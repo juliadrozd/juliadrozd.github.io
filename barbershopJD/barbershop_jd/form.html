@@ -5,19 +5,19 @@
 	<title>Записаться</title>
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="main.css">
-	
+
 </head>
 <body>
 	<div class="wrapper">
 		<!--header-->
 		<header class="header">
-			
+
 			<!--container-->
 			<div class="container">
 				<div class="column-wrap">
-					
+
 					<!--nav-->
-					<div class="column-4">		
+					<div class="column-4">
 						<nav class="nav">
 							<ul class="nav-list">
 								<li class="nav-item">
@@ -25,7 +25,7 @@
 									</a>
 								</li>
 								<li class="nav-item">
-									<a href="#" class="nav-link">Наши работы
+									<a href="portfolio.html" class="nav-link">Наши работы
 									</a>
 								</li>
 								<li class="nav-item">
@@ -43,7 +43,7 @@
 							</ul>
 						</nav>
 					</div><!--./nav-->
-					
+
 					<!--login-->
 					<div class="column-2">
 						<div class="login-item">
@@ -55,13 +55,16 @@
 				</div>
 
 			</div><!--./container-->
-			
+
 			<!--logo-->
 			<div class="logo">
-				<a href="index.html">
-					<img src="logotype-desktop.png" alt="logo" class="logo-name">
-				</a>
-				
+				<div class="container">
+					<a href="index.html">
+						<img src="logotype-desktop.png" alt="logo" class="logo-name">
+					</a>
+			</div>
+			</div><!--./logo-->
+
 				<!--logodesign-->
 				<div  class="logodesign">
 					<div id="logo-design-left"></div>
@@ -69,18 +72,22 @@
 
 				</div><!--./logodesign-->
 
-			</div><!--./logo-->
 		</header> <!--./header-->
-	
-				
+
+
 <!--content-->
-		<content class="content-form">
+		<div class="content-form">
 			<div class="container">
 				<h1> Записаться на стрижку</h1>
 
-<!--user-info-->			
+				<div class="black-box">
+					<a class="black-box-link" href="#">
+					</a>
+				</div>
+
+<!--user-info-->
 				<form action="mailto:name@serv.com" enctype="text/plain" class="user-info">
-	
+
 	<!--info-list-->
 					<ul class="info-list">
 						<li class="info-list-item">
@@ -93,7 +100,7 @@
 							<input type="text" value="Отчество" id="middlename" onclick='this.value = "";'>
 						</li>
 					</ul><!--./info-list-->
-	
+
 	<!--info-list-cont-->
 					<ul class="info-list-cont">
 						<li class="info-list-phone">
@@ -103,159 +110,159 @@
 							<input type="text" value="Контактный e-mail" id="email" onclick='this.value = "";'>
 						</li>
 					</ul> <!--./info-list-cont-->
-	
+
 	<!--more-info-->
 					<textarea class="more-info" onclick='this.value = "";'> Дополнительная информация для мастера
 					</textarea><!--./more-info-->
-	
+
 	<!--model-list-->
 					<h2> Выберите модель бороды:</h2>
 					<ul class="model-list">
-					
-					<!--admiral-->	
+
+					<!--admiral-->
 						<li class="model-list-item">
 							<input id="admiral" type="radio" value="admiral" hidden>
-							
+
 							<label class="item-form" for="admiral"></label>
-										
+
 								<p class="model-name">
-									адмирал	
+									адмирал
 								</p>
-								<div class="model-view"> 
+								<div class="model-view">
 								</div>
 
-							
-						</li><!--./admiral-->	
-					
-					<!--lesorub-->	
+
+						</li><!--./admiral-->
+
+					<!--lesorub-->
 						<li class="model-list-item">
 							<input id="lesorub" type="radio" value="lesorub" hidden>
-							
+
 							<label class="item-form2" for="lesorub"></label>
 								<p class="model-name2">
-									лесоруб	
+									лесоруб
 								</p>
-								<div class="model-view2"> 
+								<div class="model-view2">
 								</div>
-							
-						</li><!--./lesorub-->						
+
+						</li><!--./lesorub-->
 					<!--poliarnic-->
 						<li class="model-list-item">
 							<input id="poliarnik" type="radio" value="poliarnik" hidden>
-							
+
 							<label class="item-form3" for="poliarnik"></label>
 								<p class="model-name3">
 									полярник
 								</p>
-								<div class="model-view3"> 
+								<div class="model-view3">
 								</div>
-							
+
 						</li><!--./poliarnic-->
 
 					<!--boiarin-->
-						<li class="model-list-item">	
+						<li class="model-list-item">
 							<input id="boiarin" type="radio" value="boiarin" hidden>
-							
+
 							<label class="item-form4" for="boiarin"></label>
 								<p class="model-name4">
 									боярин
 								</p>
-								<div class="model-view4"> 
+								<div class="model-view4">
 								</div>
-							
+
 						</li><!--./boiarin-->
 
 					<!--mudrec-->
 						<li class="model-list-item">
 							<input id="mudrec" type="radio" value="mudrec" hidden>
-							
+
 							<label class="item-form5" for="mudrec"></label>
 								<p class="model-name5">
 									мудрец
 								</p>
-								<div class="model-view5"> 
+								<div class="model-view5">
 								</div>
-							
+
 						</li><!--./mudrec-->
-					
+
 					</ul><!--./model-list-->
 
 	<!--extras-list-->
 					<h2> Дополнительные услуги:</h2>
-					
+
 					<ul class="extras-list">
-					
-					<!--check-1-->	
-						<li class="extras-list-item">	
-							<input type="checkbox" class="checkbox" id="check1" value="podkrasit borodu" checked>	
-							
+
+					<!--check-1-->
+						<li class="extras-list-item">
+							<input type="checkbox" class="checkbox" id="check1" value="podkrasit borodu" checked>
+
 							<label class="extras-check" for="check1">
 								<span class="extras-name">Подкрасить бороду</span>
 							</label>
 						</li><!--./check-1-->
-					
+
 					<!--check-2-->
-						<li class="extras-list-item">	
-							<input type="checkbox" class="checkbox" id="check2" value="prichesat borodu">	
-							
+						<li class="extras-list-item">
+							<input type="checkbox" class="checkbox" id="check2" value="prichesat borodu">
+
 							<label class="extras-check" for="check2">
 								<span class="extras-name">Причесать бороду</span>
 							</label>
 						</li><!--./check-2-->
-					
+
 					<!--check-3-->
-						<li class="extras-list-item">	
-							<input type="checkbox" class="checkbox" id="check3" value="ubrat sedinu">	
-							
+						<li class="extras-list-item">
+							<input type="checkbox" class="checkbox" id="check3" value="ubrat sedinu">
+
 							<label class="extras-check" for="check3">
 								<span class="extras-name">Убрать седину</span>
 							</label>
 						</li><!--./check-4-->
 
 					<!--check-4-->
-						<li class="extras-list-item">	
+						<li class="extras-list-item">
 							<input type="checkbox" class="checkbox" id="check4" value="nakrutit usy" checked>
-							
+
 							<label class="extras-check" for="check4">
 								<span class="extras-name">Накрутить усы</span>
 							</label>
-						
+
 						</li><!--./check-4-->
 
 					<!--check-5-->
 						<li class="extras-list-item">
 							<input type="checkbox" class="checkbox" id="check5" value="podrovniat veski">
-							
+
 							<label class="extras-check" for="check5">
 								<span class="extras-name">Подровнять вески</span>
 							</label>
 						</li><!--./check-5-->
 
 					<!--check-6-->
-						<li class="extras-list-item">	
+						<li class="extras-list-item">
 							<input type="checkbox" class="checkbox" id="check6" value="otpolirovat lysinu">
-							
+
 							<label class="extras-check" for="check6">
 								<span class="extras-name">Отполировать лысину</span>
 							</label>
 						</li><!--./check-6-->
-					
+
 					</ul><!--./extras-list-->
 
 
 	<!--submit-button-->
-					<input type="submit" value=" " class="send"><!--./submit-button-->	
+					<input type="submit" value=" " class="send"><!--./submit-button-->
 
 				</form><!--./user-info-->
 
 			</div><!--./container-->
-		</content><!--./content-->
+		</div><!--./content-->
 
 <!--footer-->
 		<footer class="footer">
 			<div class="container">
 				<div class="column-wrap-footer">
-					
+
 					<!--column-2-address-->
 					<div class="column-2-address">
 						<h1 class="place-name">Барбершоп Бородинский
@@ -271,7 +278,7 @@
 						</p>
 
 						<ul class="social-list">
-						
+
 						<li class="social-item">
 							<a class="social-link-vk" href="#"></a>
 						</li>
@@ -299,11 +306,11 @@
 					</div><!--./column-1-about-->
 
 				</div><!--./column-wrap-footer-->
-				
+
 			</div><!--./container-->
 		</footer><!--./footer-->
 
 	</div><!--./wrapper-->
-	
+
 </body>
 </html>
