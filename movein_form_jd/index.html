@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="libs/normalize/">
+	<link rel="stylesheet" type="text/css" href="css/fonts.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+	<div class="wrapper">
+		<div class="container">
+			<div class="container-form">
+
+				<h3>Свяжитесь с нами</h3>
+
+				<form action="mailto:name@serv.com" enctype="text/plain" method="POST" class="form-back" name="form-back">
+
+				<!--name-->
+					<div class="group form-back-group">
+
+			   			<input id="form-back-group-name" name="name" required/>
+
+			   			<label for="form-back-group-name" class="form-back-label">Ваше имя
+			   			</label>
+
+					</div><!--./name-->
+
+				<!--object-->
+					<div class="group form-back-group">
+
+			  		 	<select type="dropdown" form="form-back" size="1" multiple name="object" id="form-back-type" required>
+			   				<option value="Общепромышленные обьекты">Общепромышленные обьекты</option>
+			   				<option value="Судостроение">Судостроение</option>
+			  		 	</select>
+
+			  		</div><!--./object-->
+
+				<!--phone-->
+			  		<div class="group form-back-group">
+
+			   			<input  id="form-back-group-phone" name="phone" type="Tel" maxlength="20" required/>
+
+			   			<label for="form-back-group-phone" class="form-back-phone">Номер телефона
+			   			</label>
+
+					</div><!--./phone-->
+
+				<!--email-->
+					<div class="group form-back-group">
+
+			   			<input name="email" type="email" id="form-back-group-email" maxlength="20" required/>
+
+						<label for="form-back-group-email" class="form-back-email">E-mail
+						</label>
+
+			   		</div><!--./email-->
+
+			   		<!--message-->
+			   		<div class="group message">
+
+			  		 	<textarea name="text" id="form-back-message">
+			  		 	</textarea>
+
+			  		 	<label for="form-back-group-message" class="form-back-message">Сообщение
+			  		 	</label>
+
+			  		 </div><!--./message-->
+
+					<div class="form-back-group">
+			   			<button name="form-back-button" class="form-back-button" type="submit" form="form-back">Отправить</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
