@@ -1,0 +1,39 @@
+@font-face {
+			font-family: "LiberationSansRegular";
+			src: url("../fonts/LiberationSansRegular/LiberationSansRegular.eot");
+			src: url("../fonts/LiberationSansRegular/LiberationSansRegular.eot?#iefix")format("embedded-opentype"),
+			url("../fonts/LiberationSansRegular/LiberationSansRegular.woff") format("woff"),
+			url("../fonts/LiberationSansRegular/LiberationSansRegular.ttf") format("truetype");
+			font-style: normal;
+			font-weight: normal;
+	}
+
+	@font-face {
+			font-family: "LiberationSansBold";
+			src: url("../fonts/LiberationSansBold/LiberationSansBold.eot");
+			src: url("../fonts/LiberationSansBold/LiberationSansBold.eot?#iefix")format("embedded-opentype"),
+			url("../fonts/LiberationSansBold/LiberationSansBold.woff") format("woff"),
+			url("../fonts/LiberationSansBold/LiberationSansBold.ttf") format("truetype");
+			font-style: normal;
+			font-weight: normal;
+	}
+
+	@font-face {
+			font-family: "LiberationSansItalic";
+			src: url("../fonts/LiberationSansItalic/LiberationSansItalic.eot");
+			src: url("../fonts/LiberationSansItalic/LiberationSansItalic.eot?#iefix")format("embedded-opentype"),
+			url("../fonts/LiberationSansItalic/LiberationSansItalic.woff") format("woff"),
+			url("../fonts/LiberationSansItalic/LiberationSansItalic.ttf") format("truetype");
+			font-style: normal;
+			font-weight: normal;
+	}
+
+	@font-face {
+			font-family: "LiberationSansBoldItalic";
+			src: url("../fonts/LiberationSansBoldItalic/LiberationSansBoldItalic.eot");
+			src: url("../fonts/LiberationSansBoldItalic/LiberationSansBoldItalic.eot?#iefix")format("embedded-opentype"),
+			url("../fonts/LiberationSansBoldItalic/LiberationSansBoldItalic.woff") format("woff"),
+			url("../fonts/LiberationSansBoldItalic/LiberationSansBoldItalic.ttf") format("truetype");
+			font-style: normal;
+			font-weight: normal;
+	}
