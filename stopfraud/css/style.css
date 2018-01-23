@@ -1,0 +1,164 @@
+* {
+	box-sizing: border-box;
+}
+body {
+	font-family: "RobotoRegular";
+	background-color: #253843;
+	margin: 0;
+	padding: 0;
+}
+.container {
+	width: 1200px;
+	height: 100vh;
+	margin: 0 auto;
+	padding: 0;
+}
+
+/*
+*
+* 1 Header
+*
+ */
+.header {
+	padding-top: 45px;
+	display: inline-flex;
+	flex-wrap: wrap;
+}
+
+.header__logo {
+	width: 144px;
+	height: auto;
+	text-decoration: none;
+	background-size: contain;
+}
+
+.nav__list,
+.login__list {
+	display: inline-flex;
+	align-items: center;
+	list-style: none;
+	margin: 0;
+	padding: 0 0 0 30px;
+	font-family: "RobotoLight";
+	font-size: 14px;
+	line-height: 32px;
+	text-transform: uppercase;
+}
+.nav__item,
+.login-list-item__link {
+	padding: 0 17px 0 17px;
+}
+
+.item__link,
+.login-list-item__link {
+	text-decoration: none;
+	color: #fff;
+}
+.login-list-item__link-rq {
+	border-right: 1px solid #fff;
+}
+
+.login-list-item__btn {
+	background: transparent;
+	border: 1px solid #fff;
+	border-radius: 5px;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 14px;
+	padding: 5px 20px;
+	cursor: pointer;
+}
+/*
+*
+* 2 Main
+*
+ */
+
+.main__wrap {
+	display: inline-flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+}
+.main {
+	width: 45%;
+	color: #fff;
+	font-style: normal;
+	font-weight: normal;
+	margin-bottom: 20px;
+
+}
+
+.main__title,
+.main__descr,
+.main__start {
+	font-family: 'RobotoThin';
+	font-style: normal;
+	font-weight: normal;
+	font-size: 35px;
+	line-height: 40px;
+	margin: 0 0 35px 0;
+	padding: 0;
+}
+.main__descr {
+	width: 80%;
+	font-size: 16px;
+	line-height: 20px;
+}
+.main__start {
+	text-decoration: none;
+	color: #fff;
+	font-size: 16px;
+	line-height: 16px;
+	background-color: #ff3e3e;
+	padding: 10px 25px;
+}
+
+.main__humans {
+	width: 50%;
+	height: auto;
+	padding-top: 50px;
+}
+
+.humans__img {
+	-webkit-filter: drop-shadow(10px 100px 200px #fff);
+	 filter: drop-shadow(10px 100px 200px #fff);
+}
+
+.main__switch {
+	display: block;
+	text-decoration: none;
+	color: #fff;
+	font-family: 'RobotoThin';
+	font-style: normal;
+	font-weight: normal;
+	text-transform: uppercase;
+	font-size: 14px;
+
+
+}
+.switch__btn {
+    width: 20px;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    margin: 0 auto;
+}
+
+.switch__act {
+	width: 50%;
+	height: 40%;
+	position: absolute;
+	border-right: 1px solid #fff;
+	left: 0;
+	top: 0;
+	margin: 2px 0 2px 0;
+	transition: top 5s ease-out;
+}
+
+.switch__txt {
+	text-align: center;
+}
