@@ -8,6 +8,11 @@ body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 100%;
 }
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+}
 /*
 *
 * 1 header
@@ -25,7 +30,7 @@ body {
 	z-index: 999999;
 }
 
-.main-container {
+.inner-header {
 	max-width: 1025px;
 	display: flex;
 	margin: 0 auto;
@@ -70,7 +75,8 @@ body {
 	color: rgba(0,0,0,.87);
 	cursor: pointer;
 }
-.list__item--link:hover {
+.list__item--link:hover,
+.curent {
 	border-top: 3px solid rgb(0,171,235);
 	padding: 22px 0 28px;
 }
@@ -84,37 +90,41 @@ body {
 	max-width: 100%;
 	height: auto;
 	position: relative;
-	transform: translateY(100px);
 }
 
 .video-bg__content {
 	width: 100%;
 	height: auto;
-	top: 0;
-	transform: translateY(-100px);
+	transform: translateY(-40px);
 }
 
 .video-bg:before {
 	content:'';
 	position: absolute;
 	top: 0;
-	transform: translateY(-100px);
+	transform: translateY(-40px);
 	background-color: rgba(33,33,33,.4);
 	z-index: 999;
 	width: 100%;
 	height: 100%;
 }
 
+.main-content {
+	max-width: 1025px;
+	margin: 0 auto;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+}
 
 .main__title {
+	display: block;
 	position: absolute;
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	flex-direction: column;
-	top: 0;
-	transform: translate(45%,100%);
-	z-index: 9999;
+	top: 35%;
+	left: 50%;
+	text-align: center;
+	transform: translate(-50%, -35%);
+	z-index: 99999;
 	margin: 0;
 	padding: 0;
 	opacity: 1;
@@ -122,14 +132,19 @@ body {
 	color: #ffffff;
 	text-transform: uppercase;
 	font-weight: 100;
-	font-size: 5em;
+	font-size: 4em;
 	letter-spacing: 1px;
 	text-shadow: 1px 1px 5px rgba(0,0,0,.25);
 }
 
+.main__tite--top {
+	display: block;
+}
 .main__title--bottom {
+	display: block;
 	font-size: 0.5em;
 }
+
 /**
  *
  * 3 price
@@ -138,6 +153,7 @@ body {
 .price {
 	background-color: rgb(250,250,250);
 	transform: translateY(-200px);
+	z-index: 9999;
 }
 
 .price__list {
@@ -168,7 +184,8 @@ body {
 	display: flex;
 	background-color: rgb(0,171,235);
 	border-radius: 50%;
-	padding: 23px;
+	align-items: center;
+	justify-content: center;
 	width: 100px;
 	height: 100px;
 	margin: 0 auto;
@@ -211,4 +228,8 @@ body {
 	box-shadow: 0px 0px 1px #575555 inset;
 	border-bottom: 3px solid rgb(0,142,188);
 	cursor: pointer;
+}
+
+.list--item__btn:hover {
+	background-color: rgba(0,171,235,.8);
 }
