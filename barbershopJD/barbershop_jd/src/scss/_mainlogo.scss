@@ -1,0 +1,14 @@
+
+ .logo-wrap {
+	display: block;
+	background: url('../img/back-desktop.jpg') center center no-repeat;
+	background-size: cover;
+	padding: 55px 0 455px 0;
+	text-align: center;
+	
+
+	& a {
+		cursor: pointer;
+	}
+}
+

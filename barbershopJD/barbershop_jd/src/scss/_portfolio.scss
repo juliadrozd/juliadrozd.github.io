@@ -1,0 +1,479 @@
+/*
+================================================
+* 4 PORTFOLIO PAGE***PORTFOLIO PAGE***PORTFOLIO PAGE***
+================================================
+*/
+/*
+*
+* 4.1 Master
+*
+*/
+.black-box-portfolio {
+	display: inline-block;
+	font-size: 0;
+	margin: 0 0 0 100px;
+	padding: 0;
+	width: 160px;
+	height: 51px;
+	background-color: #000000;
+	vertical-align: middle;
+}
+
+.master {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+.best-master-left {
+	display: inline-block;
+	width: 49%;
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+}
+
+.best-master-left img {
+	width: 480px;
+	height: 484px;
+}
+
+.best-master-right {
+	display: inline-block;
+	width: 49%;
+	font-size: 0;
+	margin: 0;
+	padding: 0;
+	vertical-align: top;
+}
+.best-master-button {
+	display: inline-block;
+	width: 200px;
+	margin: 26px 0 0 280px;
+	padding: 0;
+	position: relative;
+}
+.best-master-lable-top {
+	position: relative;
+	width: 20px;
+	height: 0;
+	display: inline-block;
+	font-size: 0;
+	border-top: 25px solid #000000;
+	border-left: 20px solid transparent;
+	vertical-align: bottom;
+
+
+}
+.best-master-lable-top {
+	position: relative;
+	width: 20px;
+	height: 0;
+	display: inline-block;
+	font-size: 0;
+	border-bottom: 26px solid #000000;
+	border-left: 20px solid transparent;
+	vertical-align: bottom;
+
+}
+
+.best-master-lable {
+	display: inline-block;
+	position: relative;
+	margin: -51px 0 0 20px;
+	padding: 0;
+	font-size: 0;
+	width: 160px;
+	height: 51px;
+	background-color: #000000;
+	vertical-align: top;
+}
+
+.best-master-lable p {
+	color: #fff;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 18px;
+	font-weight: 700;
+	margin: 12px 0 0 0;
+}
+
+.best-master-about {
+	display: inline-block;
+	width: 350px;
+	margin: 60px 0 0;
+	padding: 0 0 100px 0;
+	vertical-align: top;
+}
+
+.best-master-about h3{
+	font-size: 30px;
+	font-weight: 700;
+	margin-left: 40px;
+}
+.master-comment {
+	width: 300px;
+	font-size: 18px;
+	line-height: 1.5;
+	margin-left: 40px;
+}
+
+.master-skills-list ul {
+	display: inline-block;
+	margin-top: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.master-skills-list li {
+	display: inline-block;
+	margin: 0 35px 0 0;
+	padding: 0;
+}
+.master-skills-list li:last-child {
+	margin: 0;
+}
+.master-skills-list img {
+	vertical-align: middle;
+	margin: 0;
+	padding: 0;
+}
+.master-skills-list p {
+	display: inline-block;
+	font-size: 18px;
+	text-transform: uppercase;
+	line-height: 0;
+	margin: 0 0 0 15px;
+	padding: 0;
+	vertical-align: middle;
+}
+
+.other-masters {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+
+}
+
+.masters-list {
+	display: inline-block;
+	list-style: none;
+	margin: 40px 0 0 0;
+	padding: 0;
+}
+
+.masters-name {
+	display: inline-block;
+	width: 294px;
+	height: 540px;
+	margin: 0 0 90px;
+	padding: 0;
+	vertical-align: top;
+	margin-right: 35px;
+	background-color: #f2f2f2;
+}
+.masters-name:last-child {
+	margin-right: 0;
+}
+
+.masters-name:first-child {
+	background-color: #f8f5f2;
+}
+.masters-name h3 {
+	margin: 40px 0 30px 40px;
+}
+
+.masters-name p {
+	margin: 0 0 0 40px;
+	padding: 0;
+}
+
+.other-master-skills-list {
+	display: inline-block;
+	margin: 50px 0 0 40px;
+	padding: 0;
+	list-style: none;
+
+}
+
+.other-master-skills-list li {
+	display: inline-block;
+	margin: 30px 35px 0 0;
+	padding: 0;
+}
+
+.other-master-skills-list li:last-child {
+	margin:  0;
+}
+
+.other-master-skills-list img {
+	vertical-align: middle;
+	margin: 0;
+	padding: 0;
+}
+.other-master-skills-list p {
+	display: inline-block;
+	font-size: 18px;
+	text-transform: uppercase;
+	line-height: 0;
+	margin: 0 0 0 15px;
+	padding: 0;
+	vertical-align: middle;
+}
+/*
+*
+* 4.2 Price
+*
+*/
+.price {
+	width: 100%;
+	background-color: #353535;
+	font-family: 'PT Sans Narrow', sans-serif;
+}
+.price h1 {
+	display: block;
+	color: #fff;
+	margin: 0;
+	padding: 85px 0 60px 0;
+	line-height: 0;
+}
+
+.price-left {
+	display: inline-block;
+	width: 75%;
+	margin: 0 0 120px 0;
+	padding: 0;
+}
+.price-list {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+	color: #fff;
+
+}
+
+.price-item-cell {
+	list-style: none;
+	margin: 0 0 38px;
+}
+
+.price-item-cell p {
+	display: inline-block;
+	margin: 0;
+
+}
+.list-item-num {
+	width: 70px;
+	padding: 0 0 0 20px;
+	color: #505050;
+}
+.list-item {
+	width: 250px;
+	font-weight: 700;
+}
+.list-item-more {
+	width: 160px;
+}
+
+/*
+*
+* 4.3 Clock
+*
+*/
+.price-right {
+	display: inline-block;
+	width: 24%;
+	margin: 0 0 120px;
+	padding: 0;
+}
+
+.myclock {
+	font-size:1em;
+	text-align:center;
+	margin: 0;
+	padding: 0;
+}
+#clock {
+	display: inline-block;
+}
+#d { width:8.8em;
+	 height:8.8em;
+	 top:0.05em;
+	 left:0.05em;
+	 position:relative;
+	 border-radius:4.4em;
+}
+
+#ii {
+	padding-left:4.34em;
+	position:absolute;
+}
+b {
+	height:9em;
+	position:absolute;
+	display:block;
+	border:solid 0 #222;
+	border-width:1em 0;
+	width:0.12em;
+}
+
+.ss, .mm, .hh {
+	width:8.0em;
+	height:8.0em;
+	top:0.4em;
+	left:0.4em;
+	position:absolute;
+}
+.hh {
+	transform:rotate(-55deg);
+}
+.mm {
+	transform:rotate(60deg);
+}
+.ss {
+	animation: tick 1s normal infinite steps(25,end);
+ }
+@keyframes tick {
+	0% { transform: rotate(0deg); }
+	12% { transform:rotate(6deg); }
+	100% { transform: rotate(6deg); }
+}
+.s {
+	width:0.1em;
+	height:4.8em;
+	top:0.6em;
+	left:3.95em;
+	position:relative;
+	background:#222;
+	outline: 1px solid transparent;
+	animation: a360_10 60s normal infinite steps(60,end);
+}
+.sr {
+	width:0.3em;
+	height:0.3em;
+	background:#222;
+	margin:-0.95em 0 0 3.84em;
+	border-radius:0.15em;
+}
+@keyframes a360_10  {
+	0% { transform: translate(0, 1.0em) rotate(0deg) translate(0,-1.0em) }
+	100% { transform: translate(0, 1.0em) rotate(360deg) translate(0,-1.0em) }
+}
+
+.m {
+	height:4.8em;
+	left:3.89em;
+	width:0.22em;
+	position:relative;
+	background:#222;
+	border:0 0 3.2em 0;
+	animation: a36016 3600s normal infinite linear;
+	outline: 1px solid transparent;
+}
+@keyframes a36016 {
+	0% { transform: translate(0, 1.6em) rotate(0deg) translate(0,-1.6em); }
+	100% { transform: translate(0, 1.6em) rotate(360deg) translate(0,-1.6em); }
+}
+
+.mr {
+	width:0.5em;
+	height:0.5em;
+	background:#222;
+	margin:-1.05em 0 0 3.74em;
+	border-radius:0.25em;
+}
+.h {
+	width:0.3em;
+	height:3.4em;
+	left:3.85em;
+	position:relative;
+	background:#222;
+	margin-top:1.3em;
+	outline: 1px solid transparent;
+	animation: a36010 43200s normal infinite linear;
+}
+
+#sh .s, #sh .m, #sh .h, #sh .mr  {
+	background:#ddc;
+	box-shadow:0 0 0.05em #ddc, 0 0 0.025em #ddc;
+}
+
+/* Vendor CSS prefixes */
+#clock {
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+}
+#clock b>i,
+#clock i>i {
+	-ms-transform:rotate(6deg);
+	-webkit-transform:rotate(6deg);
+}
+#clock b>b {
+	-ms-transform:rotate(30deg);
+	-webkit-transform:rotate(30deg);
+}
+
+
+/* Fixes */
+
+#clock {
+	transition:none;
+	-webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none;
+}
+
+
+#clock b:nth-child(2) {
+	transform:rotate(30deg);
+	-ms-transform:rotate(30deg);
+	-webkit-transform:rotate(30deg);
+}
+#clock b:nth-child(3) {
+	transform:rotate(60deg);
+	-ms-transform:rotate(60deg);
+	-webkit-transform:rotate(60deg);
+}
+#clock b:nth-child(4) {
+	transform:rotate(90deg);
+	-ms-transform:rotate(90deg);
+	-webkit-transform:rotate(90deg);
+}
+#clock b:nth-child(5) {
+	transform:rotate(120deg);
+	-ms-transform:rotate(120deg);
+	-webkit-transform:rotate(120deg);
+}
+#clock b:nth-child(6) {
+	transform:rotate(150deg);
+	-ms-transform:rotate(150deg);
+	-webkit-transform:rotate(150deg);
+}
+
+
+/* IE10 fix */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	#css3fixed:checked ~  #clock i, #css3fixed:checked ~  #clock b {
+		border-left:solid 0px #fff;
+		border-right:solid 0px #fff;
+	}
+}
+/* Opera rotation fix */
+#clock .s {
+	animation: a360_10of 60s normal infinite steps(60,end);
+}
+@keyframes a360_10of {
+	0% {  transform: translate(0, 1.0em) rotate(0deg) translate(0,-1.0em);
+		-o-transform: translate(0, 2em) rotate(0deg) translate(0,-2em) }
+	100% { transform: translate(0, 1.0em) rotate(360deg) translate(0,-1.0em);
+		-o-transform: translate(0, 2em) rotate(360deg) translate(0,-2em) }
+}
+
+.clock-shares {
+	width: 140px;
+	display: inline-block;
+	color: #ffffff;
+	font-size: 18px;
+	text-align: center;
+}

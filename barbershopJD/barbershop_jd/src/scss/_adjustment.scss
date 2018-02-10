@@ -1,0 +1,40 @@
+* {
+	box-sizing: border-box;
+}
+body {
+	font-family: 'PTSansNarrowRegular', sans-serif;
+    font-weight: normal;
+    background-color: #f8f5f2;
+}
+
+.section-title {
+	text-transform: uppercase;
+	color: #000;
+	font-weight: normal;
+	font-family: 'PTSansNarrowBold';
+	margin: 0 0 0 70px;
+    font-size: 40px;
+}
+
+.page-btn {
+	background: transparent;
+	font-size: 18px;
+	line-height: 20px;
+	text-transform: uppercase;
+	color: #000;
+	font-weight: normal;
+	font-family: 'PTSansNarrowBold';
+	padding: 15px 30px 13px 30px;
+	border: 1px solid rgba(229, 221, 213, .4);
+	cursor: pointer;
+	transition: border .1s ease-in-out;
+        
+    &:hover {
+	border-color: #d5c9bd;
+    }
+
+    &:active {
+        background: #d5c9bd;
+        color: rgba(0, 0, 0, .3);
+    }
+}

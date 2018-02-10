@@ -1,0 +1,29 @@
+.header-btn-wrap {
+	text-transform: right;
+	padding: 30px;
+}
+
+.login-btn {
+	background: none;
+	color: #fff;
+	border: none;
+	text-transform: uppercase;
+	cursor: pointer;
+	font-family: 'PTSansNarrowBold', sans-serif;
+	font-weight: bold;
+    letter-spacing: .8px;
+	font-size: 18px;
+	line-height: 20px;
+	padding: 0 0 0 35px;
+	background: url('../img/login.svg')  center left no-repeat;
+	transition: color .3s ease-in-out;
+	
+	&:hover {
+		color: #826550;
+	}
+
+	&:active {
+		color: #777777;
+	}
+}
+

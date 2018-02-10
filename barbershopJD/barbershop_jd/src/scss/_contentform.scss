@@ -1,0 +1,598 @@
+/*
+*
+*3.1 Content-form
+*
+*/
+.content-form {
+    margin-left: auto;
+    margin-right: auto;
+}
+h1 {
+	display: inline-block;
+	font-size: 30px;
+	color: #363534;
+	text-transform: uppercase;
+	text-align: left;
+	margin-top: 60px;
+	margin-bottom: 80px;
+	margin-left: 0;
+	margin-right: 500px;
+	}
+.black-box {
+	display: inline-block;
+	font-size: 0;
+	margin: 0;
+	padding: 0;
+	width: 160px;
+	height: 51px;
+	background-color: #000000;
+	vertical-align: middle;
+}
+
+.black-box-link {
+	text-decoration: none;
+	cursor: pointer;
+}
+/*
+*
+*3.1.1 User-info
+*
+*/
+.user-info {
+	margin: 0;
+	padding: 0;
+}
+.info-list {
+	margin: 0 0 35px 0;
+	padding: 0;
+}
+.info-list-item {
+	list-style: none;
+	display: inline-block;
+}
+.info-list-item input {
+	width: 290px;
+	height: 70px;
+	background-color: #ffffff;
+	border: 0;
+	font-size: 22px;
+	text-transform: capitalize;
+	font-family: 'PT Sans Narrow', sans-serif;
+	padding-left: 20px;
+	margin-right: 40px;
+}
+.info-list-item #middlename {
+	margin-right: 0;
+}
+
+.info-list-cont {
+	margin: 0 0 35px 0;
+	padding: 0;
+}
+
+.info-list-cont li {
+	list-style: none;
+	display: inline-block;
+}
+.info-list-cont input{
+	width: 456px;
+	height: 70px;
+	background-color: #ffffff;
+	border: 0;
+	font-size: 22px;
+	text-transform: capitalize;
+	font-family: 'PT Sans Narrow', sans-serif;
+	padding-left: 20px;
+}
+.info-list-phone {
+	margin-right: 40px;
+}
+/*
+*
+*3.1.2 More-info
+*
+*/
+.more-info {
+	width: 960px;
+	height: 210px;
+	background-color: #ffffff;
+	border: 0;
+	font-size: 22px;
+	text-transform: capitalize;
+	font-family: 'PT Sans Narrow', sans-serif;
+	vertical-align: text-top;
+	padding: 20px 20px;
+}
+
+/*
+*
+*3.1.3 Model-list
+*
+*/
+h2 {
+	font-size: 24px;
+	text-align: center;
+	text-transform: uppercase;
+	color: #363534;
+	font-weight: normal;
+	margin-bottom: 60px;
+}
+h2:before,
+h2:after {
+	background-color: #e5ddd5;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 295px;
+
+}
+h2:before {
+    right: 0.5em;
+    margin:0 40px 0 0;
+
+}
+h2:after {
+    left: 0.5em;
+     margin:0 0 0 40px;
+}
+
+.model-list {
+	margin: 0;
+	padding: 0;
+}
+
+.model-list-item {
+	list-style: none;
+	display: inline-block;
+	width: 80px;
+	margin: 0 54px 0 54px;
+}
+
+input[type=radio] {
+	display: none;
+}
+/*
+*
+*3.1.3.1 Item-form (admiral)
+*
+*/
+.item-form {
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+	content: "";
+    display: inline-block;
+    height: 54px;
+    width: 54px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    cursor: pointer;
+   	margin-left: 12px;
+}
+
+p.model-name {
+	font-size: 22px;
+	text-transform: lowercase;
+	text-align: center;
+	color: #363534;
+	font-weight: normal;
+	padding: 35px 0 35px 0;
+	margin: 0;
+	width: 80px;
+	cursor: pointer;
+}
+
+.model-view {
+	display: inline-block;
+	width: 80px;
+	height: 110px;
+	background: url(admiral.png) no-repeat top center;
+	cursor: pointer;
+}
+.item-form:hover + p {
+	color: #826550;
+}
+.item-form:hover ~ div {
+	background: url(admiral-checked.png) no-repeat top;
+}
+
+input[type=radio]:checked  + .item-form ~ p {
+	color: #826550;
+}
+input[type=radio]:checked + .item-form ~  div{
+	background: url(admiral-checked.png) no-repeat top;
+
+}
+
+/*
+*
+*3.1.3.2 Item-form2 (lesorub)
+*
+*/
+.item-form2 {
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+	content: "";
+    display: inline-block;
+    height: 54px;
+    width: 54px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    cursor: pointer;
+    margin-left: 12px;
+
+}
+
+p.model-name2 {
+	font-size: 22px;
+	text-transform: lowercase;
+	text-align: center;
+	color: #363534;
+	font-weight: normal;
+	padding: 35px 0 35px 0;
+	margin: 0;
+	width: 80px;
+	cursor: pointer;
+}
+
+.model-view2 {
+	display: inline-block;
+	width: 80px;
+	height: 110px;
+	background: url(lesorub.png) no-repeat top center;
+	cursor: pointer;
+}
+.item-form2:hover + p {
+	color: #826550;
+}
+.item-form2:hover ~ div {
+	background: url(lesorub-checked.png) no-repeat top;
+}
+
+input[type=radio]:checked + .item-form2  ~ p{
+	color: #826550;
+}
+input[type=radio]:checked  + .item-form2 ~ div{
+	background: url(lesorub-checked.png) no-repeat top;
+
+}
+
+/*
+*
+*3.1.3.3 Item-form3 (poliadnik)
+*
+*/
+.item-form3 {
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+	content: "";
+    display: inline-block;
+    height: 54px;
+    width: 54px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    cursor: pointer;
+    margin-left: 12px;
+
+}
+
+p.model-name3 {
+	font-size: 22px;
+	text-transform: lowercase;
+	text-align: center;
+	color: #363534;
+	font-weight: normal;
+	padding: 35px 0 35px 0;
+	margin: 0;
+	width: 80px;
+	 cursor: pointer;
+}
+
+.model-view3 {
+	display: inline-block;
+	width: 80px;
+	height: 110px;
+	background: url(poliarnik.png) no-repeat top center;
+	 cursor: pointer;
+}
+.item-form3:hover + p {
+	color: #826550;
+}
+.item-form3:hover ~ div {
+	background: url(poliarnik-checked.png) no-repeat top;
+}
+
+input[type=radio]:checked  + .item-form3 ~ p{
+	color: #826550;
+}
+input[type=radio]:checked  + .item-form3 ~ div{
+	background: url(poliarnik-checked.png) no-repeat top;
+
+}
+/*
+*
+*3.1.3.4 Item-form4 (boiarin)
+*
+*/
+.item-form4 {
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+	content: "";
+    display: inline-block;
+    height: 54px;
+    width: 54px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    cursor: pointer;
+    margin-left: 12px;
+
+}
+
+p.model-name4 {
+	font-size: 22px;
+	text-transform: lowercase;
+	text-align: center;
+	color: #363534;
+	font-weight: normal;
+	padding: 35px 0 35px 0;
+	margin: 0;
+	width: 80px;
+	  cursor: pointer;
+}
+
+.model-view4 {
+	display: inline-block;
+	width: 80px;
+	height: 110px;
+	background: url(boiarin.png) no-repeat top center;
+	  cursor: pointer;
+}
+.item-form4:hover + p {
+	color: #826550;
+}
+.item-form4:hover ~ div {
+	background: url(boiarin-checked.png) no-repeat top;
+}
+
+input[type=radio]:checked + .item-form4 ~ p{
+	color: #826550;
+}
+input[type=radio]:checked + .item-form4 ~div{
+	background: url(boiarin-checked.png) no-repeat top;
+
+}
+
+/*
+*
+*3.1.3.5 Item-form5 (mudrec)
+*
+*/
+.item-form5 {
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+	content: "";
+    display: inline-block;
+    height: 54px;
+    width: 54px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    cursor: pointer;
+    margin-left: 12px;
+}
+
+p.model-name5 {
+	font-size: 22px;
+	text-transform: lowercase;
+	text-align: center;
+	color: #363534;
+	font-weight: normal;
+	padding: 35px 0 35px 0;
+	margin:  0;
+	width: 80px;
+	cursor: pointer;
+}
+
+.model-view5 {
+	display: inline-block;
+	width: 80px;
+	height: 110px;
+	background: url(mudrec.png) no-repeat top center;
+	 cursor: pointer;
+}
+.item-form5:hover + p {
+	color: #826550;
+}
+.item-form5:hover ~ div {
+	background: url(mudrec-checked.png) no-repeat top;
+}
+
+input[type=radio]:checked + .item-form5 ~ p{
+	color: #826550;
+}
+input[type=radio]:checked + .item-form5 ~ div{
+	background: url(mudrec-checked.png) no-repeat top;
+
+}
+/*
+*
+*3.1.4 Extras-list
+*
+*/
+.extras-list {
+	margin: 0;
+	padding: 0;
+}
+
+
+.extras-list-item {
+	list-style: none;
+	display: inline-block;
+	cursor: pointer;
+	margin-bottom: 50px;
+	font-size: 22px;
+	color: #363534;
+	font-weight: normal;
+	width: 310px;
+}
+
+.checkbox {
+  vertical-align: top;
+  margin: 0 3px 0 0;
+  width: 17px;
+  height: 17px;
+}
+
+.checkbox + label {
+  cursor: pointer;
+}
+
+.checkbox:not(checked) {
+  position: absolute;
+  opacity: 0;
+}
+.checkbox:not(checked) + label {
+  position: relative;
+  padding: 0 0 0 60px;
+}
+
+.checkbox:not(checked) + label:before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 0;
+  width: 38px;
+  height: 37px;
+  background: #fff;
+
+}
+
+.checkbox:not(checked) + label:after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  background: url(checkbox.png);
+  transition: all .2s;
+}
+/*
+*
+*3.1.4.1 check-1 (checked status for item)
+*
+*/
+#check1:checked + label:before {
+  background-image: url(checkbox.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+
+}
+
+#check1:checked + label:after {
+  background-image: url(checkbox.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+/*
+*
+*3.1.4.2 check-2 (checked status for item)
+*
+*/
+#check2:checked + label:before {
+  background-image: url(checkbox.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+
+}
+
+#check2:checked + label:after {
+  background-image: url(checkbox.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+/*
+*
+*3.1.4.3 check-3 (checked status for item)
+*
+*/
+#check3:checked + label:before {
+  background-image: url(checkbox.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+
+}
+
+#check3:checked + label:after {
+  background-image: url(checkbox.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+/*
+*
+*3.1.4.4 check-4 (checked status for item)
+*
+*/
+#check4:checked + label:before {
+  background-image: url(checkbox.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+
+}
+
+#check4:checked + label:after {
+  background-image: url(checkbox.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+/*
+*
+*3.1.4.5 check-5 (checked status for item)
+*
+*/
+#check5:checked + label:before {
+  background-image: url(checkbox.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+
+}
+
+#check5:checked + label:after {
+  background-image: url(checkbox.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+/*
+*
+*3.1.4.6 check-6 (checked status for item)
+*
+*/
+#check6:checked + label:before {
+  background-image: url(checkbox.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+
+}
+
+#check6:checked + label:after {
+  background-image: url(checkbox.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+/*
+*
+*3.1.5 Send-button
+*
+*/
+.send {
+	width: 960px;
+	height: 70px;
+	background-color: #ffffff;
+	border: 0;
+	cursor: pointer;
+	margin-top: 35px;
+	margin-bottom: 85px;
+
+}
