@@ -1,7 +1,5 @@
 .nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexCenter;
     font-family: 'PTSansNarrowBold', sans-serif;
     font-style: normal;
     font-weight: normal;
@@ -32,10 +30,10 @@
     transition: color .3s ease-in-out;
 
     &:hover{
-        color: #826550;
+        color: $hover-color;
     }
     &:active {
-		color: #777777;
+		color: $active-color;
 	}
     
     &:before,
@@ -43,7 +41,7 @@
 	content: '';
 	height: 3px;
 	width: 0;
-	background: #826550;
+	background: $hover-color;
 	position: absolute;
 	bottom: 0;
 	transition: width .2s linear;
@@ -59,5 +57,9 @@
     &:hover:before,
     &:hover:after{
 	width: 50%;
+    }
+    &:active:before,
+    &:active:after {
+        background: $active-color;
     }
 }

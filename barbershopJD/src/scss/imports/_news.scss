@@ -36,15 +36,15 @@
 	transition: color .3s ease-in-out;
 
 	&:hover {
-		color: #826550;
+		color: $hover-color;
 		text-decoration: underline;
 	}
 	&:hover .news__date-wrap {
-		background: #826550;
+		background: $hover-color;
 	}
 
 	&:hover .news__date-wrap:before {
-		border-top: 8px solid #826550;
+		border-top: 8px solid $hover-color;
 	}
 
 	&:active  {
@@ -99,7 +99,6 @@
 
 .news__descr {
 	margin: -12px 0 0 0;
-	
 	font-size: 18px;
 	line-height: 22px;
 	padding-left: 70px;

@@ -5,9 +5,7 @@
 }
 
 .features__list {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    @include AlignFlexStart;
     margin: 0;
     padding: 0;
     list-style: none;

@@ -1,0 +1,192 @@
+.myclock {
+	font-size:1em;
+	text-align:center;
+	margin: 0;
+	padding: 4px 40px;
+	border: 1px solid $active-color;
+}
+#clock {
+	display: inline-block;
+}
+#d { width:8.8em;
+	 height:8.8em;
+	 top:0.05em;
+	 left:0.05em;
+	 position:relative;
+	 border-radius:4.4em;
+}
+
+#ii {
+	padding-left:4.34em;
+	position:absolute;
+}
+b {
+	height:9em;
+	position:absolute;
+	display:block;
+	border:solid 0 #222;
+	border-width:1em 0;
+	width:0.12em;
+}
+
+.ss, .mm, .hh {
+	width:8.0em;
+	height:8.0em;
+	top:0.4em;
+	left:0.4em;
+	position:absolute;
+}
+.hh {
+	transform:rotate(-55deg);
+}
+.mm {
+	transform:rotate(60deg);
+}
+.ss {
+	animation: tick 1s normal infinite steps(25,end);
+ }
+@keyframes tick {
+	0% { transform: rotate(0deg); }
+	12% { transform:rotate(6deg); }
+	100% { transform: rotate(6deg); }
+}
+.s {
+	width:0.1em;
+	height:4.8em;
+	top:0.6em;
+	left:3.95em;
+	position:relative;
+	background:#222;
+	outline: 1px solid transparent;
+	animation: a360_10 60s normal infinite steps(60,end);
+}
+.sr {
+	width:0.3em;
+	height:0.3em;
+	background:#222;
+	margin:-0.95em 0 0 3.84em;
+	border-radius:0.15em;
+}
+@keyframes a360_10  {
+	0% { transform: translate(0, 1.0em) rotate(0deg) translate(0,-1.0em) }
+	100% { transform: translate(0, 1.0em) rotate(360deg) translate(0,-1.0em) }
+}
+
+.m {
+	height:4.8em;
+	left:3.89em;
+	width:0.22em;
+	position:relative;
+	background:#222;
+	border:0 0 3.2em 0;
+	animation: a36016 3600s normal infinite linear;
+	outline: 1px solid transparent;
+}
+@keyframes a36016 {
+	0% { transform: translate(0, 1.6em) rotate(0deg) translate(0,-1.6em); }
+	100% { transform: translate(0, 1.6em) rotate(360deg) translate(0,-1.6em); }
+}
+
+.mr {
+	width:0.5em;
+	height:0.5em;
+	background:#222;
+	margin:-1.05em 0 0 3.74em;
+	border-radius:0.25em;
+}
+.h {
+	width:0.3em;
+	height:3.4em;
+	left:3.85em;
+	position:relative;
+	background:#222;
+	margin-top:1.3em;
+	outline: 1px solid transparent;
+	animation: a36010 43200s normal infinite linear;
+}
+
+#sh .s, #sh .m, #sh .h, #sh .mr  {
+	background:#ddc;
+	box-shadow:0 0 0.05em #ddc, 0 0 0.025em #ddc;
+}
+
+/* Vendor CSS prefixes */
+#clock {
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+}
+#clock b>i,
+#clock i>i {
+	-ms-transform:rotate(6deg);
+	-webkit-transform:rotate(6deg);
+}
+#clock b>b {
+	-ms-transform:rotate(30deg);
+	-webkit-transform:rotate(30deg);
+}
+
+
+/* Fixes */
+
+#clock {
+	transition:none;
+	-webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none;
+}
+
+
+#clock b:nth-child(2) {
+	transform:rotate(30deg);
+	-ms-transform:rotate(30deg);
+	-webkit-transform:rotate(30deg);
+}
+#clock b:nth-child(3) {
+	transform:rotate(60deg);
+	-ms-transform:rotate(60deg);
+	-webkit-transform:rotate(60deg);
+}
+#clock b:nth-child(4) {
+	transform:rotate(90deg);
+	-ms-transform:rotate(90deg);
+	-webkit-transform:rotate(90deg);
+}
+#clock b:nth-child(5) {
+	transform:rotate(120deg);
+	-ms-transform:rotate(120deg);
+	-webkit-transform:rotate(120deg);
+}
+#clock b:nth-child(6) {
+	transform:rotate(150deg);
+	-ms-transform:rotate(150deg);
+	-webkit-transform:rotate(150deg);
+}
+
+
+/* IE10 fix */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	#css3fixed:checked ~  #clock i, #css3fixed:checked ~  #clock b {
+		border-left:solid 0px #fff;
+		border-right:solid 0px #fff;
+	}
+}
+/* Opera rotation fix */
+#clock .s {
+	animation: a360_10of 60s normal infinite steps(60,end);
+}
+@keyframes a360_10of {
+	0% {  transform: translate(0, 1.0em) rotate(0deg) translate(0,-1.0em);
+		-o-transform: translate(0, 2em) rotate(0deg) translate(0,-2em) }
+	100% { transform: translate(0, 1.0em) rotate(360deg) translate(0,-1.0em);
+		-o-transform: translate(0, 2em) rotate(360deg) translate(0,-2em) }
+}
+
+.myclock__descr {
+	padding-top: 20px;
+	width: 140px;
+	display: inline-block;
+	color: #ffffff;
+	font-size: 18px;
+	text-align: center;
+}

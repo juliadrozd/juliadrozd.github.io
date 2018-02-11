@@ -1,0 +1,111 @@
+/**
+*
+* Basic page needs
+*
+**/
+@import "mixins/mixins.scss";
+@import "../../src/libs/normalize/normalize.css";
+/*
+*
+* Adjustment Settings
+*
+*/
+@import "imports/adjustment";
+/*
+*
+* Grid
+*
+*/
+@import "imports/grid";
+/*
+================================================
+* HOME PAGE
+================================================
+*/
+/*
+*
+* Header
+*
+*/
+@import "imports/header";
+/*
+*
+* Nav
+*
+*/
+@import "imports/navigation";
+
+/*
+*
+* Login
+*
+*/
+
+@import "imports/login";
+/**
+ *
+ * Logo
+ *
+ */
+@import "imports/mainlogo";
+/**
+ *
+ * Statistic
+ *
+ */
+@import "imports/statistics";
+/*
+ *
+ * Features
+ *
+ */
+@import "imports/features";
+/*
+*
+* News
+*
+ */
+@import "imports/news";
+/*
+*
+* Testimonials
+*
+ */
+@import "imports/testimonials";
+/*
+*
+* Footer
+*
+*/
+@import "imports/mainfooter";
+/*
+*
+* Portfolio_BestMaster
+*
+*/
+@import "imports/portfolio_masters";
+/*
+*
+* Portfolio_Price
+*
+*/
+@import "imports/portfolio_price";
+/*
+*
+* Portfolio_Myclock
+*
+*/
+@import "imports/portfolio_myclock";
+/*
+*
+* Form_Masters
+*
+*/
+@import "imports/form_masters";
+/*
+*
+* Form_Extraslist
+*
+*/
+@import "imports/form_extraslist";
+

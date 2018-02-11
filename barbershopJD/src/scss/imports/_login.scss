@@ -19,11 +19,11 @@
 	transition: color .3s ease-in-out;
 	
 	&:hover {
-		color: #826550;
+		color: $hover-color;
 	}
 
 	&:active {
-		color: #777777;
+		color: $active-color;
 	}
 }
 

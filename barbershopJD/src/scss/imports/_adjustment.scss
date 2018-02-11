@@ -1,3 +1,8 @@
+$hover-color:#826550;
+$active-color: #777777;
+$border-color: rgba(229, 221, 213, .4);
+$border-hover-color: #d5c9bd;
+
 * {
 	box-sizing: border-box;
 }
@@ -12,7 +17,7 @@ body {
 	color: #000;
 	font-weight: normal;
 	font-family: 'PTSansNarrowBold';
-	margin: 0 0 0 70px;
+	margin: 0;
     font-size: 40px;
 }
 
@@ -21,16 +26,19 @@ body {
 	font-size: 18px;
 	line-height: 20px;
 	text-transform: uppercase;
+	text-decoration: none;
 	color: #000;
 	font-weight: normal;
 	font-family: 'PTSansNarrowBold';
 	padding: 15px 30px 13px 30px;
-	border: 1px solid rgba(229, 221, 213, .4);
+	border: 1px solid $border-color;
 	cursor: pointer;
-	transition: border .1s ease-in-out;
+	transition: border-color .3s ease-in-out;
+	transition: background .3s ease-in-out;
+	transition: color .3s ease-in-out;
         
     &:hover {
-	border-color: #d5c9bd;
+	border-color: $border-hover-color;
     }
 
     &:active {
