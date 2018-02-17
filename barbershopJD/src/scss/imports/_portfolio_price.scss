@@ -20,7 +20,12 @@
 	font-size: 18px;
 	color: #fff;
 	border: 1px solid $active-color;
-	border-collapse: collapse;		
+	border-collapse: collapse;	
+	
+	@include medium {
+		width: 100%;
+		margin-bottom: 20px;
+	}
 }
 
 .table__num {

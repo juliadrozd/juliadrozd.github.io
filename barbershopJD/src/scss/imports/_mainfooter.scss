@@ -1,11 +1,15 @@
 .footer {
 	background-color: #292929;
-	height: 200px;
+	height: auto;
 }
 
 .footer__wrap {
 	@include flexBetween;
 	padding-top: 50px;
+
+	@include small {
+		flex-flow: column wrap;
+	}
 }
 
 .footer__place {
@@ -19,6 +23,11 @@
 	margin: 0;
 	padding: 0;
 	color: #fff;
+
+	@include small {
+		width: 100%;
+		text-align: center;
+	}
 	
 }
 
@@ -49,6 +58,12 @@
 	font-weight: normal;
 	text-align: center;
 	margin: 0;
+
+	@include small {
+		width: 100%;
+		text-align: center;
+		padding: 30px;
+	}
 }
 
 .social-list {
@@ -58,7 +73,8 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
+
+	}
 
 .social-item {
 	border: 1px solid #3f3f3f;
@@ -81,6 +97,12 @@
 	@include flexCenter;
 	flex-direction: column;
 	color: #fff;
+
+	@include small {
+		width: 100%;
+		text-align: center;
+		padding: 30px;
+	}
 }
 
 .about-dev {

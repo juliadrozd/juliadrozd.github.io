@@ -1,6 +1,14 @@
 .header-btn-wrap {
 	text-transform: right;
 	padding: 30px;
+
+	@include small {
+		display: none;
+	}
+
+	@include extraSmall {
+		display: none;
+	}
 }
 
 .login-btn {

@@ -4,19 +4,15 @@
 *
 **/
 @import "mixins/mixins.scss";
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import "../../src/libs/normalize/normalize.css";
+
 /*
 *
 * Adjustment Settings
 *
 */
 @import "imports/adjustment";
-/*
-*
-* Grid
-*
-*/
-@import "imports/grid";
 /*
 ================================================
 * HOME PAGE
@@ -101,7 +97,7 @@
 * Form_Masters
 *
 */
-@import "imports/form_masters";
+@import "imports/form_mainform";
 /*
 *
 * Form_Extraslist

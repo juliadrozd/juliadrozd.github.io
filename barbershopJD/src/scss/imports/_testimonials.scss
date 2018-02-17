@@ -6,6 +6,12 @@
 	margin-top: 40px;
 	padding: 0 70px;
 	position: relative;
+
+	@include small {
+		width: 100%;
+		padding: 0;
+	}
+
 }
 
 .testimonials__slider-btn {
@@ -24,6 +30,10 @@
 			background: #d5c9bd;
 			color: rgba(0, 0, 0, .3);
 		}
+
+	@include small {
+		display: none;
+	}
 }
 
 .testimonials__slider-btn--prev {
@@ -36,6 +46,12 @@
 
 .testimonials__slider-container {
 	font-size: 0;
+
+	@include small {
+		width: 100%;
+		text-align: center;
+		border: 1px solid #e5ddd5;
+	}
 }
 
 .testimonials__slider-item {
@@ -69,6 +85,16 @@
 	border-left: 0;
 	min-height: 160px;
 	padding: 30px 70px 0 70px;
+
+	@include medium {
+		padding: 0 20px;
+	}
+
+	@include small {
+		width: 100%;
+		padding: 0;
+		border: none;
+	}
 }
 
 .testimonials__slider-title {

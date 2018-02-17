@@ -4,9 +4,19 @@
 	margin: 0;
 	padding: 4px 40px;
 	border: 1px solid $active-color;
+
+	@include medium {
+		width: 100%;
+		padding: 40px;
+	}
 }
 #clock {
 	display: inline-block;
+
+	@include medium {
+		@include flexBetween;
+
+	}
 }
 #d { width:8.8em;
 	 height:8.8em;
@@ -189,4 +199,15 @@ b {
 	color: #ffffff;
 	font-size: 18px;
 	text-align: center;
+
+	@include medium {
+		width: 100%;
+		color: #ffffff;
+		font-size: 40px;
+		text-align: right;
+		text-transform: uppercase;
+		font-weight: 700;
+		padding-top: 0;
+
+	}
 }

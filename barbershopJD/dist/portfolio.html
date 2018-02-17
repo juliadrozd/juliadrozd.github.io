@@ -3,9 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Borodinski</title>
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/fonts.css">
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 
 </head>
 <body>
@@ -28,12 +28,28 @@
 				<div class="header-btn-wrap">
 					<button class="login-btn">Вход</button>
 				</div><!--./login-->
-			
+				
+				<!--logo__mobile-->
+				<div class="logo__mobile">
+					<a href="#" class="logo__mobile-link">
+						<img src="img/logotype-mobile.png" alt="logo">
+					</a>
+				</div><!--./logo__mobile-->
+	
+				<!--menu-btn-->
+				<button class="menu-btn" id="menu-btn">
+					<svg fill="#ffffff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+						<path d="M0 0h24v24H0z" fill="none"/>
+						<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+					</svg>
+				</button><!--./menu-btn-->	
+
 			</div><!--./container-->
 		</header><!--./header-->
 
 		<!--logo-->
-		<div class="logo-wrap">
+		<div class="logo-small"
+			 style="background: url('img/small-desktop.jpg') center center no-repeat; background-size: cover;">
 			<a class="logo__link" href="index.html"> 
 				<img src="img/logotype-desktop.svg" alt="logotype">
 			</a>
@@ -45,7 +61,7 @@
 
 				<div class="container__flex">
 					<h3 class="section-title">Наши работы</h3>
-					<a class="page-btn section-btn" href="index.html">На главную</a>
+					<a class="page-btn" href="index.html">На главную</a>
 				</div>
 				<!--master__best-wrap-->
 				<div class="master__best-wrap">
@@ -84,46 +100,55 @@
 				<div class="other-masters">
 					<div class="other-masters__card">
 						<img class="other-masters__img" src="img/photo-2-desktop.jpg" alt="masters photo">
-						<h3 class="other-masters__name">Саша Мальцев</h3>
-						<p class="other-masters__descr">Попросил омолодить и омолодил! Кто теперь скажет, что мне 45!</p>
-
-						<ul class="skills__list">
-							<li class="skills__item">
-								<img src="img/scissors.png">
-								<span class="skills__descr">стрижка</span>
-							</li>
-						</ul>
-					</div>
-
-					<div class="other-masters__card">
-						<img class="other-masters__img" src="img/photo-3-desktop.jpg" alt="masters photo">
-						<h3 class="other-masters__name">Владимир Иваныч</h3>
-						<p class="other-masters__descr">К зимнему сезону - готов!</p>
-	
-						<ul class="skills__list">
-							<li class="skills__item">
-								<img src="img/shave.png">
-								<span class="skills__descr">борода</span>
-							</li>
-							<li class="skills__item">
-								<img src="img/mustache.png">
-								<span class="skills__descr">усы</span>
-							</li>
-						</ul>
-					</div>
-
-					<div class="other-masters__card">
-						<img class="other-masters__img" src="img/photo-4-desktop.jpg" alt="masters photo">
-						<h3 class="other-masters__name">Винстон Синий</h3>
-						<p class="other-masters__descr">Как только заростаю и волосы начинают мешать видеть — бегом в Бородинский!</p>
+						<div class="other-masters__card-descr">
+							<h3 class="other-masters__name">Иван Иваныч</h3>
+							<p class="other-masters__descr">Как только заростаю и волосы начинают мешать видеть — бегом в Бородинский!</p>
 		
-						<ul class="skills__list">
-							<li class="skills__item">
-								<img src="img/scissors.png">
-								<span class="skills__descr">стрижка</span>
-							</li>
-						</ul>
+							<ul class="skills__list">
+								<li class="skills__item">
+									<img src="img/scissors.png"> 
+									<span class="skills__descr">стрижка</span>
+								</li>
+							</ul>
+						</div>
 					</div>
+
+					<div class="other-masters__card">
+							<img class="other-masters__img" src="img/photo-1-desktop.jpg" alt="masters photo">
+							<div class="other-masters__card-descr">
+								<h3 class="other-masters__name">Саша Мальцев</h3>
+								<p class="other-masters__descr">Как только заростаю и волосы начинают мешать видеть — бегом в Бородинский!</p>
+			
+								<ul class="skills__list">
+									<li class="skills__item">
+										<img src="img/scissors.png">
+										<span class="skills__descr">стрижка</span>
+									</li>
+
+									<li class="skills__item">
+											<img src="img/mustache.png">
+											<span class="skills__descr">бритьё</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						
+						<div class="other-masters__card">
+								<img class="other-masters__img" src="img/photo-4-desktop.jpg" alt="masters photo">
+								<div class="other-masters__card-descr">
+									<h3 class="other-masters__name">Винстон Синий</h3>
+									<p class="other-masters__descr">Как только заростаю и волосы начинают мешать видеть — бегом в Бородинский!</p>
+				
+									<ul class="skills__list">
+										<li class="skills__item">
+											<img src="img/scissors.png">
+											<span class="skills__descr">стрижка</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+		
 
 				</div><!--./other-masters-->
 
@@ -135,7 +160,7 @@
 			<div class="container">
 				<h3 class="price__title">Прейскурант</h3>
 				
-				<div class="container__flex">
+				<div class="container__flex container__flex-medium">
 					<table class="price__table" cellspacing="2">
 						<tr>
 							<td class="table__num">1</td>
@@ -201,9 +226,9 @@
 
 							</div>
 							
-							<span class="myclock__descr">
+							<div class="myclock__descr">
 									С 10:00 до 14:00 скидка 20%
-							</span>
+							</div>
 						</div>
 
 					</div>
@@ -262,5 +287,8 @@
 
 	</div><!--./wrapper-->
 
+	<div class="overlay"></div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/script.custom.js"></script>
 </body>
 </html>

@@ -2,23 +2,10 @@
 	padding: 115px 0 40px 0;
 	border-bottom: 1px solid #e5ddd5;
 	background: #f8f5f2;
-	position: relative;
 	font-size: 0;
 
-	&:after,
-	&:before {
-    border-bottom: 4vw solid #f8f5f2;
-    top: -55px;
-    content: "";
-    position: absolute;
-	}
-	&:before {
-    border-right: 50vw solid transparent;
-    left: 0;
-	}
-	&:after {
-    border-left: 50vw solid transparent;
-    right: 0;
+	@include small {
+		padding: 20px;
 	}
 }
 
@@ -33,7 +20,7 @@
 	display: block;
 	text-decoration: none;
 	color: #000;
-	transition: color .3s ease-in-out;
+	transition: color .1s ease-in-out;
 
 	&:hover {
 		color: $hover-color;

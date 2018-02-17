@@ -1,26 +1,9 @@
 .master {
-	padding: 40px 0 0 0;
+	padding: 40px 0 60px 0;
 	background: #f8f5f2;
     position: relative;
-    top: -100px;
-    transform: translateY(-100px);
+    top: 0;
 	font-size: 0;
-
-	&:after,
-	&:before {
-    border-bottom: 4vw solid #f8f5f2;
-    top: -55px;
-    content: "";
-    position: absolute;
-	}
-	&:before {
-    border-right: 50vw solid transparent;
-    left: 0;
-	}
-	&:after {
-    border-left: 50vw solid transparent;
-    right: 0;
-	}
 }
 
 .master__best-wrap {
@@ -29,6 +12,11 @@
     align-items: flex-start;
     border: 1px solid $border-color;
     margin-top: 70px;
+
+    @include small {
+        flex-flow: column wrap;
+        align-items: center;
+    }
 }
 
 .master__best-img {
@@ -58,7 +46,7 @@
         content: '';
         position: absolute;
         top: 0;
-        right: 173px;
+        right: 172px;
         border:  10px solid transparent;	
         border-top: 20px solid #000;
         border-right: 6px solid #000;
@@ -68,7 +56,7 @@
         content: '';
         position: absolute;
         top: 18px;
-        right: 173px;
+        right: 172px;
         border: 10px solid transparent;	
         border-right: 6px solid #000; 
         border-bottom: 20px solid #000;
@@ -105,6 +93,34 @@
         border-right: 6px solid #6a4d38; 
         border-bottom: 20px solid #6a4d38;
     }
+
+    @include medium {
+        left: -175%;
+        top: 50px;
+
+        &:before,
+        &:after {
+            transform: rotate(180deg);
+            right: -15px;
+        }
+
+        &:before {
+            top: 18px;
+        }
+
+        &:after {
+            top: 0;
+        }
+    }
+
+    @include small {
+        top: -80px;
+        transform: translateX(80px);
+        left: 0;
+        width: 180px;
+        
+    }
+
 }
 
 .master__best-name {
@@ -112,18 +128,32 @@
     font-weight: 700;
     margin-top: 60px;
     padding: 0 150px 0 40px;
+
+    @include medium {
+        padding: 0 20px 0 40px;
+        margin-top: 10px;
+    }
 }
 .master__best-about {
     margin: 0;
     padding: 0 150px 150px 40px;
     font-size: 18px;
     line-height: 1.5;
+
+    @include medium {
+        padding: 0 50px 100px 40px;
+    }
 }
 .skills__list {
     display: flex;
 	margin: 0;
     padding: 0 40px;
-	list-style: none;
+    list-style: none;
+    
+    @include medium {
+        display: flex;
+        flex-flow: row wrap;
+    }
 }
 
 .skills__item {
@@ -139,6 +169,10 @@
     &:not(:last-child) {
         margin-right: 15px;
     }
+
+    @include medium {
+        padding-top: 10px;
+    }
 }
 
 .other-masters{
@@ -147,11 +181,33 @@
     align-items: flex-start;
 	margin: 40px 0 0 0;
     padding: 0;
+
+    @include medium {
+    &:after,
+	&:before {
+    border-bottom: 4vw solid #353535;
+    content: "";
+	position: absolute;
+	bottom: -1px;
+	}
+	&:before {
+	border-right: 50vw solid transparent;
+    left: 0;
+	}
+	&:after {
+    border-left: 50vw solid transparent;
+    right: 0;
+    }
+    
+    @include medium {
+        flex-flow: column nowrap;
+    }
+}
 }
 
 .other-masters__card {
     @include flexBetween;
-    flex-flow: column wrap;
+    flex-flow: row wrap;
     border: 1px solid $border-color;
     width: 294px;
     padding-bottom: 20px;
@@ -159,6 +215,20 @@
     &:not(:last-child) {
         margin-right: 15px;
     } 
+
+    @include medium {
+        flex-flow: row nowrap;
+        width: 100%;
+        margin-bottom: 20px;
+        padding-bottom: 0;
+        &:not(:last-child) {
+            margin-right: 0;
+        } 
+    }
+
+    @include small {
+        flex-flow: column nowrap;
+    }
 }
 
 .other-masters__img {
@@ -174,6 +244,7 @@
     font-weight: 700;
     margin: 20px 0 0 0;
     padding: 0;
+    text-align: center;
 }
 
 .other-masters__descr {

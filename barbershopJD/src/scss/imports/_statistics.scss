@@ -4,6 +4,14 @@
 	margin-top: -160px;
 	position: relative;
 	z-index: 99;
+
+	@include medium {
+		flex-flow: column wrap;
+	}
+
+	@include small {
+       margin-top: 0;
+    }
 }
 
 .statistics__header--wrap {
@@ -13,7 +21,6 @@
 	flex: 1 0;
 	margin-top: auto;
 	
-    
     &:before {
         position: absolute;
         content:'';
@@ -22,32 +29,62 @@
         border-right: 20px solid #fff;
         top: 40px;
         left: -20px;
-    }
+	}
+
+	@include medium {
+		@include flexBetween;
+		flex-flow: row wrap;
+		padding: 40px;
+		width: 100%;
+	}
+
+	@include small {
+		width: 100%;
+		flex-flow: column wrap;
+		text-align: center;
+
+		&:before {
+			display: none;
+		}
+	 }
 }
 
 .statistics__title {
-	font-size: 2.3rem;
-	line-height: 1;
+	font-size: 40px;
+	line-height: 42px;
 	color: #000;
 	font-weight: normal;
 	font-family: 'PTSansNarrowBold';
 	margin-bottom: 40px;
 	
+	@include medium {
+		width: 50%;
+		margin: 0;
+	}
 }
 
 .statistics__descr {
-	font-size: 1.3rem;
-	line-height: 1;
+	font-size: 20px;
+	line-height: 22px;
 	color: #000;
 	margin-bottom: 30px;
+
+	@include medium {
+		width: 50%;
+	}
 }
 
 .statistics__note {
 	color: rgba(0, 0, 0, .3);
-	font-size: 1.1rem;
+	font-size: 18px;
 	line-height: .9;
 	flex: 1 0;
 	margin-top: auto;
+
+	@include medium {
+		margin-top: 20px;
+	}
+
 }
 
 .statistics-list {
@@ -58,6 +95,14 @@
 	padding: 0;
 	list-style: none;
 	width: 60%;
+	@include medium {
+		width: 100%;
+	}
+
+	@include small {
+		width: 100%;
+		flex-flow: column wrap;
+	}
 }
 
 .statistics-item {
@@ -80,7 +125,12 @@
     }
     &:nth-child(4) {
         background: #484848;
-    }
+	}
+	
+	@include small {
+		width: 100%;
+		text-align: center;
+	}
 }
 
 .statistics-count {
