@@ -1,0 +1,49 @@
+$hover-color: rgb(31, 170, 226);
+$active-color: rgba(109,110,113,.1);
+$border-color: #dee0e6;
+$main-color: #6d6e71;
+
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "MyriadProBold", sans-serif;
+}
+
+.container {
+    width: 1160px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.container__flex {
+    @include flexBetween;
+}
+
+.section__title {
+    @include flexCenter;
+    flex-flow: row wrap;
+    padding-bottom: 70px;
+}
+.section__title--img {
+    padding-right: 20px;
+}
+.section__title--text {
+    display: flex;
+    flex-flow: column wrap;
+    color: $main-color;
+    width: 400px;
+}
+.section__title--text-main {
+    font-size: 40px;
+    line-height: 40px;
+    padding-bottom: 10px;
+}
+.section__title--text-descr {
+    font-size: 17px;
+    line-height: 17px;
+}

@@ -1,0 +1,42 @@
+.about__list {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    list-style: none;
+    color: $main-color;
+    margin: 0;
+    padding: 0;
+
+    & img {
+        padding-right: 15px;
+    }
+    
+}
+
+.about__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 50px 50px 0;
+    width: 50%;
+
+    :last-child {
+        padding: 0 0 50px 0;
+    }
+}
+
+.about__item-descr {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.about__item--title {
+    font-size: 26px;
+    line-height: 26px;
+    padding-bottom: 15px;
+}
+
+.about__item--descr {
+    font-size: 16px;
+    line-height: 24px;
+}

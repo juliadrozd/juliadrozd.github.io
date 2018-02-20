@@ -1,0 +1,51 @@
+/**
+*
+* Basic page needs
+*
+**/
+@import "mixins/mixins.scss";
+@import url('https://use.fontawesome.com/releases/v5.0.6/css/all.css');
+@import "../../src/libs/normalize/normalize.css";
+
+/*
+*
+* Adjustment Settings
+*
+*/
+@import "imports/adjustment";
+/*
+*
+* Header
+*
+*/
+@import "imports/header";
+/*
+*
+* Navigation
+*
+*/
+@import "imports/navigation";
+/*
+*
+* Hero
+*
+*/
+@import "imports/hero";
+/*
+*
+* About
+*
+*/
+@import "imports/about";
+/*
+*
+* Wedo
+*
+*/
+@import "imports/wedo";
+/*
+*
+* Wedo
+*
+*/
+@import "imports/projects";

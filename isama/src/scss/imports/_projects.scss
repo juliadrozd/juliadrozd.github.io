@@ -1,0 +1,83 @@
+.projects {
+    background: #efefef;
+}
+
+.projects__btn-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+.projects__btn-item {
+
+    &:not(:last-child) {
+        margin-right: 20px;
+    }
+
+}
+
+.projects__btn {
+    border: 2px solid $border-color;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 40px;
+    color: $main-color;
+    font-weight: normal;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: background .2s ease-in-out,
+                color .2s ease-in-out;
+
+    &:hover {
+        background: #fff;
+        color: $main-color;
+        border: 2px solid transparent;
+    }
+}
+
+.projects__btn--active {
+    background: #fff;
+    color: $active-color;
+}
+
+.projects__content {
+    @include flexCenter;
+    flex-flow: row wrap;
+    padding: 30px 0;
+}
+.projects__img--wrap {
+    width: 22%;
+    margin: 15px;
+    padding: 15px 15px 0 15px;
+    background: #fff;
+    @include flexCenter;
+    flex-flow: row wrap;
+    border-radius: 4px;
+}
+
+.projects__img {
+    @include flexCenter;
+    width: 250px;
+    height: 210px;
+    border-radius: 4px;
+    background: rgb(239,239,239);
+}
+
+.projects__hover {
+    @include flexCenter;
+    width: 25%;
+
+    > :first-child {
+        border-right: 1px solid $border-color;
+    }
+}
+
+.projects__hover-link {
+    text-decoration: none;
+    color: #c7c9ce;
+    font-size: 20px;
+    padding: 15px 50px 15px 50px;
+}

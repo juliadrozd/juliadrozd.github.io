@@ -1,0 +1,115 @@
+.header {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: rgb(236,238,244);
+}
+
+.header__address {
+    font-style: normal;
+}
+
+.header__address--link {
+    display: flex;
+    transition: background .2s ease-in-out;  
+
+    :last-child {
+        margin-right: 0;
+    }
+
+    :hover {
+        color: $hover-color;
+    }
+    :active {
+        background: $active-color;
+    }
+}
+
+.address__link {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    color: #6d6e71;
+    background: #ffffff;
+    font-size: 14px;
+    line-height: 14px;
+    text-decoration: none;
+    text-transform: capitalize;
+    letter-spacing: .5px;
+    margin-right: 10px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: color .2s ease-in-out;   
+
+    i {
+        font-size: 20px;
+        padding-right: 15px;
+    }
+}
+
+.header__address--social {
+    display: flex;
+    &a:first-child {
+        border-left: 1px solid $border-color;
+    }
+}
+
+.address__social--link {
+    @include flexCenter;
+    text-decoration: none;
+    width: 66px;
+    padding: 15px 0;
+    border-right: 1px solid $border-color;
+
+    
+}
+
+.header__mainsection {
+    height: 220px;
+    padding: 60px 0;
+    background: #ffffff;
+    
+}
+
+.header__mainsection--logo {
+    position: relative;
+    @include flexCenter;
+    cursor: pointer;
+}
+.header__mainsection--logo--title {
+    position: absolute;
+    font-size: 42px;
+    color: #68a5d3;
+}
+
+.header__mainsection--enrol {
+    text-decoration: none;
+    margin-right: 20px;
+    @include flexCenter;
+    padding: 15px 0;
+   
+
+    :last-child {
+        border-right: none; 
+    }
+}
+
+.header__mainsection--link {
+    @include flexCenter;
+    width: 66px;
+    height: 20px;
+    padding: 0 30px;
+    border-right: 1px solid $border-color; 
+    text-decoration: none;
+    font-size: 40px; 
+    color: #c7c9ce;
+    transition: color .2s ease-in-out;
+
+    :hover {
+        color: $hover-color;
+    }
+
+    :active {
+        color: $active-color;
+    }
+}
