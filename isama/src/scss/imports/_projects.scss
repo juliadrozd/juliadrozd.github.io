@@ -1,5 +1,6 @@
 .projects {
     background: #efefef;
+   
 }
 
 .projects__btn-list {
@@ -47,6 +48,7 @@
     @include flexCenter;
     flex-flow: row wrap;
     padding: 30px 0;
+    position: relative;
 }
 .projects__img--wrap {
     width: 22%;
@@ -80,4 +82,23 @@
     color: #c7c9ce;
     font-size: 20px;
     padding: 15px 50px 15px 50px;
+}
+
+.projects__up--btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    right: -40px;
+    bottom: 40px;
+    transform: translate(40px,-40px);
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    font-size: 40px;
+    color: #c7c9ce;
+    
 }

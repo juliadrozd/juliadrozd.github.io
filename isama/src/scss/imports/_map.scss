@@ -1,0 +1,49 @@
+.map__section {
+    @include flexCenter;
+    flex-flow: row wrap;
+    position: relative;
+}
+
+#map {
+    width: 100%;
+    height: 490px;
+}
+
+.map__social--list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    bottom: 25px;
+    transform: translateY(-25px);
+    display: flex;
+    justify-content: center;
+
+}
+
+.map__social--item {
+    @include flexCenter;
+    width: 63px;
+    height: 67px;
+    background: #fff;
+    border: 1px solid $border-color;
+    border-radius: 10px;
+    margin: 7px;
+    cursor: pointer;
+    transition: background-color .3s ease-in-out;
+    
+    &:hover {
+        background: $hover-color;
+
+        & > a {
+            color: #fff;
+        }
+    }
+}
+
+.map__social--item--link {
+    color: $main-color;
+    font-size: 35px;
+    line-height: 35px;
+    transition: color .3s ease-in-out;
+}
