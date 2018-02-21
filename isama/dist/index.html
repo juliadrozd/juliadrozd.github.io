@@ -8,9 +8,10 @@
 
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 </head>
 <body>
-    <header class="header">
+    <header class="header" id="home">
         
         <!--header__address-->
         <address class="header__address">
@@ -36,90 +37,108 @@
                 </div><!--./header__address--link-->
 
             <!--header__address--social-->
-                <div class="header__address--social">
-                    <a href="#" class="address__social--link">
-                        <img src="img/fb-icon.svg" alt="facebook">
+                <address class="header__address--social">
+                    <a href="#" class="address__social--link link__fb">
+                        <i class="fab fa-facebook-square"></i>
                     </a>
-
-                    <a href="#" class="address__social--link">
-                        <img src="img/tw-icon.svg" alt="twitter">
+                    
+                    <a href="#" class="address__social--link link__tw">
+                        <i class="fab fa-twitter"></i>
                     </a>
-
-                    <a href="#" class="address__social--link">
-                        <img src="img/insta-icon.svg" alt="instagram">
+                
+                    <a href="#" class="address__social--link link__insta">
+                        <i class="fab fa-instagram"></i>
                     </a>
-
-                    <a href="#" class="address__social--link">
-                        <img src="img/google-icon.svg" alt="google+">
+                    
+                    <a href="#" class="address__social--link link__gg">
+                        <i class="fab fa-google-plus-g"></i>
                     </a>
-                </div><!--./header__address--social-->
-            </div>
+                </address><!--./header__address--social-->
+            </div><!--./container-->
         </address><!--./header__address-->
 
         <!--header__mainsection-->
         <section class="header__mainsection">
            <div class="container container__flex">
+               <!--header__mainsection--logo-->
                 <a class="header__mainsection--logo" href="#">
                     <img class="header__mainsection--logo--img" src="img/logo.svg" alt="logo">
                     <span class="header__mainsection--logo--title">ISAMA</span>
-                </a>
+                </a><!--./header__mainsection--logo-->
 
-                <address class="header__mainsection--enrol">
-                    <a class="header__mainsection--link" href="#">
-                        
-                        <i class="fas fa-phone"></i>
-                    </a>
+                <!--header__mainsection--list-->
+                <ul class="header__mainsection--list">
+                    <li class="header__mainsection--item--call">
+                        <input id="call" type="checkbox" value="call" hidden>
+                        <label class="item__call" for="call">
+                            <i class="fas fa-phone"></i> 
+                        </label>
+                        <span class="item__call--active">Call us now!</span>
+                    </li>
 
-                    <a class="header__mainsection--link" href="#">
-                        <i class="fas fa-map-marker"></i>
-                    </a>
+                    <li class="header__mainsection--item--marker">
+                        <input id="marker" type="checkbox" value="marker" hidden>
+                        <label class="item__marker" for="marker">
+                                <i class="fas fa-map-marker"></i> 
+                        </label>
+                        <span class="item__marker--active">We are here</span>
+                    </li>
 
-                    <a class="header__mainsection--link" href="#">
-                        <i class="far fa-envelope"></i>
-                    </a>
-                </address>
-            </div>
+                    <li class="header__mainsection--item--mail">
+                        <input id="mail" type="checkbox" value="mail" hidden>
+                        <label class="item__mail" for="mail">
+                                <i class="far fa-envelope"></i> 
+                        </label>
+                        <span class="item__mail--active">Mail us!</span>
+                    </li>
+                </ul><!--./header__mainsection--list-->
+
+            </div><!--./container-->
         </section><!--./header__mainsection-->
     </header>
 
     <!--nav-->
-    <nav class="nav">
+    <nav class="nav" id="menu">
         <div class="container container__flex">
+            <!--nav__list-->
             <ul class="nav__list">
                 <li class="nav__item">
-                    <a href="#" class="nav__item--link">Home</a>
+                    <a href="#hero" class="nav__item--link">Home</a>
                 </li>
 
                 <li class="nav__item">
-                    <a href="#" class="nav__item--link">What about ISAMA</a>
+                    <a href="#about" class="nav__item--link">What about ISAMA</a>
                 </li>
 
                 <li class="nav__item">
-                    <a href="#" class="nav__item--link">What we do?</a>
+                    <a href="#wedo" class="nav__item--link">What we do?</a>
                 </li>
 
                 <li class="nav__item">
-                    <a href="#" class="nav__item--link">Our Projects</a>
+                    <a href="#projects" class="nav__item--link">Our Projects</a>
                 </li>
 
                 <li class="nav__item">
-                    <a href="#" class="nav__item--link">Excelent Team</a>
+                    <a href="#team" class="nav__item--link">Excelent Team</a>
                 </li>
 
                 <li class="nav__item">
-                    <a href="#" class="nav__item--link">Contact</a>
+                    <a href="#mapsection" class="nav__item--link">Contact</a>
                 </li>
-            </ul>
+            </ul><!--./nav__list-->
 
+            <!--nav__search--wrap-->
             <div class="nav__search--wrap">
                 <i class="fas fa-search"></i>
                 <input type="search" class="nav__search" placeholder="Type your search words">
-            </div>
-        </div>
+            </div><!--./nav__search--wrap-->
+
+        </div><!--./container-->
     </nav><!--./nav-->
 
     <!--hero-->
     <section class="hero" 
+                id="hero"
              style="background: url('img/iback.jpg'); 
                     background-repeat: no-repeat;
                     background-position: top center;">
@@ -128,6 +147,9 @@
 
             <div class="hero__title">
                 <span class="hero__title--top">LET’S DRAW SOME ARTS </span>
+                <span class="hero__title--and">
+                    <img src="img/and-img.svg" alt="and">
+                </span>
                 <span class="hero__title--bottom">make your business much better</span>
             </div>
 
@@ -150,9 +172,10 @@
                             <span class="hero__gallery--like--descr">Like</span>
                         </figcaption>
                     </figure>
+
                 </div>
 
-                <button class="hero__gallery--next--btn">
+                <button class="hero__gallery--next--btn" id="next">
                         <i class="fas fa-angle-right"></i>
                 </button>
             </div>
@@ -160,13 +183,13 @@
     </section><!--./hero-->
 
     <!--about-->
-    <section class="about container">
+    <section class="about container" id="about">
         <ul class="about__list">
             <li class="about__item">
                 <img src="img/lamp.png" alt="about ISAMA">
                 <div class="about__item-descr">
                     <span class="about__item--title">What about ISAMA</span>
-                    <span class="about__item--descr">ISAMA is a marketing foundation located in Riyadh built on the talent of creation that leads to a modern concept of professionalism. At ISAMA we believe even if you are good at what you do, you have a great product or you provide an excellent service. We still can present you a little better to the world, creating your full identity, provides you with your marketing plans, design your website, print your publications, design your logo’s and offices. Simply we give your business the perfect image.
+                    <span class="about__item--descr" align="justify">ISAMA is a marketing foundation located in Riyadh built on the talent of creation that leads to a modern concept of professionalism. At ISAMA we believe even if you are good at what you do, you have a great product or you provide an excellent service. We still can present you a little better to the world, creating your full identity, provides you with your marketing plans, design your website, print your publications, design your logo’s and offices. Simply we give your business the perfect image.
                     </span>
                 </div>
             </li>
@@ -175,7 +198,7 @@
                 <img src="img/tree.png" alt="about ISAMA">
                 <div class="about__item-descr">
                     <span class="about__item--title">What about ISAMA</span>
-                    <span class="about__item--descr">ISAMA is a marketing foundation located in Riyadh built on the talent of creation that leads to a modern concept of professionalism. At ISAMA we believe even if you are good at what you do, you have a great product or you provide an excellent service. We still can present you a little better to the world, creating your full identity, provides you with your marketing plans, design your website, print your publications, design your logo’s and offices. Simply we give your business the perfect image.
+                    <span class="about__item--descr" align="justify">ISAMA is a marketing foundation located in Riyadh built on the talent of creation that leads to a modern concept of professionalism. At ISAMA we believe even if you are good at what you do, you have a great product or you provide an excellent service. We still can present you a little better to the world, creating your full identity, provides you with your marketing plans, design your website, print your publications, design your logo’s and offices. Simply we give your business the perfect image.
                     </span>
                 </div>
             </li>
@@ -183,7 +206,13 @@
     </section><!--./about-->
 
     <!--wedo-->
-    <section class="wedo container">
+    <section class="wedo container" id="wedo">
+
+        <!--line-->
+        <svg width="1159" height="22" viewBox="0 0 1159 22" >
+            <path id="divide" class="cls-1" d="M438,1663v-2s281.535-20,567.09-20c293.83,0,591.91,20,591.91,20v2s-298.15-20-592.01-20C719.468,1643,438,1663,438,1663Z" transform="translate(-438 -1641)"/>
+        </svg><!--./line-->
+
         <!--section__title-->
         <div class="section__title">
             <img class="section__title--img" src="img/darts.png" alt="section logo">
@@ -202,7 +231,7 @@
                 
                 <div class="wedo__item--descr">
                     <span class="wedo__item--descr--title">Web Design & Development</span>
-                    <span class="wedo__item--descr--about">ISAMA Pvt. Ltd. designs and develops creative websites utilizing the latest technologies.</span>
+                    <span class="wedo__item--descr--about" align="justify">ISAMA Pvt. Ltd. designs and develops creative websites utilizing the latest technologies.</span>
                 </div>
             </li>
 
@@ -213,7 +242,7 @@
 
                 <div class="wedo__item--descr">
                     <span class="wedo__item--descr--title">Mobile Applications</span>
-                    <span class="wedo__item--descr--about">Our Developers helps you to Design, Develop & Distribute Mobile Applications - Smarter & Faster.
+                    <span class="wedo__item--descr--about" align="justify">Our Developers helps you to Design, Develop & Distribute Mobile Applications - Smarter & Faster.
                     </span>
                 </div>
             </li>
@@ -225,7 +254,7 @@
 
                 <div class="wedo__item--descr">
                     <span class="wedo__item--descr--title">Software Solutions</span>
-                    <span class="wedo__item--descr--about">with our software for professional services and consulting firms. Grow your revenue and profit margins by assigning the right people to the right projects at the right time.
+                    <span class="wedo__item--descr--about" align="justify">with our software for professional services and consulting firms. Grow your revenue and profit margins by assigning the right people to the right projects at the right time.
                     </span>
                 </div>
             </li>
@@ -237,7 +266,7 @@
 
                 <div class="wedo__item--descr">
                     <span class="wedo__item--descr--title">Interior Design</span>
-                    <span class="wedo__item--descr--about">We offer a variety of design services ranging from Full Service Interior Design and Styling to our Design Concierge service, all of which are executed with beautiful, custom-tailored results.
+                    <span class="wedo__item--descr--about" align="justify">We offer a variety of design services ranging from Full Service Interior Design and Styling to our Design Concierge service, all of which are executed with beautiful, custom-tailored results.
                     </span>
                 </div>
             </li>
@@ -249,7 +278,7 @@
 
                 <div class="wedo__item--descr">
                     <span class="wedo__item--descr--title">Branding</span>
-                    <span class="wedo__item--descr--about">We have our forte in advertising and Brand establishment. We create identities for the clients product and services in the target market.        
+                    <span class="wedo__item--descr--about" align="justify">We have our forte in advertising and Brand establishment. We create identities for the clients product and services in the target market.        
                     </span>
                 </div>
             </li>
@@ -261,7 +290,7 @@
 
                 <div class="wedo__item--descr">
                     <span class="wedo__item--descr--title">SEO & Web Marketing Services</span>
-                    <span class="wedo__item--descr--about">We offer a variety of design services ranging from Full Service Interior Design and Styling to our Design Concierge service, all of which are executed with beautiful, custom-tailored results.
+                    <span class="wedo__item--descr--about" align="justify">We offer a variety of design services ranging from Full Service Interior Design and Styling to our Design Concierge service, all of which are executed with beautiful, custom-tailored results.
                     </span>
                 </div>
             </li>                     
@@ -269,7 +298,8 @@
     </section><!--./wedo-->
 
     <!--projects-->
-    <section class="projects">
+    <section class="projects" id="projects">
+
         <div class="container">
             
             <!--section__title-->
@@ -443,7 +473,7 @@
                 </figure><!--./projects__img--wrap-->
                 
                 <!--projects__up--btn-->
-                <div class="projects__up--btn">
+                <div class="projects__up--btn" id="toTop">
                     <i class="fas fa-angle-up"></i>
                 </div><!--./projects__up--btn-->
 
@@ -452,7 +482,7 @@
     </section><!--./projects-->
 
     <!--team-->
-    <section class="team">
+    <section class="team" id="team">
         <div class="container">
             
             <!--section__title-->
@@ -602,7 +632,7 @@
     </section><!--./team-->
 
     <!--map__section-->
-    <address class="map__section">
+    <address class="map__section" id="mapsection">
         <!--map-->
         <div class="map" id="map"></div>
         <!--./map-->

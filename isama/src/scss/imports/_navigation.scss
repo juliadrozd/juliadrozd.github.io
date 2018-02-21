@@ -12,6 +12,10 @@
     :last-child {
         border-right: none;
     }
+
+    @include responsive(1177px) {
+		@include flexBetween;
+    }
 }
 
 .nav__item--link {
@@ -29,9 +33,10 @@
 
     &:hover {
         color: $hover-color;
+       
     }
 
-    &:hover:after {
+    &:hover:before {
         content: '';
         position: absolute;
         bottom: 0;
@@ -39,12 +44,14 @@
         transform: translateX(-50%);
         border: 20px solid transparent;	
         border-bottom: 10px solid $hover-color;
-        transition: border-color 5s ease-in-out;
+        transition: border-color .3s ease-in-out;
     }
+
     &:active {
         color: $active-color;
     }
-    &:active:after {
+
+    &:active:before {
         content: '';
         position: absolute;
         bottom: 0;
@@ -65,9 +72,20 @@
         font-size: 30px;
         padding-right: 10px;
     }
+
+    @include responsive(1177px) {
+		display: none;
+    }
+
 }
 .nav__search {
     border: none;
     border-radius: none;
     font-size: 18px;
+
+    @include placeholder {
+        color: $main-color;
+        font-size: 18px;
+        font-weight: 400;
+    }
 }

@@ -29,6 +29,14 @@
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 15px;
+    position: relative;
+    z-index: 999;
+}
+
+
+.hero__title--and {
+    position: absolute;
+    top: 20px;
 }
 
 .hero__title--bottom {
@@ -50,6 +58,8 @@
     padding: 0;
     margin: 0;
     position: relative;
+    width: 322px;
+    height: 241px;
 }
 .hero__gallery--like {
     @include flexCenter;
@@ -60,7 +70,7 @@
     background: rgba(255,255,255,.2);
     color: rgba(255,255,255,.6);
     font-size: 14px;
-    line-height: 14px;
+    line-height: 12px;
     letter-spacing: .4px;
 
     & i {
@@ -70,6 +80,20 @@
 }
 
 .hero__gallery--next--btn {
+    display: flex;
+    background: #f4f4f4;
+    border: none;
+    border-radius: none;
+    color: #d4d4d4;
+    cursor: pointer;
+
+    & i {
+        font-size: 50px;
+        padding: 0 20px;
+    }
+}
+
+.hero__gallery--prev--btn {
     display: flex;
     background: #f4f4f4;
     border: none;

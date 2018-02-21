@@ -1,0 +1,236 @@
+.header__mainsection {
+    height: 220px;
+    padding: 60px 0;
+    background: #ffffff;
+    
+}
+
+.header__mainsection--logo {
+    position: relative;
+    @include flexCenter;
+    cursor: pointer;
+}
+.header__mainsection--logo--title {
+    position: absolute;
+    font-size: 42px;
+    color: #68a5d3;
+}
+
+.header__mainsection--list {
+    margin-right: 20px;
+    @include flexCenter;
+    padding: 15px 0;
+    list-style: none;
+    margin: 0;
+   
+    :last-child {
+        border-right: none; 
+    }
+}
+
+.header__mainsection--item--call {
+    @include flexCenter;
+    position: relative;
+    width: 66px;
+    height: 20px;
+    padding: 30px 30px;
+    text-decoration: none;
+    font-size: 40px; 
+    color: #c7c9ce;
+    transition: color .2s ease-in-out;
+
+    & input {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        height: 20px;
+        border-right: 1px solid $border-color; 
+    }
+    
+
+    & input[type=checkbox]:hover + label {
+        color: $hover-color;
+    }
+
+    & input[type=checkbox]:hover ~ span {
+        display: flex;
+    
+    }
+
+    & input[type=checkbox]:checked + label {
+        color: $main-color;
+    }
+
+    & input[type=checkbox]:checked ~ span {
+        display: flex;
+        color: $main-color;
+    
+    }
+}
+
+.item__call--active {
+    font-size: 17px;
+    line-height: 18px;
+    color: $hover-color;
+    width: 160px;
+    padding: 15px 20px;
+    background: rgba(212,212,213,.1);
+    border-radius: 10px;
+    position: absolute;
+    top: -60px;
+    left: 0;
+    display: none;
+    
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: -30px;
+        left: 10px;
+        border: 20px solid transparent;	
+        border-top: 10px solid rgba(212,212,213,.1);
+        transition: border-color .2s ease-in-out;
+    }
+}
+
+.header__mainsection--item--marker {
+    @include flexCenter;
+    position: relative;
+    width: 66px;
+    height: 20px;
+    padding: 30px 30px;
+    text-decoration: none;
+    font-size: 40px; 
+    color: #c7c9ce;
+    transition: color .2s ease-in-out;
+
+    & input {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        height: 20px;
+        border-right: 1px solid $border-color; 
+    }
+    
+
+    & input[type=checkbox]:hover + label {
+        color: $hover-color;
+    }
+
+    & input[type=checkbox]:hover ~ span {
+        display: flex;
+    
+    }
+
+    & input[type=checkbox]:checked + label {
+        color: $main-color;
+    }
+
+    & input[type=checkbox]:checked ~ span {
+        display: flex;
+        color: $main-color;
+    
+    }
+}
+
+.item__marker--active {
+    font-size: 17px;
+    line-height: 18px;
+    color: $hover-color;
+    width: 160px;
+    padding: 15px 20px;
+    background: rgba(212,212,213,.1);
+    border-radius: 10px;
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 20px solid transparent;	
+        border-top: 10px solid rgba(212,212,213,.1);
+        transition: border-color .2s ease-in-out;
+    }
+}
+
+.header__mainsection--item--mail {
+    @include flexCenter;
+    position: relative;
+    width: 66px;
+    height: 20px;
+    padding: 30px 30px;
+    text-decoration: none;
+    font-size: 40px; 
+    color: #c7c9ce;
+    transition: color .2s ease-in-out;
+
+    & input {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    & input[type=checkbox]:hover + label {
+        color: $hover-color;
+    }
+
+    & input[type=checkbox]:hover ~ span {
+        display: flex;
+    
+    }
+
+    & input[type=checkbox]:checked + label {
+        color: $main-color;
+    }
+
+    & input[type=checkbox]:checked ~ span {
+        display: flex;
+        color: $main-color;
+    
+    }
+}
+
+.item__mail--active {
+    font-size: 17px;
+    line-height: 18px;
+    color: $hover-color;
+    width: 160px;
+    padding: 15px 20px;
+    background: rgba(212,212,213,.1);
+    border-radius: 10px;
+    position: absolute;
+    top: -60px;
+    right: 0;
+    display: none;
+    
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: -30px;
+        right: 10px;
+        border: 20px solid transparent;	
+        border-top: 10px solid rgba(212,212,213,.1);
+        transition: border-color .2s ease-in-out;
+    }
+}

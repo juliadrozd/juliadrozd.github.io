@@ -58,6 +58,21 @@
     @include flexCenter;
     flex-flow: row wrap;
     border-radius: 4px;
+    transition: background .2s ease-in-out;
+
+    &:hover {
+        background: rgba(212,212,213,.2);
+    }
+
+    &:active {
+        background: $active-color;
+    }
+    @include responsive(1177px) {
+        width: 30%;
+        @include flexCenter;
+        flex-flow: column wrap;
+    }
+
 }
 
 .projects__img {
@@ -82,6 +97,15 @@
     color: #c7c9ce;
     font-size: 20px;
     padding: 15px 50px 15px 50px;
+    transition: color .2s ease-in-out;
+
+    :hover {
+        color: $hover-color;
+    }
+
+    :active {
+        color: $active-color;
+    }
 }
 
 .projects__up--btn {
@@ -100,5 +124,15 @@
     background: #ffffff;
     font-size: 40px;
     color: #c7c9ce;
+    cursor: pointer;
+    text-decoration: none;
+
+    @include responsive(1340px) {
+        right: 0;
+        bottom: 0;
+        transform: translate(0,0);
+        position: relative;
+
+	}
     
 }
