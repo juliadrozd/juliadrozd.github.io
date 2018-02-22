@@ -1,12 +1,21 @@
 .header {
-    width: 100%;
     margin: 0;
     padding: 0;
+    
+}
+
+.header__top {
+    width: 100%;
     background: rgb(236,238,244);
 }
 
 .header__address {
+    @include flexBetween;
     font-style: normal;
+
+    @include small {
+        flex-flow: column wrap;
+    }
 }
 
 .header__address--link {
@@ -14,6 +23,14 @@
 
     :last-child {
         margin-right: 0;
+    }
+
+    @include small {
+        padding-bottom: 20px;
+    }
+
+    @include responsive(761px) {
+        padding: 10px 0;
     }
 }
 
@@ -51,6 +68,10 @@
     display: flex;
     &a:first-child {
         border-left: 1px solid $border-color;
+    }
+
+    @include responsive(761px) {
+        display: none;
     }
 }
 

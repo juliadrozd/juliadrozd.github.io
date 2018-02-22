@@ -11,55 +11,62 @@
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 </head>
 <body>
+    <!--header-->
     <header class="header" id="home">
+
+        <!--header__top-->
+        <section class="header__top">
+            <div class="container">
+                <!--header__address-->
+                <address class="header__address">
+                    <!--header__address--link-->
+                    <div class="header__address--link">
+                        <a href="#" class="address__link">
+                            <i class="far fa-file-alt"></i>
+                            <span class="address__link--descr">blog</span>
+                        </a>
+                        <a href="#" class="address__link">
+                            <i class="far fa-clipboard"></i>
+                            <span class="address__link--descr">jobs</span>
+                        </a>
+                        <a href="#" class="address__link">
+                            <i class="fas fa-bullhorn"></i>
+                            <span class="address__link--descr">support</span>
+                        </a>
+                        <a href="#" class="address__link">
+                            <i class="fas fa-globe"></i>
+                            <span class="address__link--descr">arabic</span>
+                        </a>
+                    </div><!--./header__address--link-->
         
-        <!--header__address-->
-        <address class="header__address">
-            <div class="container container__flex">
-            <!--header__address--link-->
-                <div class="header__address--link">
-                    <a href="#" class="address__link">
-                        <i class="far fa-file-alt"></i>
-                        <span class="address__link--descr">blog</span>
-                    </a>
-                    <a href="#" class="address__link">
-                        <i class="far fa-clipboard"></i>
-                        <span class="address__link--descr">jobs</span>
-                    </a>
-                    <a href="#" class="address__link">
-                        <i class="fas fa-bullhorn"></i>
-                        <span class="address__link--descr">support</span>
-                    </a>
-                    <a href="#" class="address__link">
-                        <i class="fas fa-globe"></i>
-                        <span class="address__link--descr">arabic</span>
-                    </a>
-                </div><!--./header__address--link-->
+                    <!--header__address--social-->
+                    <address class="header__address--social">
+                        <a href="#" class="address__social--link link__fb">
+                            <i class="fab fa-facebook-square"></i>
+                        </a>
+                            
+                        <a href="#" class="address__social--link link__tw">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        
+                        <a href="#" class="address__social--link link__insta">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                            
+                        <a href="#" class="address__social--link link__gg">
+                            <i class="fab fa-google-plus-g"></i>
+                        </a>
+                    </address><!--./header__address--social--> 
 
-            <!--header__address--social-->
-                <address class="header__address--social">
-                    <a href="#" class="address__social--link link__fb">
-                        <i class="fab fa-facebook-square"></i>
-                    </a>
-                    
-                    <a href="#" class="address__social--link link__tw">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                
-                    <a href="#" class="address__social--link link__insta">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    
-                    <a href="#" class="address__social--link link__gg">
-                        <i class="fab fa-google-plus-g"></i>
-                    </a>
-                </address><!--./header__address--social-->
+                </address><!--./header__address-->
+
             </div><!--./container-->
-        </address><!--./header__address-->
-
-        <!--header__mainsection-->
-        <section class="header__mainsection">
-           <div class="container container__flex">
+        </section><!--./header__top-->
+            
+        <div class="container">
+            <!--header__mainsection-->
+            <section class="header__mainsection">
+           
                <!--header__mainsection--logo-->
                 <a class="header__mainsection--logo" href="#">
                     <img class="header__mainsection--logo--img" src="img/logo.svg" alt="logo">
@@ -92,14 +99,14 @@
                         <span class="item__mail--active">Mail us!</span>
                     </li>
                 </ul><!--./header__mainsection--list-->
-
-            </div><!--./container-->
-        </section><!--./header__mainsection-->
-    </header>
+            </section><!--./header__mainsection-->
+        </div><!--./container-->
+    </header><!--./header-->
 
     <!--nav-->
-    <nav class="nav" id="menu">
-        <div class="container container__flex">
+    
+    <div class="container nav__wrap">
+        <nav class="nav" id="menu">
             <!--nav__list-->
             <ul class="nav__list">
                 <li class="nav__item">
@@ -126,15 +133,24 @@
                     <a href="#mapsection" class="nav__item--link">Contact</a>
                 </li>
             </ul><!--./nav__list-->
+        </nav><!--./nav-->
+        
+        <!--nav__search--wrap-->
+        <div class="nav__search--wrap">
+            <i class="fas fa-search"></i>
+            <input type="search" class="nav__search" placeholder="Type your search words">
+        </div><!--./nav__search--wrap-->
 
-            <!--nav__search--wrap-->
-            <div class="nav__search--wrap">
-                <i class="fas fa-search"></i>
-                <input type="search" class="nav__search" placeholder="Type your search words">
-            </div><!--./nav__search--wrap-->
+        <!--menu-btn-->
+		<button class="menu-btn" id="menu-btn">
+            <svg fill="#6d6e71" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0h24v24H0z" fill="none"/>
+                <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+            </svg>
+        </button><!--./menu-btn-->
 
-        </div><!--./container-->
-    </nav><!--./nav-->
+    </div><!--./container-->
+    
 
     <!--hero-->
     <section class="hero" 
@@ -209,7 +225,7 @@
     <section class="wedo container" id="wedo">
 
         <!--line-->
-        <svg width="1159" height="22" viewBox="0 0 1159 22" >
+        <svg class="section__line" width="1159" height="22" viewBox="0 0 1159 22" >
             <path id="divide" class="cls-1" d="M438,1663v-2s281.535-20,567.09-20c293.83,0,591.91,20,591.91,20v2s-298.15-20-592.01-20C719.468,1643,438,1663,438,1663Z" transform="translate(-438 -1641)"/>
         </svg><!--./line-->
 
@@ -225,30 +241,31 @@
         <!--wedo__list-->
         <ul class="wedo__list">
             <li class="wedo__item">
-                <div class="wedo__item--img--wrap">
+                <div class="wedo__item--img--wrap wrap--resp">
                     <img class="wedo__item--img" src="img/design.png" alt="icon">
                 </div>
-                
+        
                 <div class="wedo__item--descr">
                     <span class="wedo__item--descr--title">Web Design & Development</span>
-                    <span class="wedo__item--descr--about" align="justify">ISAMA Pvt. Ltd. designs and develops creative websites utilizing the latest technologies.</span>
-                </div>
-            </li>
-
-            <li class="wedo__item">
-                <div class="wedo__item--img--wrap">
-                    <img class="wedo__item--img" src="img/mobile.png" alt="icon">
-                </div>
-
-                <div class="wedo__item--descr">
-                    <span class="wedo__item--descr--title">Mobile Applications</span>
-                    <span class="wedo__item--descr--about" align="justify">Our Developers helps you to Design, Develop & Distribute Mobile Applications - Smarter & Faster.
+                    <span class="wedo__item--descr--about" align="justify">with our software for professional services and consulting firms. Grow your revenue and profit margins by assigning the right people to the right projects at the right time.
                     </span>
                 </div>
             </li>
 
             <li class="wedo__item">
-                <div class="wedo__item--img--wrap">
+                <div class="wedo__item--img--wrap wrap--resp">
+                    <img class="wedo__item--img" src="img/mobile.png" alt="icon">
+                </div>
+    
+                <div class="wedo__item--descr">
+                    <span class="wedo__item--descr--title">Mobile Aplications</span>
+                    <span class="wedo__item--descr--about" align="justify">with our software for professional services and consulting firms. Grow your revenue and profit margins by assigning the right people to the right projects at the right time.
+                    </span>
+                </div>
+            </li>
+
+            <li class="wedo__item">
+                <div class="wedo__item--img--wrap wrap--resp">
                     <img class="wedo__item--img" src="img/software.png" alt="icon">
                 </div>
 
@@ -637,6 +654,7 @@
         <div class="map" id="map"></div>
         <!--./map-->
 
+        <!--map__social--list-->
         <ul class="map__social--list container">
             <li class="map__social--item">
                 <a class="map__social--item--link" href="#">
@@ -655,13 +673,14 @@
                     <i class="fas fa-phone"></i>
                 </a>
             </li> 
-        </ul>
+        </ul><!--./map__social--list-->
     </address><!--./map__section-->
     
     
-
+    <!--footer-->
     <footer class="footer">
         <div class="footer__wrap container">
+            <!--footer__social-->
             <address class="footer__social">
                 <a href="#" class="footer__social--link">
                     <i class="fab fa-facebook-square"></i>
@@ -678,18 +697,21 @@
                 <a href="#" class="footer__social--link">
                     <i class="fab fa-google-plus-g"></i>
                 </a>
-            </address>
-
+            </address><!--./footer__social-->
+            
+            <!--footer__fallback-->
             <div class="footer__fallback">
                 <input type="text" class="footer__fallback--btn" placeholder="Enter your email for out newsletter">
                 <i class="far fa-address-card"></i>
                 <input type="submit" value="Join" class="footer__fallback--join"></input>
-            </div>
-
+            </div><!--./footer__fallback-->
+            
+            <!--footer__copywriting-->
             <div class="footer__copywriting">
                     &copy; Copyright 2014 - ISAMA for information technology
-            </div>
+            </div><!--./footer__copywriting-->
 
+            <!--footer__list--links-->
             <ul class="footer__list--links">
                 <li class="footer__item--links">
                     <a href="#">Blog</a>
@@ -710,17 +732,16 @@
                 <li class="footer__item--links">
                     <a href="#">Policy</a>
                 </li>
-            </ul>
-        </div>
-    </footer>
+            </ul><!--./footer__list--links-->
+        </div><!--./container-->
+    </footer><!--./footer-->
+
+    <div class="overlay"></div>
 
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiHTYjcGPSMYII5WfC18UqkOOz3myM7Q8&callback=initMap"></script>
     <script src="js/map.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/script.custom.js"></script>
-
-
-
     
 </body>
 </html>

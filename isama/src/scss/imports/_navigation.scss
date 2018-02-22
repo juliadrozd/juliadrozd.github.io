@@ -1,5 +1,52 @@
+.menu-btn {
+    padding: 0;
+    background: none;
+    border: none;
+    outline: none;
+    width: 40px;
+    height: 40px;
+    display: none;
+
+    @include responsive(761px) {
+        display: flex;
+        justify-content: center;
+    }
+}
 .nav {
+    transition: transform .2s ease-in-out;
+    
+    @include responsive(761px) {
+        will-change: transform;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 230px;
+        height: 100vh;
+        background: $hover-color;
+        transform: translateX(-100%);
+        z-index: 9999999999;
+    }
+}
+
+.nav--active {
+    @include responsive(761px) {
+        transform: translateX(0);
+        z-index: 9999999999;
+    }
+}
+
+.nav__wrap {
+    @include flexBetween;
+    width: 100%;
     border-top: 1px solid $border-color;
+
+    @include responsive(1178px) {
+		@include flexCenter;
+    }
+
+    @include responsive(761px) {
+        background: rgb(236,238,244);
+    }
 }
 .nav__list {
     list-style: none;
@@ -15,6 +62,20 @@
 
     @include responsive(1177px) {
 		@include flexBetween;
+    }
+
+    @include responsive(761px) {
+        flex-flow: column nowrap;
+        & li {
+            border-right: none;
+            border-bottom: 1px solid $border-color;}
+    }
+}
+
+.nav__item {
+
+    @include responsive(761px) {
+        width: 100%;
     }
 }
 
@@ -64,6 +125,32 @@
         display: block;
         border: 20px solid transparent;	
         border-bottom: 10px solid $active-color;
+    }
+    @include responsive(860px) {
+		padding: 30px 10px;
+    }
+    
+    @include small {
+        text-align: center;
+        line-height: 22px;
+        font-weight: normal;
+        padding: 30px 15px;
+    }
+
+    @include responsive(761px) {
+
+        &:before {
+            display: none;
+        }
+
+        &:hover {
+           color: $main-color;
+        }
+
+        &:active {
+            color: $border-color;
+        }
+
     }
 }
 

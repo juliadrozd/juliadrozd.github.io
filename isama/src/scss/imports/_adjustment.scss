@@ -20,16 +20,20 @@ html, body {
     padding: 0;
 
    
-    @include responsive(1177px) {
+    @include responsive(1178px) {
 		width: 1000px;
     }
+
+    @include responsive(1120px) {
+		width: 980px;
+    }
     
-	@include responsive(980px) {
+	@include responsive(982px) {
 		width: 900px;
 	}
 
-	@include responsive(917px) {
-		width: 850px;
+	@include responsive(918px) {
+		width: 820px;
 	}
 
 	@include responsive(878px) {
@@ -40,13 +44,8 @@ html, body {
 		width: 720px;
 	}
 
-	@include responsive(735px) {
-		width: 650px;
-	}
-
 	@include small {
-		width: 600px;
-		padding: 20px;
+		width: 700px;
 	}
 
 	@include responsive(677px) {
@@ -77,21 +76,43 @@ html, body {
 
 .container__flex {
     @include flexBetween;
+
+    @include responsive(1177px) {
+		@include flexCenter;
+    }
 }
 
 .section__title {
     @include flexCenter;
     flex-flow: row wrap;
     padding: 60px 0 70px 0;
+
+    @include responsive(761px) {
+        flex-flow: column wrap; 
+        justify-content: center;
+        align-items: center;
+        padding: 40px 0 60px 0;
+    }
 }
 .section__title--img {
     padding-right: 20px;
+
+    @include responsive(761px) {
+        padding-right: 0;
+        padding-bottom: 20px;
+    }
 }
 .section__title--text {
     display: flex;
     flex-flow: column wrap;
     color: $main-color;
     width: 400px;
+
+    @include responsive(761px) {
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
 }
 .section__title--text-main {
     font-size: 40px;
@@ -101,10 +122,39 @@ html, body {
 .section__title--text-descr {
     font-size: 17px;
     line-height: 22px;
+
+    @include responsive(761px) {
+        text-align: center;
+        width: 100%;
+    }
 }
 
+.section__line {
+    @include responsive(1178px) {
+		width: 1000px;
+    }
+
+    @include responsive(1120px) {
+		width: 900px;
+    }
+
+    @include responsive(982px) {
+		width: 800px;
+    }
+    
+    @include responsive(860px) {
+		width: 700px;
+    }
+    
+    @include responsive(761px) {
+		width: 500px;
+    }
+
+    @include responsive(518px) {
+        width: 300px;
+      }
+}
 .cls-1 {
     fill: $border-color;
     fill-rule: evenodd;
-    
 }

@@ -15,13 +15,11 @@ $(function () {
             scrollTop: $offsetTop,
         }, 500)
     });
-/**
-     * 
-     * toTop
-     * 
-     */
-
-
+/*
+* 
+* toTop
+* 
+*/
   $(function() {
  
         $(window).scroll(function() {
@@ -36,8 +34,11 @@ $(function () {
     });
          
     });
-
-        /*menu*/
+/*
+* 
+* Menu
+* 
+*/
     (function responsiveNav () {
         let btn = $('#menu-btn');
         let nav = $('nav');

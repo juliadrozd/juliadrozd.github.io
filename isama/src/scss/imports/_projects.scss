@@ -10,12 +10,20 @@
     display: flex;
     justify-content: center;
     flex-flow: row wrap;
+
+    @include responsive(878px) {
+		width: column wrap;
+	}
 }
 .projects__btn-item {
-
+    
     &:not(:last-child) {
         margin-right: 20px;
     }
+
+    @include responsive(878px) {
+		padding: 5px;
+	}
 
 }
 
@@ -72,7 +80,22 @@
         @include flexCenter;
         flex-flow: column wrap;
     }
+    
+    @include responsive(918px) {
+		width: 40%;
+	}
+    @include responsive(878px) {
+		width: 40%;
+    }
+    
+    @include responsive(680px) {
+        flex-flow: column wrap;
+		width: 70%;
+	}
 
+    @include extraSmall {
+        width: 70%;
+    }
 }
 
 .projects__img {
@@ -109,9 +132,7 @@
 }
 
 .projects__up--btn {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+    @include flexCenter;
     position: absolute;
     width: 70px;
     height: 70px;
@@ -126,13 +147,20 @@
     color: #c7c9ce;
     cursor: pointer;
     text-decoration: none;
+    text-align: center;
+    vertical-align: center;
 
+   
     @include responsive(1340px) {
+        @include flexCenter;
         right: 0;
         bottom: 0;
         transform: translate(0,0);
         position: relative;
+    }
 
+    @include responsive(918px) {
+		display: none !important;
 	}
-    
+
 }

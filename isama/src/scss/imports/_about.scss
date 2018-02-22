@@ -1,3 +1,8 @@
+.about {
+    @include responsive(918px) {
+        padding-top: 30px; 
+    }
+}
 .about__list {
     display: flex;
     justify-content: center;
@@ -10,6 +15,10 @@
     & img {
         padding-right: 15px;
     }
+
+    @include responsive(982px) {
+		flex-flow: column wrap;
+	}
     
 }
 
@@ -23,11 +32,31 @@
     :last-child {
         padding: 0 0 50px 0;
     }
+
+    @include responsive(1120px) {
+		padding: 0 25px 25px 25px;
+    }
+
+    @include responsive(982px) {
+		width: 100%;
+    }
+    @include responsive(761px) {
+        flex-flow: column wrap; 
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .about__item-descr {
     display: flex;
     flex-flow: row wrap;
+
+    @include responsive(761px) {
+        flex-flow: column wrap; 
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
 }
 
 .about__item--title {
