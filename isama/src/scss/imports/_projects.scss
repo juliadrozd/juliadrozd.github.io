@@ -13,7 +13,13 @@
 
     @include responsive(878px) {
 		width: column wrap;
-	}
+    }
+    
+    @include responsive(761px) {
+        @include flexCenter;
+        width: 100%;
+        flex-flow: column wrap;
+    }
 }
 .projects__btn-item {
     
@@ -23,8 +29,13 @@
 
     @include responsive(878px) {
 		padding: 5px;
-	}
-
+    }
+    
+    @include responsive(761px) {
+        &:not(:last-child) {
+            margin-right: 0;
+        }
+}
 }
 
 .projects__btn {
@@ -44,6 +55,12 @@
         background: #fff;
         color: $main-color;
         border: 2px solid transparent;
+    }
+
+    @include responsive(761px) {
+        @include flexCenter;
+        width: 250px;
+        flex-flow: column wrap;
     }
 }
 

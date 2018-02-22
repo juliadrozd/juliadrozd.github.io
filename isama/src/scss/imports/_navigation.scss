@@ -36,7 +36,6 @@
 }
 
 .nav__wrap {
-    @include flexBetween;
     width: 100%;
     border-top: 1px solid $border-color;
 
@@ -46,6 +45,14 @@
 
     @include responsive(761px) {
         background: rgb(236,238,244);
+    }
+}
+
+.nav__flex {
+    @include flexBetween;
+    
+    @include responsive(761px) {
+        @include flexCenter;
     }
 }
 .nav__list {
