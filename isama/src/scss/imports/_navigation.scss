@@ -31,6 +31,17 @@
     position: relative;
     transition: color .3s ease-in-out;
 
+    &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 20px solid transparent;	
+        border-bottom: 10px solid #fff;
+        transition: border-color .3s ease-in-out;
+    }
+
     &:hover {
         color: $hover-color;
        
@@ -38,13 +49,10 @@
 
     &:hover:before {
         content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
+        display: block;
         border: 20px solid transparent;	
         border-bottom: 10px solid $hover-color;
-        transition: border-color .3s ease-in-out;
+        
     }
 
     &:active {
@@ -53,13 +61,9 @@
 
     &:active:before {
         content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
+        display: block;
         border: 20px solid transparent;	
         border-bottom: 10px solid $active-color;
-        transition: border-color .3s ease-in-out;
     }
 }
 
