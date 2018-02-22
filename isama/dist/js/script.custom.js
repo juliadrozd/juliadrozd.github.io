@@ -50,6 +50,8 @@ $(function () {
             $('body').addClass('body-fixed');
 
             $(this).attr('disabled', true);
+
+            
         });
 
         overlay.on('click', function () {

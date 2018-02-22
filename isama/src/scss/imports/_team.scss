@@ -1,7 +1,7 @@
 .team__content {
     @include flexCenter;
     flex-flow: row wrap;
-    padding: 20px 0;
+    padding-bottom: 50px;
     background: #ffffff;
 }
 .team__card {
