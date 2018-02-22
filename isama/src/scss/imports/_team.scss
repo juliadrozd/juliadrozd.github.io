@@ -3,6 +3,10 @@
     flex-flow: row wrap;
     padding-bottom: 50px;
     background: #ffffff;
+
+    @include responsive(982px) {
+		justify-content: space-around;
+    }
 }
 .team__card {
     width: 22%;
@@ -24,8 +28,8 @@
         margin-bottom: 20px;
     }
 
-    @include responsive(918px) {
-		width: 30%;
+    @include responsive(982px) {
+        width: 40%;
     }
     
     @include responsive(761px) {
@@ -50,6 +54,10 @@
 
     > p {
         margin: 0;
+    }
+
+    @include responsive(982px) {
+        flex-flow: column wrap;
     }
 }
 .team__descr--name {

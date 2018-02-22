@@ -63,7 +63,7 @@
     @include responsive(918px) {
         width: 100%;
         order: 1;
-	}
+    }
     
 }
 .footer__fallback--btn {
@@ -75,6 +75,12 @@
     font-size: 14px;
     line-height: 16px;
     padding-left: 80px;
+
+    @include responsive(761px) {
+        font-size: 12px;
+    line-height: 14px;
+    padding-left: 50px;
+	}
 }
 
 .footer__fallback--join {

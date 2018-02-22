@@ -164,12 +164,15 @@
     color: #c7c9ce;
     cursor: pointer;
     text-decoration: none;
-    text-align: center;
-    vertical-align: center;
+
+    i {
+        @include flexCenter;
+        width: 70px;
+        height: 70px;
+    }
 
    
     @include responsive(1340px) {
-        @include flexCenter;
         right: 0;
         bottom: 0;
         transform: translate(0,0);
