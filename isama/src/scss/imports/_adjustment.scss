@@ -1,14 +1,13 @@
 $hover-color: rgb(31, 170, 226);
-$active-color: rgba(109,110,113,.1);
+$active-color: rgba(109, 110, 113, .1);
 $border-color: #dee0e6;
 $main-color: #6d6e71;
-
-
 * {
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     font-family: "MyriadProBold", sans-serif;
@@ -18,67 +17,51 @@ html, body {
     width: 1160px;
     margin: 0 auto;
     padding: 0;
-
-   
     @include responsive(1178px) {
-		width: 1000px;
+        width: 1000px;
     }
-
     @include responsive(1120px) {
-		width: 980px;
+        width: 980px;
     }
-    
-	@include responsive(982px) {
-		width: 900px;
-	}
-
-	@include responsive(918px) {
-		width: 820px;
-	}
-
-	@include responsive(878px) {
-		width: 800px;
-	}
-
-	@include responsive(857px) {
-		width: 720px;
-	}
-
-	@include small {
-		width: 700px;
-	}
-
-	@include responsive(677px) {
-		width: 550px;
-	}
-
-	@include responsive(644px) {
-		width: 500px;
-	}
-
+    @include responsive(982px) {
+        width: 900px;
+    }
+    @include responsive(918px) {
+        width: 820px;
+    }
+    @include responsive(878px) {
+        width: 800px;
+    }
+    @include responsive(857px) {
+        width: 720px;
+    }
+    @include small {
+        width: 700px;
+    }
+    @include responsive(677px) {
+        width: 550px;
+    }
+    @include responsive(644px) {
+        width: 500px;
+    }
     @include extraSmall {
-		width: 400px;
+        width: 400px;
     }
-    
-	@include responsive(590px) {
-		width: auto;
-	}
-
-	@include responsive(472px) {
-		width: 370px;
-	}
-	@include extraSmall {
-		width: auto;
+    @include responsive(590px) {
+        width: auto;
     }
-    
-
+    @include responsive(472px) {
+        width: 370px;
+    }
+    @include extraSmall {
+        width: auto;
+    }
 }
 
 .container__flex {
     @include flexBetween;
-
     @include responsive(1177px) {
-		@include flexCenter;
+        @include flexCenter;
     }
 }
 
@@ -86,43 +69,43 @@ html, body {
     @include flexCenter;
     flex-flow: row wrap;
     padding: 60px 0 70px 0;
-
     @include responsive(761px) {
-        flex-flow: column wrap; 
+        flex-flow: column wrap;
         justify-content: center;
         align-items: center;
         padding: 30px 0 30px 0;
     }
 }
+
 .section__title--img {
     padding-right: 20px;
-
     @include responsive(761px) {
         padding-right: 0;
         padding-bottom: 20px;
     }
 }
+
 .section__title--text {
     display: flex;
     flex-flow: column wrap;
     color: $main-color;
     width: 400px;
-
     @include responsive(761px) {
         justify-content: center;
         align-items: center;
         width: 100%;
     }
 }
+
 .section__title--text-main {
     font-size: 40px;
     line-height: 40px;
     padding-bottom: 10px;
 }
+
 .section__title--text-descr {
     font-size: 17px;
     line-height: 22px;
-
     @include responsive(761px) {
         text-align: center;
         width: 100%;
@@ -131,33 +114,28 @@ html, body {
 
 .section__line {
     @include responsive(1178px) {
-		width: 1000px;
+        width: 1000px;
     }
-
     @include responsive(1120px) {
-		width: 900px;
+        width: 900px;
     }
-
     @include responsive(982px) {
-		width: 800px;
+        width: 800px;
     }
-    
     @include responsive(860px) {
-		width: 700px;
+        width: 700px;
     }
-    
     @include responsive(761px) {
-		width: 500px;
+        display: none;
     }
-
     @include responsive(518px) {
-        width: 350px;
-      }
-
+        display: none;
+    }
     @include extraSmall {
         display: none;
     }
 }
+
 .cls-1 {
     fill: $border-color;
     fill-rule: evenodd;

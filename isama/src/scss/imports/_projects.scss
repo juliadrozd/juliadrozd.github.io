@@ -1,6 +1,5 @@
 .projects {
     background: #efefef;
-   
 }
 
 .projects__btn-list {
@@ -10,32 +9,28 @@
     display: flex;
     justify-content: center;
     flex-flow: row wrap;
-
     @include responsive(878px) {
-		width: column wrap;
+        width: column wrap;
     }
-    
     @include responsive(761px) {
         @include flexCenter;
         width: 100%;
         flex-flow: column wrap;
     }
 }
+
 .projects__btn-item {
-    
     &:not(:last-child) {
         margin-right: 20px;
     }
-
     @include responsive(878px) {
-		padding: 5px;
+        padding: 5px;
     }
-    
     @include responsive(761px) {
         &:not(:last-child) {
             margin-right: 0;
         }
-}
+    }
 }
 
 .projects__btn {
@@ -48,15 +43,12 @@
     font-weight: normal;
     font-size: 14px;
     border-radius: 4px;
-    transition: background .2s ease-in-out,
-                color .2s ease-in-out;
-
+    transition: background .2s ease-in-out, color .2s ease-in-out;
     &:hover {
         background: #fff;
         color: $main-color;
         border: 2px solid transparent;
     }
-
     @include responsive(761px) {
         @include flexCenter;
         width: 250px;
@@ -75,6 +67,7 @@
     padding: 30px 0;
     position: relative;
 }
+
 .projects__img--wrap {
     width: 22%;
     margin: 15px;
@@ -84,11 +77,9 @@
     flex-flow: row wrap;
     border-radius: 4px;
     transition: background .2s ease-in-out;
-
     &:hover {
-        background: rgba(212,212,213,.2);
+        background: rgba(212, 212, 213, .2);
     }
-
     &:active {
         background: $active-color;
     }
@@ -97,19 +88,16 @@
         @include flexCenter;
         flex-flow: column wrap;
     }
-    
     @include responsive(918px) {
-		width: 40%;
-	}
-    @include responsive(878px) {
-		width: 40%;
+        width: 40%;
     }
-    
+    @include responsive(878px) {
+        width: 40%;
+    }
     @include responsive(680px) {
         flex-flow: column wrap;
-		width: 70%;
-	}
-
+        width: 70%;
+    }
     @include extraSmall {
         width: 70%;
     }
@@ -120,13 +108,12 @@
     width: 250px;
     height: 210px;
     border-radius: 4px;
-    background: rgb(239,239,239);
+    background: rgb(239, 239, 239);
 }
 
 .projects__hover {
     @include flexCenter;
     width: 25%;
-
     > :first-child {
         border-right: 1px solid $border-color;
     }
@@ -138,12 +125,10 @@
     font-size: 20px;
     padding: 15px 50px 15px 50px;
     transition: color .2s ease-in-out;
-
-    :hover {
+     :hover {
         color: $hover-color;
     }
-
-    :active {
+     :active {
         color: $active-color;
     }
 }
@@ -156,7 +141,7 @@
     border-radius: 50%;
     right: -40px;
     bottom: 40px;
-    transform: translate(40px,-40px);
+    transform: translate(40px, -40px);
     margin: 0;
     padding: 0;
     background: #ffffff;
@@ -164,23 +149,18 @@
     color: #c7c9ce;
     cursor: pointer;
     text-decoration: none;
-
     i {
         @include flexCenter;
         width: 70px;
         height: 70px;
     }
-
-   
     @include responsive(1340px) {
         right: 0;
         bottom: 0;
-        transform: translate(0,0);
+        transform: translate(0, 0);
         position: relative;
     }
-
     @include responsive(918px) {
-		display: none !important;
-	}
-
+        display: none !important;
+    }
 }

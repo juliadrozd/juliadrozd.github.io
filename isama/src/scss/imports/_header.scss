@@ -1,34 +1,29 @@
 .header {
     margin: 0;
     padding: 0;
-    
 }
 
 .header__top {
     width: 100%;
-    background: rgb(236,238,244);
+    background: rgb(236, 238, 244);
 }
 
 .header__address {
     @include flexBetween;
     font-style: normal;
-
     @include small {
         flex-flow: column wrap;
     }
 }
 
 .header__address--link {
-    display: flex; 
-
-    :last-child {
+    display: flex;
+     :last-child {
         margin-right: 0;
     }
-
     @include small {
         padding-bottom: 20px;
     }
-
     @include responsive(761px) {
         padding: 10px 0;
     }
@@ -48,14 +43,12 @@
     margin-right: 10px;
     padding: 5px 10px;
     border-radius: 3px;
-    transition: color .2s ease-in-out;   
-    transition: background .2s ease-in-out; 
-
+    transition: color .2s ease-in-out;
+    transition: background .2s ease-in-out;
     i {
         font-size: 20px;
         padding-right: 15px;
     }
-
     &:hover {
         color: $hover-color;
     }
@@ -69,7 +62,6 @@
     &a:first-child {
         border-left: 1px solid $border-color;
     }
-
     @include responsive(761px) {
         display: none;
     }
@@ -80,13 +72,11 @@
     text-decoration: none;
     width: 66px;
     padding: 15px 0;
-    border-right: 1px solid $border-color;   
+    border-right: 1px solid $border-color;
     font-size: 20px;
-
     &:hover {
-        color: $main-color;
+        color: $hover-color;
     }
-
     &:active {
         color: $active-color;
     }

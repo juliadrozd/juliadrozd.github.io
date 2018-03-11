@@ -1,11 +1,11 @@
-$(function () {
+$(function() {
     /**
      * 
      * Navigation anchors
      * 
      */
 
-    $('.nav a[href^="#"]').on('click', function (e) {
+    $('.nav a[href^="#"]').on('click', function(e) {
         e.preventDefault();
 
         let $anchor = $(this).attr('href');
@@ -15,46 +15,49 @@ $(function () {
             scrollTop: $offsetTop,
         }, 500)
     });
-/*
-* 
-* toTop
-* 
-*/
-  $(function() {
- 
+    /*
+     * 
+     * toTop
+     * 
+     */
+    $(function() {
+
         $(window).scroll(function() {
-        if($(this).scrollTop() != 0) {
-        $('#toTop').fadeIn();
-    } else { 
-        $('#toTop').fadeOut(); 
-        }
-    });      
-        $('#toTop').click(function() {  
-        $('body,html').animate({scrollTop:0},800);    
+            if ($(this).scrollTop() != 0) {
+                $('#toTop').fadeIn();
+            } else {
+                $('#toTop').fadeOut();
+            }
+        });
+        $('#toTop').click(function() {
+            $('body,html').animate({ scrollTop: 0 }, 800);
+        });
+
     });
-         
-    });
-/*
-* 
-* Menu
-* 
-*/
-    (function responsiveNav () {
+
+
+
+    /*
+     * 
+     * Menu
+     * 
+     */
+    (function responsiveNav() {
         let btn = $('#menu-btn');
         let nav = $('nav');
         let overlay = $('.overlay');
 
-        btn.on('click', function () {
+        btn.on('click', function() {
             nav.addClass('nav--active');
             overlay.addClass('overlay--active');
             $('body').addClass('body-fixed');
 
             $(this).attr('disabled', true);
 
-            
+
         });
 
-        overlay.on('click', function () {
+        overlay.on('click', function() {
             nav.removeClass('nav--active');
             overlay.removeClass('overlay--active');
             $('body').removeClass('body-fixed');
@@ -63,4 +66,3 @@ $(function () {
         })
     })();
 })
-

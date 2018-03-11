@@ -6,15 +6,14 @@
     width: 40px;
     height: 40px;
     display: none;
-
     @include responsive(761px) {
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
     }
 }
+
 .nav {
     transition: transform .2s ease-in-out;
-    
     @include responsive(761px) {
         will-change: transform;
         position: fixed;
@@ -38,49 +37,42 @@
 .nav__wrap {
     width: 100%;
     border-top: 1px solid $border-color;
-
     @include responsive(1178px) {
-		@include flexCenter;
+        @include flexCenter;
     }
-
     @include responsive(761px) {
-        background: rgb(236,238,244);
+        background: #ffffff;
     }
 }
 
 .nav__flex {
     @include flexBetween;
-    
-    @include responsive(761px) {
-        @include flexCenter;
-    }
 }
+
 .nav__list {
     list-style: none;
     margin: 0;
     padding: 0;
     @include flexCenter;
-
-    & li {border-right: 1px solid $border-color;}
-
-    :last-child {
+    & li {
+        border-right: 1px solid $border-color;
+    }
+     :last-child {
         border-right: none;
     }
-
     @include responsive(1177px) {
-		@include flexBetween;
+        @include flexBetween;
     }
-
     @include responsive(761px) {
         flex-flow: column nowrap;
         & li {
             border-right: none;
-            border-bottom: 1px solid $border-color;}
+            border-bottom: 1px solid $border-color;
+        }
     }
 }
 
 .nav__item {
-
     @include responsive(761px) {
         width: 100%;
     }
@@ -98,66 +90,53 @@
     padding: 40px 15px;
     position: relative;
     transition: color .3s ease-in-out;
-
     &:before {
         content: '';
         position: absolute;
         bottom: 0;
         left: 50%;
         transform: translateX(-50%);
-        border: 20px solid transparent;	
+        border: 20px solid transparent;
         border-bottom: 10px solid #fff;
         transition: border-color .3s ease-in-out;
     }
-
     &:hover {
         color: $hover-color;
-       
     }
-
     &:hover:before {
         content: '';
         display: block;
-        border: 20px solid transparent;	
+        border: 20px solid transparent;
         border-bottom: 10px solid $hover-color;
-        
     }
-
     &:active {
         color: $active-color;
     }
-
     &:active:before {
         content: '';
         display: block;
-        border: 20px solid transparent;	
+        border: 20px solid transparent;
         border-bottom: 10px solid $active-color;
     }
     @include responsive(860px) {
-		padding: 30px 10px;
+        padding: 30px 10px;
     }
-    
     @include small {
         text-align: center;
         line-height: 22px;
         font-weight: normal;
         padding: 30px 15px;
     }
-
     @include responsive(761px) {
-
         &:before {
             display: none;
         }
-
         &:hover {
-           color: $main-color;
+            color: $main-color;
         }
-
         &:active {
             color: $border-color;
         }
-
     }
 }
 
@@ -165,22 +144,19 @@
     position: relative;
     color: #c7c9ce;
     @include flexCenter;
-
     i {
         font-size: 30px;
         padding-right: 10px;
     }
-
     @include responsive(1177px) {
-		display: none;
+        display: none;
     }
-
 }
+
 .nav__search {
     border: none;
     border-radius: none;
     font-size: 18px;
-
     @include placeholder {
         color: $main-color;
         font-size: 18px;
