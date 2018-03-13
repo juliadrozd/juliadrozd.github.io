@@ -10,7 +10,6 @@ if (isReady == true) {
     tableMultiply();
 }
 
-
 // Отображение Пифагоровой таблицы умножения
 function tableMultiply(i, j) {
     let table = document.createElement('table');
@@ -43,3 +42,17 @@ function tableMultiply(i, j) {
 
     document.body.appendChild(table);
 }
+
+//меню
+
+let menu = document.querySelector('nav');
+this._showButton = document.querySelector('#btn');
+
+this._showButton.addEventListener('click', toggleMenu => {
+
+    if (menu.className === "nav") {
+        menu.className += " open";
+    } else {
+        menu.className = "nav";
+    }
+});
