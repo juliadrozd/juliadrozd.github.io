@@ -14,18 +14,20 @@ function offCanvas() {
     let btn = document.querySelector('#js-nav-btn');
     let overlay = document.querySelector('.overlay');
 
+
     btn.addEventListener('click', () => {
         overlay.classList.add('overlay--active');
         setTimeout(() => nav.classList.add('nav--active'), 150);
         overlay.addEventListener('click', closeNav);
+
     });
 
     function closeNav() {
         nav.classList.remove('nav--active');
         setTimeout(() => overlay.classList.remove('overlay--active'), 250);
         overlay.removeEventListener('click', closeNav);
-    }
 
+    }
 }
 
 // Modal window
@@ -145,23 +147,40 @@ function targetHover() {
 }
 targetHover();
 
+// Gallery by click with images on server
+function gallery() {
+    var leftArrow = document.getElementById('prev--btn');
+    rightArrow = document.getElementById('next--btn');
+    var initImgNumber = 1;
+    maxImgNumber = 4;
+
+    leftArrow.addEventListener('click', prevImg);
+    rightArrow.addEventListener('click', nextImg);
+
+    function prevImg() {
+        var image = document.getElementById('gallery--img');
+        initImgNumber--;
+        if (initImgNumber == 0) { initImgNumber = maxImgNumber };
+
+        setTimeout(() => image.setAttribute('src', 'img/' + initImgNumber + '.jpg'), 250);
 
 
-// Взамодействие с пользователем
+    };
 
-/*let isReady = confirm('Ти готовий вивчити табличку множення?');
+    function nextImg() {
+        var image = document.getElementById('gallery--img');
+        initImgNumber++;
+        if (initImgNumber > maxImgNumber) { initImgNumber = 1 };
 
-if (isReady == true) {
-    tableMultiply();
-
-} else if (isReady == false) {
-    alert('Це легко ;) ');
-   
-}*/
+        setTimeout(() => image.setAttribute('src', 'img/' + initImgNumber + '.jpg'), 250);
+    };
+}
+gallery();
 
 // Отображение Пифагоровой таблицы умножения
-/*function tableMultiply(i, j) {
+function tableMultiply(i, j) {
     let table = document.createElement('table');
+    let section = document.querySelector('#multiply');
     table.style.fontFamily = 'Fira Code';
     table.style.textAlign = 'left';
     table.style.marginTop = '20px';
@@ -189,6 +208,8 @@ if (isReady == true) {
         table.appendChild(row);
 
 
-        document.body.appendChild(table);
+        section.appendChild(table);
+
     }
-}*/
+}
+tableMultiply();

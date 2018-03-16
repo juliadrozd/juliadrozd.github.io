@@ -12,111 +12,137 @@
 
 <body>
 
-    <div class="nav__wrap">
-        <!--menu-->
-        <button class="nav-btn" id="js-nav-btn">
+    <section id="tabs" class="section">
+        <div class="nav__wrap">
+            <!--menu-->
+            <button class="nav-btn" id="js-nav-btn">
             <i class="material-icons">menu</i>
         </button>
 
-        <nav id="nav" class="nav">
-            <ul class="nav__list">
-                <li class="list__item">
-                    <a href="#" class="nav__link">Link 1</a>
-                </li>
+            <nav id="nav" class="nav">
+                <ul class="nav__list">
+                    <li class="list__item">
+                        <a href="#tabs" class="nav__link">Section 1</a>
+                    </li>
 
-                <li class="list__item">
-                    <a href="#" class="nav__link">Link 2</a>
-                </li>
+                    <li class="list__item">
+                        <a href="#gallery" class="nav__link">Section 2</a>
+                    </li>
 
-                <li class="list__item">
-                    <a href="#" class="nav__link">Link 3</a>
-                </li>
+                    <li class="list__item">
+                        <a href="#multiply" class="nav__link">Section 3</a>
+                    </li>
 
 
-            </ul>
-        </nav>
-        <!--./menu-->
+                </ul>
+            </nav>
+            <!--./menu-->
 
-        <!--modal window-->
-        <button id="js-modal-btn" class="btn-modal">
+            <!--modal window-->
+            <button id="js-modal-btn" class="btn-modal">
             <i class="material-icons">question_answer</i>
         </button>
 
-        <div class="modal alert-modal">
-            <div class="modal__content">
-                <button id="js-modal-close" class="modal__close">
+            <div class="modal alert-modal">
+                <div class="modal__content">
+                    <button id="js-modal-close" class="modal__close">
                     <i class="material-icons">highlight_off</i>
                 </button>
-                <p class="modal__text">Lorem ipsum dolor sit amet.</p>
-                <button id="js-modal-ok" class="modal__ok">ОК</button>
+                    <p class="modal__text">Lorem ipsum dolor sit amet.</p>
+                    <button id="js-modal-ok" class="modal__ok">ОК</button>
+                </div>
             </div>
-        </div>
-        <!--./modal window-->
-
-    </div>
-    <!--nav__wrap-->
-
-    <!--interactive tabs-->
-    <div class="tabs">
-
-        <!-- tabs list -->
-        <ul class="tabs__list">
-            <li class="tabs__item tabs__item--active">
-                <a href="#tab-1" class="tabs__link">Tab 1</a>
-            </li>
-            <li class="tabs__item">
-                <a href="#tab-2" class="tabs__link">Tab 2</a>
-            </li>
-            <li class="tabs__item">
-                <a href="#tab-3" class="tabs__link">Tab 3</a>
-            </li>
-            <li class="tabs__item">
-                <a href="#tab-4" class="tabs__link">Tab 4</a>
-            </li>
-            <li class="tabs__item">
-                <a href="#tab-5" class="tabs__link">Tab 5</a>
-            </li>
-            <li class="tabs__item">
-                <a href="#tab-6" class="tabs__link">Tab 6</a>
-            </li>
-        </ul>
-
-        <span class="target"></span>
-
-        <!--tabs list -->
-
-        <div class="tabs__content">
-            <div class="tabs__content-item tabs__content-item--active" id="tab-1">
-                <h3>Tab 1</h3>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia amet ab cumque repellendus provident deserunt, exercitationem ratione quam illum quaerat laudantium. Accusamus repudiandae officiis nemo minus voluptas, commodi minima autem?
-            </div>
-            <div class="tabs__content-item" id="tab-2">
-                <h3>Tab 2</h3>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia amet ab cumque repellendus provident deserunt, exercitationem ratione quam illum quaerat laudantium. Accusamus repudiandae officiis nemo minus voluptas, commodi minima autem?
-            </div>
-            <div class="tabs__content-item" id="tab-3">
-                <h3>Tab 3</h3>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia amet ab cumque repellendus provident deserunt, exercitationem ratione quam illum quaerat laudantium. Accusamus repudiandae officiis nemo minus voluptas, commodi minima autem?
-            </div>
-            <div class="tabs__content-item" id="tab-4">
-                <h3>Tab 4</h3>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia amet ab cumque repellendus provident deserunt, exercitationem ratione quam illum quaerat laudantium. Accusamus repudiandae officiis nemo minus voluptas, commodi minima autem?
-            </div>
-
-            <div class="tabs__content-item" id="tab-5">
-                <h3>Tab 5</h3>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia amet ab cumque repellendus provident deserunt, exercitationem ratione quam illum quaerat laudantium. Accusamus repudiandae officiis nemo minus voluptas, commodi minima autem?
-            </div>
-            <div class="tabs__content-item" id="tab-6">
-                <h3>Tab 6</h3>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia amet ab cumque repellendus provident deserunt, exercitationem ratione quam illum quaerat laudantium. Accusamus repudiandae officiis nemo minus voluptas, commodi minima autem?
-            </div>
+            <!--./modal window-->
 
         </div>
+        <!--nav__wrap-->
 
-    </div>
-    <!--./interactive tabs-->
+        <!--interactive tabs-->
+        <div class="tabs">
 
+            <!-- tabs list -->
+            <ul class="tabs__list">
+                <li class="tabs__item tabs__item--active">
+                    <a href="#tab-1" class="tabs__link">Tab 1</a>
+                </li>
+                <li class="tabs__item">
+                    <a href="#tab-2" class="tabs__link">Tab 2</a>
+                </li>
+                <li class="tabs__item">
+                    <a href="#tab-3" class="tabs__link">Tab 3</a>
+                </li>
+                <li class="tabs__item">
+                    <a href="#tab-4" class="tabs__link">Tab 4</a>
+                </li>
+                <li class="tabs__item">
+                    <a href="#tab-5" class="tabs__link">Tab 5</a>
+                </li>
+                <li class="tabs__item">
+                    <a href="#tab-6" class="tabs__link">Tab 6</a>
+                </li>
+            </ul>
+
+            <span class="target"></span>
+
+            <!--tabs list -->
+
+            <div class="tabs__content">
+                <div class="tabs__content-item tabs__content-item--active" id="tab-1">
+                    <h3>Tab 1</h3>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia amet ab cumque repellendus provident deserunt, exercitationem ratione quam illum quaerat laudantium. Accusamus repudiandae officiis nemo minus voluptas, commodi minima autem?
+                </div>
+                <div class="tabs__content-item" id="tab-2">
+                    <h3>Tab 2</h3>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia amet ab cumque repellendus provident deserunt, exercitationem ratione quam illum quaerat laudantium. Accusamus repudiandae officiis nemo minus voluptas, commodi minima autem?
+                </div>
+                <div class="tabs__content-item" id="tab-3">
+                    <h3>Tab 3</h3>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia amet ab cumque repellendus provident deserunt, exercitationem ratione quam illum quaerat laudantium. Accusamus repudiandae officiis nemo minus voluptas, commodi minima autem?
+                </div>
+                <div class="tabs__content-item" id="tab-4">
+                    <h3>Tab 4</h3>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia amet ab cumque repellendus provident deserunt, exercitationem ratione quam illum quaerat laudantium. Accusamus repudiandae officiis nemo minus voluptas, commodi minima autem?
+                </div>
+
+                <div class="tabs__content-item" id="tab-5">
+                    <h3>Tab 5</h3>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia amet ab cumque repellendus provident deserunt, exercitationem ratione quam illum quaerat laudantium. Accusamus repudiandae officiis nemo minus voluptas, commodi minima autem?
+                </div>
+                <div class="tabs__content-item" id="tab-6">
+                    <h3>Tab 6</h3>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia amet ab cumque repellendus provident deserunt, exercitationem ratione quam illum quaerat laudantium. Accusamus repudiandae officiis nemo minus voluptas, commodi minima autem?
+                </div>
+
+            </div>
+
+        </div>
+        <!--./interactive tabs-->
+        <span class="scroll">Scroll down or use menu</span>
+    </section>
+
+    <section id="gallery" class="section">
+        <!--gallery by click with images on server-->
+        <div class="gallery--wrapper">
+            <button class="gallery__btn" id="prev--btn">
+            <i class="material-icons">keyboard_arrow_left</i>
+        </button>
+
+            <div id="gallery" class="gallery">
+                <img id="gallery--img" src="img/1.jpg">
+            </div>
+
+            <button class="gallery__btn" id="next--btn">
+            <i class="material-icons">keyboard_arrow_right</i>
+        </button>
+
+        </div>
+        <!--./gallery by click with images on server-->
+        <span class="scroll">Scroll down or use menu</span>
+    </section>
+
+    <section id="multiply" class="section">
+
+    </section>
     <div class="overlay"></div>
     <script src="main.js"></script>
 
