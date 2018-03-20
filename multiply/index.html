@@ -7,12 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Interactive components for sites</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
 
-    <section id="tabs" class="section">
+    <section id="first" class="section">
         <div class="nav__wrap">
             <!--menu-->
             <button class="nav-btn" id="js-nav-btn">
@@ -22,11 +22,15 @@
             <nav id="nav" class="nav">
                 <ul class="nav__list">
                     <li class="list__item">
-                        <a href="#tabs" class="nav__link">Section 1</a>
+                        <a href="#first" class="nav__link">Section 1</a>
                     </li>
 
                     <li class="list__item">
-                        <a href="#gallery" class="nav__link">Section 2</a>
+                        <a href="#second" class="nav__link">Section 2</a>
+                    </li>
+
+                    <li class="list__item">
+                        <a href="#third" class="nav__link">Section 3</a>
                     </li>
 
                     <li class="list__item">
@@ -57,6 +61,57 @@
         </div>
         <!--nav__wrap-->
 
+        <!--slider-->
+        <div id="first-slider" class="slider">
+        <button class="slider__btn prev">
+            <i class="material-icons">keyboard_arrow_left</i>
+        </button>
+        <div class="container-wrapper">
+            <ul class="slider__container">
+                <li class="slider__item">
+                    <img src="http://www.bibleworth.com/wp-content/uploads/2013/08/christian-nature--600x200.jpg" alt="#">
+                </li>
+                <li class="slider__item">
+                    <img src="https://collegevilleinstitute.org/wp-content/uploads/2016/08/S3XBRRS2D9-600x200.jpg" alt="#">
+                </li>
+                <li class="slider__item">
+                    <img src="https://www.intuitalks.com/wp-content/uploads/rtMedia/users/129/2015/07/Gnarled-Tree-600x200.jpg" alt="#">
+                </li>
+                <li class="slider__item">
+                    <img src="https://s-ec.bstatic.com/images/city/600x200/976/97694.jpg" alt="#">
+                </li>
+            </ul>
+        </div>
+        <button class="slider__btn next">
+            <i class="material-icons">keyboard_arrow_right</i>
+        </button>
+    </div><!--./slider-->
+
+    <!--accordion-->
+    <section class="accordion">
+        <article class="accordion__item">
+            <h3 class="accordion__title accordion__title--btn">First tab</h3>
+            <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam ab necessitatibus possimus sed itaque? Eos pariatur magnam molestias autem voluptates quis voluptatum obcaecati numquam tempore sapiente, et cum doloremque animi!</p>
+        </article>
+
+        <article class="accordion__item">
+            <h3 class="accordion__title accordion__title--btn">Second tab</h3>
+            <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam ab necessitatibus possimus sed itaque? Eos pariatur magnam molestias autem voluptates quis voluptatum obcaecati numquam tempore sapiente, et cum doloremque animi!</p>
+        </article>
+
+        <article class="accordion__item">
+            <h3 class="accordion__title accordion__title--btn">Third tab</h3>
+            <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam ab necessitatibus possimus sed itaque? Eos pariatur magnam molestias autem voluptates quis voluptatum obcaecati numquam tempore sapiente, et cum doloremque animi!</p>
+        </article>
+    </section>
+    <!--./accordion-->
+
+        <span class="scroll">Scroll down or use menu</span>
+
+    </section> <!--first-->
+
+
+    <section id="second" class="section">
         <!--interactive tabs-->
         <div class="tabs">
 
@@ -117,10 +172,11 @@
 
         </div>
         <!--./interactive tabs-->
-        <span class="scroll">Scroll down or use menu</span>
-    </section>
 
-    <section id="gallery" class="section">
+         <span class="scroll">Scroll down or use menu</span>
+    </section> <!--./second-->
+
+    <section id="third" class="section">
         <!--gallery by click with images on server-->
         <div class="gallery--wrapper">
             <button class="gallery__btn" id="prev--btn">
@@ -138,13 +194,20 @@
         </div>
         <!--./gallery by click with images on server-->
         <span class="scroll">Scroll down or use menu</span>
-    </section>
+    </section><!--./third-->
 
     <section id="multiply" class="section">
 
     </section>
     <div class="overlay"></div>
-    <script src="main.js"></script>
+
+    <script type="text/javascript" src="libs/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="libs/myslider.js"></script>
+    <script type="text/javascript" src="libs/tabsHover.js"></script>
+    <script type="text/javascript" src="libs/tableMultiply.js"></script>
+    <script type="text/javascript" src="libs/modalWindow.js"></script>
+    <script type="text/javascript" src="libs/accordion.js"></script>
+    <script src="js/main.js"></script>
 
     </head>
 
