@@ -1,245 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Borodinski</title>
-	<link rel="stylesheet" type="text/css" href="css/fonts.css">
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <title>Borodinski</title>
+    <link rel="stylesheet" type="text/css" href="css/fonts.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 
 </head>
+
 <body>
-	<div class="wrapper">
-		
-		<!--header-->
-		<header class="header">
-			<div class="container container__flex">
-				<!--nav-->
-				<nav class="nav">
-					<ul class="nav-list">
-						<li class="nav-item"><a href="index.html" class="nav-link">Главная</a></li>
-						<li class="nav-item"><a href="portfolio.html" class="nav-link">Наши работы</a></li>
-						<li class="nav-item"><a href="form.html" class="nav-link">Записаться</a></li>
-						<li class="nav-item"><a href="#" class="nav-link">Контакты</a></li>
-					</ul>
-				</nav><!--./nav-->
-				
-				<!--login-->
-				<div class="header-btn-wrap">
-					<button class="login-btn">Вход</button>
-				</div><!--./login-->
-				
-				<!--logo__mobile-->
-				<div class="logo__mobile">
-					<a href="#" class="logo__mobile-link">
-						<img src="img/logotype-mobile.png" alt="logo">
-					</a>
-				</div><!--./logo__mobile-->
-	
-				<!--menu-btn-->
-				<button class="menu-btn" id="menu-btn">
+    <div class="wrapper">
+
+        <!--header-->
+        <header class="header">
+            <div class="container container__flex">
+                <!--nav-->
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.html" class="nav-link">Главная</a></li>
+                        <li class="nav-item"><a href="portfolio.html" class="nav-link">Наши работы</a></li>
+                        <li class="nav-item"><a href="form.html" class="nav-link">Записаться</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Контакты</a></li>
+                    </ul>
+
+                    <!--login-->
+                    <div id="js-show-login-btn" class="header-btn-wrap">
+                        <button class="login-btn">Вход</button>
+                    </div>
+
+                    <div class="login__form--wrap">
+
+                        <form id="js-login__form" class="login__form" action="index.html" method="get">
+                            <fieldset>
+                                <input class="login__form--btn" type="text" name="fname" id="fname" placeholder="Введите ваше имя" pattern="^[a-їґ]+$" maxlength="20">
+                                <input class="login__form--btn" type="text" name="lname" id="lname" placeholder="Введите вашу фамилию" pattern="^[а-яА-Я]+$" maxlength="20">
+                            </fieldset>
+                            <fieldset>
+                                <input class="login__form--btn" type="phone" name="phone" id="phone" placeholder="Ввудите ваш номер телефона" maxlength="30">
+                                <input class="login__form--btn" type="email" name="email" id="email" placeholder="Введите ваш e-mail" maxlength="30" required>
+                                <input class="login__form--btn" type="password" name="password" id="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="Ваш пароль" maxlength="20" required>
+                                <input class="login__form--btn" type="password" name="password" id="confirm_password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="Повторите пароль" maxlength="20" required>
+                            </fieldset>
+                        </form>
+                        <div id="js-login-btn" class="buttons">
+                            <button type="submit" class="button--login" name="button" form="js-login__form">Войти</button>
+                        </div>
+
+                        <div id="js-singin-btn" class="buttons">
+                            <button type="submit" class="button--singin" name="button">зарегистрироваться</button>
+                        </div>
+                    </div>
+                    <!--./login-->
+                </nav>
+                <!--./nav-->
+
+                <!--logo__mobile-->
+                <div class="logo__mobile">
+                    <a href="#" class="logo__mobile-link">
+                        <img src="img/logotype-mobile.png" alt="logo">
+                    </a>
+                </div>
+                <!--./logo__mobile-->
+
+                <!--menu-btn-->
+                <button class="menu-btn" id="menu-btn">
 					<svg fill="#ffffff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 						<path d="M0 0h24v24H0z" fill="none"/>
 						<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
 					</svg>
-				</button><!--./menu-btn-->	
+				</button>
+                <!--./menu-btn-->
 
-			</div><!--./container-->
-		</header><!--./header-->
+            </div>
+            <!--./container-->
+        </header>
+        <!--./header-->
 
-		<!--logo-->
-		<div class="logo-small"
-			 style="background: url('img/small-desktop.jpg') center center no-repeat; background-size: cover;">
-			<a class="logo__link" href="index.html"> 
-				<img src="img/logotype-desktop.svg" alt="logotype">
-			</a>
-		</div><!--./logo-->
+        <!--logo-->
+        <div class="logo-small" style="background: url('img/small-desktop.jpg') center center no-repeat; background-size: cover;">
+            <a class="logo__link" href="index.html">
+                <img src="img/logotype-desktop.svg" alt="logotype">
+            </a>
+        </div>
+        <!--./logo-->
 
-		<div class='form__content'>
-			<div class="container">
-				<div class="container__flex">
-					<h3 class="section-title">Записаться на стрижку</h3>
-					<a class="page-btn section-btn" href="index.html">На главную</a>
-				</div>
-		
-		<!--form__enroll-->	
-				<section class="form__enroll">
-					<form action="mailto:name@serv.com" enctype="text/plain" class="user-info">
-						<div class="container__flex">
-							<input class="info-list-item" type="text" value="Имя" id="name" onclick='this.value = "";' >
-							<input class="info-list-item" type="text" value="Фамилия" id="surname" onclick='this.value = "";'>
-							<input class="info-list-item" type="text" value="Отчество" id="middlename" onclick='this.value = "";'>
-						</div>
-						<div class="container__flex">
-							<input class="info-list-item" type="text" value="Контактный телефон" id="phonenumber" onclick='this.value = "";' >
-							<input class="info-list-item" type="text" value="Контактный e-mail" id="email" onclick='this.value = "";'>
-						</div>
-						<textarea class="info-list-item" cols="1000" rows="10" onclick='this.value = "";'> Дополнительная информация для мастера
+        <div class='form__content'>
+            <div class="container">
+                <div class="container__flex">
+                    <h3 class="section-title">Записаться на стрижку</h3>
+                    <a class="page-btn section-btn" href="index.html">На главную</a>
+                </div>
+
+                <!--form__enroll-->
+                <section class="form__enroll">
+                    <form action="mailto:name@serv.com" enctype="text/plain" class="user-info">
+                        <div class="container__flex">
+                            <input class="info-list-item" type="text" value="Имя" id="name" onclick='this.value = "";'>
+                            <input class="info-list-item" type="text" value="Фамилия" id="surname" onclick='this.value = "";'>
+                            <input class="info-list-item" type="text" value="Отчество" id="middlename" onclick='this.value = "";'>
+                        </div>
+                        <div class="container__flex">
+                            <input class="info-list-item" type="text" value="Контактный телефон" id="phonenumber" onclick='this.value = "";'>
+                            <input class="info-list-item" type="text" value="Контактный e-mail" id="email" onclick='this.value = "";'>
+                        </div>
+                        <textarea class="info-list-item" cols="1000" rows="10" onclick='this.value = "";'> Дополнительная информация для мастера
 						</textarea>
 
-						<!--model-list-->
-						<h3 class="more-info__title"> Выберите модель бороды:</h3>
-						<ul class="model-list">
-							<!--admiral-->
-							<li class="model-list-item">
-								<input id="admiral" type="radio" value="admiral" hidden>
-								<label class="item-form" for="admiral"></label>
-									<span class="model-name">адмирал</span>
-									<img class="model-icon" src="img/admiral.png" alt="admiral">
-									<img class="model-icon-checked" src="img/admiral-checked.png" alt="admiral">
-							</li><!--./admiral-->
+                        <!--model-list-->
+                        <h3 class="more-info__title"> Выберите модель бороды:</h3>
+                        <ul class="model-list">
+                            <!--admiral-->
+                            <li class="model-list-item">
+                                <input id="admiral" type="radio" value="admiral" hidden>
+                                <label class="item-form" for="admiral"></label>
+                                <span class="model-name">адмирал</span>
+                                <img class="model-icon" src="img/admiral.png" alt="admiral">
+                                <img class="model-icon-checked" src="img/admiral-checked.png" alt="admiral">
+                            </li>
+                            <!--./admiral-->
 
-						<!--lesorub-->
-							<li class="model-list-item">
-								<input id="lesorub" type="radio" value="lesorub" hidden>
-								<label class="item-form" for="lesorub"></label>
-									<span class="model-name">лесоруб</span>
-									<img class="model-icon" src="img/lesorub.png" alt="lesorub">
-									<img class="model-icon-checked" src="img/lesorub-checked.png" alt="lesorub">
-							</li><!--./lesorub-->
-						
-						<!--poliarnik-->
-							<li class="model-list-item">
-								<input id="poliarnik" type="radio" value="poliarnik" hidden>
-								<label class="item-form" for="poliarnik"></label>
-									<span class="model-name">полярник</span>
-									<img class="model-icon" src="img/poliarnik.png" alt="poliarnik">
-									<img class="model-icon-checked" src="img/poliarnik-checked.png" alt="poliarnik">
-							</li><!--./poliarnik-->
+                            <!--lesorub-->
+                            <li class="model-list-item">
+                                <input id="lesorub" type="radio" value="lesorub" hidden>
+                                <label class="item-form" for="lesorub"></label>
+                                <span class="model-name">лесоруб</span>
+                                <img class="model-icon" src="img/lesorub.png" alt="lesorub">
+                                <img class="model-icon-checked" src="img/lesorub-checked.png" alt="lesorub">
+                            </li>
+                            <!--./lesorub-->
 
-						<!--boiarin-->
-							<li class="model-list-item">
-								<input id="boiarin" type="radio" value="boiarin" hidden>
-								<label class="item-form" for="boiarin"></label>
-									<span class="model-name">боярин</span>
-									<img class="model-icon" src="img/boiarin.png" alt="boiarin">
-									<img class="model-icon-checked" src="img/boiarin-checked.png" alt="boiarin">
-							</li><!--./boiarin-->
+                            <!--poliarnik-->
+                            <li class="model-list-item">
+                                <input id="poliarnik" type="radio" value="poliarnik" hidden>
+                                <label class="item-form" for="poliarnik"></label>
+                                <span class="model-name">полярник</span>
+                                <img class="model-icon" src="img/poliarnik.png" alt="poliarnik">
+                                <img class="model-icon-checked" src="img/poliarnik-checked.png" alt="poliarnik">
+                            </li>
+                            <!--./poliarnik-->
 
-						<!--mudrec-->
-							<li class="model-list-item">
-								<input id="mudrec" type="radio" value="mudrec" hidden>
-								<label class="item-form" for="mudrec"></label>
-									<span class="model-name">боярин</span>
-									<img class="model-icon" src="img/mudrec.png" alt="mudrec">
-									<img class="model-icon-checked" src="img/mudrec-checked.png" alt="mudrec">
-							</li><!--./mudrec-->
-						</ul>
-				
-					<!--extras-list-->
-						<h2 class="more-info__title">Дополнительные услуги:</h2>
-	
-						<ul class="extras-list">
-							<div class="container container__flex">
-								<li class="extras-list-item">
-									<input type="checkbox" class="checkbox" id="check1" value="podkrasit borodu">
-									<label class="extras-check" for="check1">
+                            <!--boiarin-->
+                            <li class="model-list-item">
+                                <input id="boiarin" type="radio" value="boiarin" hidden>
+                                <label class="item-form" for="boiarin"></label>
+                                <span class="model-name">боярин</span>
+                                <img class="model-icon" src="img/boiarin.png" alt="boiarin">
+                                <img class="model-icon-checked" src="img/boiarin-checked.png" alt="boiarin">
+                            </li>
+                            <!--./boiarin-->
+
+                            <!--mudrec-->
+                            <li class="model-list-item">
+                                <input id="mudrec" type="radio" value="mudrec" hidden>
+                                <label class="item-form" for="mudrec"></label>
+                                <span class="model-name">боярин</span>
+                                <img class="model-icon" src="img/mudrec.png" alt="mudrec">
+                                <img class="model-icon-checked" src="img/mudrec-checked.png" alt="mudrec">
+                            </li>
+                            <!--./mudrec-->
+                        </ul>
+
+                        <!--extras-list-->
+                        <h2 class="more-info__title">Дополнительные услуги:</h2>
+
+                        <ul class="extras-list">
+                            <div class="container container__flex">
+                                <li class="extras-list-item">
+                                    <input type="checkbox" class="checkbox" id="check1" value="podkrasit borodu">
+                                    <label class="extras-check" for="check1">
 										<span class="extras-name">Подкрасить бороду</span>
 									</label>
-								</li>
-				
-								<li class="extras-list-item">
-									<input type="checkbox" class="checkbox" id="check2" value="prichesat borodu">
-									<label class="extras-check" for="check2">
+                                </li>
+
+                                <li class="extras-list-item">
+                                    <input type="checkbox" class="checkbox" id="check2" value="prichesat borodu">
+                                    <label class="extras-check" for="check2">
 										<span class="extras-name">Причесать бороду</span>
 									</label>
-								</li>
+                                </li>
 
-								<li class="extras-list-item">
-									<input type="checkbox" class="checkbox" id="check3" value="ubrat sedinu">
-									<label class="extras-check" for="check3">
+                                <li class="extras-list-item">
+                                    <input type="checkbox" class="checkbox" id="check3" value="ubrat sedinu">
+                                    <label class="extras-check" for="check3">
 										<span class="extras-name">Убрать седину</span>
 									</label>
-								</li>
-							</div>
-					
-							<div class="container container__flex">
-								<li class="extras-list-item">
-									<input type="checkbox" class="checkbox" id="check4" value="nakrutit usy">
-									<label class="extras-check" for="check4">
+                                </li>
+                            </div>
+
+                            <div class="container container__flex">
+                                <li class="extras-list-item">
+                                    <input type="checkbox" class="checkbox" id="check4" value="nakrutit usy">
+                                    <label class="extras-check" for="check4">
 										<span class="extras-name">Накрутить усы</span>
 									</label>
-								</li>
+                                </li>
 
-								<li class="extras-list-item">
-									<input type="checkbox" class="checkbox" id="check5" value="podrovniat veski">
-									<label class="extras-check" for="check5">
+                                <li class="extras-list-item">
+                                    <input type="checkbox" class="checkbox" id="check5" value="podrovniat veski">
+                                    <label class="extras-check" for="check5">
 										<span class="extras-name">Подровнять вески</span>
 									</label>
-								</li>
+                                </li>
 
-								<li class="extras-list-item">
-									<input type="checkbox" class="checkbox" id="check6" value="otpolirovat lysinu">
-									<label class="extras-check" for="check6">
+                                <li class="extras-list-item">
+                                    <input type="checkbox" class="checkbox" id="check6" value="otpolirovat lysinu">
+                                    <label class="extras-check" for="check6">
 										<span class="extras-name">Отполировать лысину</span>
 									</label>
-								</li>
-							</div>
-						</ul><!--./extras-list-->
+                                </li>
+                            </div>
+                        </ul>
+                        <!--./extras-list-->
 
 
-	<!--submit-button-->
-						<button type="submit" formaction="" value="" class="form__send">Отправить заявку</button><!--./submit-button-->
+                        <!--submit-button-->
+                        <button type="submit" formaction="" value="" class="form__send">Отправить заявку</button>
+                        <!--./submit-button-->
 
-					</form><!--./user-info-->
-				</section><!--./form__enroll-->	
-			</div>	<!--./container-->
-		</div><!--form__content-->
+                    </form>
+                    <!--./user-info-->
+                </section>
+                <!--./form__enroll-->
+            </div>
+            <!--./container-->
+        </div>
+        <!--form__content-->
 
 
-		<!--footer-->
-		<footer class="footer">
-				<div class="container">
-					<!--footer__wrap-->
-					<div class="footer__wrap">
-						
-						<!--footer__place-->
-						<address class="footer__place">
+        <!--footer-->
+        <footer class="footer">
+            <div class="container">
+                <!--footer__wrap-->
+                <div class="footer__wrap">
+
+                    <!--footer__place-->
+                    <address class="footer__place">
 							<h1 class="place-name">Барбершоп Бородинский
 							</h1>
 							<p class="footer__contacts">г.Санкт-Петербург, ул. Большая Конюшенная 19/8</p>
 							<p class="footer__contacts">Тел.: +7 (000) 555-555-55</p>
-						</address><!--./footer__place-->
-						
-						<!--footer__social-->
-						<div class="footer__social">
-							<p class="social__title">Давайте дружить!</p>
-	
-							<ul class="social-list">
-								<li class="social-item">
-									<a class="social__item-link" href="#">
-										<img src="img/insta-icon-small.png">
-									</a>
-								</li>
-	
-								<li class="social-item">
-									<a class="social__item-link" href="#">
-										<img src="img/facebook-icon-small.png">
-									</a>
-								</li>
-	
-								<li class="social-item">
-									<a class="social__item-link" href="#">
-										<img src="img/vk-icon-small.png">
-									</a>
-								</li>
-							</ul>
-						</div><!--./footer__social-->
-						
-						<!--about-developer-->
-						<div class="about-developer">
-							<p class="about-dev">Разработано:</p>
-							<a href="https://www.linkedin.com/in/juliadrozd/" class="about-link" target="_blank"> Julia__Drozd</a>
-						</div><!--./about-developer-->
-	
-					</div><!--./footer__wrap-->
-				</div><!--./container-->
-			</footer><!--./footer-->
-	
-		</div><!--./wrapper-->
-		
-		<div class="overlay"></div>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+						</address>
+                    <!--./footer__place-->
+
+                    <!--footer__social-->
+                    <div class="footer__social">
+                        <p class="social__title">Давайте дружить!</p>
+
+                        <ul class="social-list">
+                            <li class="social-item">
+                                <a class="social__item-link" href="#">
+                                    <img src="img/insta-icon-small.png">
+                                </a>
+                            </li>
+
+                            <li class="social-item">
+                                <a class="social__item-link" href="#">
+                                    <img src="img/facebook-icon-small.png">
+                                </a>
+                            </li>
+
+                            <li class="social-item">
+                                <a class="social__item-link" href="#">
+                                    <img src="img/vk-icon-small.png">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--./footer__social-->
+
+                    <!--about-developer-->
+                    <div class="about-developer">
+                        <p class="about-dev">Разработано:</p>
+                        <a href="https://www.linkedin.com/in/juliadrozd/" class="about-link" target="_blank"> Julia__Drozd</a>
+                    </div>
+                    <!--./about-developer-->
+
+                </div>
+                <!--./footer__wrap-->
+            </div>
+            <!--./container-->
+        </footer>
+        <!--./footer-->
+
+    </div>
+    <!--./wrapper-->
+
+    <div class="overlay"></div>
     <script src="js/script.custom.js"></script>
-	</body>
-	</html>
+</body>
+
+</html>

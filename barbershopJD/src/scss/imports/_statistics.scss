@@ -1,147 +1,134 @@
 .statistics {
     display: flex;
-	background: #fff;
-	margin-top: -160px;
-	position: relative;
-	z-index: 99;
-
-	@include medium {
-		flex-flow: column wrap;
-	}
-
-	@include small {
-       margin-top: 0;
+    background: #fff;
+    margin-top: -160px;
+    position: relative;
+    z-index: 99;
+    @include medium {
+        flex-flow: column wrap;
+    }
+    @include small {
+        margin-top: 0;
     }
 }
 
 .statistics__header--wrap {
-	padding: 20px 40px;
-	position: relative;
-	width: 40%;
-	flex: 1 0;
-	margin-top: auto;
-	
+    padding: 20px 40px;
+    position: relative;
+    width: 40%;
+    flex: 1 0;
+    margin-top: auto;
     &:before {
         position: absolute;
-        content:'';
+        content: '';
         border: 12px solid transparent;
         border-top: 8px solid #fff;
         border-right: 20px solid #fff;
         top: 40px;
         left: -20px;
-	}
-
-	@include medium {
-		@include flexBetween;
-		flex-flow: row wrap;
-		padding: 40px;
-		width: 100%;
-	}
-
-	@include small {
-		width: 100%;
-		flex-flow: column wrap;
-		text-align: center;
-
-		&:before {
-			display: none;
-		}
-	 }
+    }
+    @include medium {
+        @include flexBetween;
+        flex-flow: row wrap;
+        padding: 40px;
+        width: 100%;
+    }
+    @include small {
+        width: 100%;
+        flex-flow: column wrap;
+        text-align: center;
+        &:before {
+            display: none;
+        }
+    }
 }
 
 .statistics__title {
-	font-size: 40px;
-	line-height: 42px;
-	color: #000;
-	font-weight: normal;
-	font-family: 'PTSansNarrowBold';
-	margin-bottom: 40px;
-	
-	@include medium {
-		width: 50%;
-		margin: 0;
-	}
+    font-size: 40px;
+    line-height: 42px;
+    color: #000;
+    font-weight: normal;
+    font-family: 'PTSansNarrowBold';
+    margin-bottom: 40px;
+    @include medium {
+        width: 50%;
+        margin: 0;
+    }
 }
 
 .statistics__descr {
-	font-size: 20px;
-	line-height: 22px;
-	color: #000;
-	margin-bottom: 30px;
-
-	@include medium {
-		width: 50%;
-	}
+    font-size: 20px;
+    line-height: 22px;
+    color: #000;
+    margin-bottom: 30px;
+    @include medium {
+        width: 50%;
+    }
 }
 
 .statistics__note {
-	color: rgba(0, 0, 0, .3);
-	font-size: 18px;
-	line-height: .9;
-	flex: 1 0;
-	margin-top: auto;
-
-	@include medium {
-		margin-top: 20px;
-	}
-
+    color: rgba(0, 0, 0, .3);
+    font-size: 18px;
+    line-height: .9;
+    flex: 1 0;
+    margin-top: auto;
+    @include medium {
+        margin-top: 20px;
+    }
 }
 
 .statistics-list {
-	display: flex;
-	justify-content: space-around;
-	flex-flow: row wrap;
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	width: 60%;
-	@include medium {
-		width: 100%;
-	}
-
-	@include small {
-		width: 100%;
-		flex-flow: column wrap;
-	}
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 60%;
+    @include medium {
+        width: 100%;
+    }
+    @include small {
+        width: 100%;
+        flex-flow: column wrap;
+    }
 }
 
 .statistics-item {
-	width: 50%;
-	min-height: 160px;
-	padding: 20px 35px;
-	vertical-align: top;
-	display: flex;
-	flex-flow: column wrap;
-	justify-content: space-between;
-
+    width: 50%;
+    min-height: 160px;
+    padding: 20px 35px;
+    vertical-align: top;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
     &:nth-child(1) {
         background: #484848;
     }
-    &:nth-child(2){
+    &:nth-child(2) {
         background: #4e4e4e
     }
-    &:nth-child(3){
+    &:nth-child(3) {
         background: #353535
     }
     &:nth-child(4) {
         background: #484848;
-	}
-	
-	@include small {
-		width: 100%;
-		text-align: center;
-	}
+    }
+    @include small {
+        width: 100%;
+        text-align: center;
+    }
 }
 
 .statistics-count {
-	color: #fff;
-	font-family: 'PTSansNarrowBold';
-	font-size: 4.5rem;
+    color: #fff;
+    font-family: 'PTSansNarrowBold';
+    font-size: 4.5rem;
 }
 
 .statistics-count-descr {
-	color: #fff;
-	font-size: 1.1rem;
-	line-height: .9;
-	margin: 0;
+    color: #fff;
+    font-size: 1.1rem;
+    line-height: .9;
+    margin: 0;
 }

@@ -1,37 +1,112 @@
 .header-btn-wrap {
-	text-transform: right;
-	padding: 30px;
-
-	@include small {
-		display: none;
-	}
-
-	@include extraSmall {
-		display: none;
-	}
+    text-transform: right;
+    padding: 30px;
+    @include small {
+        margin: 0;
+        padding-right: 20px;
+        border-top: 1px solid $border-color;
+        transition: background .3s ease-in-out;
+        &:hover {
+            background: #9f826e;
+        }
+    }
 }
 
 .login-btn {
-	background: none;
-	color: #fff;
-	border: none;
-	text-transform: uppercase;
-	cursor: pointer;
-	font-family: 'PTSansNarrowBold', sans-serif;
-	font-weight: bold;
+    background: none;
+    color: #fff;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'PTSansNarrowBold', sans-serif;
+    font-weight: bold;
     letter-spacing: .8px;
-	font-size: 18px;
-	line-height: 20px;
-	padding: 0 0 0 35px;
-	background: url('../img/login.svg')  center left no-repeat;
-	transition: color .3s ease-in-out;
-	
-	&:hover {
-		color: $hover-color;
-	}
-
-	&:active {
-		color: $active-color;
-	}
+    font-size: 18px;
+    line-height: 20px;
+    padding: 0 0 0 35px;
+    background: url('../img/login.svg') center left no-repeat;
+    transition: color .3s ease-in-out;
+    &:hover {
+        color: $hover-color;
+    }
+    &:active {
+        color: $active-color;
+    }
+    @include small {
+        &:hover {
+            color: #fff;
+        }
+        &:active {
+            color: $active-color;
+        }
+    }
 }
 
+.login__form--wrap {
+    width: 500px;
+    position: absolute;
+    z-index: 999999999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -300%);
+    margin-top: 20px;
+    background: $border-hover-color;
+    padding: 20px 0;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    transition: transform .5s ease-in-out;
+    input {
+        padding: 12px 20px;
+        margin-bottom: 25px;
+        width: 100%;
+        outline: none;
+        border: none;
+    }
+    input::placeholder {
+        font-size: 14px;
+    }
+    input:focus {
+        border: 3px solid #555;
+    }
+    fieldset {
+        border: none;
+        outline: none;
+        font-size: 14px;
+        margin: 0;
+        padding: 0 20px;
+    }
+    .buttons {
+        display: block;
+        width: 100%;
+        margin-top: 20px;
+        padding: 0 20px;
+    }
+    button {
+        display: block;
+        background: $hover-color;
+        width: 100%;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        font-size: 20px;
+        line-height: 45px;
+        text-transform: uppercase;
+        font-family: 'PTSansNarrowRegular', sans-serif;
+        color: white;
+    }
+    button:hover {
+        background: #6a4d38;
+    }
+    button:active {
+        color: #aeaeae;
+        background: $active-color;
+    }
+    @include small {
+        width: 300px;
+        top: 50%;
+        left: 100%;
+    }
+}
+
+.login__form--wrap--show {
+    transform: translate(-50%, -50%);
+}
