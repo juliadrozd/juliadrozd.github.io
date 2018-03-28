@@ -82,19 +82,45 @@ function init() {
     addComment();
 
     // Slider
-    function slider(wrapperID, settings) {
-        let btnPrev = document.querySelector('#js-prev--btn');
-        let btnNext = document.querySelector('#js-next--btn');
-        let currentItem = document.querySelectorAll('.testimonials__slider-item');
+    function slider() {
+        let nextBtn = document.querySelector('#js-next--btn');
+        let prevBtn = document.querySelector('#js-prev--btn');
 
-        let endCount = 0;
-        let currentCount = 1;
+        nextBtn.addEventListener('click', function() {
+            var currentImage = $('.testimonials__slider-item.curry');
+            var currentImageIndex = $('.testimonials__slider-item.curry').index();
+            var nextImageIndex = currentImageIndex + 1;
+            var nextImage = $('.testimonials__slider-item.curry').eq(nextImageIndex);
+            currentImage.fadeOut(1000);
+            currentImage.removeClass('curry');
 
-        btnNext.addEventListener('click', () => {
+
+            if (nextImageIndex === ($('.testimonials__slider-item:last').index() + 1)) {
+                $('.testimonials__slider-item').eq(0).fadeIn(1000);
+                $('.testimonials__slider-item').eq(0).addClass('curry');
+            } else {
+                nextImage.fadeIn(1000);
+                nextImage.addClass('curry');
+            }
+
+        });
+
+
+        prevBtn.addEventListener('click', function() {
+            var currentImage = $('.testimonials__slider-item.curry');
+            var currentImageIndex = $('.testimonials__slider-item.curry').index();
+            var prevImageIndex = currentImageIndex - 1;
+            var prevImage = $('.testimonials__slider-item.curry').eq(prevImageIndex);
+
+            currentImage.fadeOut(1000);
+            currentImage.removeClass('curry');
+            prevImage.fadeIn(1000);
+            prevImage.addClass('curry');
 
 
         });
+
+
     }
     slider();
-
 }

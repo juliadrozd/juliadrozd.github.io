@@ -24,13 +24,9 @@
     transition: background .3s ease-in-out;
     &:hover {
         color: $hover-color;
-        text-decoration: underline;
     }
     &:hover .news__date-wrap {
-        background: $hover-color;
-        &.news__date-wrap:before {
-            border-top: 8px solid $hover-color;
-        }
+        color: $hover-color;
     }
     &:active {
         color: #6a4d38;
@@ -38,10 +34,6 @@
     }
     &:active .news__date-wrap {
         color: #978374;
-        background: #6a4d38;
-    }
-    &:active .news__date-wrap:before {
-        border-top: 8px solid #6a4d38;
     }
 }
 

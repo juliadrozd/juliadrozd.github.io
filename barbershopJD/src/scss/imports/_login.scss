@@ -32,7 +32,7 @@
     &:active {
         color: $active-color;
     }
-    @include small {
+    @include medium {
         &:hover {
             color: #fff;
         }
@@ -100,13 +100,31 @@
         color: #aeaeae;
         background: $active-color;
     }
-    @include small {
-        width: 300px;
-        top: 50%;
-        left: 100%;
+    @include medium {
+        width: 500px;
+        top: 0;
+        left: 0;
     }
 }
 
 .login__form--wrap--show {
     transform: translate(-50%, -50%);
+    @include medium {
+        width: 500px;
+        top: 0;
+        left: 25%;
+        transform: translate(25%, 0)
+    }
+    @include small {
+        width: 400px;
+        top: 0;
+        left: 10%;
+        transform: translate(10%, 0)
+    }
+    @include extraSmall {
+        width: 300px;
+        top: 0;
+        left: 10%;
+        transform: translate(10%, 0)
+    }
 }

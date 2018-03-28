@@ -5,10 +5,9 @@
     outline: none;
     width: 40px;
     height: 40px;
-    @include flexCenter;
     display: none;
-    @include small {
-        display: flex;
+    @include medium {
+        @include flexCenter;
     }
 }
 
@@ -20,8 +19,7 @@
     font-weight: normal;
     letter-spacing: .8px;
     transition: transform .2s ease-in-out;
-    @include small {
-        display: flex;
+    @include medium {
         will-change: transform;
         position: fixed;
         left: 0;
@@ -38,7 +36,7 @@
 }
 
 .nav--active {
-    @include small {
+    @include medium {
         z-index: 9999;
         transform: translateX(0);
     }
@@ -57,7 +55,7 @@
     &:not(.last-child) {
         margin-right: 0;
     }
-    @include small {
+    @include medium {
         margin: 0;
         padding-right: 20px;
         width: 100%;
@@ -111,7 +109,7 @@
     &:active:after {
         background: $active-color;
     }
-    @include small {
+    @include medium {
         &:hover {
             color: #fff;
         }
