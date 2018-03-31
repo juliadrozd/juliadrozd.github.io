@@ -91,59 +91,38 @@
     </aside>
     <!-- ./aside -->
 
-    <!-- maincontent -->
-    <main class="maincontent">
+    <main class="maincontent maincontent--search-page" id="search-product">
+        <div class="container">
+            <form class="search-form">
+                <div class="input-wrap">
+                    <input id="search" type="text" class="search-form__input">
+                    <label for="search" class="search-form__label">Type product that you are search</label>
 
-        <!-- main preview -->
-        <div class="main-preview">
-            <section id="section-1" class="main-preview__item main-preview__item--bg-1 current-section">
-                <h2 class="main-preview__title">olios</h2>
-                <p class="main-preview__descr">newest furniture shop template</p>
+                    <button id="form-reset" class="search-form__reset ui-reset-btn" type="button">
+                        <i class="material-icons">close</i>
+                    </button>
+                </div>
+            </form>
 
-                <a href="#" class="main-preview__link ui-btn-element">view more</a>
-            </section>
 
-            <section id="section-2" class="main-preview__item main-preview__item--bg-1">
-                <h2 class="main-preview__title">Lorem</h2>
-                <p class="main-preview__descr">Lorem ipsum dolor set amet</p>
+            <div class="seached-product">
+                <div class="result-count">
+                    <span class="count"></span>
+                    <span class="count-descr">Searched result</span>
+                </div>
+                <div class="trade-list"></div>
 
-                <a href="#" class="main-preview__link ui-btn-element">view more</a>
-            </section>
-
-            <section id="section-3" class="main-preview__item main-preview__item--bg-1">
-                <h2 class="main-preview__title">Ipsum</h2>
-                <p class="main-preview__descr">Set amet dolor ipsum lorem</p>
-
-                <a href="#" class="main-preview__link ui-btn-element">view more</a>
-            </section>
-
-            <section id="section-4" class="main-preview__item main-preview__item--bg-1">
-                <h2 class="main-preview__title">Ipsum</h2>
-                <p class="main-preview__descr">Set amet dolor ipsum lorem</p>
-
-                <a href="#" class="main-preview__link ui-btn-element">view more</a>
-            </section>
+            </div>
 
         </div>
-
-
-        <ul class="main-preview__controls">
-            <a href="#section-1" class="main-preview__controls-dots current-dots"></a>
-            <a href="#section-2" class="main-preview__controls-dots"></a>
-            <a href="#section-3" class="main-preview__controls-dots"></a>
-            <a href="#section-4" class="main-preview__controls-dots"></a>
-
-        </ul>
-
-        <!-- ./main preview -->
-
     </main>
-    <!-- ./maincontent -->
+
+
 
 
     <div class="overlay"></div>
     <script src="js/libs/main_menu.js"></script>
-    <script src="js/libs/main_slider.js"></script>
+    <script src="js/libs/search.js"></script>
     <script src="js/main.js"></script>
 </body>
 

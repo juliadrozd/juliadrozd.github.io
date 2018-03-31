@@ -3,10 +3,10 @@ $main-color: #0023ff;
     background: none;
     border: none;
     padding: 0;
+    cursor: pointer;
 }
 
 .ui-btn-element {
-    font-weight: 900;
     color: #fff;
     background: $main-color;
     font-size: 18px;
@@ -15,7 +15,7 @@ $main-color: #0023ff;
     padding: 16px 50px;
     border-radius: 30px;
     transition: background .1s ease-in-out;
-    font: $basic-font;
+    font-family: $basic-font;
     &:hover {
         background: #132fe2;
     }

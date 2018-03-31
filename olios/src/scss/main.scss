@@ -1,3 +1,4 @@
+@import "mixins/mixin.scss";
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 @import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,900);
 @import "imports/adjustment";
@@ -5,3 +6,4 @@
 @import "imports/main_menu";
 @import "imports/main_preview";
 @import "imports/ui";
+@import "imports/search";
