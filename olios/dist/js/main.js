@@ -6,7 +6,4 @@ function init() {
     const mainslider = sliderSection('.maincontent');
     const searchProduct = Search('#search-product');
 
-
-
-
 }
