@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style/main.min.css">
 </head>
 
-<body>
+<body class="body-no-overflow">
     <div class="nav-wrap" id="navigation">
         <!-- navigation -->
         <button class="ui-circle-btn menu-btn ui-reset-btn" id="menu-btn">
@@ -25,7 +25,7 @@
 
             <ul class="main-nav__list" id="main-nav">
                 <li class="main-nav__item">
-                    <a href="products.html" class="main-nav__link">Living room</a>
+                    <a href="#" class="main-nav__link">Living room</a>
                     <img src="img/living.png" alt="living room">
                 </li>
                 <li class="main-nav__item">
@@ -91,58 +91,55 @@
     </aside>
     <!-- ./aside -->
 
-    <!-- maincontent -->
-    <main class="maincontent" id="main-slider">
+     <!-- maincontent -->
+  <main class="maincontent products-auto-height">
+    <!-- container -->
+    <div class="container container--products">
 
-        <!-- main preview -->
-        <div class="main-preview">
-            <section id="section-1" class="main-preview__item main-preview__item--bg-1 current-section">
-                <h2 class="main-preview__title">olios</h2>
-                <p class="main-preview__descr">newest furniture shop template</p>
+      <div class="products__top">
+        <h3 class="products__main-title">Products</h3>
+        <span class="products__page-category">living room</span>
+      </div>
 
-                <a href="#" class="main-preview__link ui-btn-element">view more</a>
-            </section>
+      <div class="products__grid-wrap" id="add-products">
+        <a href="#" class="products__link small-card">
+          <figure class="small-card__container">
+            <img src="img/redseat.png" class="small-card__img">
 
-            <section id="section-2" class="main-preview__item main-preview__item--bg-1">
-                <h2 class="main-preview__title">Lorem</h2>
-                <p class="main-preview__descr">Lorem ipsum dolor set amet</p>
+            <figcaption class="small-card__descr-wrap">
+              <h3 class="small-card__title">red seat</h3>
+              <span class="small-card__descr">lorem ipsum dolor sit amet</span>
+              <span class="small-card__price">$45</span>
+            </figcaption>
+          </figure>
+        </a>
+        <a href="#" class="products__link small-card">
+          <figure class="small-card__container">
+            <img src="img/redseat.png" class="small-card__img">
 
-                <a href="#" class="main-preview__link ui-btn-element">view more</a>
-            </section>
+            <figcaption class="small-card__descr-wrap">
+              <h3 class="small-card__title">red seat</h3>
+              <span class="small-card__descr">lorem ipsum dolor sit amet</span>
+              <span class="small-card__price">$45</span>
+            </figcaption>
+          </figure>
+        </a>
+      </div>
 
-            <section id="section-3" class="main-preview__item main-preview__item--bg-1">
-                <h2 class="main-preview__title">Ipsum</h2>
-                <p class="main-preview__descr">Set amet dolor ipsum lorem</p>
+      <div class="products__load-more-wrap">
+        <button class="products__load-more">Show more products</button>
+      </div>
 
-                <a href="#" class="main-preview__link ui-btn-element">view more</a>
-            </section>
-
-            <section id="section-4" class="main-preview__item main-preview__item--bg-1">
-                <h2 class="main-preview__title">Ipsum</h2>
-                <p class="main-preview__descr">Set amet dolor ipsum lorem</p>
-
-                <a href="#" class="main-preview__link ui-btn-element">view more</a>
-            </section>
-
-        </div>
-
-
-        <ul class="main-preview__controls">
-            <a href="#section-1" class="main-preview__controls-dots current-dots"></a>
-            <a href="#section-2" class="main-preview__controls-dots"></a>
-            <a href="#section-3" class="main-preview__controls-dots"></a>
-            <a href="#section-4" class="main-preview__controls-dots"></a>
-
-        </ul>
-
-        <!-- ./main preview -->
-
-    </main>
-    <!-- ./maincontent -->
+    </div> <!-- ./container -->
+  </main> <!-- ./maincontent -->
 
 
-    <div class="overlay"></div>
-    <script type="text/javascript"  src="js/main.js"></script>
+    <div class="overlay "></div>
+    <div class="preloader ">
+        <div class="round1 "></div>
+    </div>
+   
+    <script type="text/javascript" src="js/main.js "></script>
 </body>
 
 </html>

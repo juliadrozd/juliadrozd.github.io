@@ -1,4 +1,3 @@
-// menu
 function mainMenu() {
     let btnMenu = document.querySelector('#menu-btn');
     let btnMenuClose = document.querySelector('#menu-close-btn');
@@ -17,5 +16,6 @@ function mainMenu() {
         setTimeout(() => { overlay.classList.remove('overlay--active') }, 250);
         overlay.removeEventListener('click', closeMenu);
     }
+
 }
-mainMenu();
+if (document.querySelector('#navigation') !== null) mainMenu();

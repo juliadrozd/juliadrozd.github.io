@@ -1,5 +1,5 @@
-// slider on home page
 function sliderSection() {
+
     const tabsBtn = document.querySelector('.main-preview__controls');
     const activeTab = 'current-section';
     const activeBtn = 'current-dots';
@@ -17,8 +17,7 @@ function sliderSection() {
         let tab = document.querySelector(selector);
         let parent = tab.closest('.main-preview');
 
-        parent.querySelector(`.${activeTab}`)
-            .classList.remove(activeTab);
+        parent.querySelector(`.${activeTab}`).classList.remove(activeTab);
         setTimeout(() => tab.classList.add(activeTab), 350);
 
     }
@@ -31,5 +30,6 @@ function sliderSection() {
             .classList.remove(activeBtn);
         li.classList.add(activeBtn);
     }
+
 }
-sliderSection();
+if (document.querySelector('#main-slider') !== null) sliderSection();

@@ -1,205 +1,224 @@
-    $body-color: #f2f2f2;
-    $basic-font: 'Lato',
-    sans-serif;
-    $accent-color: #fff;
-    * {
-        box-sizing: border-box;
+:root {
+    --body-color: #f2f2f2;
+    --basic-font: 16px 'Lato', sans-serif;
+    --accent-color: #fff;
+}
+
+$body-color: #f2f2f2;
+$basic-font: 'Lato',
+sans-serif;
+$accent-color: #fff;
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: $basic-font;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    background: $body-color;
+    overflow: hidden;
+    position: relative;
+}
+
+.maincontent {
+    height: 100vh;
+    flex: 1 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin-bottom: 0;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.overlay {
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    background: rgba(0, 0, 0, .2);
+    display: none;
+    z-index: 99999;
+}
+
+.overlay--active {
+    display: block;
+}
+
+.container {
+    margin: 0 auto;
+    position: relative;
+    z-index: 99;
+    width: 1024px;
+    height: 100%;
+    transition: width .3s ease-in-out;
+    @include responsive(1324px) {
+        width: 900px;
     }
-    
-    html,
-    body {
-        font-family: $basic-font;
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        margin: 0;
-        padding: 0;
-        background: $body-color;
-        overflow: hidden;
-        position: relative;
+    @include responsive(1210px) {
+        width: 850px;
     }
-    
-    .maincontent {
-        height: 100vh;
-        flex: 1 0;
+    @include large {
+        width: 750px;
     }
-    
-    a {
-        text-decoration: none;
-        color: #000;
+    @include medium {
+        width: 500px;
     }
-    
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p {
-        margin-bottom: 0;
-        font-weight: normal;
-        font-style: normal;
+    @include small {
+        width: 400px;
     }
-    
-    .overlay {
-        width: 100%;
-        height: 100vh;
-        padding: 0;
-        margin: 0;
-        position: fixed;
-        background: rgba(0, 0, 0, .2);
-        display: none;
-        z-index: 99999;
+    @include extraSmall {
+        width: 250px;
     }
-    
-    .overlay--active {
-        display: block;
+}
+
+.preloader {
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    background: rgba(0, 0, 0, .2);
+    display: none;
+    z-index: 99999;
+}
+
+.preloader--active {
+    display: block;
+}
+
+.round1,
+.round1:after,
+.round1:before {
+    border-radius: 50%;
+    border: 3px solid transparent;
+}
+
+.round1:after,
+.round1:before {
+    position: absolute;
+    content: '';
+}
+
+.round1 {
+    width: 150px;
+    height: 150px;
+    border-top-color: rgb(0, 30, 255);
+    position: relative;
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+    margin: 50px auto;
+}
+
+.round1:after {
+    top: 7px;
+    bottom: 7px;
+    left: 7px;
+    right: 7px;
+    border-top-color: rgb(0, 133, 177);
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+.round1:before {
+    top: 17px;
+    bottom: 17px;
+    left: 17px;
+    right: 17px;
+    border-top-color: rgb(0, 171, 235);
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+}
+
+.anti:before,
+.anti2:before {
+    -webkit-animation: antispin 0.3s linear infinite;
+    animation: antispin 0.3s linear infinite;
+    border-bottom-color: #ff1400;
+    top: 47px;
+    bottom: 47px;
+    left: 47px;
+    right: 47px;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
     }
-    
-    .container {
-        margin: 0 auto;
-        position: relative;
-        z-index: 99;
-        width: 1024px;
-        height: 100%;
-        transition: width .3s ease-in-out;
-        @include responsive(1324px) {
-            width: 900px;
-        }
-        @include responsive(1210px) {
-            width: 850px;
-        }
-        @include large {
-            width: 750px;
-        }
-        @include medium {
-            width: 500px;
-        }
-        @include small {
-            width: 400px;
-        }
-        @include extraSmall {
-            width: 250px;
-        }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-    
-    .preloader {
-        width: 100%;
-        height: 100vh;
-        padding: 0;
-        margin: 0;
-        position: fixed;
-        background: rgba(0, 0, 0, .2);
-        display: none;
-        z-index: 99999;
+}
+
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
     }
-    
-    .preloader--active {
-        display: block;
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-    
-    .round1,
-    .round1:after,
-    .round1:before {
-        border-radius: 50%;
-        border: 3px solid transparent;
+}
+
+@-webkit-keyframes antispin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
     }
-    
-    .round1:after,
-    .round1:before {
-        position: absolute;
-        content: '';
+    100% {
+        -webkit-transform: rotate(-360deg);
+        -ms-transform: rotate(-360deg);
+        transform: rotate(-360deg);
     }
-    
-    .round1 {
-        width: 150px;
-        height: 150px;
-        border-top-color: rgb(0, 30, 255);
-        position: relative;
-        -webkit-animation: spin 1s linear infinite;
-        animation: spin 1s linear infinite;
-        margin: 50px auto;
+}
+
+@keyframes antispin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
     }
-    
-    .round1:after {
-        top: 7px;
-        bottom: 7px;
-        left: 7px;
-        right: 7px;
-        border-top-color: rgb(0, 133, 177);
-        -webkit-animation: spin 2s linear infinite;
-        animation: spin 2s linear infinite;
+    100% {
+        -webkit-transform: rotate(-360deg);
+        -ms-transform: rotate(-360deg);
+        transform: rotate(-360deg);
     }
-    
-    .round1:before {
-        top: 17px;
-        bottom: 17px;
-        left: 17px;
-        right: 17px;
-        border-top-color: rgb(0, 171, 235);
-        -webkit-animation: spin 1s linear infinite;
-        animation: spin 1s linear infinite;
-    }
-    
-    .anti:before,
-    .anti2:before {
-        -webkit-animation: antispin 0.3s linear infinite;
-        animation: antispin 0.3s linear infinite;
-        border-bottom-color: #ff1400;
-        top: 47px;
-        bottom: 47px;
-        left: 47px;
-        right: 47px;
-    }
-    
-    @-webkit-keyframes spin {
-        0% {
-            -webkit-transform: rotate(0deg);
-            -ms-transform: rotate(0deg);
-            transform: rotate(0deg);
-        }
-        100% {
-            -webkit-transform: rotate(360deg);
-            -ms-transform: rotate(360deg);
-            transform: rotate(360deg);
-        }
-    }
-    
-    @keyframes spin {
-        0% {
-            -webkit-transform: rotate(0deg);
-            -ms-transform: rotate(0deg);
-            transform: rotate(0deg);
-        }
-        100% {
-            -webkit-transform: rotate(360deg);
-            -ms-transform: rotate(360deg);
-            transform: rotate(360deg);
-        }
-    }
-    
-    @-webkit-keyframes antispin {
-        0% {
-            -webkit-transform: rotate(0deg);
-            -ms-transform: rotate(0deg);
-            transform: rotate(0deg);
-        }
-        100% {
-            -webkit-transform: rotate(-360deg);
-            -ms-transform: rotate(-360deg);
-            transform: rotate(-360deg);
-        }
-    }
-    
-    @keyframes antispin {
-        0% {
-            -webkit-transform: rotate(0deg);
-            -ms-transform: rotate(0deg);
-            transform: rotate(0deg);
-        }
-        100% {
-            -webkit-transform: rotate(-360deg);
-            -ms-transform: rotate(-360deg);
-            transform: rotate(-360deg);
-        }
-    }
+}
+
+.products-auto-height {
+    min-height: 100vh;
+}
+
+.body-no-overflow {
+    min-height: 100vh;
+    overflow: scroll;
+}
+
+.container--products {
+    max-width: 1550px;
+}
