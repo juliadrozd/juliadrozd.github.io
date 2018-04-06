@@ -1,11 +1,8 @@
 window.addEventListener('DOMContentLoaded', init);
 
 function init() {
-    
-    const firstSlider = Slider('#first-slider', {
-        counter: true,
-        infinite: true,
-    });
+
+    const firstSlider = Slider('#first-slider');
 
     const tabsHover = tabs('.tabs');
 
@@ -14,6 +11,12 @@ function init() {
     const modalWindow = modal('#js-modal-btn');
 
     const accordion = accordionSection('.accordion');
+
+    const buttonsAnimation = buttonAnimate('.button-animate');
+
+    const ballAnimation = ballAnimate('#field');
+
+
 }
 
 // Menu
@@ -70,4 +73,3 @@ function gallery() {
     };
 }
 gallery();
-

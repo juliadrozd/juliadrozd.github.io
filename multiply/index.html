@@ -11,107 +11,125 @@
 </head>
 
 <body>
-
-    <section id="first" class="section">
-        <div class="nav__wrap">
-            <!--menu-->
-            <button class="nav-btn" id="js-nav-btn">
+     <!--menu-->
+    <div class="nav__wrap">
+        <button class="nav-btn" id="js-nav-btn">
             <i class="material-icons">menu</i>
         </button>
 
-            <nav id="nav" class="nav">
-                <ul class="nav__list">
-                    <li class="list__item">
-                        <a href="#first" class="nav__link">Section 1</a>
-                    </li>
+        <nav id="nav" class="nav">
+            <ul class="nav__list">
+                <li class="list__item">
+                    <a href="#first" class="nav__link">Section 1</a>
+                </li>
 
-                    <li class="list__item">
-                        <a href="#second" class="nav__link">Section 2</a>
-                    </li>
+                <li class="list__item">
+                    <a href="#second" class="nav__link">Section 2</a>
+                </li>
 
-                    <li class="list__item">
-                        <a href="#third" class="nav__link">Section 3</a>
-                    </li>
+                <li class="list__item">
+                    <a href="#third" class="nav__link">Section 3</a>
+                </li>
 
-                    <li class="list__item">
-                        <a href="#multiply" class="nav__link">Section 3</a>
-                    </li>
-
-
-                </ul>
-            </nav>
+                <li class="list__item">
+                    <a href="#multiply" class="nav__link">Section 3</a>
+                </li>
+            </ul>
+        </nav>
             <!--./menu-->
 
-            <!--modal window-->
-            <button id="js-modal-btn" class="btn-modal">
+        <!--modal window-->
+        <button id="js-modal-btn" class="btn-modal">
             <i class="material-icons">question_answer</i>
         </button>
 
-            <div class="modal alert-modal">
-                <div class="modal__content">
-                    <button id="js-modal-close" class="modal__close">
+        <div class="modal alert-modal">
+            <div class="modal__content">
+                <button id="js-modal-close" class="modal__close">
                     <i class="material-icons">highlight_off</i>
                 </button>
-                    <p class="modal__text">Lorem ipsum dolor sit amet.</p>
-                    <button id="js-modal-ok" class="modal__ok">ОК</button>
-                </div>
+                <p class="modal__text">Lorem ipsum dolor sit amet.</p>
+                <button id="js-modal-ok" class="modal__ok">ОК</button>
             </div>
-            <!--./modal window-->
-
         </div>
+            <!--./modal window-->
+    </div>
         <!--nav__wrap-->
 
+    <section class="section" id="field">
+
+        <span class="scroll">Pulse on button's click & interactive hover</span>
+        <span class="scroll">The ball is following your cursor</span>
+        
+        <!--ball animation-->
+        <div id="ball"></div>
+
+        <!--button's animation-->
+        <div class="button-animate">
+	        <a href="#" class="button-animate__link">Click me</a>
+        </div><!--./button's animation-->
+    
+    </section>
+
+
+    <!--field-->
+    <section id="second" class="section">
+        <span class="scroll">Accordion on tabs</span>
+        <!--accordion-->
+        <section class="accordion">
+            <article class="accordion__item">
+                <h3 class="accordion__title accordion__title--btn">First tab</h3>
+                <p class="accordion__descr hide"> 1 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam ab necessitatibus possimus sed itaque? Eos pariatur magnam molestias autem voluptates quis voluptatum obcaecati numquam tempore sapiente, et cum doloremque animi!</p>
+            </article>
+
+            <article class="accordion__item">
+                <h3 class="accordion__title accordion__title--btn">Second tab</h3>
+                <p class="accordion__descr hide"> 2 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam ab necessitatibus possimus sed itaque? Eos pariatur magnam molestias autem voluptates quis voluptatum obcaecati numquam tempore sapiente, et cum doloremque animi!</p>
+            </article>
+
+            <article class="accordion__item">
+                <h3 class="accordion__title accordion__title--btn">Third tab</h3>
+                <p class="accordion__descr hide"> 3 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam ab necessitatibus possimus sed itaque? Eos pariatur magnam molestias autem voluptates quis voluptatum obcaecati numquam tempore sapiente, et cum doloremque animi!</p>
+            </article>
+        </section>
+        <!--./accordion-->
+
+    <section id="third" class="section">
+        <span class="scroll">Slider with autoplay and infinite</span>
         <!--slider-->
         <div id="first-slider" class="slider">
-        <button class="slider__btn prev">
-            <i class="material-icons">keyboard_arrow_left</i>
-        </button>
-        <div class="container-wrapper">
-            <ul class="slider__container">
-                <li class="slider__item">
-                    <img src="http://www.bibleworth.com/wp-content/uploads/2013/08/christian-nature--600x200.jpg" alt="#">
-                </li>
-                <li class="slider__item">
-                    <img src="https://collegevilleinstitute.org/wp-content/uploads/2016/08/S3XBRRS2D9-600x200.jpg" alt="#">
-                </li>
-                <li class="slider__item">
-                    <img src="https://www.intuitalks.com/wp-content/uploads/rtMedia/users/129/2015/07/Gnarled-Tree-600x200.jpg" alt="#">
-                </li>
-                <li class="slider__item">
-                    <img src="https://s-ec.bstatic.com/images/city/600x200/976/97694.jpg" alt="#">
-                </li>
-            </ul>
+            <button class="slider__btn prev">
+                <i class="material-icons">keyboard_arrow_left</i>
+            </button>
+
+            <div class="container-wrapper">
+                <ul class="slider__container">
+                    <li class="slider__item">
+                        <img src="http://www.bibleworth.com/wp-content/uploads/2013/08/christian-nature--600x200.jpg" alt="#">
+                    </li>
+                    <li class="slider__item">
+                        <img src="https://collegevilleinstitute.org/wp-content/uploads/2016/08/S3XBRRS2D9-600x200.jpg" alt="#">
+                    </li>
+                    <li class="slider__item">
+                        <img src="https://www.intuitalks.com/wp-content/uploads/rtMedia/users/129/2015/07/Gnarled-Tree-600x200.jpg" alt="#">
+                    </li>
+                    <li class="slider__item">
+                        <img src="https://s-ec.bstatic.com/images/city/600x200/976/97694.jpg" alt="#">
+                    </li>
+                </ul>
+            </div>
+
+            <button class="slider__btn next">
+                <i class="material-icons">keyboard_arrow_right</i>
+            </button>
+
         </div>
-        <button class="slider__btn next">
-            <i class="material-icons">keyboard_arrow_right</i>
-        </button>
-    </div><!--./slider-->
-
-    <!--accordion-->
-    <section class="accordion">
-        <article class="accordion__item">
-            <h3 class="accordion__title accordion__title--btn">First tab</h3>
-            <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam ab necessitatibus possimus sed itaque? Eos pariatur magnam molestias autem voluptates quis voluptatum obcaecati numquam tempore sapiente, et cum doloremque animi!</p>
-        </article>
-
-        <article class="accordion__item">
-            <h3 class="accordion__title accordion__title--btn">Second tab</h3>
-            <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam ab necessitatibus possimus sed itaque? Eos pariatur magnam molestias autem voluptates quis voluptatum obcaecati numquam tempore sapiente, et cum doloremque animi!</p>
-        </article>
-
-        <article class="accordion__item">
-            <h3 class="accordion__title accordion__title--btn">Third tab</h3>
-            <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam ab necessitatibus possimus sed itaque? Eos pariatur magnam molestias autem voluptates quis voluptatum obcaecati numquam tempore sapiente, et cum doloremque animi!</p>
-        </article>
+        <!--./slider-->
     </section>
-    <!--./accordion-->
+    
+    <section id="fourth" class="section">
 
-        <span class="scroll">Scroll down or use menu</span>
-
-    </section> <!--first-->
-
-
-    <section id="second" class="section">
+        <span class="scroll">Tabs with interactive underline</span>
         <!--interactive tabs-->
         <div class="tabs">
 
@@ -172,11 +190,12 @@
 
         </div>
         <!--./interactive tabs-->
+    </section>
 
-         <span class="scroll">Scroll down or use menu</span>
-    </section> <!--./second-->
 
-    <section id="third" class="section">
+    <section id="fifth" class="section">
+
+        <span class="scroll">Slider with images from server</span>
         <!--gallery by click with images on server-->
         <div class="gallery--wrapper">
             <button class="gallery__btn" id="prev--btn">
@@ -193,20 +212,22 @@
 
         </div>
         <!--./gallery by click with images on server-->
-        <span class="scroll">Scroll down or use menu</span>
-    </section><!--./third-->
+    </section>
+    <!--./third-->
 
     <section id="multiply" class="section">
-
+        <span class="scroll">The multiply created just on js</span>
     </section>
     <div class="overlay"></div>
 
-    <script type="text/javascript" src="libs/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="libs/myslider.js"></script>
-    <script type="text/javascript" src="libs/tabsHover.js"></script>
-    <script type="text/javascript" src="libs/tableMultiply.js"></script>
-    <script type="text/javascript" src="libs/modalWindow.js"></script>
-    <script type="text/javascript" src="libs/accordion.js"></script>
+
+    <script type="text/javascript" src="js/components/ballAnimation.js"></script>
+    <script type="text/javascript" src="js/components/buttonsAnimation.js"></script>
+    <script type="text/javascript" src="js/components/myslider.js"></script>
+    <script type="text/javascript" src="js/components/tabsHover.js"></script>
+    <script type="text/javascript" src="js/components/tableMultiply.js"></script>
+    <script type="text/javascript" src="js/components/modalWindow.js"></script>
+    <script type="text/javascript" src="js/components/accordion.js"></script>
     <script src="js/main.js"></script>
 
     </head>

@@ -36,7 +36,7 @@ body {
 .scroll {
     display: block;
     text-align: center;
-    margin: 20px 0;
+    margin: 20px auto;
     font-size: 20px;
     line-height: 20px;
     font-family: 'Fira Code', sans-serif;
@@ -175,6 +175,226 @@ body {
 
 
 /*
+* Ball
+*
+*/
+
+#field {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#ball {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 70px;
+    height: 70px;
+    border: 1px solid rebeccapurple;
+    background: rebeccapurple;
+    border-radius: 50%;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    -ms-transition: all 1s;
+    transition: all 1s;
+}
+
+
+/*
+*
+* Button's animation
+*/
+
+.button-animate {
+    display: block;
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translate(-50%, 50px);
+}
+
+.button-animate__link {
+    border: 3px solid rgb(255, 102, 1);
+    font-size: 30px;
+    color: rgb(255, 102, 1);
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 250px;
+    height: 60px;
+    display: block;
+    text-align: center;
+    line-height: 60px;
+    font-family: Arial, sans-serif;
+    position: relative;
+    transition: .5s;
+    overflow: hidden;
+}
+
+.button-animate__link::before,
+.button-animate__link::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 102, 1);
+    top: 0;
+    left: -100%;
+    opacity: .5;
+    transition: .3s;
+    z-index: -1;
+}
+
+.button-animate__link::after {
+    opacity: 1;
+    transition-delay: .2s;
+}
+
+.button-animate__link:hover {
+    color: #fff;
+}
+
+.button-animate__link:hover::before,
+.button-animate__link:hover::after {
+    left: 0;
+}
+
+.pulse {
+    background-color: rebeccapurple;
+    border-radius: 50%;
+    animation: pulse 0.7s ease-out;
+    transform: scale(0);
+    position: absolute;
+}
+
+@keyframes pulse {
+    to {
+        transform: scale(2);
+        background-color: #fff;
+        opacity: 0;
+    }
+}
+
+
+/*
+*
+* Slider with autoplay and hidden images
+*/
+
+.slider {
+    display: block;
+    margin-top: 50px;
+    width: 600px;
+    margin: 100px auto;
+    position: relative;
+}
+
+.container-wrapper {
+    position: relative;
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider__container {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.slider__item {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slider__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    border: none;
+    z-index: 99;
+    cursor: pointer;
+}
+
+.slider__btn>i {
+    font-size: 40px;
+}
+
+.slider__btn.prev {
+    left: -70px;
+}
+
+.slider__btn.next {
+    right: -70px;
+}
+
+.counter-wrapper {
+    position: absolute;
+    left: 50%;
+    bottom: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+.counter-wrapper-show {
+    display: none;
+}
+
+.counter__item {
+    display: block;
+}
+
+.counter__item:not(:last-child):after {
+    content: '/';
+    margin: 0 4px;
+}
+
+
+/*
+* Accordion
+*/
+
+.accordion {
+    width: 500px;
+    margin: 20px auto;
+    border: 1px solid;
+}
+
+.accordion__title {
+    background: #f2f2f2;
+    margin: 0;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.accordion__item:not(:first-child) .accordion__title {
+    border-top: 1px solid #000;
+}
+
+.accordion__item>p {
+    padding: 5px;
+    font-size: 14px;
+}
+
+.active {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+
+/*
 *
 * Interactive tabs
 *
@@ -254,7 +474,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 100px auto;
+    margin: 20px auto;
     font-size: 0;
     height: 400px;
 }
@@ -291,104 +511,4 @@ body {
 #gallery--img {
     min-width: 500px;
     min-height: 400px;
-}
-/*
-*
-* Slider with autoplay and hidden images
-*/
-.slider {
-    width: 600px;
-    margin: 50px auto;
-    position: relative;
-    
-}
-
-.container-wrapper {
-    overflow: hidden;
-    position: relative;
-    height: 200px;
-    width: 100%;
-}
-
-.slider__container {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    display: flex;
-    transition: transform 1s ease-in-out;
-}
-
-.slider__item {
-    width: 100%;
-    height: 100%;
-}
-
-.slider__btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    border: none;
-    z-index: 99;
-    cursor: pointer;
-}
-
-.slider__btn>i {
-    font-size: 40px;
-}
-
-.slider__btn.prev {
-    left: -70px;
-}
-
-.slider__btn.next {
-    right: -70px;
-}
-
-.counter-wrapper {
-    position: absolute;
-    left: 50%;
-    bottom: -40px;
-    display: flex;
-    justify-content: center;
-}
-
-.counter__item {
-    display: block;
-}
-
-.counter__item:not(:last-child):after {
-    content: '/';
-    margin: 0 4px;
-}
-
-
-/*
-* Accordion
-*/
-
-.accordion {
-    width: 500px;
-    margin: 20px auto;
-    border: 1px solid;
-}
-
-.accordion__title {
-    background: #f2f2f2;
-    margin: 0;
-    padding: 5px;
-    cursor: pointer;
-}
-
-.accordion__item:not(:first-child) .accordion__title {
-    border-top: 1px solid #000;
-}
-
-.accordion__item>p {
-    padding: 5px;
-    font-size: 14px;
 }
