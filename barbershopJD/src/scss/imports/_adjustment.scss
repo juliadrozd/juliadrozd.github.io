@@ -4,10 +4,12 @@ $border-color: rgba(229, 221, 213, .4);
 $border-hover-color: #d5c9bd;
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    font-family: 'PTSansNarrowRegular', sans-serif;
+    font-family: 'PT Sans Narrow', sans-serif;
     font-weight: normal;
     background-color: #f8f5f2;
 }
@@ -77,8 +79,8 @@ body {
 .section-title {
     text-transform: uppercase;
     color: #000;
-    font-weight: normal;
-    font-family: 'PTSansNarrowBold';
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: 700;
     margin: 0;
     font-size: 40px;
     @include small {
@@ -93,8 +95,8 @@ body {
     text-transform: uppercase;
     text-decoration: none;
     color: #000;
-    font-weight: normal;
-    font-family: 'PTSansNarrowBold';
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: 700;
     padding: 15px 30px 13px 30px;
     border: 1px solid $border-color;
     cursor: pointer;

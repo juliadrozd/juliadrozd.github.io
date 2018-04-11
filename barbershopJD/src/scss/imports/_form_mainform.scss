@@ -1,169 +1,180 @@
 .form__content {
-	height: 100%;
-	padding: 40px 0 0 0;
-	background: #f8f5f2;
+    height: 100%;
+    padding: 40px 0 0 0;
+    background: #f8f5f2;
     top: 0;
-	font-size: 0;
+    font-size: 0;
 }
 
 .form__enroll {
-	@include flexBetween;
-	padding-top: 50px;
+    @include flexBetween;
+    padding-top: 50px;
+    position: relative;
 }
 
 .info-list-item {
-	width: 100%;
-	background-color: #ffffff;
-	border: 1px solid $border-color;
-	font-size: 22px;
-	font-family: 'PTSansNarrowRegular', sans-serif;
-	padding: 20px 0 20px 20px;
-	margin: 10px 0;
-	transition: border-color .3s ease-in-out;
-
-	&:not(:last-child) {
-		margin-right: 10px;
-	}
-
-	&:hover {
-		border: 1px solid $border-hover-color;
-	}
-
-	@include small {
-		width: 100%;
-
-		&:not(:last-child) {
-			margin-right: 0;
-		}
-	}
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid $border-color;
+    font-size: 22px;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: normal;
+    padding: 20px 0 20px 20px;
+    margin: 10px 0;
+    resize: none;
+    transition: border-color .3s ease-in-out;
+    &:not(:last-child) {
+        margin-right: 10px;
+    }
+    &:hover {
+        border: 1px solid $border-hover-color;
+    }
+    @include small {
+        width: 100%;
+        &:not(:last-child) {
+            margin-right: 0;
+        }
+    }
 }
 
 .more-info__title {
-	font-size: 24px;
-	text-align: center;
-	text-transform: uppercase;
-	color: #363534;
-	font-weight: normal;
-	margin-bottom: 60px;
-
-	&:before,
-	&:after {
-	background-color: #e5ddd5;
-    content: "";
-	display: inline-block;
-    height: 1px;
-    position: relative;
-    vertical-align: middle;
-    width: 30%;
-}
-	&:before {
-    right: 0;
-    margin:0 40px 0 0;
-
-}
-	&:after {
-    left: 0;
-     margin:0 0 0 40px;
-}
-
-	@include medium {
-		&:before,
-		&:after {
-			width: 10%;
-		}
-	}
-
-	@include small {
-		&:before,
-		&:after {
-			width: 0;
-		}
-	}
+    font-size: 24px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #363534;
+    font-weight: normal;
+    margin-bottom: 60px;
+    &:before,
+    &:after {
+        background-color: #e5ddd5;
+        content: "";
+        display: inline-block;
+        height: 1px;
+        position: relative;
+        vertical-align: middle;
+        width: 30%;
+    }
+    &:before {
+        right: 0;
+        margin: 0 40px 0 0;
+    }
+    &:after {
+        left: 0;
+        margin: 0 0 0 40px;
+    }
+    @include medium {
+        &:before,
+        &:after {
+            width: 10%;
+        }
+    }
+    @include small {
+        &:before,
+        &:after {
+            width: 0;
+        }
+    }
 }
 
 .model-list {
-	display: flex;
+    display: flex;
     justify-content: space-between;
     align-items: flex-start;
-	list-style: none;
-
-	& input[type=radio] {
-		display: none;
-	}
-
-	@include small {
-		flex-flow: row wrap;
-	}
+    list-style: none;
+    & input[type=radio] {
+        display: none;
+    }
+    @include small {
+        flex-flow: row wrap;
+    }
 }
+
 .model-icon-checked {
-	display: none;
+    display: none;
 }
+
 .model-list-item {
-	@include flexCenter;
-	flex-direction: column;
-	transition: color .3s ease-in-out;
-	transition: background-color .3s ease-in-out;
-
-	& input[type=radio]:checked  + .item-form ~ span {
-		color: $hover-color;
-	}
-	& input[type=radio]:checked  + .item-form {
-		background-color: $hover-color;
-	}
-	& input[type=radio]:checked ~ .model-icon {
-		display: none;
-	}
-
-	& input[type=radio]:checked ~ .model-icon-checked {
-		display: block;
-	}
-
-	@include small {
-		padding: 0 30px 30px 0;
-	}
+    @include flexCenter;
+    flex-direction: column;
+    transition: color .3s ease-in-out;
+    transition: background-color .3s ease-in-out;
+    & input[type=radio]:checked+.item-form~span {
+        color: $hover-color;
+    }
+    & input[type=radio]:checked+.item-form {
+        background-color: $hover-color;
+    }
+    & input[type=radio]:checked~.model-icon {
+        display: none;
+    }
+    & input[type=radio]:checked~.model-icon-checked {
+        display: block;
+    }
+    @include small {
+        padding: 0 30px 30px 0;
+    }
 }
 
 .item-form {
-	margin: 0;
-	padding: 0;
-	font-size: 0;
-	content: "";
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    content: "";
     height: 54px;
     width: 54px;
     border-radius: 50%;
-	background-color: #ffffff;
-	border: 1px solid $border-color;
-	cursor: pointer;
-	transition: border-color .3s ease-in-out;
-	transition: color .3s ease-in-out;
-	transition: background-color .3s ease-in-out;
-
-	&:hover {
-		border: 1px solid $border-hover-color;
-	}
-	&:active {
-		background-color: $active-color;
-	}
-	&:hover + .model-name {
-		color: $hover-color;	
-	}
-	&:hover ~ .model-icon {
-		display: none;
-	}
-
-	&:hover ~ .model-icon-checked {
-		display: block;
-	}
+    background-color: #ffffff;
+    border: 1px solid $border-color;
+    cursor: pointer;
+    transition: border-color .3s ease-in-out;
+    transition: color .3s ease-in-out;
+    transition: background-color .3s ease-in-out;
+    &:hover {
+        border: 1px solid $border-hover-color;
+    }
+    &:active {
+        background-color: $active-color;
+    }
+    &:hover+.model-name {
+        color: $hover-color;
+    }
+    &:hover~.model-icon {
+        display: none;
+    }
+    &:hover~.model-icon-checked {
+        display: block;
+    }
 }
 
 .model-name {
-	font-size: 22px;
-	text-transform: lowercase;
-	text-align: center;
-	color: #363534;
-	font-weight: normal;
-	padding: 35px 0 35px 0;
-	margin: 0;
-	width: 80px;
-	cursor: pointer;
+    font-size: 22px;
+    text-transform: lowercase;
+    text-align: center;
+    color: #363534;
+    font-weight: normal;
+    padding: 35px 0 35px 0;
+    margin: 0;
+    width: 80px;
+    cursor: pointer;
+}
+
+.form__alert {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-600%);
+    font-size: 20px;
+    width: 600px;
+    z-index: 999999999;
+    margin-top: 20px;
+    background: $border-hover-color;
+    padding: 20px 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    transition: transform .5s ease-in-out;
+    display: block;
+}
+
+.form__alert--show {
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -80%);
 }

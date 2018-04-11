@@ -4,10 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Borodinski</title>
-    <link rel="stylesheet" type="text/css" href="css/fonts.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="styles/main.min.css">
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
-
 </head>
 
 <body>
@@ -249,15 +247,17 @@
                             </fieldset>
 
                             <fieldset>
-                                <textarea name="comments" id="comments" placeholder="Введите свой отзыв" maxlength="400" required></textarea>
+                                <textarea name="comments" id="tfcomments" placeholder="Введите свой отзыв" maxlength="400" required></textarea>
                             </fieldset>
+
+                             <div class="testimonials__form--add--wrap">
+                                <button id="js-testemonials-add-btn" type="submit" class="testimonials__form--add">Оставить отзыв</button>
+                            </div>
                         </form>
-                        <div class="testimonials__form--add--wrap">
-                            <button id="js-testemonials-add-btn" type="submit" class="testimonials__form--add" form="js-testimonials__form">Оставить отзыв</button>
-                        </div>
+                       
                     </div>
                     <!--./testimonials__form--wrap-->
-
+            
                 </div>
 
                 <!--testimonials__slider-wrap-->
@@ -394,8 +394,8 @@
     </div>
 
     <div class="overlay"></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/script.custom.js"></script>
+ 
+    <script src="js/bundle.js"></script>
 </body>
 
 </html>

@@ -77,8 +77,8 @@
     color: #fff;
     text-transform: uppercase;
     font-size: 30px;
-    font-weight: normal;
-    font-family: 'PTSansNarrowBold';
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: 700;
     @include medium {
         width: 50%;
     }

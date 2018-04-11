@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Borodinski</title>
-    <link rel="stylesheet" type="text/css" href="css/fonts.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="styles/main.min.css">
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 
 </head>
@@ -95,17 +94,18 @@
 
                 <!--form__enroll-->
                 <section class="form__enroll">
-                    <form action="mailto:name@serv.com" enctype="text/plain" class="user-info">
+                
+                    <form id="applicationForm" class="user-info">
                         <div class="container__flex">
-                            <input class="info-list-item" type="text" value="Имя" id="name" onclick='this.value = "";'>
-                            <input class="info-list-item" type="text" value="Фамилия" id="surname" onclick='this.value = "";'>
-                            <input class="info-list-item" type="text" value="Отчество" id="middlename" onclick='this.value = "";'>
+                            <input name="nameApp" class="info-list-item" type="text" value="Имя" id="nameApp" onclick='this.value = "";' required>
+                            <input name="surnameApp" class="info-list-item" type="text" value="Фамилия" id="surnameApp" onclick='this.value = "";'>
+                            <input name="middlenameApp" class="info-list-item" type="text" value="Отчество" id="middlenameApp" onclick='this.value = "";'>
                         </div>
                         <div class="container__flex">
-                            <input class="info-list-item" type="text" value="Контактный телефон" id="phonenumber" onclick='this.value = "";'>
-                            <input class="info-list-item" type="text" value="Контактный e-mail" id="email" onclick='this.value = "";'>
+                            <input name="phoneApp" class="info-list-item" type="text" value="Контактный телефон" id="phoneApp" onclick='this.value = "";' required>
+                            <input name="emailApp" class="info-list-item" type="email" value="Контактный e-mail" id="emailApp" onclick='this.value = "";'>
                         </div>
-                        <textarea class="info-list-item" cols="1000" rows="10" onclick='this.value = "";'> Дополнительная информация для мастера
+                        <textarea name="textCommentApp" class="info-list-item" cols="1000" rows="10" id="textCommentApp" onclick='this.value = "";' required> Дополнительная информация для мастера
 						</textarea>
 
                         <!--model-list-->
@@ -113,7 +113,7 @@
                         <ul class="model-list">
                             <!--admiral-->
                             <li class="model-list-item">
-                                <input id="admiral" type="radio" value="admiral" hidden>
+                                <input id="admiral" class="model-list-item-inpt" type="radio" value="admiral" hidden>
                                 <label class="item-form" for="admiral"></label>
                                 <span class="model-name">адмирал</span>
                                 <img class="model-icon" src="img/admiral.png" alt="admiral">
@@ -123,7 +123,7 @@
 
                             <!--lesorub-->
                             <li class="model-list-item">
-                                <input id="lesorub" type="radio" value="lesorub" hidden>
+                                <input id="lesorub" class="model-list-item-inpt" type="radio" value="lesorub" hidden>
                                 <label class="item-form" for="lesorub"></label>
                                 <span class="model-name">лесоруб</span>
                                 <img class="model-icon" src="img/lesorub.png" alt="lesorub">
@@ -133,7 +133,7 @@
 
                             <!--poliarnik-->
                             <li class="model-list-item">
-                                <input id="poliarnik" type="radio" value="poliarnik" hidden>
+                                <input id="poliarnik" class="model-list-item-inpt" type="radio" value="poliarnik" hidden>
                                 <label class="item-form" for="poliarnik"></label>
                                 <span class="model-name">полярник</span>
                                 <img class="model-icon" src="img/poliarnik.png" alt="poliarnik">
@@ -143,7 +143,7 @@
 
                             <!--boiarin-->
                             <li class="model-list-item">
-                                <input id="boiarin" type="radio" value="boiarin" hidden>
+                                <input id="boiarin" class="model-list-item-inpt" type="radio" value="boiarin" hidden>
                                 <label class="item-form" for="boiarin"></label>
                                 <span class="model-name">боярин</span>
                                 <img class="model-icon" src="img/boiarin.png" alt="boiarin">
@@ -153,7 +153,7 @@
 
                             <!--mudrec-->
                             <li class="model-list-item">
-                                <input id="mudrec" type="radio" value="mudrec" hidden>
+                                <input id="mudrec" class="model-list-item-inpt" type="radio" value="mudrec" hidden>
                                 <label class="item-form" for="mudrec"></label>
                                 <span class="model-name">боярин</span>
                                 <img class="model-icon" src="img/mudrec.png" alt="mudrec">
@@ -216,11 +216,13 @@
 
 
                         <!--submit-button-->
-                        <button type="submit" formaction="" value="" class="form__send">Отправить заявку</button>
+                        <button type="submit" class="form__send">Отправить заявку</button>
                         <!--./submit-button-->
 
                     </form>
                     <!--./user-info-->
+
+                    <div class="form__alert"> Ваша заяка отправлена. Наш администратор свяжется с Вами для уточнения удобного для вас времени.</div>
                 </section>
                 <!--./form__enroll-->
             </div>
@@ -288,7 +290,8 @@
     <!--./wrapper-->
 
     <div class="overlay"></div>
-    <script src="js/script.custom.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="js/bundle.js"></script>
 </body>
 
 </html>

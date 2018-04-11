@@ -14,9 +14,9 @@
 .nav {
     @include flexBetween;
     width: 100%;
-    font-family: 'PTSansNarrowBold', sans-serif;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: 700;
     font-style: normal;
-    font-weight: normal;
     letter-spacing: .8px;
     transition: transform .2s ease-in-out;
     @include medium {
