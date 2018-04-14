@@ -29,25 +29,22 @@
                     </div>
 
                     <div class="login__form--wrap">
-
-                        <form id="js-login__form" class="login__form" action="index.html" method="get">
-                            <fieldset>
-                                <input class="login__form--btn" type="text" name="fname" id="fname" placeholder="Введите ваше имя" pattern="^[a-їґ]+$" maxlength="20">
-                                <input class="login__form--btn" type="text" name="lname" id="lname" placeholder="Введите вашу фамилию" pattern="^[а-яА-Я]+$" maxlength="20">
-                            </fieldset>
-                            <fieldset>
-                                <input class="login__form--btn" type="phone" name="phone" id="phone" placeholder="Ввудите ваш номер телефона" maxlength="30">
-                                <input class="login__form--btn" type="email" name="email" id="email" placeholder="Введите ваш e-mail" maxlength="30" required>
-                                <input class="login__form--btn" type="password" name="password" id="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="Ваш пароль" maxlength="20" required>
-                                <input class="login__form--btn" type="password" name="password" id="confirm_password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="Повторите пароль" maxlength="20" required>
-                            </fieldset>
-                        </form>
-                        <div id="js-login-btn" class="buttons">
-                            <button type="submit" class="button--login" name="button" form="js-login__form">Войти</button>
+                       <div id="login_div" class="main-div">
+                            <h3>Пользуйтесь скидками для зарегистрированных клиентов</h3>
+                            <input type="email" placeholder="Email..." id="email_field" required/>
+                            <input type="password" placeholder="Password..." id="password_field" required/>
+                            <div class="remember__wrap">
+                                <input type="checkbox" id="js-remember-btn">
+                                <label for="js-remember-btn">Запомнить меня</label>
+                            </div>
+                            <button id="js-login-form-btn">Войти</button>
+                            <button id="js-singup-form-btn">Зарегистрироваться</button>
                         </div>
 
-                        <div id="js-singin-btn" class="buttons">
-                            <button type="submit" class="button--singin" name="button">зарегистрироваться</button>
+                        <div id="user_div" class="loggedin-div">
+                            <h3>Здравствуйте! </h3>
+                            <p id="user_para">Мы ради видеть вас. Теперь Вы наш особый клиент!</p>
+                            <button id="js-logout-form-btn">Выйти</button>
                         </div>
                     </div>
                     <!--./login-->
@@ -333,6 +330,19 @@
     <!--./wrapper-->
 
     <div class="overlay"></div>
+        <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyBBbxMCRYANXjoBi81JlgO8-VWdkTRov_4",
+        authDomain: "barbershopjd-2cab8.firebaseapp.com",
+        databaseURL: "https://barbershopjd-2cab8.firebaseio.com",
+        projectId: "barbershopjd-2cab8",
+        storageBucket: "barbershopjd-2cab8.appspot.com",
+        messagingSenderId: "518963994835"
+    };
+        firebase.initializeApp(config);
+    </script>
     <script src="js/bundle.js"></script>
 </body>
 
