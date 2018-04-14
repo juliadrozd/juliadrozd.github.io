@@ -1,19 +1,6 @@
 function formApplication() {
-
-    // Initialize Firebase (ADD YOUR OWN DATA)
-    var config = {
-        apiKey: "AIzaSyBBbxMCRYANXjoBi81JlgO8-VWdkTRov_4",
-        authDomain: "barbershopjd-2cab8.firebaseapp.com",
-        databaseURL: "https://barbershopjd-2cab8.firebaseio.com",
-        projectId: "barbershopjd-2cab8",
-        storageBucket: "barbershopjd-2cab8.appspot.com",
-        messagingSenderId: "518963994835"
-    };
-    firebase.initializeApp(config);
-
     // Reference messages collection
     var applicationRef = firebase.database().ref('applications');
-
 
     // Listen for form submit
     document.getElementById('applicationForm').addEventListener('submit', submitForm);
@@ -21,7 +8,6 @@ function formApplication() {
     // Submit form
     function submitForm(e) {
         e.preventDefault();
-
 
         // Get values
         var name = getInputVal('nameApp');
@@ -57,7 +43,7 @@ function formApplication() {
         document.getElementById('applicationForm').reset();
     }
 
-    // Function to get get form values
+    // Function to get form values
     function getInputVal(id) {
         return document.getElementById(id).value;
     }
@@ -66,14 +52,14 @@ function formApplication() {
     function saveMessage(name, surname, middlename, phone, email, textComment, modelValue, extrasValue) {
         var newMessageRef = applicationRef.push();
         newMessageRef.set({
-            name: name,
-            surname: surname,
-            middlename: middlename,
-            phone: phone,
-            email: email,
-            textComment: textComment,
-            modelValue: modelValue,
-            extrasValue: extrasValue
+            name,
+            surname,
+            middlename,
+            phone,
+            email,
+            textComment,
+            modelValue,
+            extrasValue
         });
 
         // Show alert

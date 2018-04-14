@@ -12,7 +12,12 @@
     }
 }
 
-.login-btn {
+.hide--btn {
+    display: none;
+}
+
+.login-btn,
+.logout-btn {
     background: none;
     color: #fff;
     border: none;
@@ -46,17 +51,18 @@
     width: 500px;
     position: absolute;
     z-index: 999999999;
+    text-align: center;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -300%);
+    transform: translate(-50%, -500%);
     margin-top: 20px;
     background: $border-hover-color;
-    padding: 20px 0;
+    padding: 20px 20px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
     transition: transform .5s ease-in-out;
     input {
         padding: 12px 20px;
-        margin-bottom: 25px;
+        margin: 10px 0;
         width: 100%;
         outline: none;
         border: none;
@@ -80,6 +86,9 @@
         margin-top: 20px;
         padding: 0 20px;
     }
+    .hide {
+        display: none;
+    }
     button {
         display: block;
         background: $hover-color;
@@ -93,6 +102,7 @@
         font-family: 'PT Sans Narrow', sans-serif;
         font-weight: normal;
         color: white;
+        margin: 20px 0;
     }
     button:hover {
         background: #6a4d38;
@@ -106,6 +116,20 @@
         top: 0;
         left: 0;
     }
+}
+
+.remember__wrap {
+    text-align: center;
+    label {
+        display: inline-block;
+        font-weight: normal;
+    }
+}
+
+#js-remember-btn {
+    display: flex;
+    margin: 0;
+    padding: 0;
 }
 
 .login__form--wrap--show {
@@ -128,4 +152,9 @@
         left: 10%;
         transform: translate(10%, 0)
     }
+}
+
+#show-user {
+    font-weight: normal;
+    color: #fff;
 }

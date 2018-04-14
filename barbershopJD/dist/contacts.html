@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Borodinski</title>
+    <link rel="stylesheet" href="styles/main.min.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <!--header-->
+        <header class="header">
+            <div class="container container__flex">
+                <!--nav-->
+                <nav class="nav">
+
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.html" class="nav-link">Главная</a></li>
+                        <li class="nav-item"><a href="portfolio.html" class="nav-link">Наши работы</a></li>
+                        <li class="nav-item"><a href="form.html" class="nav-link">Записаться</a></li>
+                        <li class="nav-item"><a href="contacts.html" class="nav-link">Контакты</a></li>
+                    </ul>
+
+
+                    <!--login-->
+                    <div id="js-show-login-btn" class="header-btn-wrap">
+                        <button class="login-btn">Вход</button>
+                    </div>
+
+                    <div class="login__form--wrap">
+
+                        <form id="js-login__form" class="login__form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+                            <fieldset>
+                                <input class="login__form--btn" type="text" name="fname" id="fname" placeholder="Введите ваше имя" pattern="^[a-їґ]+$" maxlength="20">
+                                <input class="login__form--btn" type="text" name="lname" id="lname" placeholder="Введите вашу фамилию" pattern="^[а-яА-Я]+$" maxlength="20">
+                            </fieldset>
+                            <fieldset>
+                                <input class="login__form--btn" type="phone" name="phone" id="phone" placeholder="Ввудите ваш номер телефона" maxlength="30">
+                                <input class="login__form--btn" type="email" name="email" id="email" placeholder="Введите ваш e-mail" maxlength="30" required>
+                                <input class="login__form--btn" type="password" name="password" id="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="Ваш пароль" maxlength="20" required>
+                                <input class="login__form--btn" type="password" name="password" id="confirm_password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="Повторите пароль" maxlength="20" required>
+                            </fieldset>
+                        </form>
+                        <div id="js-login-btn" class="buttons">
+                            <button type="submit" class="button--login" name="button" form="js-login__form">Войти</button>
+                        </div>
+
+                        <div id="js-singin-btn" class="buttons">
+                            <button type="submit" class="button--singin" name="button">зарегистрироваться</button>
+                        </div>
+                    </div>
+                    <!--./login-->
+
+                </nav>
+                <!--./nav-->
+
+
+                <!--logo__mobile-->
+
+                <div class="logo__mobile">
+                    <a href="#" class="logo__mobile-link">
+                        <img src="img/logotype-mobile.png" alt="logo">
+                    </a>
+                </div>
+                <!--./logo__mobile-->
+
+                <!--menu-btn-->
+                <button class="menu-btn" id="menu-btn">
+					<svg fill="#ffffff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+						<path d="M0 0h24v24H0z" fill="none"/>
+						<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+					</svg>
+				</button>
+                <!--./menu-btn-->
+            </div>
+            <!--./container-->
+        </header>
+        <!--./header-->
+
+        <!--logo-->
+        <div class="logo-small" style="background: url('img/small-desktop.jpg') center center no-repeat; background-size: cover;">
+            <a class="logo__link" href="index.html">
+                <img src="img/logotype-desktop.svg" alt="logotype">
+            </a>
+        </div>
+        <!--./logo-->
+
+
+
+        
+        <!--maincontacts-->
+        <section class="maincontacts">
+            <div class="container">
+
+                <div class="container__flex">
+                    <h3 class="section-title">Контакты</h3>
+                    <a class="page-btn section-btn" href="index.html">На главную</a>
+                </div>
+
+
+                <!--map__section-->
+    <address class="map__section" id="mapsection">
+        <!--map-->
+        <div class="map" id="map"></div>
+        <!--./map-->
+
+        <!--map__social--list-->
+        <ul class="map__social--list container">
+            <li class="map__social--item">
+                <a class="map__social--item--link" href="#">
+                    <i class="fas fa-map-marker"></i>
+                </a>
+            </li>
+
+            <li class="map__social--item">
+                <a class="map__social--item--link" href="#">
+                    <i class="far fa-envelope"></i>
+                </a>
+            </li>
+
+            <li class="map__social--item">
+                <a class="map__social--item--link" href="#">
+                    <i class="fas fa-phone"></i>
+                </a>
+            </li> 
+        </ul><!--./map__social--list-->
+    </address>
+    <!--./map__section-->
+
+            
+
+            </div>
+            <!--./maincontacts-->
+        </section>
+        <!--./news-->
+
+        
+        <!--footer-->
+        <footer class="footer">
+            <div class="container">
+                <!--footer__wrap-->
+                <div class="footer__wrap">
+
+                    <!--footer__place-->
+                    <address class="footer__place">
+						<h1 class="place-name">Барбершоп Бородинский
+						</h1>
+						<p class="footer__contacts">г.Санкт-Петербург, ул. Большая Конюшенная 19/8</p>
+						<p class="footer__contacts">Тел.: +7 (000) 555-555-55</p>
+					</address>
+                    <!--./footer__place-->
+
+                    <!--footer__social-->
+                    <div class="footer__social">
+                        <p class="social__title">Давайте дружить!</p>
+
+                        <ul class="social-list">
+                            <li class="social-item">
+                                <a class="social__item-link" href="#">
+                                    <img src="img/insta-icon-small.png">
+                                </a>
+                            </li>
+
+                            <li class="social-item">
+                                <a class="social__item-link" href="#">
+                                    <img src="img/facebook-icon-small.png">
+                                </a>
+                            </li>
+
+                            <li class="social-item">
+                                <a class="social__item-link" href="#">
+                                    <img src="img/vk-icon-small.png">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--./footer__social-->
+
+                    <!--about-developer-->
+                    <div class="about-developer">
+                        <p class="about-dev">Разработано:</p>
+                        <a href="https://www.linkedin.com/in/juliadrozd/" class="about-link" target="_blank"> Julia__Drozd</a>
+                    </div>
+                    <!--./about-developer-->
+
+                </div>
+                <!--./footer__wrap-->
+            </div>
+            <!--./container-->
+        </footer>
+        <!--./footer-->
+
+    </div>
+
+    <div class="overlay"></div>
+    
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiHTYjcGPSMYII5WfC18UqkOOz3myM7Q8&callback=initMap"></script>
+    <script src="js/map.js"></script>
+    <script src="js/bundle.js"></script>
+</body>
+
+</html>
