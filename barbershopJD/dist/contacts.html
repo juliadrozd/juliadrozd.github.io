@@ -79,55 +79,24 @@
         </div>
         <!--./logo-->
 
-
-
-        
         <!--maincontacts-->
         <section class="maincontacts">
             <div class="container">
-
-                <div class="container__flex">
+                <div class="container__flex section-map">
                     <h3 class="section-title">Контакты</h3>
                     <a class="page-btn section-btn" href="index.html">На главную</a>
                 </div>
-
-
                 <!--map__section-->
-    <address class="map__section" id="mapsection">
-        <!--map-->
-        <div class="map" id="map"></div>
-        <!--./map-->
-
-        <!--map__social--list-->
-        <ul class="map__social--list container">
-            <li class="map__social--item">
-                <a class="map__social--item--link" href="#">
-                    <i class="fas fa-map-marker"></i>
-                </a>
-            </li>
-
-            <li class="map__social--item">
-                <a class="map__social--item--link" href="#">
-                    <i class="far fa-envelope"></i>
-                </a>
-            </li>
-
-            <li class="map__social--item">
-                <a class="map__social--item--link" href="#">
-                    <i class="fas fa-phone"></i>
-                </a>
-            </li> 
-        </ul><!--./map__social--list-->
-    </address>
-    <!--./map__section-->
-
-            
-
-            </div>
-            <!--./maincontacts-->
+                <address class="map__section" id="mapsection">
+                    <!--map-->
+                    <div id="map"></div>
+                    <!--./map-->
+                    <a class="page-btn section-btn map--btn" href="form.html">Записаться</a>
+                </address>
+                <!--./map__section-->
+            </div>    
         </section>
-        <!--./news-->
-
+   <!--./maincontacts-->
         
         <!--footer-->
         <footer class="footer">
@@ -185,7 +154,22 @@
         <!--./footer-->
 
     </div>
-
+     <script>
+      function initMap() {
+        var uluru = {lat: 59.9387942, lng: 30.323083300000008};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDM57W8cFWnjQr9eOwIXgV7_gzBAtVEH0k&callback=initMap">
+    </script>
     <div class="overlay"></div>
         <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
     <script>
@@ -200,7 +184,6 @@
     };
         firebase.initializeApp(config);
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDM57W8cFWnjQr9eOwIXgV7_gzBAtVEH0k"></script>
     <script src="js/bundle.js"></script>
 </body>
 

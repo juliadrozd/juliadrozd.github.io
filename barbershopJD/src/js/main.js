@@ -5,7 +5,6 @@ import showLogin from './components/showLogin.js';
 import login from './components/login.js';
 import addComment from './components/comments.js';
 import formApplication from './components/form.application.js';
-import mapInit from './components/map.js';
 
 //import Slider from './components/comments.slider.js';
 
@@ -18,8 +17,6 @@ function init() {
     login();
     addComment();
     formApplication();
-    mapInit();
 
-
+    // Slider();
 }
-// Slider();
