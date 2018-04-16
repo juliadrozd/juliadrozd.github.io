@@ -1,3 +1,8 @@
+import nunjucks from 'nunjucks'
+nunjucks.configure('js/templates', {
+    autoescape: true,
+});
+
 // Add comments on testimonials
 function addComment() {
     let btnAdd = document.querySelector('#js-testimonials-btn');
@@ -25,7 +30,7 @@ function addComment() {
 
     function getNewComment() {
         // Reference comments collection
-        var commentsRef = firebase.database().ref('comments');
+        let commentsRef = firebase.database().ref('comments');
 
         // Listen for form submit
         document.getElementById('js-testimonials__form').addEventListener('submit', submitForm);
@@ -35,10 +40,10 @@ function addComment() {
             e.preventDefault();
 
             // Get values
-            var photoCom = getInputVal('js-testimonials__avatar');
-            var nameCom = getInputVal('js-testimonials__name');
-            var emailCom = getInputVal('js-testimonials__email');
-            var commentsCom = getInputVal('js-testimonials__comments');
+            const photoCom = getInputVal('js-testimonials__avatar');
+            const nameCom = getInputVal('js-testimonials__name');
+            const emailCom = getInputVal('js-testimonials__email');
+            const commentsCom = getInputVal('js-testimonials__comments');
 
             // Save message
             saveComment(photoCom, nameCom, emailCom, commentsCom);
@@ -55,19 +60,22 @@ function addComment() {
 
         // Save message to firebase
         function saveComment(photoCom, nameCom, emailCom, commentsCom) {
-
-            var newMessageRef = commentsRef.push();
+            let newMessageRef = commentsRef.push();
             newMessageRef.set({ photoCom, nameCom, emailCom, commentsCom });
+            console.log();
         }
 
 
         // Create comments item
         function putComments(photoCom, nameCom, emailCom, commentsCom) {
-            let nunjucks = require('./nunjucks');
-            nunjucks.configure('dist', { autoescape: true });
+            let nunjucks = require('nunjucks');
+            nunjucks.configure('js/templates', {
+                autoescape: true,
+            });
             let container = document.querySelector('.testimonials__slider-track');
-            const content = nunjucks.render('testimonialsItem.html', { photoCom, nameCom, emailCom, commentsCom });
-            container.innerHTML += content;
+            const content = nunjucks.render('tesimonialsItem.html', { photoCom, nameCom, emailCom, commentsCom });
+            container.innerHTML = content;
+            container.appendChild(content);
 
         }
 

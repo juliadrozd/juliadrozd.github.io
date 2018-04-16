@@ -167,8 +167,9 @@
     z-index: 999999999;
     margin-top: 20px;
     background: $border-hover-color;
-    padding: 20px 20px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    padding: 40px 20px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
     transition: transform .5s ease-in-out;
     display: block;
 }

@@ -39,7 +39,7 @@ gulp.task('js', function() {
         .pipe(rename('bundle.js'))
         .pipe(gulp.dest('dist/js'))
         .pipe(browserSync.stream())
-});
+})
 
 gulp.task('html', function() {
     return gulp.src('dist/*.html')
@@ -51,8 +51,8 @@ gulp.task('html', function() {
 })
 
 gulp.task('njkTemplates', function() {
-    return gulp.src('dist/templates/*.html')
-        .pipe(gulp.dest('dist/templates'))
+    return gulp.src('src/js/templates/*.html')
+        .pipe(gulp.dest('dist/js/templates'))
 })
 
 gulp.task('reload', function() {
@@ -67,6 +67,6 @@ gulp.task('watch', ['reload', 'styles', 'js', 'html', 'njkTemplates'], function(
     gulp.watch('src/scss/**/*.scss', ['styles'])
     gulp.watch('src/js/**/*.js', ['js'])
     gulp.watch('dist/js/**/*.html', ['html'])
-    gulp.watch('dist/**/*.html', ['njkTemplates'], browserSync.reload)
+    gulp.watch('src/js/templates/*.html', ['njkTemplates'], browserSync.reload)
     gulp.watch('dist/*.html', browserSync.reload)
 });
