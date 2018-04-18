@@ -32,7 +32,7 @@ gulp.task('js', function() {
         .pipe(browserify({
             debug: true,
             transform: [babel.configure({
-                presets: ['es2015'],
+                presets: ['es2015']
             })]
         }))
         .pipe(minifyJS())
@@ -51,8 +51,8 @@ gulp.task('html', function() {
 })
 
 gulp.task('njkTemplates', function() {
-    return gulp.src('src/js/templates/*.html')
-        .pipe(gulp.dest('dist/js/templates'))
+    return gulp.src('src/js/templates/*.njk')
+        .pipe(gulp.dest('dist/'))
 })
 
 gulp.task('reload', function() {
@@ -66,7 +66,7 @@ gulp.task('reload', function() {
 gulp.task('watch', ['reload', 'styles', 'js', 'html', 'njkTemplates'], function() {
     gulp.watch('src/scss/**/*.scss', ['styles'])
     gulp.watch('src/js/**/*.js', ['js'])
-    gulp.watch('dist/js/**/*.html', ['html'])
-    gulp.watch('src/js/templates/*.html', ['njkTemplates'], browserSync.reload)
+    gulp.watch('dist/**/*.html', ['html'])
+    gulp.watch('src/js/templates/*.njk', ['njkTemplates'], browserSync.reload)
     gulp.watch('dist/*.html', browserSync.reload)
 });
