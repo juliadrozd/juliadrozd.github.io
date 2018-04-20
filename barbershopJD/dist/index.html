@@ -236,10 +236,8 @@
                     <div class="testimonials__form--wrap">
                         <form id="js-testimonials__form" class="testimonials__form" action="index.html" method="get">
                             <fieldset>
-                                <div id="avatar" class="testimonials__form-avatar">
+                                <input name="photoCom" id="js-testimonials__avatar" type="file"  value="upload" accept="image/jpeg,image/png">
 
-                                </div>
-                                <input name="photoCom" id="js-testimonials__avatar" type="file"  accept="image/jpeg,image/png">
                                 <input name="nameCom" type="text" id="js-testimonials__name" placeholder="Представтесь, пожалуйста" maxlength="20">
                             </fieldset>
                             <fieldset>
@@ -285,10 +283,10 @@
 
                 <!--testimonials__slider-dots-list-->
                 <ul class="testimonials__slider-dots-list">
-                    <li class="testimonials__slider-dots-item testimonials__slider-dots-item--active">
+                    <li class="testimonials__slider-dots-item">
                         <button class="testimonials__slider-dots-btn"></button>
                     </li>
-                    <li class="testimonials__slider-dots-item">
+                    <li class="testimonials__slider-dots-item testimonials__slider-dots-item--active">
                         <button class="testimonials__slider-dots-btn"></button>
                     </li>
                     <li class="testimonials__slider-dots-item">
@@ -361,8 +359,7 @@
     
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
     <script>
-    // Initialize Firebase
-    var config = {
+     var config = {
         apiKey: "AIzaSyBBbxMCRYANXjoBi81JlgO8-VWdkTRov_4",
         authDomain: "barbershopjd-2cab8.firebaseapp.com",
         databaseURL: "https://barbershopjd-2cab8.firebaseio.com",
@@ -370,7 +367,7 @@
         storageBucket: "barbershopjd-2cab8.appspot.com",
         messagingSenderId: "518963994835"
     };
-        firebase.initializeApp(config);
+    firebase.initializeApp(config);
     </script>
     <script src="js/bundle.js"></script>
 </body>

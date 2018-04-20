@@ -26,87 +26,73 @@ function addComment() {
     btnPutComments.addEventListener('click', getNewComment);
 
     function getNewComment() {
-        // Reference comments collection
-        let commentsRef = firebase.database().ref('comments');
 
         // Listen for form submit
         document.getElementById('js-testimonials__form').addEventListener('submit', submitForm);
 
         // Submit form function
-        function submitForm(event) {
-            event.preventDefault();
+        function submitForm(e) {
+            e.preventDefault();
 
-            // Get values
+            function saveValue() {
+                // Get elements
+                let nameCom = getInputVal('js-testimonials__name');
+                let emailCom = getInputVal('js-testimonials__email');
+                let commentsCom = getInputVal('js-testimonials__comments');
+                let photoCom;
+                // Function to get form values
+                function getInputVal(id) {
+                    return document.getElementById(id).value;
+                }
+                // Reference comments collection
+                const commentsRef = firebase.database().ref('comments');
+                const newMessageRef = commentsRef.push();
 
-            // put a photo
-            // cant to add a child in storage
+                function getValue() {
+                    // Get img
+                    let imageFile = document.getElementById('js-testimonials__avatar').files[0];
 
-            // let storageRef = firebase.storage();
-            // console.log(storageRef);
+                    //Create a storage ref
+                    const storageRef = firebase.storage().ref(imageFile.name);
 
-            // let file = document.querySelector('#js-testimonials__avatar').files[0];
-            // const photoCom = (+new Date()) + '-' + file.name;
-            // console.log(photoCom);
-
-            // // Create a reference to photoCom
-            // var imageRef = storageRef.child(photoCom).put(file);
-            // console.log(imageRef);
-
-
-            // task.then((snapshot) => {
-            //     const url = snapshot.downloadURL;
-            //     console.log(url);
-
-            //     document.querySelector('#js-testimonials__avatar').src = url;
-            //     console.log(document.querySelector('#js-testimonials__avatar'));
-
-            // }).catch((error) => {
-            //     console.error(error);
-            // });
-
-            const photoCom = getInputVal('js-testimonials__avatar');
-            const nameCom = getInputVal('js-testimonials__name');
-            const emailCom = getInputVal('js-testimonials__email');
-            const commentsCom = getInputVal('js-testimonials__comments');
-
-            // Save message
-            saveComment(photoCom, nameCom, emailCom, commentsCom);
+                    //Upload file
+                    let task = storageRef.put(imageFile);
+                    task.on('state_changed',
+                        function getURL() {
+                            const imgurl = task.snapshot.downloadURL;
+                            let photoCom = imgurl;
+                            newMessageRef.set({ photoCom, emailCom, nameCom, commentsCom });
 
 
-            // Function to get form values
-            function getInputVal(id) {
-                return document.getElementById(id).value;
+                            // Put comment to template
+                            function putComments() {
+                                let container = document.querySelector('.testimonials__slider-track');
+                                return fetch('https://barbershopjd-2cab8.firebaseio.com/comments.json')
+                                    .then(r => r.json())
+                                    .then(item => {
+                                        let commentItem = document.createElement('figure');
+                                        commentItem.className = 'testimonials__slider-item';
+                                        let content = ({ photoCom, nameCom, commentsCom });
+                                        content = nunjucks.render('testimonialsItem.njk', {
+                                            photoCom,
+                                            nameCom,
+                                            commentsCom
+                                        });
+                                        commentItem.innerHTML = content;
+                                        container.appendChild(commentItem);
+                                    })
+
+                            }
+                            putComments(); // --> reset and close
+
+                        }
+                    );
+
+                }
+                getValue();
             }
+            saveValue();
 
-            // Save message to firebase
-            function saveComment(photoCom, nameCom, emailCom, commentsCom) {
-                let newMessageRef = commentsRef.push();
-                newMessageRef.set({ photoCom, nameCom, emailCom, commentsCom });
-            }
-
-
-            // Create comments item
-            function putComments(photoCom, nameCom, emailCom, commentsCom) {
-                let container = document.querySelector('.testimonials__slider-track');
-                return fetch('https://barbershopjd-2cab8.firebaseio.com/comments.json')
-                    .then(r => r.json())
-                    .then(item => {
-                        let commentItem = document.createElement('figure');
-                        commentItem.className = 'testimonials__slider-item';
-                        let content = ({ photoCom, nameCom, emailCom, commentsCom });
-                        content = nunjucks.render('testimonialsItem.njk', {
-                            photoCom,
-                            nameCom,
-
-                            commentsCom
-                        });
-                        commentItem.innerHTML = content;
-                        container.appendChild(commentItem);
-                    })
-            }
-
-            // Put comment in container
-            putComments(photoCom, nameCom, emailCom, commentsCom);
             // Clear form after request
             document.getElementById('js-testimonials__form').reset();
 
@@ -119,4 +105,5 @@ function addComment() {
     }
 
 }
+
 if (document.querySelector('.testimonials__form--wrap') !== null) addComment();
