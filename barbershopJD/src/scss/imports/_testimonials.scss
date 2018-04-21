@@ -1,5 +1,8 @@
 .testimonials {
     margin: 115px 0 40px 0;
+    @include small {
+        margin: 40px 0 40px 0;
+    }
 }
 
 .testimonials__slider-wrap {
