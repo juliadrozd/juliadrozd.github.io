@@ -77,6 +77,12 @@ body {
 }
 
 .container__flex-small {
+    @include medium {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-flow: row nowrap;
+    }
     @include small {
         display: flex;
         justify-content: space-between;

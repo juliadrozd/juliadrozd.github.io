@@ -88,17 +88,19 @@
                 <section id="form-application" class="form__enroll">
                 
                     <form id="applicationForm" class="user-info">
-                        <div class="container__flex">
-                            <input name="nameApp" class="info-list-item" type="text" value="Имя" id="nameApp" onclick='this.value = "";' required>
-                            <input name="surnameApp" class="info-list-item" type="text" value="Фамилия" id="surnameApp" onclick='this.value = "";'>
-                            <input name="middlenameApp" class="info-list-item" type="text" value="Отчество" id="middlenameApp" onclick='this.value = "";'>
+                        <div id="user__info-wrap">
+                            <div class="container__flex">
+                            <input name="nameApp" class="info-list-item" type="text" value="Имя" id="nameApp" required>
+                            <input name="surnameApp" class="info-list-item" type="text" value="Фамилия" id="surnameApp">
+                            <input name="middlenameApp" class="info-list-item" type="text" value="Отчество" id="middlenameApp">
                         </div>
                         <div class="container__flex">
-                            <input name="phoneApp" class="info-list-item" type="text" value="Контактный телефон" id="phoneApp" onclick='this.value = "";' required>
-                            <input name="emailApp" class="info-list-item" type="email" value="Контактный e-mail" id="emailApp" onclick='this.value = "";'>
+                            <input name="phoneApp" class="info-list-item" type="text" value="Контактный телефон" id="phoneApp" required>
+                            <input name="emailApp" class="info-list-item" type="email" value="Контактный e-mail" id="emailApp">
                         </div>
-                        <textarea name="textCommentApp" class="info-list-item" cols="1000" rows="10" id="textCommentApp" onclick='this.value = "";' required> Дополнительная информация для мастера
+                        <textarea name="textCommentApp" class="info-list-item" cols="1000" rows="10" id="textCommentApp" required> Дополнительная информация для мастера
 						</textarea>
+                        </div>
 
                         <!--model-list-->
                         <h3 class="more-info__title"> Выберите модель бороды:</h3>
