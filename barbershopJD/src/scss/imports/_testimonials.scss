@@ -87,12 +87,20 @@
 }
 
 .testimonials__slider-img-wrap {
-    min-width: 250px;
+    max-width: 250px;
+    @include small {
+        min-width: 200px;
+        max-height: 100%;
+    }
 }
 
 .testimonials__slider-img {
     max-width: 100%;
     display: block;
+    @include small {
+        min-width: 200px;
+        min-height: 100%;
+    }
 }
 
 .testimonials__slider-descr-wrap {
