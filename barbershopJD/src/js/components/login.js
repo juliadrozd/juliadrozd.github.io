@@ -25,7 +25,7 @@ function login() {
             // Handle Errors here
             var errorCode = error.code;
             var errorMessage = error.message;
-            window.alert("Извините: " + errorMessage);
+            document.getElementById("login__error").innerHTML = "Извините: " + errorMessage;
 
         });
     }
@@ -48,9 +48,7 @@ function login() {
             // Handle Errors here
             var errorCode = error.code;
             var errorMessage = error.message;
-            window.alert("Извините: " + errorMessage);
-
-
+            document.getElementById("login__error").innerHTML = "Извините: " + errorMessage;
         });
     }
 
