@@ -73,4 +73,4 @@ function formApplication() {
     }
 
 }
-if (document.querySelector('#applicationForm') !== null) formApplication();
+if (document.getElementById('form-application') !== null) formApplication();

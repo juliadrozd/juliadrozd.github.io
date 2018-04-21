@@ -15,7 +15,7 @@
         <header class="header">
             <div class="container container__flex">
                 <!--nav-->
-                <nav class="nav">
+                <nav id="navigation" class="nav">
                     <ul class="nav-list">
                         <li class="nav-item"><a href="index.html" class="nav-link">Главная</a></li>
                         <li class="nav-item"><a href="portfolio.html" class="nav-link">Наши работы</a></li>
@@ -330,10 +330,10 @@
     <!--./wrapper-->
 
     <div class="overlay"></div>
-        <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
     <script>
-    // Initialize Firebase
-    var config = {
+     // Initialize Firebase
+    const config = {
         apiKey: "AIzaSyBBbxMCRYANXjoBi81JlgO8-VWdkTRov_4",
         authDomain: "barbershopjd-2cab8.firebaseapp.com",
         databaseURL: "https://barbershopjd-2cab8.firebaseio.com",
@@ -341,9 +341,9 @@
         storageBucket: "barbershopjd-2cab8.appspot.com",
         messagingSenderId: "518963994835"
     };
-        firebase.initializeApp(config);
+    firebase.initializeApp(config);
     </script>
-    <script src="js/bundle.js"></script>
+       <script src="js/bundle.js"></script>
 </body>
 
 </html>

@@ -41,6 +41,11 @@
                             <button id="js-login-form-btn">Войти</button>
                             <button id="js-singup-form-btn">Зарегистрироваться</button>
                         </div>
+                        <div id="user_div" class="loggedin-div">
+                            <h3>Здравствуйте! </h3>
+                            <p id="user_para">Мы ради видеть вас. Теперь Вы наш особый клиент!</p>
+                            <button id="js-logout-form-btn">Выйти</button>
+                        </div>
                     </div>
                     <!--./login-->
                 </nav>
@@ -84,7 +89,7 @@
                 </div>
 
                 <!--form__enroll-->
-                <section class="form__enroll">
+                <section id="form-application" class="form__enroll">
                 
                     <form id="applicationForm" class="user-info">
                         <div class="container__flex">
@@ -281,10 +286,10 @@
     <!--./wrapper-->
 
     <div class="overlay"></div>
-    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
     <script>
-    // Initialize Firebase
-    var config = {
+     // Initialize Firebase
+    const config = {
         apiKey: "AIzaSyBBbxMCRYANXjoBi81JlgO8-VWdkTRov_4",
         authDomain: "barbershopjd-2cab8.firebaseapp.com",
         databaseURL: "https://barbershopjd-2cab8.firebaseio.com",
@@ -292,9 +297,8 @@
         storageBucket: "barbershopjd-2cab8.appspot.com",
         messagingSenderId: "518963994835"
     };
-        firebase.initializeApp(config);
+    firebase.initializeApp(config);
     </script>
-    <script src="js/bundle.js"></script>
-</body>
+       <script src="js/bundle.js"></script></body>
 
 </html>

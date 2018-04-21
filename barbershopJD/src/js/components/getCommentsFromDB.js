@@ -2,6 +2,7 @@ import nunjucks from './nunjucks.js';
 
 function getCommentsFromDB() {
 
+
     // Reference comments collection
     let commentsRef = firebase.database().ref('comments/');
 
@@ -36,4 +37,4 @@ function getCommentsFromDB() {
         });
     })
 }
-getCommentsFromDB();
+if (document.getElementById('testimonials-section') !== null) getCommentsFromDB();

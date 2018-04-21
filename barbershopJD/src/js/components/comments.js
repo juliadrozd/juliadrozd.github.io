@@ -1,5 +1,6 @@
 import nunjucks from './nunjucks.js';
 
+
 // Add comments on testimonials
 function addComment() {
     let btnAdd = document.querySelector('#js-testimonials-btn');
@@ -55,8 +56,13 @@ function addComment() {
                     //Create a storage ref
                     const storageRef = firebase.storage().ref(imageFile.name);
 
+                    // Create the file metadata
+                    let metadata = {
+                        contentType: 'image/jpeg'
+                    };
+
                     //Upload file
-                    let task = storageRef.put(imageFile);
+                    let task = storageRef.put(imageFile, metadata);
                     task.on('state_changed',
                         function getURL() {
                             const imgurl = task.snapshot.downloadURL;
@@ -106,4 +112,4 @@ function addComment() {
 
 }
 
-if (document.querySelector('.testimonials__form--wrap') !== null) addComment();
+if (document.getElementById('testimonials-section') !== null) addComment();

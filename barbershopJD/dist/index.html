@@ -226,7 +226,7 @@
         <!--./news-->
 
         <!--testimonials-->
-        <section class="testimonials">
+        <section id="testimonials-section" class="testimonials">
             <div class="container">
                 <div class="container__flex">
                     <h3 class="section-title">Отзывы о нас</h3>
@@ -356,10 +356,10 @@
     </div>
 
     <div class="overlay"></div>
-    
-    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
     <script>
-     var config = {
+     // Initialize Firebase
+    const config = {
         apiKey: "AIzaSyBBbxMCRYANXjoBi81JlgO8-VWdkTRov_4",
         authDomain: "barbershopjd-2cab8.firebaseapp.com",
         databaseURL: "https://barbershopjd-2cab8.firebaseio.com",
@@ -369,7 +369,7 @@
     };
     firebase.initializeApp(config);
     </script>
-    <script src="js/bundle.js"></script>
+       <script src="js/bundle.js"></script>
 </body>
 
 </html>

@@ -9,25 +9,22 @@ function login() {
 
     btnLogin.addEventListener('click', loginEnv);
     btnSingUp.addEventListener('click', singUp);
-    btnLogout.addEventListener('click', logout);
+    btnLogout.addEventListener('click', logOut);
 
     // Add login event
     function loginEnv() {
-        const email = txtEmail.value;
-        const pass = txtPassword.value;
-
+        let email = txtEmail.value;
+        let pass = txtPassword.value;
         firebase.auth().signInWithEmailAndPassword(email, pass).catch(function(error) {
-            var user = firebase.auth().currentUser;
+            let user = firebase.auth().currentUser;
 
             if (user != null) {
-                var email_id = user.email;
+                let email_id = user.email;
                 document.getElementById("user_para").innerHTML = "Здравствуйте: " + email_id;
             }
-
             // Handle Errors here
             var errorCode = error.code;
             var errorMessage = error.message;
-
             window.alert("Извините: " + errorMessage);
 
         });
@@ -35,15 +32,17 @@ function login() {
 
     // Add sinup event
     function singUp() {
-        const email = txtEmail.value;
-        const pass = txtPassword.value;
+        let email = txtEmail.value;
+        let pass = txtPassword.value;
 
         firebase.auth().createUserWithEmailAndPassword(email, pass).catch(function(error) {
+            let user = firebase.auth();
             // Check for real email
-            if (user !== firebase.auth().currentUser) {
+            if (user == null) {
                 var email_id = user.email;
                 var pass_id = user.pass;
-                var user = firebase.auth();
+                user = firebase.auth();
+                document.getElementById("user_para").innerHTML = "Здравствуйте: " + email_id;
             }
 
             // Handle Errors here
@@ -62,7 +61,7 @@ function login() {
             document.getElementById("user_div").style.display = "block";
             document.getElementById("login_div").style.display = "none";
 
-            var user = firebase.auth().currentUser;
+            let user = firebase.auth().currentUser;
 
             if (user != null) {
                 var email_id = user.email;
@@ -80,7 +79,7 @@ function login() {
     });
 
     // Logout event
-    function logout() {
+    function logOut() {
         firebase.auth().signOut();
         document.querySelector('.login-btn').classList.remove('hide--btn');
         document.querySelector('.logout-btn').classList.add('hide--btn');
