@@ -38,6 +38,7 @@
         color: $active-color;
     }
     @include medium {
+        font-size: 20px;
         &:hover {
             color: #fff;
         }

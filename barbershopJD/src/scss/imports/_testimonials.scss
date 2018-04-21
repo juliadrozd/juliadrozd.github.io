@@ -54,6 +54,10 @@
     height: 160px;
     position: relative;
     overflow: hidden;
+    @include small {
+        display: flex;
+        flex-flow: row wrap;
+    }
 }
 
 .testimonials__slider-item {
@@ -64,6 +68,9 @@
     position: absolute;
     display: block;
     background-color: #f8f5f2;
+    @include small {
+        display: flex;
+    }
 }
 
 .testimonials__slider-title {

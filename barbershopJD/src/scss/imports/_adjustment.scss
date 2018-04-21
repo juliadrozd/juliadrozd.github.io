@@ -76,6 +76,15 @@ body {
     }
 }
 
+.container__flex-small {
+    @include small {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-flow: row nowrap;
+    }
+}
+
 .section-title {
     text-transform: uppercase;
     color: #000;
@@ -83,6 +92,10 @@ body {
     font-weight: 700;
     margin: 0;
     font-size: 40px;
+    @include medium {
+        padding-bottom: 20px;
+        font-size: 40px;
+    }
     @include small {
         padding-bottom: 20px;
     }

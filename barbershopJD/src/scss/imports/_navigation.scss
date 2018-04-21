@@ -1,12 +1,19 @@
 .menu-btn {
     padding: 0;
+    color: #fff;
     background: none;
     border: none;
     outline: none;
     width: 40px;
     height: 40px;
     display: none;
+    i {
+        font-size: 40px;
+    }
     @include medium {
+        @include flexCenter;
+    }
+    @include small {
         @include flexCenter;
     }
 }
@@ -24,7 +31,7 @@
         position: fixed;
         left: 0;
         top: 0;
-        width: 230px;
+        width: 300px;
         height: 100vh;
         background: $hover-color;
         transform: translateX(-100%);
@@ -110,6 +117,7 @@
         background: $active-color;
     }
     @include medium {
+        font-size: 22px;
         &:hover {
             color: #fff;
         }
