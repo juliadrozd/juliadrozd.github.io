@@ -8,11 +8,12 @@ function showValue() {
         let inputValue = inputItem[i].value;
         inputItem[i].addEventListener('click', () => {
             inputItem[i].value = ' ';
-            inputItem[i].addEventListener('focusout', () => {
-                if (inputItem[i].value.length === 1) {
-                    inputItem[i].value = inputValue;
-                }
-            });
+
+        });
+        inputItem[i].addEventListener('focusout', () => {
+            if (inputItem[i].value.length === 1) {
+                inputItem[i].value = inputValue;
+            }
         });
     }
 
