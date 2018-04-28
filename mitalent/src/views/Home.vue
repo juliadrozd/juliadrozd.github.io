@@ -1,4 +1,3 @@
-<!--npm run build - combine -->
 <template id="home-template">
     <div class="wrapper">
         <app-slider />
