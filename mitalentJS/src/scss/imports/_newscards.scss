@@ -1,0 +1,238 @@
+.news__grid-wrap {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cards-wrap {
+    width: 60%;
+    margin-left: 30px;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.trend-card__container {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 0 0 0 30px;
+    text-decoration: none;
+    @include flexCenter;
+    flex-flow: row nowrap;
+    width: 100%;
+    height: 300px;
+}
+
+.news__descr-trend-wrap {
+    width: 40%;
+    height: inherit;
+    margin: 0;
+    padding: 30px;
+    background: $hover-color;
+    color: #fff;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    justify-content: flex-end;
+    text-decoration: none;
+    >i {
+        transform: rotate(90deg);
+        transition: color .3s ease-in-out;
+    }
+    &:hover .news__trend--title {
+        color: $accent-color;
+    }
+    &:hover>i {
+        color: $accent-color;
+    }
+}
+
+.news__trend--title {
+    text-align: left;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 400;
+    margin: 30px 0;
+    transition: color .3s ease-in-out;
+}
+
+.news__trend--date {
+    font-size: 12px;
+}
+
+.trend__item--img {
+    width: 60%;
+    height: inherit;
+    display: block;
+    position: relative;
+    >img {
+        width: 100%;
+        height: inherit;
+    }
+}
+
+.trend-card__lable {
+    background: #fff;
+    color: $main-color;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 2px;
+    padding: 10px 30px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.large-card__container {
+    width: 30%;
+    height: 750px;
+    margin: 0 30px 0 30px;
+    @include flexBetween;
+    flex-flow: column;
+}
+
+.large__item--img {
+    width: 100%;
+    height: 650px;
+    display: block;
+    position: relative;
+    >img {
+        width: 100%;
+        height: inherit;
+    }
+}
+
+.large-card__dots--list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    position: absolute;
+    bottom: 0;
+    left: 36%;
+    >li {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: #fff;
+        cursor: pointer;
+        transition: transform .5s ease-in-out;
+        &:hover {
+            transform: scale(2.2, 2.2);
+        }
+    }
+}
+
+.large-card__dots--item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.news__descr-large-wrap,
+.news__descr-small-wrap {
+    text-decoration: none;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+}
+
+.small-card__container {
+    width: 35%;
+    height: 300px;
+    margin: 0 15px 0 15px;
+    @include flexBetween;
+    flex-flow: column;
+}
+
+.small__item--img {
+    width: 100%;
+    height: 200px;
+    display: block;
+    position: relative;
+    >img {
+        width: 100%;
+        height: inherit;
+    }
+}
+
+.medium-card__container {
+    width: 48%;
+    height: 300px;
+    margin: 0 15px 0 15px;
+    @include flexBetween;
+    flex-flow: column;
+}
+
+.medium__item--img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+    >img {
+        width: 100%;
+        height: inherit;
+    }
+}
+
+.medium-card__dots--list {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    position: absolute;
+    bottom: 40%;
+    right: 15px;
+    >li {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: #fff;
+        cursor: pointer;
+        transition: transform .5s ease-in-out;
+        &:hover {
+            transform: scale(2.2, 2.2);
+        }
+    }
+}
+
+.medium-card__dots--item:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.medium__descr-link-wrap {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 30px;
+    bottom: 50px;
+    transition: color .3s ease-in-out;
+    &:hover {
+        color: $accent-color;
+    }
+    &:hover .medium__btn {
+        border-color: $accent-color;
+    }
+}
+
+.medium__btn {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    @include flexCenter;
+    padding-left: 5px;
+    transition: border-color .3s ease-in-out;
+    >i {
+        transform: rotate(90deg);
+    }
+}
+
+.medium-descr {
+    margin-left: 20px;
+    text-transform: uppercase;
+}
