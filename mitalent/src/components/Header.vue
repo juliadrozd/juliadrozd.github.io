@@ -1,44 +1,36 @@
 <template>
     <header class="main-header">
-        <div class="container">
-            <app-nav />
-             <app-slider />
-        </div>
+        <app-nav />
+        <app-logo />
+        <app-search />
+           
     </header>
 </template>
 <script>
-import Nav from './Nav.vue'
-import Slider from './Slider.vue'
+import Nav from './Nav'
+import Search from './Search'
+import Logo from './Logo'
 
 export default {
-  data () {
-    
-  },
+  data: () => ({
+}),
   components: {
     appNav: Nav,
-    appSlider: Slider,
+    appSearch: Search,
+    appLogo: Logo,
   }
 }
 </script>
 
 <style scoped>
-    .main-header {
-        width: 100%;
-        height: 100vh;
-        margin: 0;
-        padding: 0;
-    }
-    .main-header:before {
-        content: '';
-        width: 770px;
-        height: 719px;
-        position: absolute;
-        top: 0;
-        right: 0;
-        background: rgba(119,221,211,.5);
-        z-index: -1;
-    }
-    .container {
-        margin: 60px 70px;
-    }
+.main-header {
+    width: 100%;
+    margin: 60px 0;
+    padding: 0;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 </style>

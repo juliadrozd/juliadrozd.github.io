@@ -1,19 +1,24 @@
-<template>
-    <app-header />
-    
+<!--npm run build - combine -->
+<template id="home-template">
+    <div class="wrapper">
+        <app-slider />
+        <app-talent />
+        <app-latestnews />
+    </div>
     
 </template>
 <script>
-import Header from '../components/Header.vue'
+import Slider from '../components/Slider.vue'
 import Talent from '../components/Talent.vue'
+import Latestnews from '../components/Latestnews.vue'
 
 export default {
-  data () {
-
-  },
+  data: () => ({
+}),
   components: {
-      appHeader: Header,
+      appSlider: Slider,
       appTalent: Talent,
+      appLatestnews: Latestnews,
   }
 }
 </script>
