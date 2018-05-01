@@ -2,7 +2,7 @@
 <!--Main logo-->
     <div class="main-logo">
         <a href="#" class="main-logo__link">
-            <img class="main-logo__img" src="../assets/logo.png" alt="Mitalent">
+            <img class="main-logo__img" src="/src/assets/logo.png" alt="Mitalent">
         </a>
     </div>
 <!--./Main logo-->
