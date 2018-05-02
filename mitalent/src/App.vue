@@ -8,8 +8,10 @@
         </div>
       <app-footer />
 
+       
+
     </div>
-      
+   
   </div>
 </template>
 
@@ -22,10 +24,13 @@ import News from './views/News'
 import Contacts from './views/Contacts'
 import Blog from './views/Blog'
 import About from './views/About'
+
+
 export default {
   name: 'app',
   data () {
     return {
+      
     }
   },
   components: {
@@ -37,6 +42,7 @@ export default {
     appContacts: Contacts,
     appBlog: Blog,
     appAbout: About,
+   
 
   }
 }
@@ -82,6 +88,21 @@ body {
     padding: 20px;
 }
 
+.overlay {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: block;
+    background: rgba(0, 0, 0, .4);
+    z-index: 999;
+}
+
+// .body-fixed {
+//     overflow: hidden;
+//     width: 100%;
+// }
 .section__title {
     font-family: 'Poppins', sans-serif;
     color: $main-color;
@@ -102,4 +123,27 @@ body {
         left: 46%;
     }
 }
+.address-aside__list {
+    height: 300px;
+    list-style: none;
+    padding: 0;
+    flex-flow: column wrap;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+   
+}
+
+.address-aside__link {
+    color: rgb(26, 26, 29);
+    text-decoration: none;
+    transition: color .2s ease-in-out;
+    font-size: 16px;
+    transition: color .2s ease-in-out;
+}
+
+.address-aside__link:hover {
+    color: rgb(181, 211, 211);
+}
+
 </style>

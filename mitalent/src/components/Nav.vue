@@ -3,11 +3,13 @@
             <nav id="navigation" class="nav">
                 <ul class="nav__list">
                     <li class="nav__item">
-                        <button @click="show = !show" id="menuBtn" class="nav__link--btn">
+                        <button @click="showMenu" id="menuBtn" class="nav__link--btn">
                             <i class="material-icons">menu</i>
                         </button>
                     </li>
-
+                    <li class="nav__item to__home">
+                        <app-back-to-index v-if="$route.name !== 'Home'"/>
+                    </li>
                     <li class="nav__item" v-for="(item, key) in nav" :key="key">
                         <router-link :to="item.path" class="nav__link"
                                     router-link-active exact>
@@ -18,40 +20,65 @@
                 <!--./Main navigation-->
 
                 <!--Aside navigation-->
-                <div v-if="show" id="js-nav__aside" class="nav__aside nav-active">
-                    <ul class="nav__aside--list">
-                        <li class="nav__aside--item" v-for="(item, key) in aside" :key="key">
-                            <router-link :to="item.path" class="nav__aside--link"
+                <transition name="slide-down">
+                    <div  v-if="isShowAside" id="js-nav__aside" class="nav__aside">
+                        <ul class="nav__aside--list">
+                            <li class="nav__aside--item" v-for="(item, key) in aside" :key="key">
+                                <router-link :to="item.path" class="nav__aside--link"
                                     router-link-active exact>
                                     {{ item.title }}
-                            </router-link>
-                        </li>
-                    </ul>
-                </div>
+                                </router-link>
+                            </li>
+                        </ul>
+                    </div>
+                </transition>
                 <!--./Aside navigation-->
+                <div v-if="isShowOverlay" @click="closeMenu" class="overlay"></div>
             </nav>
 </template>
 <script>
+import BackToIndex from './BackToIndex'
 export default {
     data () {
     return {
-        nav: [
+    nav: [
         { title: 'Clients', path: '/clients' },
         { title: 'News', path: '/news' },
        
       ],
-      aside: [ 
+    aside: [ 
         { title: 'Home', path: '/' },
         { title: 'Contacts', path: '/contacts' },
         { title: 'Blog', path: '/blog' },
-        { title: 'About', path: '/about'},],
-      show: false,
+        { title: 'About', path: '/about'},
+        ],
+    isShowAside: false,
+    isShowBth: false,
+    isShowOverlay:false,
     }
-  }
+  },
+
+  methods: { 
+        showMenu() {
+          this.isShowAside = this.isShowAside;
+          this.isShowOverlay = this.isShowOverlay;
+        if (this.isShowAside = true) {
+            this.isShowOverlay = true;
+        }
+      },
+      closeMenu() {
+            this.isShowAside = false;
+            setTimeout(() => { this.isShowOverlay = false; }, 250);
+      }
+  },
+  components: {
+          appBackToIndex: BackToIndex,
+      }
 }
 </script>
 
 <style lang="scss" scoped>
+@import './mixins/_mixins.scss';
 .nav {
     font-weight: 700;
     display: flex;
@@ -107,19 +134,22 @@ export default {
     flex-flow: column wrap;
     justify-content: flex-start;
     align-items: center;
-    width: 250px;
+    width: 300px;
     height: 100vh;
     background: #fff;
-    z-index: 999;
-    top: 60px;
+    z-index: 99999;
+    top: -60px;
+    left: -30px;
     box-shadow: 5px 0 5px -5px rgba(0, 0, 0, 0.23);
     padding: 40px 20px;
+    transition: transform .3s ease-in-out;
 }
 
 .nav__aside--list {
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 60px 0 0 0;
+
 }
 
 .nav__aside--item:not(:last-child) {
@@ -140,5 +170,11 @@ export default {
 .nav__aside--link:hover {
     color: rgb(181, 211, 211);
 }
+.router-link-active {
+    color: $hover-color;
+}
+.slide-down-enter, .slide-down-leave-active {
+    transform: translateX(-100%);
+  }
 </style>
 

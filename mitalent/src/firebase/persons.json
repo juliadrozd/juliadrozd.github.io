@@ -1,0 +1,5 @@
+[
+    { "name": "Georgina Alson", "category": "model", "about": "young model 2020", "fb": "www.facebook.com/1", "insta": "www.instagram.com/1", "tw": "www.twitter.com/1", "youtube": "www.youtube.com/1", "imgPath": "https://firebasestorage.googleapis.com/v0/b/mitalent-b73e5.appspot.com/o/women1.jpg?alt=media&token=f3029bb3-dbb6-4720-b2db-d30bc6a19f83", "id": 1 },
+    { "name": "Derek Weelson", "category": "actor", "about": "the best actor 2001", "fb": "www.facebook.com/2", "insta": "www.instagram.com/2", "tw": "www.twitter.com/2", "youtube": "www.youtube.com/1", "imgPath": "https://firebasestorage.googleapis.com/v0/b/mitalent-b73e5.appspot.com/o/men.jpg?alt=media&token=46de70a6-8086-4303-9285-cffe60aba6f4", "id": 2 }
+
+]

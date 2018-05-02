@@ -1,169 +1,35 @@
 <template>
-  <!--talent__content-->
-        <div class="talent__content">
-
             <figure class="talent__img-container">
                 <span class="talent__img">
-					<img src="../assets/women2.jpg" alt="img">
+					<img :src="profilesData.imgPath" alt="img">
 				</span>
                 <figcaption class="talent__hover hover-overlay-params">
-                    <a href="#" class="talent__hover-link">
+                    <a href="#" class="talent__hover-link" @click="onOpenPerson">
                         <div class="talent__icon--wrap">
                             <span class="talent__icon">
 								<i class="material-icons">call_made</i>
 							</span>
                         </div>
                         <div class="talent__descr--wrap">
-                            <p class="talent__descr">Jenny Garder</p>
-                            <span class="talent__category">Model</span>
+                            <p class="talent__descr">{{ profilesData.name }}</p>
+                            <span class="talent__category">{{ profilesData.category }}</span>
                         </div>
                     </a>
                 </figcaption>
             </figure>
-
-            <figure class="talent__img-container">
-                <span class="talent__img">
-					<img src="../assets/men1.jpg" alt="img">
-				</span>
-                <figcaption class="talent__hover hover-overlay-params">
-                    <a href="#" class="talent__hover-link">
-                        <div class="talent__icon--wrap">
-                            <span class="talent__icon">
-								<i class="material-icons">call_made</i>
-							</span>
-                        </div>
-                        <div class="talent__descr--wrap">
-                            <p class="talent__descr">Jenny Garder</p>
-                            <span class="talent__category">Model</span>
-                        </div>
-                    </a>
-                </figcaption>
-            </figure>
-
-            <figure class="talent__img-container">
-                <span class="talent__img">
-					<img src="../assets/women3.jpg" alt="img">
-				</span>
-                <figcaption class="talent__hover hover-overlay-params">
-                    <a href="#" class="talent__hover-link">
-                        <div class="talent__icon--wrap">
-                            <span class="talent__icon">
-								<i class="material-icons">call_made</i>
-							</span>
-                        </div>
-                        <div class="talent__descr--wrap">
-                            <p class="talent__descr">Jenny Garder</p>
-                            <span class="talent__category">Model</span>
-                        </div>
-                    </a>
-                </figcaption>
-            </figure>
-
-            <figure class="talent__img-container">
-                <span class="talent__img">
-					<img src="../assets/men2.jpg" alt="img">
-				</span>
-                <figcaption class="talent__hover hover-overlay-params">
-                    <a href="#" class="talent__hover-link">
-                        <div class="talent__icon--wrap">
-                            <span class="talent__icon">
-								<i class="material-icons">call_made</i>
-							</span>
-                        </div>
-                        <div class="talent__descr--wrap">
-                            <p class="talent__descr">Jenny Garder</p>
-                            <span class="talent__category">Model</span>
-                        </div>
-                    </a>
-                </figcaption>
-            </figure>
-
-            <figure class="talent__img-container">
-                <span class="talent__img">
-					<img src="../assets/women4.jpg" alt="img">
-				</span>
-                <figcaption class="talent__hover hover-overlay-params">
-                    <a href="#" class="talent__hover-link">
-                        <div class="talent__icon--wrap">
-                            <span class="talent__icon">
-						    <i class="material-icons">call_made</i>
-						    </span>
-                        </div>
-                        <div class="talent__descr--wrap">
-                            <p class="talent__descr">Jenny Garder</p>
-                            <span class="talent__category">Model</span>
-                        </div>
-                    </a>
-                </figcaption>
-            </figure>
-
-            <figure class="talent__img-container">
-                <span class="talent__img">
-					<img src="../assets/men3.jpg" alt="img">
-				</span>
-                <figcaption class="talent__hover hover-overlay-params">
-                    <a href="#" class="talent__hover-link">
-                        <div class="talent__icon--wrap">
-                            <span class="talent__icon">
-								<i class="material-icons">call_made</i>
-							</span>
-                        </div>
-                        <div class="talent__descr--wrap">
-                            <p class="talent__descr">Jenny Garder</p>
-                            <span class="talent__category">Model</span>
-                        </div>
-                    </a>
-                </figcaption>
-            </figure>
-
-            <figure class="talent__img-container">
-                <span class="talent__img">
-					<img src="../assets/women5.jpg" alt="img">
-				</span>
-                <figcaption class="talent__hover hover-overlay-params">
-                    <a href="#" class="talent__hover-link">
-                        <div class="talent__icon--wrap">
-                            <span class="talent__icon">
-								<i class="material-icons">call_made</i>
-							</span>
-                        </div>
-                        <div class="talent__descr--wrap">
-                            <p class="talent__descr">Jenny Garder</p>
-                            <span class="talent__category">Model</span>
-                        </div>
-                    </a>
-                </figcaption>
-            </figure>
-
-            <figure class="talent__img-container">
-                <span class="talent__img">
-					<img src="../assets/men4.jpg" alt="img">
-				</span>
-                <figcaption class="talent__hover hover-overlay-params">
-                    <a href="#" class="talent__hover-link">
-                        <div class="talent__icon--wrap">
-                            <span class="talent__icon">
-								<i class="material-icons">call_made</i>
-						    </span>
-                        </div>
-                        <div class="talent__descr--wrap">
-                            <p class="talent__descr">Jenny Garder</p>
-                            <span class="talent__category">Model</span>
-                        </div>
-                    </a>
-                </figcaption>
-            </figure>
-        </div>
-        <!--./talent__content-->
 </template>
-<style lang="scss" scoped>
-.talent__content {
-    font-family: 'Poppins', sans-serif;
-    margin-top: 35px;
-    display: flex;
-    flex-flow: row wrap;
-}
+<script>
+export default {
+  props: ['profilesData'],
+  methods: {
+      onOpenPerson() {
 
+       this.$router.push(`/profile/${this.profilesData.id}`);
+    },
+  }
+}
+</script>
+<style lang="scss" scoped>
 .talent__img-container {
     margin: 0;
     padding: 0;
@@ -180,12 +46,13 @@
     width: 100%;
     >img {
         display: block;
-        width: 350px;
+        width: 325px;
         height: 380px;
     }
 }
 
 .talent__hover {
+    width: 325px;
     cursor: pointer;
     transform: rotateY(180deg);
     backface-visibility: hidden;

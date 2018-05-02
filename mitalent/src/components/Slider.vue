@@ -1,147 +1,157 @@
 <template id="slider-section">
-    <section class="main-slider">
-        <div class="container">
-            <app-social />
-        <button class="main-slider__btn">
-            <span class="main-slider__btn--descr">View profile</span>
-            <span class="main-slider__btn--icon">
-                <i class="material-icons">change_history</i>
-            </span>
-        </button>
+    <section id="main-slider" class="main-slider">
+        <div class="slider-wrap" 
+        v-show="person.id !== 1 ? isShowPerson : !isShowPerson" 
+        v-for="(person, key) in renderPersons" :key="key">
+            <div class="slider-social-wrap">
+                <address class="address-aside">
+                    <ul class="address-aside__list">
+                        <li class="address-aside__item">
+                            <a :href="person.fb" class="address-aside__link" target="_blank">
+                                <i class="fa fa-facebook-official"></i>
+                            </a>
+                        </li>
+                        <li class="address-aside__item">
+                            <a :href="person.insta" class="address-aside__link" target="_blank">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="address-aside__item">
+                            <a :href="person.youtube" class="address-aside__link" target="_blank">
+                                <i class="fa fa-youtube-play"></i>
+                            </a>
+                        </li>
+                        <li class="address-aside__item">
+                            <a :href="person.tw" class="address-aside__link" target="_blank">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li> 
+                    </ul>
+                    <div class="address-aside__counter">{{ "0"+ person.id }}</div>
+                </address>
+            
+                <app-to-profile :personsData="person"/>
+            </div>
+
+            <div class="figure--wrap" id="js-figures">
+                <app-person :personsData="person"/> 
+            </div>
+            
         </div>
-
-        <div class="figure--wrap">
-            <figure class="main-slider__item">
-            <img class="main-slider__img" src="../assets/women1.jpg" alt="img">
-
-             <figcaption class="main-slider__txt">
-                <span class="main-slider__title">Georgina Alson</span>
-                <span class="main-slider__descr">Young model 2020</span>
-            </figcaption>
-        </figure>
         <ul class="main-content__counter--list">
-            <li class="main-content__counter--item">01</li>
-            <li class="main-content__counter--item main-content__counter--item--active">02</li>
-            <li class="main-content__counter--item">03</li>
+            <li class="main-content__counter--item" 
+            v-for="(person, key) in renderPersons" :key="key"
+             :class="{active : person.id === 1}"
+             @click="mainSlider($event)"
+            >{{ "0" + person.id }}</li>
         </ul>
-        </div>
 
     </section>
   
 </template>
 <script>
 import Social from './Social'
+import Person from './Person'
+import firebase from 'firebase'
+import toPtofile from './toProfile'
 
 export default {
-  data: () => ({
-}),
+     props: {
+        myQuery: {
+            type: String,
+            default: '',
+        }
+    },
+    data () {
+        return {
+        ref: 'https://mitalent-b73e5.firebaseio.com/persons.json',
+        persons: [],
+        isShowPerson: false,
+        isCounterActive: 'active',
+
+      }
+    },
+   methods: {
+    getPersons: function() {
+       this.$http.get(this.ref)
+       .then((result) => {
+            this.persons = result.data;
+       }).catch((err) => {
+           //error
+       });
+    },
+    
+     mainSlider: function(e) {
+        let counter = document.getElementsByClassName('main-content__counter--item');
+        for (let i = 0; counter[i]; i++ ) {
+           counter[i].classList.remove('active');
+        }
+         let currentId = e.target;
+            currentId.classList.add('active');
+           
+        
+    }
+    
+    },
+   
+  computed: {
+       renderPersons () {
+        return this.persons.filter(person => { 
+        return person.name.indexOf(this.myQuery) > -1
+    })
+    },
+  },
   components: {
     appSocial: Social,
-
+    appPerson: Person,
+    appToProfile: toPtofile,
+    
+  },
+  created: function() {
+      this.getPersons()
   }
 }
 </script>
 
 <style lang="scss" scoped>
+@import './mixins/_mixins.scss';
 .main-slider {
     width: 100%;
-    margin-top: 100px;
+    overflow: hidden;
+    margin: 0;
+    position: relative;
     display: flex;
-    align-items: flex-end;
+    flex-flow: column nowrap; 
     
 }
-.main-slider:before {
-        content: '';
-        width: 770px;
-        height: 719px;
-        position: absolute;
-        top: 0;
-        right: 0;
-        background: rgba(119,221,211,.5);
-        z-index: -1;
-    }
-
-.main-slider__btn {
-    display: flex;
-    height: 80px;
-    width: 300px;
-    border: none;
-    outline: none;
-    background: none;
-    padding: 0;
-    font-size: 20px;
-    text-transform: uppercase;
-    z-index: 999;
-    cursor: pointer;
-    
-    &:hover .main-slider__btn--descr {
-        background: rgba(45, 47, 51, 0.9);
-        color: rgba(119,221,211,1);
-    }
-    &:hover .main-slider__btn--icon {
-        color: rgba(119,221,211,1);
-    }
-
-}
-.main-slider__btn--descr {
-    width: 70%;
-    height: inherit;
-    background: rgba(119,221,211,1);
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: color .3s ease-in-out;
-    transition: background .3s ease-in-out;
-}
-.main-slider__btn--icon {
-    color: rgba(45, 47, 51, 0.9);
-    background: #fff;
-    width: 30%;
-    height: inherit;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: color .3s ease-in-out;
-    > i {
-        transform: rotate(90deg);
-    }
-}
-.main-slider__item {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+.slider-wrap {
     position: relative;
-}
-.figure--wrap {
-    position: relative;
-}
-.main-slider__img {
-    margin: 0;
-    padding: 0;
-    width: 90%;
-    height: 100%;
-    position: relative;
-    left: -45px;
-    transform: translateX(-45px);
-    z-index: -1;
-}
-.main-slider__txt {
-    position: absolute;
-    left: -150px;
     display: flex;
     flex-flow: column nowrap;
+    justify-content: flex-end;
+    height: inherit;
+} 
+.address-aside {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 0 40px 0;
+    font-style: normal;
+    font-weight: 700;
+    height: 400px;
 }
-.main-slider__title {
-    font-size: 70px;
-    width: 50px;
+.address-aside__counter {
+    margin-top: 0;
+    transform: rotate(-90deg);
 }
-.main-slider__descr {
-    margin-top: 20px;
-    text-transform: uppercase;
+
+.figure--wrap {
+    position: relative;
+    width: 100%;
 }
+
+
 .main-content__counter--list {
     margin: 0;
     padding: 40px 40px;
@@ -155,7 +165,7 @@ export default {
     font-weight: 700;
     font-size: 10px;
     position: absolute;
-    right: -60px;
+    right: 0;
     bottom: 0;
 }
 .main-content__counter--item {
@@ -163,26 +173,31 @@ export default {
     transition: color .2s ease-in-out;
     cursor: pointer;
     position: relative;
+    transition: color .3s linear;
 }
-.main-content__counter--item--active {
+.active {
     color: #000;
 }
-.main-content__counter--item--active:after,
-.main-content__counter--item--active:before {
+.active:after,
+.active:before {
     position: absolute;
     content: '';
-    width: 20px;
-    border-bottom: 2px solid #000;
+    width: 0;
+    height: 2px;
     top: 50%;
-    transition: width .2s ease-in-out;
+    background: $accent-color;
+    transition: background 3s linear;
 }
-.main-content__counter--item--active:after {
+.active:after {
     left: 60px;
 }
-.main-content__counter--item--active:before {
+.active:before {
      right: 60px;
 }
-
+.active:after,
+.active:before {
+    width: 20px;
+}
 .main-content__counter--item:hover {
     color: #000;
 }

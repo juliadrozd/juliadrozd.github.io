@@ -14,6 +14,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    &:hover .header__search--field {
+        border-bottom: 1px solid rgba(255, 255, 255, .3);
+    }
+    &:hover .header__search--btn {
+        color: rgba(255, 255, 255, .3);
+    }
 }
 
 .header__search--field {
@@ -27,6 +34,10 @@
     outline: none;
     background: none;
     cursor: pointer;
+    transition: color .3s ease-in-out;
+    &:hover {
+        color: rgba(255, 255, 255, .3);
+    }
 }
 </style>
 

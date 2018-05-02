@@ -3,11 +3,7 @@
         <app-social />
 
         <section class="categories">
-          <div class="categories-wrap">
-            <app-categories />
-          </div>
-
-          <app-cards />
+          <app-talent />
         </section>
         <!--news-->
         <section class="news container">
@@ -23,8 +19,7 @@
 <script>
 
 import Social from '../components/Social'
-import Categories from '../components/Categories'
-import Cards from '../components/Cards'
+import Talent from '../components/Talent.vue'
 import Articles from '../components/Articles'
 
 export default {
@@ -32,8 +27,7 @@ export default {
 }),
   components: {
       appSocial: Social,
-      appCategories: Categories,
-      appCards: Cards,
+      appTalent: Talent,
       appArticles: Articles,
 
   }

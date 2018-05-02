@@ -31,6 +31,17 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
+.main-header:before {
+        content: '';
+        width: 770px;
+        height: 719px;
+        position: absolute;
+        top: -300px;
+        right: -60px;
+        background: rgba(119,221,211,.5);
+        z-index: -1;
+    }
 
 </style>

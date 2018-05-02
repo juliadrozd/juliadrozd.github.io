@@ -1,5 +1,5 @@
 <template id="home-template">
-    <div class="wrapper">
+    <div class="home">
         <app-slider />
         <app-talent />
         <app-latestnews />

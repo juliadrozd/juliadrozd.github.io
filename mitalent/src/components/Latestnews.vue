@@ -20,6 +20,7 @@ export default {
 }),
   components: {
       appNewscards: Newscards,
+      appArticles: Articles,
   }
 }
 </script>

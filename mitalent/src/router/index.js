@@ -6,6 +6,7 @@ import News from '../views/News'
 import Contacts from '../views/Contacts'
 import Blog from '../views/Blog'
 import About from '../views/About'
+import Profile from '../views/Profile'
 
 Vue.use(VueRouter);
 
@@ -18,6 +19,7 @@ export default new VueRouter({
         { path: '/contacts', component: Contacts, name: 'Contacts' },
         { path: '/blog', component: Blog, name: 'Blog' },
         { path: '/about', component: About, name: 'About' },
+        { path: '/profile/:id', component: Profile, name: 'Profile' },
         { path: '*', redirect: '/home' }
     ],
 })

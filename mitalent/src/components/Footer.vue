@@ -59,6 +59,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+@import './mixins/_mixins.scss';
 .main-footer {
     width: 100%;
     margin: 50px 0 0 0;
@@ -118,6 +119,10 @@ export default {
             > a {
                 text-decoration: none;
                 color: rgb(26, 26, 29);
+                transition: color .3s ease-in-out;
+                &:hover {
+                    color: $hover-color;
+                }
             }
         }
     }

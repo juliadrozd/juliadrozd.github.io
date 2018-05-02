@@ -187,7 +187,7 @@
         cursor: pointer;
         transition: transform .5s ease-in-out;
         &:hover {
-            transform: scale(2.2, 2.2);
+            transform: scale(2);
         }
     }
 }
@@ -263,7 +263,7 @@
         cursor: pointer;
         transition: transform .5s ease-in-out;
         &:hover {
-            transform: scale(2.2, 2.2);
+            transform: scale(2);
         }
     }
 }
