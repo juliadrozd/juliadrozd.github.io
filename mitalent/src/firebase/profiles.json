@@ -1,0 +1,57 @@
+[{
+        "about": "young model 2020",
+        "category": "musicial",
+        "id": 1,
+        "imgPath": "https://firebasestorage.googleapis.com/v0/b/mitalent-b73e5.appspot.com/o/newsB1.jpg?alt=media&token=a0174ff8-78e6-4e29-845f-eb4768e03120",
+        "name": "Garold Down"
+    }, {
+        "about": "young model 2020",
+        "category": "comedial",
+        "id": 2,
+        "imgPath": "https://firebasestorage.googleapis.com/v0/b/mitalent-b73e5.appspot.com/o/women5.jpg?alt=media&token=667954df-47de-431f-803f-b5ffb266c04b",
+        "name": "Monica Garrow"
+    }, {
+        "about": "young model 2020",
+        "category": "model",
+        "id": 3,
+        "imgPath": "https://firebasestorage.googleapis.com/v0/b/mitalent-b73e5.appspot.com/o/newsB3.jpg?alt=media&token=3c86cb21-8248-4189-81ac-237595d354bb",
+        "name": "Patrik Jonhs"
+    },
+    {
+        "about": "young model 2020",
+        "category": "model",
+        "id": 4,
+        "imgPath": "https://firebasestorage.googleapis.com/v0/b/mitalent-b73e5.appspot.com/o/men1.jpg?alt=media&token=fff66e03-9f3e-454f-a85a-443a4f3b8eaa",
+        "name": "Sedrik Honor"
+    }, {
+        "about": "young model 2020",
+        "category": "actor",
+        "id": 5,
+        "imgPath": "https://firebasestorage.googleapis.com/v0/b/mitalent-b73e5.appspot.com/o/women2.jpg?alt=media&token=1427b2b9-0e49-4a6a-9039-c1f704e10b67",
+        "name": "Carolina White"
+    }, {
+        "about": "young model 2020",
+        "category": "musicial",
+        "id": 6,
+        "imgPath": "https://firebasestorage.googleapis.com/v0/b/mitalent-b73e5.appspot.com/o/men3.jpg?alt=media&token=6fd813d5-9489-4e07-92ae-52752229343b",
+        "name": "Alex Browns"
+    }, {
+        "about": "young model 2020",
+        "category": "comedial",
+        "id": 7,
+        "imgPath": "https://firebasestorage.googleapis.com/v0/b/mitalent-b73e5.appspot.com/o/women3.jpg?alt=media&token=8c00f710-32cb-4561-b3f3-8fb04a7b1284",
+        "name": "Jenny Sabbins"
+    }, {
+        "about": "young model 2020",
+        "category": "model",
+        "id": 8,
+        "imgPath": "https://firebasestorage.googleapis.com/v0/b/mitalent-b73e5.appspot.com/o/men4.jpg?alt=media&token=8f22a0b4-285e-4276-a9b7-f10f73dcd8dd",
+        "name": "Harold Henk"
+    }, {
+        "about": "young model 2020",
+        "category": "actor",
+        "id": 9,
+        "imgPath": "https://firebasestorage.googleapis.com/v0/b/mitalent-b73e5.appspot.com/o/women4.jpg?alt=media&token=f731a2ff-c995-4a1a-9d82-a36ec6aad6d2",
+        "name": "Julia Gerrows"
+    }
+]

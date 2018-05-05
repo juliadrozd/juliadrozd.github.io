@@ -9,7 +9,7 @@
 <!--./Header search-->
 </template>
 <style lang="scss" scoped>
-
+@import './mixins/_mixins.scss';
 .header__search {
     display: flex;
     justify-content: center;
@@ -18,8 +18,10 @@
     &:hover .header__search--field {
         border-bottom: 1px solid rgba(255, 255, 255, .3);
     }
-    &:hover .header__search--btn {
-        color: rgba(255, 255, 255, .3);
+    @include  small {
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 20px;
     }
 }
 

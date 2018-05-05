@@ -9,17 +9,17 @@
         props: ['personsData'],
         data() {
             return {
-                    n: 1,
+                    n: '',
             }
       
         },
         watch: {
             '$route': function (newValue, oldValue) {
-                console.log(newValue);
             },
         },
         created() {
         this.id = this.$route.params;
+        
         }
     }
 </script>

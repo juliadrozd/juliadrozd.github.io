@@ -34,12 +34,12 @@
         </div>
 </template>
 <style lang="scss" scoped>
+@import './mixins/_mixins.scss';
 .news__content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-flow: row wrap;
-    width: 1300px;
     margin: 0 auto;
 }
 
@@ -50,6 +50,12 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
+    @include medium {
+        width: 50%;
+    }
+    @include small {
+        width: 100%;
+    }
 }
 
 .news__item--img {

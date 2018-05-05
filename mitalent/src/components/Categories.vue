@@ -20,6 +20,7 @@
     width: 100%;
     list-style: none;
     justify-content: center;
+    padding: 0;
 }
 
 .talent-nav__item:not(:last-child) {

@@ -22,7 +22,8 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import './mixins/_mixins.scss';
 .main-header {
     width: 100%;
     margin: 60px 0;
@@ -32,16 +33,14 @@ export default {
     justify-content: space-between;
     align-items: center;
     position: relative;
-}
-.main-header:before {
-        content: '';
-        width: 770px;
-        height: 719px;
-        position: absolute;
-        top: -300px;
-        right: -60px;
-        background: rgba(119,221,211,.5);
-        z-index: -1;
+    z-index: 999;
+    @include  small {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0 0 0;
     }
+}
 
 </style>

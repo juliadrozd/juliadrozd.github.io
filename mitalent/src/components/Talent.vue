@@ -64,7 +64,7 @@ export default {
 @import './mixins/_mixins.scss';
 .talent {
     text-align: center;
-    margin-top: 50px;
+    margin: 50px -35px;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -76,9 +76,7 @@ export default {
     flex-flow: row wrap;
     justify-content: center;
 }
-.talent-card-wrap {
-    width: 25%;
-}
+
 .talent__explore--btn {
     @include flexCenter;
     text-decoration: none;

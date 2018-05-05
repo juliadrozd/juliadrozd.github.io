@@ -51,12 +51,9 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=Nunito:300,400,700,800');
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,700');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700i');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
-
-$main-color: rgb(26, 26, 29);
-$hover-color:rgb(181, 211, 211);
-$accent-color: rgba(45, 47, 51, 0.9);
-
+@import './components/mixins/_mixins.scss';
 * {
     box-sizing: border-box;
     font-family: 'Nunito', sans-serif;
@@ -122,6 +119,7 @@ body {
         bottom: -30px;
         left: 46%;
     }
+   
 }
 .address-aside__list {
     height: 300px;

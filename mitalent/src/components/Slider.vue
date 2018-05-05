@@ -117,11 +117,23 @@ export default {
 @import './mixins/_mixins.scss';
 .main-slider {
     width: 100%;
-    overflow: hidden;
-    margin: 0;
+    margin: 60px 0 0 0;
     position: relative;
     display: flex;
     flex-flow: column nowrap; 
+    &:before {
+        content: '';
+        width: 770px;
+        height: 719px;
+        position: absolute;
+        top: -300px;
+        right: -30px;
+        background: rgba(119,221,211,.5);
+        z-index: -1;
+    }
+    @include small {
+        margin:0;
+    }
     
 }
 .slider-wrap {
@@ -130,7 +142,11 @@ export default {
     flex-flow: column nowrap;
     justify-content: flex-end;
     height: inherit;
+    overflow: hidden;
 } 
+.slider-social-wrap {
+    position: relative;
+}
 .address-aside {
     display: flex;
     flex-flow: column wrap;
@@ -167,6 +183,10 @@ export default {
     position: absolute;
     right: 0;
     bottom: 0;
+    @include medium {
+        height: 60px;
+        padding: 10px 40px;
+    }
 }
 .main-content__counter--item {
     color: rgba(0,0,0,.5);

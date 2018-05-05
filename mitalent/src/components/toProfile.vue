@@ -18,6 +18,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+@import './mixins/_mixins.scss';
 .main-slider__btn {
     display: flex;
     height: 80px;
@@ -40,6 +41,11 @@ export default {
         color: rgba(119,221,211,1);
     }
 
+    @include medium {
+        height: 50px;
+        width: 250px;
+        font-size: 16px;
+    }
 }
 .main-slider__btn--descr {
     width: 70%;

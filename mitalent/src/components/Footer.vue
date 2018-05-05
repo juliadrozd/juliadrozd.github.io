@@ -72,8 +72,16 @@ export default {
     align-items: center;
     padding-bottom: 30px;
     border-bottom: 2px solid rgba(0, 0, 0, .2);
+    @include small {
+        flex-flow: column wrap;
+        padding-bottom: 10px;
+    }
 }
-
+.footer__singup {
+    @include small {
+        margin: 30px 0;
+    }
+}
 .footer__singup--field {
     border: none;
     outline: none;
@@ -92,6 +100,7 @@ export default {
     &:hover {
         color: rgb(181, 211, 211);
     }
+    
 }
 
 .footer__singup--descr {
@@ -105,6 +114,9 @@ export default {
     justify-content: space-between;
     align-items: center;
     font-style: normal;
+    @include small {
+        flex-flow: column wrap;
+    }
 }
 
 .footer__address--social {

@@ -30,6 +30,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+@import './mixins/_mixins.scss';
 .talent__img-container {
     margin: 0;
     padding: 0;
@@ -42,12 +43,16 @@ export default {
 }
 
 .talent__img {
-    display: block;
-    width: 100%;
+    width: 325px;
+    height: 380px;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
     >img {
-        display: block;
-        width: 325px;
-        height: 380px;
+        overflow: hidden;
+        margin: -41px -156px -40px -30px;
     }
 }
 

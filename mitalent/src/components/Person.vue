@@ -24,24 +24,41 @@ export default {
     align-items: center;
     position: absolute;
     bottom: 0;
-    right: 0;
+    left: 0;
+    width: 100%;
 }
 .main-slider__img {
     margin: 0;
     padding: 0;
-    width: 927px;
     height: auto;
     position: relative;
-    left: -45px;
-    transform: translateX(-45px);
     z-index: -1;
+    left: 130px;
+    top: 250px;
+    @include responsive(1980px) {
+        width: 1500px; 
+    }
+    @include responsive(1360px) {
+        width: 1000px;
+        top: 150px;
+    }
+    @include medium {
+        width: 800px;
+        top: 0;
+    }
+    @include small {
+        width: 600px;
+        top: 0;
+    }
+
     
 }
 .main-slider__txt {
     position: absolute;
-    left: -150px;
     display: flex;
     flex-flow: column nowrap;
+    bottom: 150px;
+    left: 50px;
 }
 .main-slider__title {
     font-size: 70px;

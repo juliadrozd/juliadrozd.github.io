@@ -48,9 +48,9 @@ export default {
       ],
     aside: [ 
         { title: 'Home', path: '/' },
+        { title: 'About', path: '/about'},
         { title: 'Contacts', path: '/contacts' },
         { title: 'Blog', path: '/blog' },
-        { title: 'About', path: '/about'},
         ],
     isShowAside: false,
     isShowBth: false,
@@ -84,6 +84,10 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
+     @include  small {
+    width: 100%;
+    margin-bottom: 20px;
+    }
 }
 
 .nav__list {
@@ -135,7 +139,7 @@ export default {
     justify-content: flex-start;
     align-items: center;
     width: 300px;
-    height: 100vh;
+    height: calc(100vh + 30px);
     background: #fff;
     z-index: 99999;
     top: -60px;

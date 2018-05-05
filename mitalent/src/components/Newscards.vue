@@ -62,10 +62,12 @@
             </div>
 </template>
 <style lang="scss" scoped>
+@import './mixins/_mixins.scss';
 .news__grid-wrap {
     margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
+   
 }
 
 .cards-wrap {
@@ -75,11 +77,15 @@
     align-items: flex-start;
     flex-wrap: wrap;
     justify-content: center;
+    @include medium {
+        width: 100%;
+    }
+    @include small {
+        margin: 0;
+    }
 }
 
 .trend-card__container {
-    display: flex;
-    flex-flow: column nowrap;
     margin: 0 0 0 30px;
     text-decoration: none;
     display: flex;
@@ -87,7 +93,20 @@
     align-items: center;
     flex-flow: row nowrap;
     width: 100%;
-    height: 300px;
+    
+    
+    @include responsive(1980px) {
+        height: 400px;
+    }
+    @include responsive(1370px) {
+        height: 300px;
+        margin-bottom: 10px;
+    }
+    @include small {
+        height: 200px;
+        margin: 0 0 10px 0;
+    }
+
 }
 
 .news__descr-trend-wrap {
@@ -112,6 +131,7 @@
     &:hover>i {
         color: rgba(45, 47, 51, 0.9);
     }
+    
 }
 
 .news__trend--title {
@@ -152,19 +172,32 @@
 
 .large-card__container {
     width: 30%;
-    height: 750px;
+    height: auto;
     margin: 0 30px 0 30px;
-     display: flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     flex-flow: column;
+   
 }
 
 .large__item--img {
     width: 100%;
-    height: 650px;
     display: block;
     position: relative;
+     @include responsive(1980px) {
+        height: 820px;
+    }
+     @include responsive(1370px) {
+        height: 550px;
+        margin: 10px 5px;
+    }
+    @include medium {
+        height: 400px;
+    }
+     @include small {
+        height: 280px;
+    }
     >img {
         width: 100%;
         height: inherit;
@@ -206,19 +239,33 @@
 
 .small-card__container {
     width: 35%;
-    height: 300px;
+    height: auto;
     margin: 0 15px 0 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-flow: column;
+    @include responsive(1365px) {
+        width: 40%;
+        height: auto;
+        margin: 0 5px 0 5px;
+    }
 }
 
 .small__item--img {
     width: 100%;
-    height: 200px;
+    
     display: block;
     position: relative;
+    @include responsive(1980px) {
+        height: 250px;
+    }
+     @include responsive(1370px) {
+        height: 220px;
+    }
+     @include small {
+        height: 150px;
+    }
     >img {
         width: 100%;
         height: inherit;
@@ -227,12 +274,22 @@
 
 .medium-card__container {
     width: 48%;
-    height: 300px;
     margin: 0 15px 0 15px;
      display: flex;
     justify-content: space-between;
     align-items: center;
     flex-flow: column;
+    @include responsive(1980px) {
+        height: 430px;
+    }
+     @include responsive(1370px) {
+         width: 50%;
+        height: 330px;
+        margin: 0 5px;
+    }
+    @include small {
+        height: 250px;
+    }
 }
 
 .medium__item--img {
