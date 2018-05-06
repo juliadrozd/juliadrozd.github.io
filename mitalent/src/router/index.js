@@ -8,6 +8,7 @@ import Blog from '../views/Blog'
 import About from '../views/About'
 import Profile from '../views/Profile'
 
+
 Vue.use(VueRouter);
 
 export default new VueRouter({
