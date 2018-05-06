@@ -1,9 +1,10 @@
 <template>
-    <section id="clients-slider" class="main-slider">
+    <section id="clients-slider" class="main-slider"
+            v-if="persons.length > 0">
         <!--slider-wrap-->
         <div class="slider-wrap" 
-        v-show="person.id !== 1 ? isShowPerson : !isShowPerson" 
-        v-for="(person, key) in renderPersons" :key="key">
+        v-show="person.id === activeId" 
+        v-for="(person, key) in persons" :key="key">
 
         <!--social-->
                     <address class="address-aside">
@@ -47,7 +48,16 @@
 
             <!--person-->
             <div class="figure--wrap" id="js-figures">
-                <app-clients-person :personsData="person"/> 
+                <app-clients-person :personsData="person"/>
+                <!--main-slider__txt-btn-wrap-->
+                <div class="main-slider__txt-btn-wrap">
+                    <button @click="prevItem(person.id)" class="main-slider__prev">
+                        <i class="material-icons">keyboard_arrow_up</i>
+                    </button>
+                    <button @click="nextItem(person.id)" class="main-slider__next">
+                        <i class="material-icons">keyboard_arrow_down</i>
+                    </button>
+                </div> <!--./main-slider__txt-btn-wrap-->   
             </div><!--./person-->
             
             
@@ -70,48 +80,45 @@ export default {
     },
     data () {
         return {
-        ref: 'https://mitalent-b73e5.firebaseio.com/persons.json',
         persons: [],
-        isShowPerson: false,
         isCounterActive: 'active',
+        activeId: 1,
 
       }
     },
    methods: {
-    getPersons: function() {
-       this.$http.get(this.ref)
-       .then((result) => {
-            this.persons = result.data;
-       }).catch((err) => {
-           //error
-       });
-    },
-    
-     mainSlider: function(e) {
-        let counter = document.getElementsByClassName('main-content__counter--item');
-        for (let i = 0; counter[i]; i++ ) {
-           counter[i].classList.remove('active');
+       getPersons() {
+        const self = this;
+        firebase.database().ref('persons').once('value', function(snapshot){
+            snapshot.forEach(function(childSnapshot){
+                let childData = childSnapshot.val();
+                self.persons.push(childData);
+            });
+        });      
+    }, 
+    mainSlider(id, e) {
+         this.activeId = id;
+        },
+    nextItem(e) {
+            if(this.activeId < this.persons.length) {
+                this.activeId = this.activeId + 1;
+            } else {
+                return this.activeId;
+            }
+        },
+    prevItem(e) {
+            if (this.activeId !== 1){
+                this.activeId = this.activeId - 1;
+            } else {
+                return this.activeId;
+            }
         }
-         let currentId = e.target;
-            currentId.classList.add('active');
-           
-        
-    }
-    
     },
-   
-  computed: {
-       renderPersons () {
-        return this.persons.filter(person => { 
-        return person.name.indexOf(this.myQuery) > -1
-    })
-    },
-  },
   components: {
     appClientsPerson: ClientsPerson,
     
   },
-  created: function() {
+  created() {
       this.getPersons()
   }
 }
@@ -133,18 +140,18 @@ export default {
         left: -30px;
         background: rgba(119,221,211,.5);
         z-index: -1;
-         @include responsive(1980px) {
-        width: 900px;
-        height: 1200px;
-    }
-    @include responsive(1365px) {
-        width: 750px;
-        height: 1000px;
-    }
-    @include small {
-        width: 450px;
-        height: 700px;
-    }
+            @include responsive(1980px) {
+                width: 900px;
+                height: 1200px;
+            }
+            @include responsive(1365px) {
+                width: 750px;
+                height: 1000px;
+            }
+            @include small {
+                width: 450px;
+                height: 700px;
+            }
     }
 }
 .slider-wrap {
@@ -178,11 +185,34 @@ export default {
 
 .figure--wrap {
     display: block;
+    position: relative;
    @include responsive(1980px) {
         height: 950;
     }
 }
-
+.main-slider__txt-btn-wrap {
+    @include flexCenter;
+    flex-flow: column;
+    width: 20%;
+    height: 150px;
+    background: #fff;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    > button {
+        border: none;
+        outline: none;
+        background: none;
+        @include flexCenter;
+        cursor: pointer;
+        padding: 20px;
+        color: rgba(0, 0, 0, .5);
+        transition: color .3s ease-in-out;
+        &:hover {
+            color: $accent-color;
+        }
+    }
+}
 .section-title {
     height: inherit;
     width: 100%;

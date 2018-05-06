@@ -1,17 +1,17 @@
 <template>
   <ul class="talent-nav__list">
-            <li class="talent-nav__item">
-                <a href="#" class="talent-nav__link">Actor</a>
-            </li>
-            <li class="talent-nav__item">
-                <a href="#" class="talent-nav__link">Musician</a>
-            </li>
-            <li class="talent-nav__item">
-                <a href="#" class="talent-nav__link">Comedian</a>
-            </li>
-            <li class="talent-nav__item">
-                <a href="#" class="talent-nav__link">Model</a>
-            </li>
+        <li  class="talent-nav__item">
+            <button class="talent-nav__link">Actor</button>
+        </li>
+        <li class="talent-nav__item">
+            <button class="talent-nav__link">Musician</button>
+        </li>
+        <li class="talent-nav__item">
+            <button class="talent-nav__link">Comedian</button>
+        </li>
+        <li class="talent-nav__item">
+            <button class="talent-nav__link">Model</button>
+        </li>
     </ul>
 </template>
 <style lang="scss" scoped>
@@ -23,11 +23,19 @@
     padding: 0;
 }
 
+.talent-nav__item {
+     > button {
+        font-size: 18px;
+    }
+}
 .talent-nav__item:not(:last-child) {
     margin-right: 20px;
 }
 
 .talent-nav__link {
+    border: none;
+    outline: none;
+    background: none;
     padding: 15px 40px;
     text-decoration: none;
     color: rgba(0, 0, 0, .5);
@@ -36,6 +44,7 @@
     line-height: 18px;
     position: relative;
     transition: color .2s ease-in-out;
+   
     &:hover {
         color: rgb(26, 26, 29);
     }

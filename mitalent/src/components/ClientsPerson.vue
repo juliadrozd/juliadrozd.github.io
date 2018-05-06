@@ -12,15 +12,7 @@
                 <span class="main-slider__descr">{{ personsData.about }}</span>
                 <span class="main-slider__title">{{ personsData.name }}</span>
             </div>
-            
-            <div class="main-slider__txt-btn-wrap">
-                <button class="main-slider__prev">
-                    <i class="material-icons">keyboard_arrow_up</i>
-                </button>
-                <button class="main-slider__next">
-                    <i class="material-icons">keyboard_arrow_down</i>
-                </button>
-            </div>      
+               
         </figcaption><!--./main-slider__txt-->
 
     </figure>
@@ -28,8 +20,15 @@
 </template>
 <script>
 export default {
-  props: ['personsData']
+    props: ['personsData'],
+    data () {
+        return {
+
+      }
+    },
+    
 }
+
 </script>
 
 <style lang="scss" scoped>
@@ -46,9 +45,25 @@ export default {
 .main-slider__img {
     margin: 0;
     padding: 0;
-    width: 100%;
+    width: 654px;
     height: auto;
     z-index: -1;
+            @include responsive(1980px) {
+                width: 750px;
+                
+            }
+            @include responsive(1365px) {
+                width: 654px;
+               
+            }
+            @include medium {
+                width: 450px;
+               
+            }
+            @include small {
+                width: 450px;
+               
+            }
     
 }
 .main-slider__txt {
@@ -65,29 +80,6 @@ export default {
     display: flex;
     flex-flow: column;
     width: 70%;
-}
-.main-slider__txt-btn-wrap {
-    @include flexCenter;
-    flex-flow: column;
-    width: 20%;
-    height: 100%;
-    background: #fff;
-    position: absolute;
-    top: 0;
-    right: 0;
-    > button {
-        border: none;
-        outline: none;
-        background: none;
-        @include flexCenter;
-        cursor: pointer;
-        padding: 20px;
-        color: rgba(0, 0, 0, .5);
-        transition: color .3s ease-in-out;
-        &:hover {
-            color: $accent-color;
-        }
-    }
 }
 
 .main-slider__title {

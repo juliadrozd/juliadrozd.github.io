@@ -8,6 +8,15 @@
     </div>
 <!--./Header search-->
 </template>
+<script>
+export default {
+   data () {
+        return {
+       
+      }
+  },
+}
+</script>
 <style lang="scss" scoped>
 @import './mixins/_mixins.scss';
 .header__search {

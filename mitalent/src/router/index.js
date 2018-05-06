@@ -13,7 +13,7 @@ Vue.use(VueRouter);
 export default new VueRouter({
     mode: 'history',
     routes: [
-        { path: '/', component: Home, name: 'Home' },
+        { path: '', component: Home, name: 'Home' },
         { path: '/clients', component: Clients, name: 'Clients' },
         { path: '/news', component: News, name: 'News' },
         { path: '/contacts', component: Contacts, name: 'Contacts' },

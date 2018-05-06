@@ -1,8 +1,9 @@
 <template id="slider-section">
-    <section id="main-slider" class="main-slider">
+    <section id="main-slider" class="main-slider"
+            v-if="persons.length > 0">
         <div class="slider-wrap" 
-        v-show="person.id !== 1 ? isShowPerson : !isShowPerson" 
-        v-for="(person, key) in renderPersons" :key="key">
+        v-show="person.id === activeId" 
+        v-for="(person, key) in persons" :key="key">
             <div class="slider-social-wrap">
                 <address class="address-aside">
                     <ul class="address-aside__list">
@@ -40,9 +41,9 @@
         </div>
         <ul class="main-content__counter--list">
             <li class="main-content__counter--item" 
-            v-for="(person, key) in renderPersons" :key="key"
-             :class="{active : person.id === 1}"
-             @click="mainSlider($event)"
+            v-for="(person, key) in persons" :key="key"
+             :class="{active : activeId === person.id}"
+             @click="mainSlider(person.id)"
             >{{ "0" + person.id }}</li>
         </ul>
 
@@ -64,50 +65,36 @@ export default {
     },
     data () {
         return {
-        ref: 'https://mitalent-b73e5.firebaseio.com/persons.json',
         persons: [],
-        isShowPerson: false,
         isCounterActive: 'active',
+        activeId: 1,
 
       }
     },
    methods: {
-    getPersons: function() {
-       this.$http.get(this.ref)
-       .then((result) => {
-            this.persons = result.data;
-       }).catch((err) => {
-           //error
-       });
-    },
+    getPersons() {
+        const self = this;
+        firebase.database().ref('persons').once('value', function(snapshot){
+            snapshot.forEach(function(childSnapshot){
+                let childData = childSnapshot.val();
+                self.persons.push(childData);
     
-     mainSlider: function(e) {
-        let counter = document.getElementsByClassName('main-content__counter--item');
-        for (let i = 0; counter[i]; i++ ) {
-           counter[i].classList.remove('active');
+            });
+        });      
+    }, 
+    
+     mainSlider(id, e) {
+         this.activeId = id;
         }
-         let currentId = e.target;
-            currentId.classList.add('active');
-           
-        
-    }
-    
     },
    
-  computed: {
-       renderPersons () {
-        return this.persons.filter(person => { 
-        return person.name.indexOf(this.myQuery) > -1
-    })
-    },
-  },
   components: {
     appSocial: Social,
     appPerson: Person,
     appToProfile: toPtofile,
     
   },
-  created: function() {
+  created() {
       this.getPersons()
   }
 }

@@ -7,8 +7,10 @@
             <transition name="slide">
                 <!--testimonials__form--wrap-->
                 <div v-if="isShowForm" class="testimonials__form--wrap">
-                     <form id="js-testimonials__form" class="testimonials__form" action="index.html" method="get">
+                     <form id="js-form" class="testimonials__form">
+
                         <fieldset>
+                            <input @change="onFileChange" name="image" id="js-testimonials__avatar" type="file"  value="upload" accept="image/jpeg,image/png">
                             <input v-model.lazy="name" name="name" type="text" id="js-testimonials__name" placeholder="Your name" maxlength="20">
                         </fieldset>
                         <fieldset>
@@ -31,26 +33,32 @@
             <!--testimonials__slider-wrap-->
             <div id="first-slider" class="testimonials__slider-wrap">
 
-                <button id="js-prev--btn" class="testimonials__slider-btn testimonials__slider-btn--prev">
+                <button @click="prevItem" id="js-prev--btn" class="testimonials__slider-btn testimonials__slider-btn--prev">
 					<i class="material-icons">arrow_back</i>
 				</button>
 
-                <div class="testimonials__slider-container">
+                <div class="testimonials__slider-container"
+                    v-if="comments.length > 0">
                     <div class="testimonials__slider-track">
-                        <figure class="testimonials__slider-item">
+                        <figure class="testimonials__slider-item"
+
+                        v-for="(item, key) in comments" :key="key" >
+                            <span class="testimonials__slider-img-wrap">
+	                            <img :src="item.image" alt="img" class="testimonials__slider-img">
+	                        </span>
                             <figcaption class="testimonials__slider-descr-wrap">
                                 <h3 class="testimonials__slider-title">
-                                        {{ name }}
+                                        {{ item.name }}
                                 </h3>
                                 <p class="testimonials__slider-descr">
-                                        {{ comment }}
+                                        {{ item.comment }}
                                 </p>
                             </figcaption>
                         </figure>
                     </div>
                 </div>
 
-                <button id="js-next--btn" class="testimonials__slider-btn testimonials__slider-btn--next">
+                <button @click="nextItem" id="js-next--btn" class="testimonials__slider-btn testimonials__slider-btn--next">
 					<i class="material-icons">arrow_forward</i>
 				</button>
 
@@ -79,86 +87,101 @@ import firebase from 'firebase'
 export default {
     data () {
         return {
+            
             isShowForm: false,
             isShowOverlay: false,
+
+            comments: [],
+            image: '',
             name: '',
             email: '',
             comment: '',
+            currentItem: '',
       }
     },
  methods: {
-     showForm() {
+    showForm() {
          this.isShowForm = this.isShowForm;
           this.isShowOverlay = this.isShowOverlay;
         if (this.isShowForm = true) {
             this.isShowOverlay = true;
         }
      },
-      closeForm() {
+    closeForm() {
             this.isShowForm = false;
             setTimeout(() => { this.isShowOverlay = false; }, 250);
       },
-    //     onFileChange(e) {
-    //         var files = e.target.files || e.dataTransfer.files;
-    //             if (!files.length)
-    //                 return; 
-    //             this.createImage(files[0]);
-    // },
-    //     createImage(file) {
-    //         var image = new Image();
-    //         var reader = new FileReader();
-    //         var vm = this;
+    onFileChange(e) {
+            var files = e.target.files || e.dataTransfer.files;
+                if (!files.length)
+                    return; 
+                this.createImage(files[0]);
+    },
+    createImage(file) {
+            var image = new Image();
+            var reader = new FileReader();
 
-    //          reader.onload = (e) => {
-    //             vm.image = e.target.result;
-    //         };
-    //     reader.readAsDataURL(file);
-      
-    //     this.file = file;
-      
-    //  },
+             reader.onload = (e) => {
+                this.image = e.target.result;
+            };
+        reader.readAsDataURL(file);
+        this.file = file;
+        this.$emit('getNewComment', this.file);
         
-     getNewComment() {
-        this.name = this.name;
-        this.email = this.email;
-        this.comment = this.comment;
-        const commentsRef = firebase.database().ref('comments');
-        const newMessageRef = commentsRef.push();
-        // // Create the file metadata
-        // let metadata = {
-        //     contentType: 'image/jpeg'
-        // };
+     },
 
-        // const storageRef = firebase.storage().ref(this.file.name);
-        //  //Upload file
-        //  let task = storageRef.put(this.file, metadata);
-        //     task.on('state_changed',
-        //     function getURL() {
-        //     const imgurl = task.snapshot.downloadURL;
-        //     this.image = imgurl;
-        newMessageRef.set({ name: this.name, comment: this.comment, email: this.email });
+     getNewComment(file, name, comment, email) {
+        let metadata = { contentType: 'image/jpeg' };
+        let imageUrl;
+        let key;
+        let commentsRef = firebase.database().ref('comments');
+        let newMessageRef = commentsRef.push();
 
-            // });
-        this.closeForm();
+        new Promise((resolve, reject) => {
+        newMessageRef.set({ name: this.name, comment: this.comment, email: this.email, image: this.image })
+
+        .then(data => {
+            key = newMessageRef.key;
+            return key
+        })
+        .then(fileData =>{  
+            firebase.storage().ref(`comments/${key}${this.file.name}`).put(this.file, metadata)
+            .on('state_changed', (snapshot) => {
+                imageUrl = snapshot.downloadURL;
+            
+            return commentsRef.child(key).update({
+                image: imageUrl
+                })
+            })
+        })
+         .then(() => {
+             resolve();
+
+             this.closeForm();
+         })
+        .catch(err => reject(err));
+     })
+     },
+     getAllComments() {
+        const self = this;
+        firebase.database().ref('comments').once('value', function(snapshot){
+            snapshot.forEach(function(childSnapshot){
+                let childData = childSnapshot.val();
+                self.comments.push(childData);
+    
+            });
+        });  
     },
-    getAllComents() {
+    nextItem() {
+        console.log('next');
 
-        this.commentsRef = firebase.database().ref('comments/');
-        // Get all comments from DB
-        this.commentsRef.once('value', function(snapshot) {
-        snapshot.forEach(function(childSnapshot) {
-            let childKey = childSnapshot.key; // comment's ID
-            let childData = childSnapshot.val(); // get object
-               this.name = childData.name;
-               this.comment = childData.comment;   
-
-                console.log(name, comment);
-        });
-    })
     },
+    prevItem() {
+        console.log('prev');
+    }
 },
-created: function() {
-      this.getAllComents()
+created() {
+   this.getAllComments()
   }
 }
 
@@ -257,19 +280,17 @@ created: function() {
 .testimonials__slider-btn--next {
     right: 0;
 }
-
 .testimonials__slider-container {
     width: 100%;
     font-size: 0;
     @include small {
         text-align: center;
-        border: 1px solid #e5ddd5;
     }
 }
 
 .testimonials__slider-track {
     width: 100%;
-    height: 160px;
+    height: 300px;
     position: relative;
     overflow: hidden;
     
@@ -281,13 +302,11 @@ created: function() {
 
 .testimonials__slider-item {
     width: 100%;
-    height: 160px;
+    height: 300px;
     margin: 0;
     font-size: 0;
     position: absolute;
     display: block;
-    background: url('https://firebasestorage.googleapis.com/v0/b/mitalent-b73e5.appspot.com/o/planks.jpg?alt=media&token=7983ec6f-87c8-44c0-90c2-11d237951e93');
-
     @include small {
         display: flex;
     }
@@ -304,12 +323,33 @@ created: function() {
     vertical-align: top;
 }
 
-.testimonials__slider-descr-wrap {
+.testimonials__slider-img-wrap {
+    width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+    @include small {
+        min-width: 200px;
+        max-height: 100%;
+    }
+}
+
+.testimonials__slider-img {
     width: 100%;
+    display: block;
+    @include small {
+        min-width: 200px;
+        min-height: 100%;
+    }
+}
+
+
+.testimonials__slider-descr-wrap {
+   width: calc(100% - 350px);
     border-left: 0;
-    min-height: 160px;
+    min-height: 300px;
     padding: 30px 70px 0 70px;
-    background: $accent-color;
+    margin-left: 20px;
+    background: $hover-color;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
     @include medium {
         padding: 0 20px;
     }
@@ -321,18 +361,18 @@ created: function() {
 }
 
 .testimonials__slider-title {
-    color: #fff;
+    color: $accent-color;
     font-family: 'Playfair Display', serif;
     font-weight: 700;
     font-style:italic;
-    font-size: 24px;
+    font-size: 30px;
     margin: 0;
 }
 
 .testimonials__slider-descr {
-    color: #fff;
+    color:$accent-color;
     margin: 15px 0 0 0;
-    font-size: 18px;
+    font-size: 24px;
     line-height: 27px;
 }
 
