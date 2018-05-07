@@ -40,12 +40,8 @@ export default {
     &:hover .talent__hover {
         transform: rotateY(0);
     }
-    @include small {
-        &:hover .talent__hover {
-        transform: rotateY(360deg);
+
     }
-    }
-}
 
 .talent__img {
     width: 325px;
@@ -67,6 +63,9 @@ export default {
     transform: rotateY(180deg);
     backface-visibility: hidden;
     transition: transform .6s linear;
+     @include small {
+         transform: rotateY(0);
+    }
 }
 
 .talent__hover-link {

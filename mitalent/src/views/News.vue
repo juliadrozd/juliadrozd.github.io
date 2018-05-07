@@ -153,12 +153,15 @@ export default {
     @include medium {
       left: 200px;
     }
+    @include small {
+        left: 0;
+    }
   }
    > a {
       text-decoration: none;
       background: #fff;
       position: absolute;
-      left:270px;
+      left: 270px;
       top: 500px;
       color: $accent-color;
       @include flexBetween;
@@ -180,6 +183,9 @@ export default {
       left:230px;
       top: 470px;
     }
+    @include small {
+       left: 0;
+    } 
     }
 
 }
@@ -188,10 +194,19 @@ export default {
 }
 .news__articles--small-wrap {
   width: 60%;
+    @include small {
+       width: 100%;
+       margin-top: 30px;
+    } 
 }
 .news__articles--prev {
   display: flex;
   width: 100%;
+  @include small {
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
 .large-card__container {
     width: 50%;
@@ -203,6 +218,9 @@ export default {
     flex-flow: column;
     @include medium {
       width: 30%;
+    }
+    @include small {
+         width: 50%;
     }
    
 }
