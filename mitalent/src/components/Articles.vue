@@ -2,7 +2,7 @@
   <div class="news__content">
             <article class="news__item">
                 <span class="news__item--img">
-                    <img src="../assets/news1.jpg">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/mitalent-b73e5.appspot.com/o/news1.jpg?alt=media&token=59c4aefd-26b7-45fc-a60a-d638f8ee0ed9">
                 </span>
 
                 <a href="#" class="news__item--descr">
@@ -13,7 +13,7 @@
 
             <article class="news__item">
                 <span class="news__item--img">
-                    <img src="../assets/news2.jpg">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/mitalent-b73e5.appspot.com/o/news2.jpg?alt=media&token=68327bda-10f3-46d6-b5bb-45973edb74ef">
                 </span>
 
                 <a href="#" class="news__item--descr">
@@ -23,7 +23,7 @@
             </article>
             <article class="news__item">
                 <span class="news__item--img">
-                    <img src="../assets/news3.jpg">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/mitalent-b73e5.appspot.com/o/news3.jpg?alt=media&token=ab6ef208-bcc0-4cac-932c-59877974ca14">
                 </span>
 
                 <a href="#" class="news__item--descr">

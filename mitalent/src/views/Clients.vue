@@ -20,9 +20,11 @@
 
               </div><!--./talent-categories-->
 
-              <div class="talent__content">
+              <div class="talent__content"
+              v-if="profiles.length > 0">
               <!--talent__content-->
-                <div class="talent-card-wrap" v-for="(profile, key) in renderProfile" :key="key">
+                <div class="talent-card-wrap" 
+                     v-for="(profile, key) in profiles" :key="key">
                     <app-cards :profilesData="profile"/>
                 </div>
               </div>
@@ -59,38 +61,34 @@ export default {
     },
   data () {
     return {
-        ref: 'https://mitalent-b73e5.firebaseio.com/profile.json',
         profiles: [],
 
       }
 },
  methods: {
-        getProfiles: function() {
-            this.$http.get(this.ref)
-                .then((result) => {
-                    this.profiles = result.data;
-                }).catch((err) => {
-                //error
-            });
-    },
-      },
-      computed: {
-       renderProfile () {
-        return this.profiles.filter(profile => { 
-        return profile.name.indexOf(this.myQuery) > -1
-    })
-    },
+        getProfiles() {
+        const self = this;
+        firebase.database().ref('profile').once('value', function(snapshot){
+            snapshot.forEach(function(childSnapshot){
+                let childData = childSnapshot.val();
+                self.profiles.push(childData);
+                });
+            });      
+        },
+},
+    computed: {
+      
   },
 
   components: {
-      appSocial: Social,
-     appCards: Cards,
+    appSocial: Social,
+    appCards: Cards,
     appCategories: Categories,
-      appArticles: Articles,
-      appSliderClients: SliderClients,
+    appArticles: Articles,
+    appSliderClients: SliderClients,
 
   },
-  created: function() {
+  created() {
       this.getProfiles()
   }
 }

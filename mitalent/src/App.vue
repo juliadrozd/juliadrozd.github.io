@@ -8,8 +8,6 @@
         </div>
       <app-footer />
 
-       
-
     </div>
    
   </div>
@@ -24,6 +22,8 @@ import News from './views/News'
 import Contacts from './views/Contacts'
 import Blog from './views/Blog'
 import About from './views/About'
+
+import Vue from 'vue';
 
 
 export default {

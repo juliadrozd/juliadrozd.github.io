@@ -8,14 +8,14 @@
                             <span class="news__trend--date" data="2018-04-27">8 March, 2020</span>
                         </a>
                         <span class="trend__item--img">
-                            <img class="trend-card__img" src="../assets/newsB2.jpg">
+                            <img class="trend-card__img" src="https://firebasestorage.googleapis.com/v0/b/mitalent-b73e5.appspot.com/o/newsB2.jpg?alt=media&token=d978f5a5-104d-4562-8ad6-7fdee67fc8f2">
                              <span class="trend-card__lable">Trending</span>
                         </span>
                     </article>
 
                     <article class="small-card small-card__container">
                         <span class="small__item--img">
-                                    <img class="small-card__img" src="../assets/news2.jpg">
+                                    <img class="small-card__img" src="https://firebasestorage.googleapis.com/v0/b/mitalent-b73e5.appspot.com/o/news2.jpg?alt=media&token=68327bda-10f3-46d6-b5bb-45973edb74ef">
                                 </span>
                         <a href="#" class="news__descr-small-wrap">
                             <span class="news__item--title">5 Reasons to keep your beauty salon reservation</span>
@@ -25,7 +25,7 @@
 
                     <article class="medium-card medium-card__container">
                         <span class="medium__item--img">
-                            <img class="medium-card__img" src="../assets/newsB3.jpg">
+                            <img class="medium-card__img" src="https://firebasestorage.googleapis.com/v0/b/mitalent-b73e5.appspot.com/o/newsB3.jpg?alt=media&token=42efd7cb-a547-490c-930a-4626e4b0638d">
                             <ul class="medium-card__dots--list">
                                 <li class="medium-card__dots--item"></li>
                                 <li class="medium-card__dots--item"></li>
@@ -44,7 +44,7 @@
                 </div>
                 <article class="large-card large-card__container">
                     <span class="large__item--img">
-                        <img class="large-card__img" src="../assets/newsB1.jpg">
+                        <img class="large-card__img" src="https://firebasestorage.googleapis.com/v0/b/mitalent-b73e5.appspot.com/o/newsB1.jpg?alt=media&token=eaf39cd6-69c9-4157-9b92-2c25dadeeaef">
                         <ul class="large-card__dots--list">
                             <li class="large-card__dots--item"></li>
                             <li class="large-card__dots--item"></li>
