@@ -12,6 +12,7 @@ import Talent from '../components/Talent.vue'
 import Latestnews from '../components/Latestnews.vue'
 
 export default {
+    name: 'home',
   data: () => ({
 }),
   components: {

@@ -66,6 +66,16 @@
     </section>
   </div>
 </template>
+<script>
+export default {
+  name: 'news',
+  data() {
+    return {          
+    }
+},
+}
+</script>
+
 <style lang="scss" scoped>
 @import '../components/mixins/_mixins.scss';
 .news--wrap {

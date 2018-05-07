@@ -50,6 +50,7 @@ import Categories from '../components/Categories'
 import firebase from 'firebase'
 
 export default {
+  name: 'clients',
   props: {
         myQuery: {
             type: String,

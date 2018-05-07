@@ -51,6 +51,7 @@ import AboutSlider from '../components/AboutSlider'
 
 
 export default {
+  name: 'about',
   data: () => ({
 }),
   components: {
