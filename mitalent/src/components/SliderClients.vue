@@ -263,6 +263,9 @@ export default {
         color: $hover-color;
         background: $accent-color;
     }
+    @include small {
+        padding: 20px 40px;
+    }
 }
 .aside-show {
     @include small {

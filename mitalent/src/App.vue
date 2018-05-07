@@ -83,6 +83,9 @@ body {
     height: 100%;
     background: $accent-color;
     padding: 20px;
+     @include small {
+        background: rgba(45, 47, 51, .2);
+    }
 }
 
 .overlay {

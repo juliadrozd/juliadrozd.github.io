@@ -64,6 +64,9 @@ export default {
     width: 100%;
     margin: 50px 0 0 0;
     padding: 0;
+    @include small {
+        margin: 70px 0 0 0;
+    }
 }
 
 .footer__features {

@@ -15,21 +15,29 @@
     </ul>
 </template>
 <style lang="scss" scoped>
+@import './mixins/_mixins.scss';
 .talent-nav__list {
     display: flex;
     width: 100%;
     list-style: none;
     justify-content: center;
     padding: 0;
+    
 }
 
 .talent-nav__item {
      > button {
         font-size: 18px;
+        @include small {
+        font-size: 14px;
+        }
     }
 }
 .talent-nav__item:not(:last-child) {
     margin-right: 20px;
+            @include small {
+         margin-right: 10px;
+        }
 }
 
 .talent-nav__link {
@@ -71,6 +79,9 @@
     &:active:before,
     &:active:after {
         background: rgb(26, 26, 29);
+    }
+    @include small {
+         padding: 10px 20px;
     }
 }
 

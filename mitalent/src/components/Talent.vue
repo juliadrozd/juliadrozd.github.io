@@ -87,6 +87,10 @@ export default {
     @include flexBetween;
     width: 100%;
     margin: 0 30px;
+    @include small {
+        flex-flow: column nowrap;
+        @include flexCenter;
+    }
 }
 .talent__search {
     display: flex;
@@ -99,7 +103,7 @@ export default {
     @include  small {
     width: 100%;
     justify-content: flex-end;
-    margin-top: 20px;
+    margin-top: 0;
     }
 }
 
@@ -128,6 +132,9 @@ export default {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    @include  small {
+    margin-top: 10px;
+    }
 }
 
 .talent__explore--btn {

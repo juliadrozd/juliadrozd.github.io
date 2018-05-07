@@ -130,6 +130,7 @@ export default {
     justify-content: flex-end;
     height: inherit;
     overflow: hidden;
+     
 } 
 .slider-social-wrap {
     position: relative;
@@ -143,10 +144,17 @@ export default {
     font-style: normal;
     font-weight: 700;
     height: 400px;
+    @include small {
+        height: 250px;
+        flex-flow: column nowrap;
+    }
 }
 .address-aside__counter {
     margin-top: 0;
     transform: rotate(-90deg);
+     @include small {
+        margin-top: 20px;
+    }
 }
 
 .figure--wrap {
@@ -174,6 +182,11 @@ export default {
         height: 60px;
         padding: 10px 40px;
     }
+    @include small {
+        width: 50%;
+        height: 60px;
+        right: -15px;
+    }
 }
 .main-content__counter--item {
     color: rgba(0,0,0,.5);
@@ -192,7 +205,7 @@ export default {
     width: 0;
     height: 2px;
     top: 50%;
-    background: $accent-color;
+    background: #000;
     transition: background 3s linear;
 }
 .active:after {
@@ -200,10 +213,14 @@ export default {
 }
 .active:before {
      right: 60px;
+     @include  small {
+        right: 0;
+    }
 }
 .active:after,
 .active:before {
     width: 20px;
+    
 }
 .main-content__counter--item:hover {
     color: #000;

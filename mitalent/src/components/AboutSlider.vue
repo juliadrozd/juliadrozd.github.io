@@ -193,11 +193,13 @@ created() {
 .comment {
     @include flexCenter;
     flex-flow: column;
-    > h1 {
+> h1 {
+    width: 100%;
+    text-align: center;
     font-family: 'Poppins', sans-serif;
     color: $main-color;
     font-size: 40px;
-    line-height: 24px;
+    line-height: 44px;
     font-weight: 400;
     position: relative;
     margin: 0 0 50px 0;
@@ -214,6 +216,10 @@ created() {
             height: 1px;
             background: $accent-color;        
         }
+    @include small {
+      font-size: 24px;
+    line-height: 24px;
+    }
     }
     > button {
     @include flexCenter;
@@ -233,6 +239,10 @@ created() {
     &:hover {
         background: rgba(45, 47, 51, 0.9);
     }
+    @include small {
+      margin-top: 0;
+    }
+    
     
   }
 }
@@ -297,6 +307,7 @@ created() {
     @include small {
         display: flex;
         flex-flow: row wrap;
+        height: 150px;
     }
 }
 
@@ -309,6 +320,7 @@ created() {
     display: block;
     @include small {
         display: flex;
+        height: 150px;
     }
 }
 
@@ -327,7 +339,7 @@ created() {
     width: 300px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
     @include small {
-        min-width: 200px;
+        width: 150px;
         max-height: 100%;
     }
 }
@@ -336,7 +348,7 @@ created() {
     width: 100%;
     display: block;
     @include small {
-        min-width: 200px;
+        width: 150px;
         min-height: 100%;
     }
 }
@@ -367,6 +379,9 @@ created() {
     font-style:italic;
     font-size: 30px;
     margin: 0;
+     @include small {
+        font-size: 20px;
+    }
 }
 
 .testimonials__slider-descr {
@@ -374,6 +389,10 @@ created() {
     margin: 15px 0 0 0;
     font-size: 24px;
     line-height: 27px;
+    @include small {
+        font-size: 18px;
+        line-height: 20px;
+    }
 }
 
 .testimonials__slider-dots-list {

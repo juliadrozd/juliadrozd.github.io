@@ -98,6 +98,7 @@ export default {
     left: -100px;
     background: #fff;
     @include small {
+        flex-flow: column wrap;
         left: -150px;
     }
 }
@@ -132,7 +133,8 @@ export default {
     }
     @include small {
       top: 40%;
-      left: 80px;
+      left: 230px;
+      color: $hover-color;
     }
 }
 .contacts__title {
@@ -148,6 +150,7 @@ export default {
     background: #fff;
      @include small {
        right: 40%;
+       background: $hover-color;
     }
   }
   @include medium {
@@ -170,9 +173,10 @@ export default {
         padding: 90px 20px 30px 30px;
     }
     @include small {
-      padding: 200px 0 0 10px;
-      margin-right: -150px;
-
+      padding: 0 0 0 10px;
+      margin-left: 250px;
+      width: 100%;
+      text-align: center;
     }
 }
 
@@ -182,6 +186,9 @@ export default {
   font-size: 22px;
   line-height: 26px;
   font-weight: 500;
+  @include small {
+     margin: 40px 0 40px 0;
+    }
   
   > span {
     font-size: 60px;
@@ -277,6 +284,9 @@ export default {
   line-height: 16px;
   color: rgba(0,0,0, .8);
   font-style: normal;
+  @include small {
+     width: 100%;
+    }
 
   > span {
     display: block;

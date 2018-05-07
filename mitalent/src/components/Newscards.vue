@@ -103,7 +103,7 @@
         margin-bottom: 10px;
     }
     @include small {
-        height: 200px;
+        height: 150px;
         margin: 0 0 10px 0;
     }
 
@@ -121,6 +121,10 @@
     align-items: flex-start;
     justify-content: flex-end;
     text-decoration: none;
+    @include small {
+        padding: 10px;
+        justify-content: center;
+    }
     >i {
         transform: rotate(90deg);
         transition: color .3s ease-in-out;
@@ -141,6 +145,10 @@
     font-weight: 400;
     margin: 30px 0;
     transition: color .3s ease-in-out;
+    @include small {
+        font-size: 16px;
+        line-height: 18px;
+    }
 }
 
 .news__trend--date {
@@ -178,6 +186,9 @@
     justify-content: space-between;
     align-items: center;
     flex-flow: column;
+    @include small {
+        width: 50%;
+    }
    
 }
 
@@ -264,7 +275,7 @@
         height: 220px;
     }
      @include small {
-        height: 150px;
+        height: 100px;
     }
     >img {
         width: 100%;
@@ -288,7 +299,7 @@
         margin: 0 5px;
     }
     @include small {
-        height: 250px;
+        height: 170px;
     }
 }
 

@@ -26,6 +26,10 @@ export default {
     bottom: 0;
     left: 0;
     width: 100%;
+    @include small {
+        flex-flow: column nowrap;
+    }
+    
 }
 .main-slider__img {
     margin: 0;
@@ -47,8 +51,9 @@ export default {
         top: 0;
     }
     @include small {
-        width: 600px;
-        top: 0;
+        width: 400px;
+        top: -50px;
+        left: 0;
     }
 
     
@@ -59,14 +64,24 @@ export default {
     flex-flow: column nowrap;
     bottom: 150px;
     left: 50px;
+    @include small {
+        bottom: 120px;
+        left: 0;
+    }
 }
 .main-slider__title {
     font-size: 70px;
     width: 50px;
+    @include small {
+        font-size: 50px;
+    }
 }
 .main-slider__descr {
     margin-top: 20px;
     text-transform: uppercase;
+    @include small {
+        font-size: 18px;
+    }
 }
 
 </style>

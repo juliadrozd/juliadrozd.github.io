@@ -40,6 +40,11 @@ export default {
     &:hover .talent__hover {
         transform: rotateY(0);
     }
+    @include small {
+        &:hover .talent__hover {
+        transform: rotateY(360deg);
+    }
+    }
 }
 
 .talent__img {

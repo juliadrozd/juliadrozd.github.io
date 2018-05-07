@@ -46,6 +46,11 @@ export default {
         width: 250px;
         font-size: 16px;
     }
+    @include small {
+        width: 50%;
+        height: 60px;
+        font-size: 14px;
+    }
 }
 .main-slider__btn--descr {
     width: 70%;

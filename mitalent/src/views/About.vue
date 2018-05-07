@@ -107,6 +107,9 @@ export default {
     @include small {
         width: 400px;
         height: 575px;
+        position: absolute;
+        top: 0;
+        left: 0;
     }
   }
 }
@@ -128,9 +131,10 @@ export default {
         padding: 0 20px 30px 30px;
     }
     @include small {
+      width: 100%;
       padding: 200px 0 0 10px;
-      margin-right: -150px;
-
+      margin: 0 -150px 0 150px;
+      right: 0;
     }
     
 }
@@ -206,11 +210,11 @@ export default {
   align-items: flex-end;
    @include small {
       width: 100%;
-      flex-flow: column wrap;
+      flex-flow: column nowrap;
       justify-content: flex-start;
       align-items: flex-start;
       left: 0;
-      bottom: 0;
+      bottom: -50px;
     }
 }
 .about__link-ctc {
@@ -243,6 +247,10 @@ export default {
       padding: 30px 30px;
       margin-left: 60px;
       transition: color .3s ease-in-out;
+        @include small {
+        padding: 15px;
+        margin-left: 20px;
+      }
     }  
     @include small {
       padding-left: 160px;
@@ -298,8 +306,7 @@ export default {
       font-size: 18px;
     }
     @include small {
-      padding-left: 160px;
-      width: 350px;
+      display: none;
     }
    
 }
