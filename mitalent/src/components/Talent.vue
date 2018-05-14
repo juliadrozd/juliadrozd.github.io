@@ -1,26 +1,37 @@
 <template>
  <!--talent-->
     <section class="talent">
-        
-        <div class="talent-wrap">
-            <app-categories />
-            
-            <div class="talent__search">
-                <input type="text" v-model="search" placeholder="SEARCH PERSON" class="talent__search--field">
-                <button class="talent__search--btn">
-                    <i class="material-icons">search</i>
-                </button>
-            </div>
+        <!--search-wrap-->
+    <div class="search-wrap">
+        <div class="search">
+            <form class="talent__search"
+                @submit.prevent="onSearchSubmit">
+            <input type="text" class="talent__search--field"
+                v-model="search" placeholder="SEARCH PERSON" 
+                :class="{ 'header__search-textfield--invalid': invalid }">
+            <button class="talent__search--btn">
+                <i class="material-icons">search</i>
+            </button>
+        </form>
+        <span class="invalid" v-show="invalid === true">Oh, empty field</span>
         </div>
+        
+    </div><!--./search-wrap-->
 
-         <div class="talent__content"
-                v-if="profiles.length > 0">
-              <!--talent__content-->
-                <div class="talent-card-wrap"
-                    v-for="(profile, key) in profiles" :key="key">
-                    <app-cards :profilesData="profile"/>
-                </div>
-         </div>
+        <!--talent__content-->
+        <div class="talent__content"
+                v-if="profiles.length > 0"
+                v-bind:class="{'view-list': isShowList}" >
+            <div v-show="noPerson" class="person-null">
+                        Sorry, we don't know this person. Just found the simmilar...
+            </div>
+              
+            <div class="talent-card-wrap"
+                    v-for="(profile, key) in profiles" :key="key"
+                    :class="{ 'talent-card-wrap--list' : isShowList }">
+                <app-cards :profilesData="profile"/>
+            </div>
+        </div> <!--./talent__content-->
 
         <div class="talent__explore--wrap">
             <a href="/clients" class="talent__explore--btn"> Explore more</a>
@@ -33,44 +44,74 @@ import Cards from './Cards'
 import Categories from './Categories'
 
 import firebase from 'firebase'
+import { mapGetters } from 'vuex';
 
 export default {
-    props: {
-        myQuery: {
-            type: String,
-            default: '',
-        }
-    },
-
    data () {
         return {
-        profiles: [],
-        search: ''
-
-      }
+            search: '',
+            invalid: false,
+            category: '',
+            noPerson: false,
+        }
     },
-      methods: {
-        getProfiles() {
-        const self = this;
-        firebase.database().ref('profile').once('value', function(snapshot){
-            snapshot.forEach(function(childSnapshot){
-                let childData = childSnapshot.val();
-                self.profiles.push(childData);
-                });
-            });      
+    computed: {
+        ...mapGetters([
+            'btnValue',
+            'isShowList'
+        ]),
+        
+        profiles() {
+            return this.$store.state.profiles.filter(profile => {
+                if (this.btnValue) {
+                    return profile.category.toLowerCase().indexOf(this.btnValue.toLowerCase()) > -1
+                } else if (this.search) {
+                    this.category !== this.btnValue;
+
+                }
+                return profile.name.toLowerCase().match(this.search.toLowerCase())
+            });
+            
+
         },
     },
-    filteredProfile () {
-        return this.profiles.filter(profile => {
-            return profile.name.toLowerCase().match(this.search.toLowerCase())
-        });
+    methods: {
+        onSearchSubmit () {
+            if (this.search.length === 0) {
+                this.invalid = !this.invalid;
+                this.noPerson = false;
+                    setTimeout(() => {
+                          this.invalid = false;
+                    }, 3000);
+            } 
+            else if (this.search !== this.name) {
+                this.noPerson = !this.noPerson;
+            }
+           
+             this.$emit('profiles', this.search);
+        },
+        
     },
-  components: {
-    appCards: Cards,
-    appCategories: Categories,
+    watch: {
+        search () {
+            if (this.search.length >= 0 && this.invalid === true) {
+                this.invalid = false;
+            
+            } 
+            if (this.search.length >= 0 && this.noPerson === true) {
+                this.noPerson = false;
+            } 
+            
+        },
+    },
+    
+    components: {
+        appCards: Cards,
+        appCategories: Categories,
+        
   },
   created() {
-      this.getProfiles()
+      this.$store.dispatch('getProfiles');
   }
 }
 </script>
@@ -78,11 +119,12 @@ export default {
 @import './mixins/_mixins.scss';
 .talent {
     text-align: center;
-    margin: 50px -35px;
+    margin: 0 -35px;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
 }
+
 .talent-wrap {
     @include flexBetween;
     width: 100%;
@@ -92,14 +134,27 @@ export default {
         @include flexCenter;
     }
 }
+.search-wrap {
+    height: 35px;
+    width: 100%;
+    margin-right: 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+}
+.search {
+    text-align: left;
+}
 .talent__search {
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    &:hover .header__search--field {
-        border-bottom: 1px solid rgba(255, 255, 255, .3);
+    &:hover .talent__search--btn > i {
+        color: $hover-color;
     }
+    
     @include  small {
     width: 100%;
     justify-content: flex-end;
@@ -113,6 +168,9 @@ export default {
     background: none;
     border-left: 3px solid $hover-color;
     padding: 10px 10px;
+    &:focus ~ .talent__search--btn {
+        color: $hover-color;
+    }
 }
 
 .talent__search--btn {
@@ -120,9 +178,8 @@ export default {
     outline: none;
     background: none;
     cursor: pointer;
-    transition: color .3s ease-in-out;
-    &:hover {
-        color: $hover-color;
+    > i {
+        transition: color .3s ease-in-out;
     }
 }
 
@@ -136,7 +193,19 @@ export default {
     margin-top: 10px;
     }
 }
-
+.view-list {
+    width: 100%;
+    flex-flow: column wrap;
+}
+.person-null {
+    font-size: 24px;
+    color: $accent-color;
+    width: 100%;
+    margin: 20px;
+}
+.talent-card-wrap--list {
+    height: 380px;
+}
 .talent__explore--btn {
     @include flexCenter;
     text-decoration: none;
@@ -161,6 +230,12 @@ export default {
     width: 100%;
     margin: 40px 0;
 }
-
+.invalid {
+    height: 5px;
+    font-size: 14px;
+    color: $hover-color;
+    width: 100%;
+    display: block;
+}
 </style>
 

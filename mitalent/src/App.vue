@@ -23,11 +23,19 @@ import Contacts from './views/Contacts'
 import Blog from './views/Blog'
 import About from './views/About'
 
-import Vue from 'vue';
+import Vue from 'vue'
 
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'app',
+   watch: {
+    ...mapGetters([
+        'profiles',
+        'btnValue',
+        'isShowList',
+    ]),
+    },
   data () {
     return {
       

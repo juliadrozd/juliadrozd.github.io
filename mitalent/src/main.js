@@ -1,17 +1,19 @@
 import Vue from 'vue';
-import VueRouter from 'vue-router'
-import App from './App.vue'
-import { config } from './firebase/config'
-import firebase, { app } from 'firebase'
-import Home from './views/Home'
-import Clients from './views/Clients'
-import News from './views/News'
-import Contacts from './views/Contacts'
-import Blog from './views/Blog'
-import About from './views/About'
-import Profile from './views/Profile'
+import { store } from './store/index'
+import VueRouter from 'vue-router';
+import App from './App.vue';
+import { config } from './firebase/config';
+import firebase, { app } from 'firebase';
+import Home from './views/Home';
+import Clients from './views/Clients';
+import News from './views/News';
+import Contacts from './views/Contacts';
+import Blog from './views/Blog';
+import About from './views/About';
+import Profile from './views/Profile';
 
 Vue.use(VueRouter);
+
 
 const routes = [
     { path: '/', component: Home, name: 'home' },
@@ -31,8 +33,9 @@ const router = new VueRouter({
 new Vue({
     el: '#app',
     router,
+    store,
     render: h => h(App),
     created() {
         firebase.initializeApp(config);
-    },
+    }
 });

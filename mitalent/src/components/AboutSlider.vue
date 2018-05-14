@@ -33,19 +33,20 @@
             <!--testimonials__slider-wrap-->
             <div id="first-slider" class="testimonials__slider-wrap">
 
-                <button @click="prevItem" id="js-prev--btn" class="testimonials__slider-btn testimonials__slider-btn--prev">
+                <button @click="prev" id="js-prev--btn" class="testimonials__slider-btn testimonials__slider-btn--prev">
 					<i class="material-icons">arrow_back</i>
 				</button>
 
                 <div class="testimonials__slider-container"
                     v-if="comments.length > 0">
                     <div class="testimonials__slider-track">
-                        <figure class="testimonials__slider-item"
-
-                        v-for="(item, key) in comments" :key="key" >
+                        <figure class="testimonials__slider-item"    
+                            v-for="(item, key) in comments"
+                            :key="key"
+                            >
                             <span class="testimonials__slider-img-wrap">
-	                            <img :src="item.image" alt="img" class="testimonials__slider-img">
-	                        </span>
+                                <img :src="item.image" alt="img" class="testimonials__slider-img">
+                            </span>
                             <figcaption class="testimonials__slider-descr-wrap">
                                 <h3 class="testimonials__slider-title">
                                         {{ item.name }}
@@ -58,23 +59,24 @@
                     </div>
                 </div>
 
-                <button @click="nextItem" id="js-next--btn" class="testimonials__slider-btn testimonials__slider-btn--next">
+                <button @click="next" id="js-next--btn" class="testimonials__slider-btn testimonials__slider-btn--next">
 					<i class="material-icons">arrow_forward</i>
 				</button>
 
             </div>
             <!--./testimonials__slider-wrap-->
+            
 
             <!--testimonials__slider-dots-list-->
             <ul class="testimonials__slider-dots-list">
                 <li class="testimonials__slider-dots-item">
-                    <button class="testimonials__slider-dots-btn"></button>
+                    <button @click="prev" class="testimonials__slider-dots-btn"></button>
                 </li>
                 <li class="testimonials__slider-dots-item testimonials__slider-dots-item--active">
                     <button class="testimonials__slider-dots-btn"></button>
                 </li>
                 <li class="testimonials__slider-dots-item">
-                    <button class="testimonials__slider-dots-btn"></button>
+                    <button @click="next" class="testimonials__slider-dots-btn"></button>
                 </li>
             </ul>
     
@@ -83,20 +85,18 @@
 </template>
 <script>
 import firebase from 'firebase'
-
 export default {
+   
     data () {
         return {
-            
             isShowForm: false,
             isShowOverlay: false,
-
+           
             comments: [],
             image: '',
             name: '',
             email: '',
             comment: '',
-            currentItem: '',
       }
     },
  methods: {
@@ -168,22 +168,71 @@ export default {
             snapshot.forEach(function(childSnapshot){
                 let childData = childSnapshot.val();
                 self.comments.push(childData);
-    
             });
         });  
     },
-    nextItem() {
-        console.log('next');
+    next() {
+        const sliderContainer = document.querySelector('.testimonials__slider-track');
+        const dotsContainer = document.querySelector('.testimonials__slider-dots-list');
+
+        let endCount = this.comments.length;
+        let currentCount = 1;
+        let position = 0;
+
+        endCount = sliderContainer.children.length;
+        let sliderItemLast = sliderContainer.lastElementChild;
+        let sliderItemFirst = sliderContainer.firstElementChild;
+        if (currentCount < endCount) {
+            currentCount++;
+            position = 0;
+
+            let cloneItem = sliderItemFirst.cloneNode(true);
+            cloneItem = sliderContainer.appendChild(cloneItem);
+
+            sliderContainer.removeChild(sliderItemFirst); //удалили склонированы
+            sliderItemFirst = sliderContainer.firstElementChild;
+        }
+        let dotsItem = dotsContainer.getElementsByTagName('li');
+        for (let i = 0; i < dotsItem.length; i++) {
+            let dotsCurrent = dotsItem[i].classList.remove('testimonials__slider-dots-item--active');
+            dotsContainer.lastElementChild.classList.add('testimonials__slider-dots-item--active');
+        }
+    
+
 
     },
-    prevItem() {
-        console.log('prev');
-    }
+    prev() {
+        const sliderContainer = document.querySelector('.testimonials__slider-track');
+        const dotsContainer = document.querySelector('.testimonials__slider-dots-list');
+
+        let endCount = this.comments.length;
+        let currentCount = 1;
+        let position = 0;
+
+        let sliderItemLast = sliderContainer.lastElementChild;
+        let sliderItemFirst = sliderContainer.firstElementChild;
+
+        if (currentCount <= endCount) {
+            endCount--;
+            position = 0;
+            let cloneItem = sliderItemFirst.cloneNode(true);
+            cloneItem = sliderContainer.appendChild(cloneItem);
+
+            sliderContainer.removeChild(sliderItemFirst); //удалили склонированы
+            sliderItemFirst = sliderContainer.firstElementChild;
+        }
+        let dotsItem = dotsContainer.getElementsByTagName('li');
+        for (let i = 0; i < dotsItem.length; i++) {
+            let dotsCurrent = dotsItem[i].classList.remove('testimonials__slider-dots-item--active');
+            dotsContainer.firstElementChild.classList.add('testimonials__slider-dots-item--active');
+        }
+    },
 },
 created() {
-   this.getAllComments()
+   this.getAllComments();
   }
 }
+
 
 </script>
 
@@ -310,7 +359,14 @@ created() {
         height: 150px;
     }
 }
-
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 1s ease-in-out;
+    transition: transform 1s ease-in-out;
+}
+.fade-enter, .fade-leave-active {
+    opacity: 0;
+    transform: translateX(20px);
+}
 .testimonials__slider-item {
     width: 100%;
     height: 300px;
@@ -443,5 +499,6 @@ created() {
 .slide-enter, .slide-leave-active {
     transform: translateX(-100%);
   }
+ 
 </style>
 

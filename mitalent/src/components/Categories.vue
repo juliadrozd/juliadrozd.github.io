@@ -1,19 +1,41 @@
 <template>
-  <ul class="talent-nav__list">
-        <li  class="talent-nav__item">
-            <button class="talent-nav__link">Actor</button>
-        </li>
-        <li class="talent-nav__item">
-            <button class="talent-nav__link">Musician</button>
-        </li>
-        <li class="talent-nav__item">
-            <button class="talent-nav__link">Comedian</button>
-        </li>
-        <li class="talent-nav__item">
-            <button class="talent-nav__link">Model</button>
+    <ul class="talent-nav__list">
+        <li class="talent-nav__item"
+            v-for="(item , key) in categories" :key="key">
+            <button :value="item.value" @click="getBtnName(key)" class="talent-nav__link">{{ item.title }}</button>
         </li>
     </ul>
 </template>
+<script>
+import { mapActions, mapGetters } from 'vuex';
+
+export default {
+  data () {
+        return {
+            categories: [
+                {title: 'all', value: ''},
+                {title: 'actor', value: 'actor'},
+                {title: 'model', value: 'model'},
+                {title: 'comedian', value: 'comedian'},
+                {title: 'musician', value: 'musician'},
+            ],
+        }
+    },
+    computed: {
+        ...mapGetters([
+            'btnValue', 
+        ]),
+
+    },
+    methods: {
+    getBtnName(id) {
+        const category = this.categories[id].value;
+        this.$store.dispatch('btnName', category);
+    },
+
+  },
+}
+</script>
 <style lang="scss" scoped>
 @import './mixins/_mixins.scss';
 .talent-nav__list {
@@ -22,7 +44,6 @@
     list-style: none;
     justify-content: center;
     padding: 0;
-    
 }
 
 .talent-nav__item {
@@ -52,6 +73,7 @@
     line-height: 18px;
     position: relative;
     transition: color .2s ease-in-out;
+    cursor: pointer;
    
     &:hover {
         color: rgb(26, 26, 29);

@@ -1,12 +1,13 @@
 <template>
-  <figure class="main-slider__item">
+    <transition name="fade">
+    <figure class="main-slider__item">
             <img class="main-slider__img" :src="personsData.imgPath" alt="img">
-
              <figcaption class="main-slider__txt">
                 <span class="main-slider__title">{{ personsData.name }}</span>
                 <span class="main-slider__descr">{{ personsData.about }}</span>
             </figcaption>
     </figure>
+    </transition>
 </template>
 <script>
 export default {
@@ -26,10 +27,10 @@ export default {
     bottom: 0;
     left: 0;
     width: 100%;
+    z-index: -1;
     @include small {
         flex-flow: column nowrap;
-    }
-    
+    } 
 }
 .main-slider__img {
     margin: 0;
@@ -82,6 +83,17 @@ export default {
     @include small {
         font-size: 18px;
     }
+}
+ .fade-enter-active, .fade-leave-active {
+  transition: opacity 0.8s ease;
+  overflow: hidden;
+  visibility: visible;
+  opacity: 1;
+  position: absolute;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+  visibility: hidden;
 }
 
 </style>

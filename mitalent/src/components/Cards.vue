@@ -1,32 +1,52 @@
 <template>
-            <figure class="talent__img-container">
-                <span class="talent__img">
-					<img :src="profilesData.imgPath" alt="img">
-				</span>
-                <figcaption class="talent__hover hover-overlay-params">
-                    <a href="#" class="talent__hover-link" @click="onOpenPerson">
-                        <div class="talent__icon--wrap">
-                            <span class="talent__icon">
-								<i class="material-icons">call_made</i>
-							</span>
-                        </div>
-                        <div class="talent__descr--wrap">
-                            <p class="talent__descr">{{ profilesData.name }}</p>
-                            <span class="talent__category">{{ profilesData.category }}</span>
-                        </div>
-                    </a>
-                </figcaption>
-            </figure>
+    <figure class="talent__img-container"
+        :class="{ 'talent-img-container--list' : isShowList}">
+        <span class="talent__img">
+            <img :src="profilesData.imgPath" alt="img">
+        </span>
+        <figcaption class="talent__hover hover-overlay-params"
+                    :class="{ 'talent__hover--list' : isShowList }">
+            <a href="#" class="talent__hover-link" 
+                @click="onOpenPerson">
+                <div class="talent__icon--wrap">
+                    <span class="talent__icon">
+                        <i class="material-icons">call_made</i>
+                    </span>
+                </div>
+                <div class="talent__descr--wrap">
+                    <p class="talent__descr"
+                        :class="{ 'talent__descr--list' : isShowList }" >{{ profilesData.name }}</p>
+                    <span class="talent__category"
+                            :class="{ 'talent__category--list' : isShowList }">{{ profilesData.category }}</span>
+                </div>
+            </a>
+        </figcaption>
+    </figure>
 </template>
 <script>
-export default {
-  props: ['profilesData'],
-  methods: {
-      onOpenPerson() {
 
-       this.$router.push(`/profile/${this.profilesData.id}`);
+import { mapGetters } from 'vuex';
+
+export default {
+    props: ['profilesData'],
+    data() {
+        return {
+        }
     },
-  }
+    computed: {
+        ...mapGetters([
+            'isShowList',
+            'profiles'
+        ]),
+        isShowList() {
+            return this.$store.state.isShowList;
+        }
+    },
+    methods: {
+        onOpenPerson() {
+            this.$router.push(`/profile/${this.profile.id}`);
+        },      
+    }
 }
 </script>
 <style lang="scss" scoped>
@@ -40,8 +60,13 @@ export default {
     &:hover .talent__hover {
         transform: rotateY(0);
     }
-
     }
+.talent-img-container--list {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
 
 .talent__img {
     width: 325px;
@@ -67,7 +92,13 @@ export default {
          transform: rotateY(0);
     }
 }
-
+.talent__hover--list {
+    transform: rotateY(0);
+    position: relative;
+    height: 100%;
+    background: $hover-color;
+    padding: 60px 20px;
+}
 .talent__hover-link {
     width: 100%;
     height: 100%;
@@ -76,6 +107,9 @@ export default {
     flex-flow: column nowrap;
     text-decoration: none;
     color: #fff;
+}
+.talent__hover-link--list {
+    color: $accent-color;
 }
 
 .talent__icon--wrap {
@@ -105,12 +139,18 @@ export default {
     font-size: 18px;
     font-weight: 300;
 }
-
+.talent__descr--list {
+    font-size: 24px;
+    color: $accent-color;
+}
 .talent__category {
     text-transform: uppercase;
     font-size: 10px;
     font-weight: 300;
     display: block;
     margin-top: 10px;
+}
+.talent__category--list {
+    font-size: 18px;
 }
 </style>

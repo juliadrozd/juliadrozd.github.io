@@ -78,7 +78,6 @@ export default {
             snapshot.forEach(function(childSnapshot){
                 let childData = childSnapshot.val();
                 self.persons.push(childData);
-    
             });
         });      
     }, 

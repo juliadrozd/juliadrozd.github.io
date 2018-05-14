@@ -40,31 +40,28 @@ export default {
     justify-content: flex-start;
     align-items: center;
     flex-flow: column nowrap;
-    width: 100%;
-}
-.main-slider__img {
-    margin: 0;
-    padding: 0;
-    width: 654px;
-    height: auto;
-    z-index: -1;
+    width: 750px;
+    height: 630px;
+    overflow: hidden;
             @include responsive(1980px) {
                 width: 750px;
+                height: 630px;
                 
             }
             @include responsive(1365px) {
                 width: 654px;
-               
+                height: 534px;
             }
             @include medium {
                 width: 450px;
-               
+                 height: 330px;
             }
-            @include small {
-                width: 450px;
-               
-            }
-    
+}
+.main-slider__img {
+    margin: 0;
+    padding: 0;
+    z-index: -1;
+    width: 100%; 
 }
 .main-slider__txt {
     display: flex;

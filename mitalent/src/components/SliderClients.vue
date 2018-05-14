@@ -1,13 +1,14 @@
 <template>
     <section id="clients-slider" class="main-slider"
             v-if="persons.length > 0">
+        
         <!--slider-wrap-->
         <div class="slider-wrap" 
         v-show="person.id === activeId" 
         v-for="(person, key) in persons" :key="key">
 
         <!--social-->
-                    <address class="address-aside">
+                <address class="address-aside">
                     <!--address-aside__list-->
                     <ul class="address-aside__list">
                         <li class="address-aside__item">
@@ -48,7 +49,9 @@
 
             <!--person-->
             <div class="figure--wrap" id="js-figures">
-                <app-clients-person :personsData="person"/>
+                
+                    <app-clients-person :personsData="person"/>
+                
                 <!--main-slider__txt-btn-wrap-->
                 <div class="main-slider__txt-btn-wrap">
                     <button @click="prevItem(person.id)" class="main-slider__prev">
@@ -63,7 +66,7 @@
             
 
         </div><!--./slider-wrap-->
-        
+
     </section>
 </template>
 <script>
@@ -186,6 +189,7 @@ export default {
 .figure--wrap {
     display: block;
     position: relative;
+
    @include responsive(1980px) {
         height: 950;
     }
@@ -272,4 +276,5 @@ export default {
         display: none;
     }
 }
+
 </style>

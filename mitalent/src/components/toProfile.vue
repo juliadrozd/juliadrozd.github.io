@@ -11,7 +11,6 @@ export default {
   props: ['personsData'],
   methods: {
       onOpenPerson() {
-
        this.$router.push(`/profile/${this.personsData.id}`);
     },
   }
@@ -34,7 +33,7 @@ export default {
     cursor: pointer;
     
     &:hover .main-slider__btn--descr {
-        background: rgba(45, 47, 51, 0.9);
+        background: rgb(52, 55, 59);
         color: rgba(119,221,211,1);
     }
     &:hover .main-slider__btn--icon {
