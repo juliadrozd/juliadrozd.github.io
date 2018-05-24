@@ -28,7 +28,9 @@
 
                     <!--login-->
                     <div id="js-show-login-btn" class="header-btn-wrap">
+                        <span id="show-user"></span>
                         <button class="login-btn">Вход</button>
+                        <button class="logout-btn hide--btn">Выход</button>
                     </div>
 
                     <div class="login__form--wrap">
@@ -52,7 +54,7 @@
 
                 <!--logo__mobile-->
                 <div class="logo__mobile">
-                    <a href="#" class="logo__mobile-link">
+                    <a href="index.html" class="logo__mobile-link">
                         <img src="img/logotype-mobile.png" alt="logo">
                     </a>
                 </div>
@@ -86,19 +88,19 @@
 
                 <!--form__enroll-->
                 <section id="form-application" class="form__enroll">
-                
+
                     <form id="applicationForm" class="user-info">
                         <div id="user__info-wrap">
                             <div class="container__flex">
-                            <input name="nameApp" class="info-list-item" type="text" value="Имя" id="nameApp" required>
-                            <input name="surnameApp" class="info-list-item" type="text" value="Фамилия" id="surnameApp">
-                            <input name="middlenameApp" class="info-list-item" type="text" value="Отчество" id="middlenameApp">
-                        </div>
-                        <div class="container__flex">
-                            <input name="phoneApp" class="info-list-item" type="text" value="Контактный телефон" id="phoneApp" required>
-                            <input name="emailApp" class="info-list-item" type="email" value="Контактный e-mail" id="emailApp">
-                        </div>
-                        <textarea name="textCommentApp" class="info-list-item" cols="1000" rows="10" id="textCommentApp" required> Дополнительная информация для мастера
+                                <input name="nameApp" class="info-list-item" type="text" value="Имя" id="nameApp" required>
+                                <input name="surnameApp" class="info-list-item" type="text" value="Фамилия" id="surnameApp">
+                                <input name="middlenameApp" class="info-list-item" type="text" value="Отчество" id="middlenameApp">
+                            </div>
+                            <div class="container__flex">
+                                <input name="phoneApp" class="info-list-item" type="text" value="Контактный телефон" id="phoneApp" required>
+                                <input name="emailApp" class="info-list-item" type="email" value="Контактный e-mail" id="emailApp">
+                            </div>
+                            <textarea name="textCommentApp" class="info-list-item" cols="1000" rows="10" id="textCommentApp" required> Дополнительная информация для мастера
 						</textarea>
                         </div>
 
@@ -286,17 +288,18 @@
     <div class="overlay"></div>
     <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
     <script>
-     // Initialize Firebase
-    const config = {
-        apiKey: "AIzaSyBBbxMCRYANXjoBi81JlgO8-VWdkTRov_4",
-        authDomain: "barbershopjd-2cab8.firebaseapp.com",
-        databaseURL: "https://barbershopjd-2cab8.firebaseio.com",
-        projectId: "barbershopjd-2cab8",
-        storageBucket: "barbershopjd-2cab8.appspot.com",
-        messagingSenderId: "518963994835"
-    };
-    firebase.initializeApp(config);
+        // Initialize Firebase
+        const config = {
+            apiKey: "AIzaSyBBbxMCRYANXjoBi81JlgO8-VWdkTRov_4",
+            authDomain: "barbershopjd-2cab8.firebaseapp.com",
+            databaseURL: "https://barbershopjd-2cab8.firebaseio.com",
+            projectId: "barbershopjd-2cab8",
+            storageBucket: "barbershopjd-2cab8.appspot.com",
+            messagingSenderId: "518963994835"
+        };
+        firebase.initializeApp(config);
     </script>
-       <script src="js/bundle.js"></script></body>
+    <script src="js/bundle.js"></script>
+</body>
 
 </html>

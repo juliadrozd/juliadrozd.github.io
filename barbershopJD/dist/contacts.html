@@ -29,11 +29,13 @@
 
                     <!--login-->
                     <div id="js-show-login-btn" class="header-btn-wrap">
+                        <span id="show-user"></span>
                         <button class="login-btn">Вход</button>
+                        <button class="logout-btn hide--btn">Выход</button>
                     </div>
 
                     <div class="login__form--wrap">
-                       <div id="login_div" class="main-div">
+                        <div id="login_div" class="main-div">
                             <h3>Пользуйтесь скидками для зарегистрированных клиентов</h3>
                             <input type="email" placeholder="Email..." id="email_field" required/>
                             <input type="password" placeholder="Password..." id="password_field" required/>
@@ -57,7 +59,7 @@
                 <!--logo__mobile-->
 
                 <div class="logo__mobile">
-                    <a href="#" class="logo__mobile-link">
+                    <a href="index.html" class="logo__mobile-link">
                         <img src="img/logotype-mobile.png" alt="logo">
                     </a>
                 </div>
@@ -96,10 +98,10 @@
                     <a class="page-btn section-btn map--btn" href="form.html">Записаться</a>
                 </address>
                 <!--./map__section-->
-            </div>    
+            </div>
         </section>
-   <!--./maincontacts-->
-        
+        <!--./maincontacts-->
+
         <!--footer-->
         <footer class="footer">
             <div class="container">
@@ -154,38 +156,41 @@
             <!--./container-->
         </footer>
         <!--./footer-->
-    <div class="overlay"></div>
+        <div class="overlay"></div>
     </div>
-     <script>
-      function initMap() {
-        var uluru = {lat: 59.9387942, lng: 30.323083300000008};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 10,
-          center: uluru
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-      }
+    <script>
+        function initMap() {
+            var uluru = {
+                lat: 59.9387942,
+                lng: 30.323083300000008
+            };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 10,
+                center: uluru
+            });
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+            });
+        }
     </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDM57W8cFWnjQr9eOwIXgV7_gzBAtVEH0k&callback=initMap">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDM57W8cFWnjQr9eOwIXgV7_gzBAtVEH0k&callback=initMap">
     </script>
-    
+
     <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
     <script>
-     // Initialize Firebase
-    const config = {
-        apiKey: "AIzaSyBBbxMCRYANXjoBi81JlgO8-VWdkTRov_4",
-        authDomain: "barbershopjd-2cab8.firebaseapp.com",
-        databaseURL: "https://barbershopjd-2cab8.firebaseio.com",
-        projectId: "barbershopjd-2cab8",
-        storageBucket: "barbershopjd-2cab8.appspot.com",
-        messagingSenderId: "518963994835"
-    };
-    firebase.initializeApp(config);
+        // Initialize Firebase
+        const config = {
+            apiKey: "AIzaSyBBbxMCRYANXjoBi81JlgO8-VWdkTRov_4",
+            authDomain: "barbershopjd-2cab8.firebaseapp.com",
+            databaseURL: "https://barbershopjd-2cab8.firebaseio.com",
+            projectId: "barbershopjd-2cab8",
+            storageBucket: "barbershopjd-2cab8.appspot.com",
+            messagingSenderId: "518963994835"
+        };
+        firebase.initializeApp(config);
     </script>
-    <script src="js/bundle.js"></script></body>
+    <script src="js/bundle.js"></script>
+</body>
 
 </html>
