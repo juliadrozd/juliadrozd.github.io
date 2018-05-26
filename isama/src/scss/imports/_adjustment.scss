@@ -113,24 +113,7 @@ body {
 }
 
 .section__line {
-    @include responsive(1178px) {
-        width: 1000px;
-    }
-    @include responsive(1120px) {
-        width: 900px;
-    }
-    @include responsive(982px) {
-        width: 800px;
-    }
-    @include responsive(860px) {
-        width: 700px;
-    }
-    @include responsive(761px) {
-        display: none;
-    }
-    @include responsive(518px) {
-        display: none;
-    }
+    width: 100%;
     @include extraSmall {
         display: none;
     }
@@ -139,6 +122,30 @@ body {
 .cls-1 {
     fill: $border-color;
     fill-rule: evenodd;
+}
+
+.back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin: 0;
+    padding: 15px;
+    background: #ffffff;
+    color: #c7c9ce;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 9;
+    i {
+        font-size: 40px;
+    }
+    @include responsive(918px) {
+        display: none !important;
+    }
 }
 
 .overlay {
@@ -153,4 +160,8 @@ body {
 
 .overlay--active {
     display: block;
+}
+
+.highlighted {
+    background-color: yellow;
 }

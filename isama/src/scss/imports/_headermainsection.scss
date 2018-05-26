@@ -107,7 +107,7 @@
     color: $hover-color;
     width: 160px;
     padding: 15px 20px;
-    background: rgba(212, 212, 213, .1);
+    background: rgba(212, 212, 213, .3);
     border-radius: 10px;
     position: absolute;
     top: -60px;
@@ -119,7 +119,7 @@
         bottom: -30px;
         left: 10px;
         border: 20px solid transparent;
-        border-top: 10px solid rgba(212, 212, 213, .1);
+        border-top: 10px solid rgba(212, 212, 213, .3);
         transition: border-color .2s ease-in-out;
     }
 }
@@ -184,7 +184,7 @@
     color: $hover-color;
     width: 160px;
     padding: 15px 20px;
-    background: rgba(212, 212, 213, .1);
+    background: rgba(212, 212, 213, .3);
     border-radius: 10px;
     position: absolute;
     top: -60px;
@@ -198,7 +198,7 @@
         left: 50%;
         transform: translateX(-50%);
         border: 20px solid transparent;
-        border-top: 10px solid rgba(212, 212, 213, .1);
+        border-top: 10px solid rgba(212, 212, 213, .3);
         transition: border-color .2s ease-in-out;
     }
 }
@@ -254,7 +254,7 @@
     color: $hover-color;
     width: 160px;
     padding: 15px 20px;
-    background: rgba(212, 212, 213, .1);
+    background: rgba(212, 212, 213, .3);
     border-radius: 10px;
     position: absolute;
     top: -60px;
@@ -266,7 +266,7 @@
         bottom: -30px;
         right: 10px;
         border: 20px solid transparent;
-        border-top: 10px solid rgba(212, 212, 213, .1);
+        border-top: 10px solid rgba(212, 212, 213, .3);
         transition: border-color .2s ease-in-out;
     }
 }

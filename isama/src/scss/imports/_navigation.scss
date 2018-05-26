@@ -163,3 +163,16 @@
         font-weight: 400;
     }
 }
+
+#search-button {
+    cursor: pointer;
+}
+
+#clear-button {
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    transition: display .3s ease-in-out;
+}

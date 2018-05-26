@@ -19,20 +19,6 @@
     }
 }
 
-.projects__btn-item {
-    &:not(:last-child) {
-        margin-right: 20px;
-    }
-    @include responsive(878px) {
-        padding: 5px;
-    }
-    @include responsive(761px) {
-        &:not(:last-child) {
-            margin-right: 0;
-        }
-    }
-}
-
 .projects__btn {
     border: 2px solid $border-color;
     background: none;
@@ -43,7 +29,14 @@
     font-weight: normal;
     font-size: 14px;
     border-radius: 4px;
+    margin: 5px 0;
     transition: background .2s ease-in-out, color .2s ease-in-out;
+    &:not(:last-child) {
+        margin-right: 20px;
+    }
+    @include responsive(878px) {
+        padding: 5px;
+    }
     &:hover {
         background: #fff;
         color: $main-color;
@@ -53,12 +46,16 @@
         @include flexCenter;
         width: 250px;
         flex-flow: column wrap;
+        &:not(:last-child) {
+            margin-right: 0;
+        }
     }
 }
 
 .projects__btn--active {
     background: #fff;
-    color: $active-color;
+    color: $main-color;
+    border: 2px solid #fff;
 }
 
 .projects__content {
@@ -133,34 +130,28 @@
     }
 }
 
-.projects__up--btn {
-    @include flexCenter;
+.projects__btn-list a.active:before {
+    content: '';
     position: absolute;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    right: -40px;
-    bottom: 40px;
-    transform: translate(40px, -40px);
-    margin: 0;
-    padding: 0;
-    background: #ffffff;
-    font-size: 40px;
-    color: #c7c9ce;
-    cursor: pointer;
-    text-decoration: none;
-    i {
-        @include flexCenter;
-        width: 70px;
-        height: 70px;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 15px 0 0;
+    border-color: #333 transparent transparent transparent;
+}
+
+.is-animated {
+    animation: .6s zoom-in;
+}
+
+@keyframes zoom-in {
+    0% {
+        transform: scale(.1);
     }
-    @include responsive(1340px) {
-        right: 0;
-        bottom: 0;
-        transform: translate(0, 0);
-        position: relative;
-    }
-    @include responsive(918px) {
-        display: none !important;
+    100% {
+        transform: none;
     }
 }

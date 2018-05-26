@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ISAMA</title>
-
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.min.css">
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 </head>
 
@@ -150,10 +149,11 @@
             <!--./nav-->
 
             <!--nav__search--wrap-->
-            <div class="nav__search--wrap">
-                <i class="fas fa-search"></i>
-                <input type="search" class="nav__search" placeholder="Type your search words">
-            </div>
+            <form class="nav__search--wrap">
+                <i id="search-button" class="fas fa-search"></i>
+                <input id="search-term" type="search" class="nav__search" placeholder="Type your search words">
+                <i id="clear-button" class="material-icons">close</i>
+            </form>
             <!--./nav__search--wrap-->
 
 
@@ -194,21 +194,53 @@
             </div>
 
             <div class="hero__gallery">
+                <button class="hero__gallery--prev--btn" id="prev">
+                    <i class="fas fa-angle-left"></i>
+                </button>
                 <div class="hero__gallery--track">
                     <figure class="hero__gallery--img">
                         <img src="img/gallery1.jpg" alt="design1">
 
                         <figcaption class="hero__gallery--like">
-                            <i class="far fa-heart"></i>
+                            <input id="like" type="checkbox" value="like" hidden>
+                            <label class="gallery__like" for="like">
+                                <i class="far fa-heart"></i>
+                            </label>
                             <span class="hero__gallery--like--descr">Like</span>
                         </figcaption>
                     </figure>
 
                     <figure class="hero__gallery--img">
-                        <img src="img/gallery2.jpg" alt="design1">
+                        <img src="img/gallery2.jpg" alt="design2">
 
                         <figcaption class="hero__gallery--like">
-                            <i class="far fa-heart"></i>
+                            <input id="like2" type="checkbox" value="like" hidden>
+                            <label class="gallery__like" for="like2">
+                                <i class="far fa-heart"></i>
+                            </label>
+                            <span class="hero__gallery--like--descr">Like</span>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="hero__gallery--img">
+                        <img src="img/gellery3.jpg" alt="design3">
+
+                        <figcaption class="hero__gallery--like">
+                            <input id="like3" type="checkbox" value="like" hidden>
+                            <label class="gallery__like" for="like3">
+                                <i class="far fa-heart"></i>
+                            </label>
+                            <span class="hero__gallery--like--descr">Like</span>
+                        </figcaption>
+                    </figure>
+                    <figure class="hero__gallery--img">
+                        <img src="img/gallery4.jpg" alt="design4">
+
+                        <figcaption class="hero__gallery--like">
+                            <input id="like4" type="checkbox" value="like" hidden>
+                            <label class="gallery__like" for="like4">
+                                <i class="far fa-heart"></i>
+                            </label>
                             <span class="hero__gallery--like--descr">Like</span>
                         </figcaption>
                     </figure>
@@ -216,13 +248,12 @@
                 </div>
 
                 <button class="hero__gallery--next--btn" id="next">
-                        <i class="fas fa-angle-right"></i>
+                    <i class="fas fa-angle-right"></i>
                 </button>
             </div>
         </div>
     </section>
     <!--./hero-->
-
     <!--about-->
     <section class="about container" id="about">
         <ul class="about__list">
@@ -360,33 +391,19 @@
             <!--./section__title-->
 
             <!--projects__btn-list-->
-            <ul class="projects__btn-list">
-                <li class="projects__btn-item">
-                    <button class="projects__btn gallery__btn-active" data-category="all">All</button>
-                </li>
-
-                <li class="projects__btn-item">
-                    <button class="projects__btn" data-category="mobile">Mobile Apps</button>
-                </li>
-
-                <li class="projects__btn-item">
-                    <button class="projects__btn" data-category="identities">Identities</button>
-                </li>
-
-                <li class="projects__btn-item">
-                    <button class="projects__btn" data-category="interior-design">Interior design</button>
-                </li>
-
-                <li class="projects__btn-item">
-                    <button class="projects__btn" data-category="uiux">UI/UX</button>
-                </li>
-            </ul>
+            <div class="projects__btn-list">
+                <a class="projects__btn projects__btn--active" data-category="all">All</a>
+                <a class="projects__btn" data-category="mobile">Mobile Apps</a>
+                <a class="projects__btn" data-category="identities">Identities</a>
+                <a class="projects__btn" data-category="interior-design">Interior design</a>
+                <a class="projects__btn" data-category="uiux">UI/UX</a>
+            </div>
             <!--./projects__btn-list-->
 
             <!--projects__content-->
             <div class="projects__content">
                 <!--projects__img--wrap-->
-                <figure class="projects__img--wrap">
+                <figure class="projects__img--wrap" data-filter="mobile">
                     <span class="projects__img">
                         <img src="img/projects1.svg" alt="img">
                     </span>
@@ -404,7 +421,7 @@
                 <!--./projects__img--wrap-->
 
                 <!--projects__img--wrap-->
-                <figure class="projects__img--wrap">
+                <figure class="projects__img--wrap" data-filter="identities">
                     <span class="projects__img">
                         <img src="img/projects2.svg" alt="img">
                     </span>
@@ -422,7 +439,7 @@
                 <!--./projects__img--wrap-->
 
                 <!--projects__img--wrap-->
-                <figure class="projects__img--wrap">
+                <figure class="projects__img--wrap" data-filter="interior-design">
                     <span class="projects__img">
                         <img src="img/projects3.svg" alt="img">
                     </span>
@@ -440,7 +457,7 @@
                 <!--./projects__img--wrap-->
 
                 <!--projects__img--wrap-->
-                <figure class="projects__img--wrap">
+                <figure class="projects__img--wrap" data-filter="uiux">
                     <span class="projects__img">
                         <img src="img/projects4.svg" alt="img">
                     </span>
@@ -458,7 +475,7 @@
                 <!--./projects__img--wrap-->
 
                 <!--projects__img--wrap-->
-                <figure class="projects__img--wrap">
+                <figure class="projects__img--wrap" data-filter="mobile">
                     <span class="projects__img">
                         <img src="img/projects5.svg" alt="img">
                     </span>
@@ -476,7 +493,7 @@
                 <!--./projects__img--wrap-->
 
                 <!--projects__img--wrap-->
-                <figure class="projects__img--wrap">
+                <figure class="projects__img--wrap" data-filter="identities">
                     <span class="projects__img">
                         <img src="img/projects6.svg" alt="img">
                     </span>
@@ -494,7 +511,7 @@
                 <!--./projects__img--wrap-->
 
                 <!--projects__img--wrap-->
-                <figure class="projects__img--wrap">
+                <figure class="projects__img--wrap" data-filter="interior-design">
                     <span class="projects__img">
                         <img src="img/projects7.svg" alt="img">
                     </span>
@@ -512,7 +529,7 @@
                 <!--./projects__img--wrap-->
 
                 <!--projects__img--wrap-->
-                <figure class="projects__img--wrap">
+                <figure class="projects__img--wrap" data-filter="uiux">
                     <span class="projects__img">
                         <img src="img/projects5.svg" alt="img">
                     </span>
@@ -528,12 +545,6 @@
                     </figcaption>
                 </figure>
                 <!--./projects__img--wrap-->
-
-                <!--projects__up--btn-->
-                <div class="projects__up--btn" id="toTop">
-                    <i class="fas fa-angle-up"></i>
-                </div>
-                <!--./projects__up--btn-->
 
             </div>
             <!--./projects__content-->
@@ -754,11 +765,16 @@
             <!--./footer__social-->
 
             <!--footer__fallback-->
-            <div class="footer__fallback">
-                <input type="text" class="footer__fallback--btn" maxlength="35" placeholder="Enter your email for out newsletter">
-                <i class="far fa-address-card"></i>
-                <input type="submit" value="Join" class="footer__fallback--join"></input>
+            <div id="completeform" class="footer__fallback">
+                <form id="inviteform" name="inviteform" method="post" action="#">
+                    <input type="email" name="email" id="email" class="footer__fallback--btn" maxlength="35" placeholder="Enter your email for out newsletter" autocomplete="off" autocorrect="off" autocapitalize="off">
+                    <i class="far fa-address-card"></i>
+                    <button class="footer__fallback--join" name="sendbtn" id="sendbtn" type="submit" value="Send">Join</button>
+                </form>
+                <span id="error"></span>
             </div>
+
+
             <!--./footer__fallback-->
 
             <!--footer__copywriting-->
@@ -795,12 +811,18 @@
     </footer>
     <!--./footer-->
 
+    <!--back-to-top-->
+    <a href="#" class="back-to-top">
+        <i class="material-icons">keyboard_arrow_up</i>
+    </a>
+    <!--./back-to-top-->
+
     <div class="overlay"></div>
 
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiHTYjcGPSMYII5WfC18UqkOOz3myM7Q8&callback=initMap"></script>
-    <script src="js/map.js"></script>
+    <script type="text/javascript" src="js/map.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/script.custom.js"></script>
+    <script src="js/bundle.js"></script>
 
 </body>
 

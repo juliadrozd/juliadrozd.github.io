@@ -3,73 +3,103 @@
 * Basic page needs
 *
 **/
+
 @import "mixins/mixins.scss";
 @import url('https://use.fontawesome.com/releases/v5.0.6/css/all.css');
 @import "../../src/libs/normalize/normalize.css";
+@font-face {
+    font-family: "MyriadProRegular";
+    src: url("../fonts/MyriadProRegular/MyriadProRegular.eot");
+    src: url("../fonts/MyriadProRegular/MyriadProRegular.eot?#iefix")format("embedded-opentype"), url("../fonts/MyriadProRegular/MyriadProRegular.woff") format("woff"), url("../fonts/MyriadProRegular/MyriadProRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
 
 /*
 *
 * Adjustment Settings
 *
 */
+
 @import "imports/adjustment";
+
 /*
 *
 * Header
 *
 */
+
 @import "imports/header";
+
 /*
 *
 * HeaderMainsection
 *
 */
+
 @import "imports/headermainsection";
+
 /*
 *
 * Navigation
 *
 */
+
 @import "imports/navigation";
+
 /*
 *
 * Hero
 *
 */
+
 @import "imports/hero";
+
 /*
 *
 * About
 *
 */
+
 @import "imports/about";
+
 /*
 *
 * Wedo
 *
 */
+
 @import "imports/wedo";
+
 /*
 *
 * Projects
 *
 */
+
 @import "imports/projects";
+
 /*
 *
 * Team
 *
 */
+
 @import "imports/team";
+
 /*
 *
 * Map
 *
 */
+
 @import "imports/map";
+
 /*
 *
 * Footer
 *
 */
+
 @import "imports/footer";

@@ -10,23 +10,22 @@
     justify-content: space-around;
     align-items: center;
     flex-flow: row wrap;
-
     @include responsive(918px) {
         @include flexCenter;
         flex-flow: column wrap;
-	}
+    }
 }
+
 .footer__social {
     display: flex;
     width: 50%;
     order: 1;
-
     @include responsive(918px) {
         @include flexCenter;
         width: 100%;
         order: 2;
         padding-top: 50px;
-	}
+    }
 }
 
 .footer__social--link {
@@ -35,13 +34,23 @@
     width: 66px;
     padding: 15px 0;
     border-right: 1px solid $main-color;
-
     &:last-child {
         border: none;
     }
-
     & {
         color: $main-color;
+    }
+}
+
+#inviteform {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    >i {
+        position: absolute;
+        font-size: 35px;
+        margin-left: 10px;
     }
 }
 
@@ -53,19 +62,17 @@
     position: relative;
     color: $main-color;
     order: 2;
-
-    > i {
+    >i {
         position: absolute;
         font-size: 35px;
         padding-left: 10px;
     }
-
     @include responsive(918px) {
         width: 100%;
         order: 1;
     }
-    
 }
+
 .footer__fallback--btn {
     width: 100%;
     height: 46px;
@@ -75,12 +82,11 @@
     font-size: 14px;
     line-height: 16px;
     padding-left: 80px;
-
     @include responsive(761px) {
         font-size: 12px;
-    line-height: 14px;
-    padding-left: 50px;
-	}
+        line-height: 14px;
+        padding-left: 50px;
+    }
 }
 
 .footer__fallback--join {
@@ -95,11 +101,9 @@
     line-height: 16px;
     cursor: pointer;
     transition: color .2s ease-in-out;
-
-    :active {
+     :active {
         color: $active-color;
     }
-
 }
 
 .footer__copywriting {
@@ -109,12 +113,11 @@
     color: $main-color;
     padding: 50px 0 0 0;
     order: 3;
-
     @include responsive(918px) {
         @include flexCenter;
         width: 100%;
         order: 4;
-	}
+    }
 }
 
 .footer__list--links {
@@ -127,17 +130,16 @@
     font-size: 14px;
     line-height: 16px;
     order: 4;
-
     @include responsive(918px) {
         justify-content: center;
         width: 100%;
         order: 3;
-	}
+    }
 }
 
 .footer__item--links {
     padding-right: 10px;
-    > a {
+    >a {
         text-decoration: none;
         color: $main-color;
     }
