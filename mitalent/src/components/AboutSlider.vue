@@ -24,7 +24,13 @@
                         <div class="testimonials__form--add--wrap">
                             <button @click.prevent="getNewComment" id="js-testemonials-add-btn" type="submit" class="testimonials__form--add">Add your comment</button>
                         </div>
-                        <p id="testimonials__form--error"></p>
+                        <p id="testimonials__form--error" v-if="errors.length">
+                            <b>Please correct the following error(s):</b>
+                            <ul>
+                                <li v-for="(error, key) in errors" :key="key">{{ error }}</li>
+                            </ul>
+  
+                        </p>
                     </form>
                 </div>
                 <!--./testimonials__form--wrap-->
@@ -97,6 +103,7 @@ export default {
             name: '',
             email: '',
             comment: '',
+            errors: [],
       }
     },
  methods: {
@@ -137,8 +144,9 @@ export default {
         let commentsRef = firebase.database().ref('comments');
         let newMessageRef = commentsRef.push();
 
-        new Promise((resolve, reject) => {
-        newMessageRef.set({ name: this.name, comment: this.comment, email: this.email, image: this.image })
+        if (this.name && this.comment && this.email && this.image) {
+             new Promise((resolve, reject) => {
+            newMessageRef.set({ name: this.name, comment: this.comment, email: this.email, image: this.image })
 
         .then(data => {
             key = newMessageRef.key;
@@ -156,12 +164,33 @@ export default {
         })
          .then(() => {
              resolve();
-
              this.closeForm();
          })
-        .catch(err => reject(err));
+        .catch(err => {
+             reject(err); 
+           
+        });
      })
+        } else {
+            this.errors = [];
+            if(!this.image) this.errors.push("Image required.");
+            if(!this.name) this.errors.push("Name required.");
+
+            if(!this.email) {
+                this.errors.push("Email required.");
+            } 
+            else if(!this.validEmail(this.email)) {
+            this.errors.push("Valid email required.");        
+            }
+            if(!this.comment) this.errors.push("Comment required.");
+            if(!this.errors.length) return true;
+        }
+       
      },
+     validEmail(email) {
+            let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(email);
+    },
      getAllComments() {
         const self = this;
         firebase.database().ref('comments').once('value', function(snapshot){

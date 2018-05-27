@@ -56,8 +56,8 @@
             color: #aeaeae;
             background: $accent-color;
         }
-        @include small {
-            width: 300px;
-        }
+    }
+    @include small {
+        width: 300px;
     }
 }

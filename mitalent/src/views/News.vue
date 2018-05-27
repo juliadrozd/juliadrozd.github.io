@@ -146,6 +146,10 @@ export default {
       position: absolute;
       bottom: 40px;
       left: 400px;
+      @include small {
+        bottom: 0;
+        left: 100%;
+    }
     }
     @include responsive(1367px) {
       top: 280px;
@@ -155,6 +159,7 @@ export default {
     }
     @include small {
         left: 0;
+        width: 100%;
     }
   }
    > a {
@@ -220,7 +225,7 @@ export default {
       width: 30%;
     }
     @include small {
-         width: 50%;
+         width: 100%;
     }
    
 }
@@ -241,7 +246,7 @@ export default {
         height: 350px;
     }
      @include small {
-        height: 280px;
+        height: 480px;
     }
     >img {
         width: 100%;

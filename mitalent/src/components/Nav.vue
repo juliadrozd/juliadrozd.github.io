@@ -50,7 +50,6 @@ export default {
         { title: 'Home', path: '/' },
         { title: 'About', path: '/about'},
         { title: 'Contacts', path: '/contacts' },
-        { title: 'Blog', path: '/blog' },
         ],
     isShowAside: false,
     isShowBth: false,

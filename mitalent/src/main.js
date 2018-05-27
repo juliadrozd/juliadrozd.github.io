@@ -2,7 +2,7 @@ import Vue from 'vue';
 import { store } from './store/index'
 import VueRouter from 'vue-router';
 import App from './App.vue';
-import { config } from './firebase/config';
+import { config } from './firebase/Config';
 import firebase, { app } from 'firebase';
 import Home from './views/Home';
 import Clients from './views/Clients';

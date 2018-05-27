@@ -44,6 +44,7 @@ export default {
     list-style: none;
     justify-content: center;
     padding: 0;
+    flex-flow: row wrap;
 }
 
 .talent-nav__item {

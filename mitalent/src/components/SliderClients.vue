@@ -226,6 +226,10 @@ export default {
     justify-content: center;
     align-items: flex-start;
     flex-flow: column wrap;
+    @include small {
+        align-items: center;
+        padding: 10px;
+    }
 }
 .section-title__title {
     font-size: 80px;
@@ -236,6 +240,9 @@ export default {
     }
      @include responsive(1365px) {
         font-size: 80px;
+    }
+    @include small {
+        font-size: 60px;
     }
 }
 .section-title__descr {

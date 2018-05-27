@@ -99,7 +99,7 @@ export default {
     background: #fff;
     @include small {
         flex-flow: column wrap;
-        left: -150px;
+        left: 0;
     }
 }
 .contacts__img {
@@ -133,8 +133,8 @@ export default {
     }
     @include small {
       top: 40%;
-      left: 230px;
-      color: $hover-color;
+      left: 0;
+      color: #fff;
     }
 }
 .contacts__title {
@@ -173,10 +173,11 @@ export default {
         padding: 90px 20px 30px 30px;
     }
     @include small {
-      padding: 0 0 0 10px;
-      margin-left: 250px;
+      padding: 0 10px 0 10px;
+      margin: 0;
       width: 100%;
-      text-align: center;
+      justify-content: center;
+      align-items: center;
     }
 }
 
@@ -231,6 +232,11 @@ export default {
   position: absolute;
   bottom: 0;
   right: 0;
+
+  @include small {
+    left: 0;
+  }
+
 }
 .contacts__link-ctc {
   @include flexCenter;
@@ -274,6 +280,9 @@ export default {
   @include medium {
         flex-flow: column nowrap;
     }
+    @include small {
+      align-items: center;
+    }
 }
 .contacts-address__item {
   display: flex;
@@ -286,6 +295,7 @@ export default {
   font-style: normal;
   @include small {
      width: 100%;
+     justify-content: center;
     }
 
   > span {

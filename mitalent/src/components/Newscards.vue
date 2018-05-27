@@ -187,7 +187,8 @@
     align-items: center;
     flex-flow: column;
     @include small {
-        width: 50%;
+        width: 100%;
+        margin: 0;
     }
    
 }
@@ -207,7 +208,7 @@
         height: 400px;
     }
      @include small {
-        height: 280px;
+        height: 480px;
     }
     >img {
         width: 100%;
@@ -261,11 +262,15 @@
         height: auto;
         margin: 0 5px 0 5px;
     }
+    @include small {
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
 }
 
 .small__item--img {
     width: 100%;
-    
     display: block;
     position: relative;
     @include responsive(1980px) {
@@ -275,7 +280,7 @@
         height: 220px;
     }
      @include small {
-        height: 100px;
+        height: 200px;
     }
     >img {
         width: 100%;
@@ -299,7 +304,9 @@
         margin: 0 5px;
     }
     @include small {
-        height: 170px;
+        width: 100%;
+        height: 270px;
+        margin: 0;
     }
 }
 

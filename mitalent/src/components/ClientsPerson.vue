@@ -56,6 +56,9 @@ export default {
                 width: 450px;
                  height: 330px;
             }
+            @include small {
+                width: 100%;
+            }
 }
 .main-slider__img {
     margin: 0;
