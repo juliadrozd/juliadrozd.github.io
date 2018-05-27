@@ -2,7 +2,7 @@
     display: none;
     @include responsive(761px) {
         @include flexBetween;
-        width: 250px;
+        width: 300px;
         height: 100px;
         padding: 20px 0;
         background: #ffffff;
