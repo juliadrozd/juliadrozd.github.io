@@ -28,7 +28,7 @@
               
             <div class="talent-card-wrap"
                     v-for="(profile, key) in profiles" :key="key"
-                    :class="{ 'talent-card-wrap--list' : isShowList }">
+                    :class="{ 'talent-card-wrap--list': isShowList }">
                 <app-cards :profilesData="profile"/>
             </div>
         </div> <!--./talent__content-->
@@ -205,6 +205,7 @@ export default {
 }
 .talent-card-wrap--list {
     height: 380px;
+    opacity: 0;
 }
 .talent__explore--btn {
     @include flexCenter;
@@ -237,5 +238,6 @@ export default {
     width: 100%;
     display: block;
 }
+
 </style>
 

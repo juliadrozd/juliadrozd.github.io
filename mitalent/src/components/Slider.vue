@@ -32,6 +32,7 @@
                 </address>
             
                 <app-to-profile :personsData="person"/>
+            
             </div>
 
             <div class="figure--wrap" id="js-figures">
@@ -83,7 +84,7 @@ export default {
     }, 
     
      mainSlider(id, e) {
-         this.activeId = id;
+         this.activeId = id; 
         }
     },
    
@@ -224,5 +225,6 @@ export default {
 .main-content__counter--item:hover {
     color: #000;
 }
+
 
 </style>

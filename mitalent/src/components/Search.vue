@@ -2,7 +2,7 @@
   <!--Header search-->
     <div class="header__search">
         <input type="text" class="header__search--field">
-        <button class="header__search--btn">
+        <button type="submit" class="header__search--btn">
             <i class="material-icons">search</i>
         </button>
     </div>
@@ -12,9 +12,10 @@
 export default {
    data () {
         return {
-       
+          
       }
   },
+  
 }
 </script>
 <style lang="scss" scoped>

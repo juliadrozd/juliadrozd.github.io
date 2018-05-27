@@ -91,6 +91,7 @@
 </template>
 <script>
 import firebase from 'firebase'
+
 export default {
    
     data () {
@@ -217,9 +218,13 @@ export default {
 
             let cloneItem = sliderItemFirst.cloneNode(true);
             cloneItem = sliderContainer.appendChild(cloneItem);
+            cloneItem.style.opacity = '0';
+            cloneItem.style.transform = 'rotateZ(45deg)';
 
             sliderContainer.removeChild(sliderItemFirst); //удалили склонированы
             sliderItemFirst = sliderContainer.firstElementChild;
+            sliderItemLast.style.opacity = '1';
+            sliderItemLast.style.transform = 'rotateZ(0)';
         }
         let dotsItem = dotsContainer.getElementsByTagName('li');
         for (let i = 0; i < dotsItem.length; i++) {
@@ -246,9 +251,14 @@ export default {
             position = 0;
             let cloneItem = sliderItemFirst.cloneNode(true);
             cloneItem = sliderContainer.appendChild(cloneItem);
+            cloneItem.style.opacity = '0';
+            cloneItem.style.transform = 'rotateZ(45deg)';
+
 
             sliderContainer.removeChild(sliderItemFirst); //удалили склонированы
             sliderItemFirst = sliderContainer.firstElementChild;
+            sliderItemLast.style.opacity = '1';
+            sliderItemLast.style.transform = 'rotateZ(0)';
         }
         let dotsItem = dotsContainer.getElementsByTagName('li');
         for (let i = 0; i < dotsItem.length; i++) {
@@ -380,7 +390,6 @@ created() {
     width: 100%;
     height: 300px;
     position: relative;
-    overflow: hidden;
     
     @include small {
         display: flex;
@@ -388,14 +397,7 @@ created() {
         height: 150px;
     }
 }
-.fade-enter-active, .fade-leave-active {
-    transition: opacity 1s ease-in-out;
-    transition: transform 1s ease-in-out;
-}
-.fade-enter, .fade-leave-active {
-    opacity: 0;
-    transform: translateX(20px);
-}
+
 .testimonials__slider-item {
     width: 100%;
     height: 300px;
@@ -403,6 +405,8 @@ created() {
     font-size: 0;
     position: absolute;
     display: block;
+    opacity: 1;
+    transition: all .5s ease-in-out;
     @include small {
         display: flex;
         height: 150px;
@@ -422,6 +426,8 @@ created() {
 
 .testimonials__slider-img-wrap {
     width: 300px;
+    height: 300px;
+    overflow: hidden;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
     @include small {
         width: 150px;
@@ -431,7 +437,9 @@ created() {
 
 .testimonials__slider-img {
     width: 100%;
+   
     display: block;
+    
     @include small {
         width: 150px;
         min-height: 100%;
