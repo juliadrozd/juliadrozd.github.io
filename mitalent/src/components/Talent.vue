@@ -36,6 +36,8 @@
         <div class="talent__explore--wrap">
             <a href="/clients" class="talent__explore--btn"> Explore more</a>
         </div>
+
+        
     </section>
     <!--./talent-->
 </template>
@@ -53,21 +55,22 @@ export default {
             invalid: false,
             category: '',
             noPerson: false,
+            isShowList: false,
+           
+            
         }
     },
     computed: {
         ...mapGetters([
             'btnValue',
-            'isShowList'
         ]),
-        
+       
         profiles() {
-            return this.$store.state.profiles.filter(profile => {
+         return this.$store.state.profiles.filter(profile => {
                 if (this.btnValue) {
                     return profile.category.toLowerCase().indexOf(this.btnValue.toLowerCase()) > -1
                 } else if (this.search) {
                     this.category !== this.btnValue;
-
                 }
                 return profile.name.toLowerCase().match(this.search.toLowerCase())
             });

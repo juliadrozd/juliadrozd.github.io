@@ -24,9 +24,7 @@ export default {
         ...mapGetters([
             'isShowList',
         ]),
-        // isShowList() {
-        //     return this.$store.state.isShowList;
-        // }
+
     },
     methods: {
         viewList() {

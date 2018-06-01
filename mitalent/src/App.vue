@@ -6,8 +6,7 @@
         <div class="main-content">
           <router-view></router-view>
         </div>
-      <app-footer />
-
+        <app-footer />      
     </div>
    
   </div>
@@ -107,10 +106,6 @@ body {
     z-index: 999;
 }
 
-// .body-fixed {
-//     overflow: hidden;
-//     width: 100%;
-// }
 .section__title {
     font-family: 'Poppins', sans-serif;
     color: $main-color;
@@ -154,5 +149,6 @@ body {
 .address-aside__link:hover {
     color: rgb(181, 211, 211);
 }
+
 
 </style>
