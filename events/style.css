@@ -12,6 +12,7 @@
     align-items: center;
     flex-flow: column;
     position: relative;
+    margin-top: 50px;
 }
 
 #add {
@@ -120,4 +121,17 @@
     height: 300px;
     margin: 5px;
     border: 20px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.event__item--image {
+    width: 100px;
+    height: 150px;
+}
+
+.hide {
+    display: none;
 }
