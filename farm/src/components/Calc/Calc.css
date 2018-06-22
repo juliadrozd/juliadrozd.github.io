@@ -1,0 +1,33 @@
+.main__form {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: calc(100% - 600px);
+}
+
+.main__form--res {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+}
+
+.main__form--res>label {
+    height: 50px;
+    background: rgb(191, 194, 11);
+    width: 350px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 20px 20px;
+    font-size: 20px;
+}
+
+.main__form--res>label>input {
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    width: 150px;
+}

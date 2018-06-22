@@ -1,0 +1,11 @@
+.main__wrap {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    margin: 0 20px;
+}
+
+.map__wrap {
+    width: 600px;
+    height: 500px;
+}

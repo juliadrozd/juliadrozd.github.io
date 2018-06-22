@@ -1,0 +1,15 @@
+.main__header {
+    color: #fff;
+    background: #000;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    margin: 0 0 20px 0;
+}
+.main__header--title {
+    margin: 0;
+    padding: 20px 0;
+}
+.main__header--link {
+    text-decoration: none;
+}

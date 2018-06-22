@@ -1,0 +1,42 @@
+.crops__wrap {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.crops__wrap>button {
+    width: 200px;
+    height: 70px;
+    border: none;
+    outline: none;
+    background: rgba(3, 65, 3, 1);
+    margin: 5px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background .3s ease-in-out;
+}
+
+.crops__wrap>button:hover {
+    background: rgba(3, 65, 3, .8);
+}
+
+.active__btn {
+    background: rgb(191, 194, 11);
+}
+
+.input__wrap {
+    width: 100%;
+}
+
+.input__wrap>input {
+    height: 50px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.input__wrap>input:not(:last-child) {
+    margin-right: 20px;
+}
