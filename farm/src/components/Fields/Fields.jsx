@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import './Fields.css';
 import farm from '../../data/farm.json';
-import '../../index.css';
 
 class Fields extends Component {
     constructor() {

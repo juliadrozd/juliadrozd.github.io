@@ -9,7 +9,3 @@ body {
     font-family: sans-serif;
     text-align: center;
 }
-
-:global(.active__btn) {
-    background-color: rgb(191, 194, 11);
-}

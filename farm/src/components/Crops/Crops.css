@@ -6,6 +6,10 @@
     margin-bottom: 20px;
 }
 
+.crops__wrap .active__btn {
+    background: rgb(191, 194, 11);
+}
+
 .crops__wrap>button {
     min-width: 200px;
     height: 70px;

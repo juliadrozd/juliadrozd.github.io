@@ -6,6 +6,10 @@
     margin-bottom: 20px;
 }
 
+.fields__wrap .active__btn {
+    background: rgb(191, 194, 11);
+}
+
 .fields__wrap>button {
     min-width: 200px;
     height: 50px;

@@ -10,22 +10,26 @@ class Crops extends Component {
             expected: 0,
             risk: 0,
             price: 0,
+            index: '',
         };
       }
-      
+    handleClick(index) {
+        this.setState({ index: index});
+    }
     render() {
       return (
         <div className='crops__wrap'>
         {crops.map((crop, index) => (
 
-            <button key={index} onClick={(event) => {
+            <button key={index} className={this.state.index === index ?  'active__btn': ''} onClick={(event) => {
               event.preventDefault();
+              this.handleClick(index)
               setTimeout(() => {
                 this.setState({ expected: crop.expected_yield, risk: crop.disease_risk_factor, price: crop.price_per_tonne }, () => {
                     const expected = this.state.expected;
                     const risk = this.state.risk;
                     const price = this.state.price;
-                    this.props.update(expected, risk, price);
+                    this.props.update(expected, risk, price, index);
                 });
               });
                 
