@@ -12,37 +12,41 @@ class Crops extends Component {
             price: 0,
         };
       }
+      
     render() {
-        const expected = this.state.expected;
-        const risk = this.state.risk;
-        const price = this.state.price;
-        
       return (
         <div className='crops__wrap'>
-        
         {crops.map((crop, index) => (
+
             <button key={index} onClick={(event) => {
-                this.setState({ expected: crop.expected_yield, risk: crop.disease_risk_factor, price: crop.price_per_tonne });
-                this.props.update(expected, risk, price);
-                event.preventDefault();
-              }}
-            >
+              event.preventDefault();
+              setTimeout(() => {
+                this.setState({ expected: crop.expected_yield, risk: crop.disease_risk_factor, price: crop.price_per_tonne }, () => {
+                    const expected = this.state.expected;
+                    const risk = this.state.risk;
+                    const price = this.state.price;
+                    this.props.update(expected, risk, price);
+                });
+              });
+                
+              }}>
                 {crop.name}
             </button>
-          ))}
+
+        ))}
 
           <div className = 'input__wrap' >
             <label>
-              Expected yield:
-              <input key={expected} defaultValue={expected} />
+              <span>Expected yield:</span>
+              <input key={this.state.expected} defaultValue={ this.state.expected } />
             </label>
             <label>
-              Disease risk factor:
-              <input key={risk} defaultValue={risk} />
+              <span>Disease risk factor:</span>
+              <input key={this.state.risk} defaultValue={ this.state.risk } />
             </label>
             <label>
-              Price per tonne:
-              <input key={price} defaultValue={price} />
+              <span>Price per tonne:</span>
+              <input key={this.state.price} defaultValue={this.state.price} />
             </label>
           </div>
         </div>

@@ -1,11 +1,12 @@
 .main__wrap {
     display: flex;
     justify-content: center;
-    height: 100vh;
+    flex-flow: row wrap;
     margin: 0 20px;
+    min-height: calc(100vh - 80px);
 }
 
 .map__wrap {
-    width: 600px;
+    min-width: 600px;
     height: 500px;
 }

@@ -1,9 +1,7 @@
 .main__form {
-    display: flex;
-    flex-flow: column;
-    justify-content: flex-start;
-    align-items: center;
+    display: block;
     width: calc(100% - 600px);
+    height: 100%;
 }
 
 .main__form--res {

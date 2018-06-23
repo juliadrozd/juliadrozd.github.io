@@ -1,10 +1,15 @@
 * {
-  box-sizing: border-box;
-  font-family: nexaregular,Open\ Sans,sans-serif;
+    box-sizing: border-box;
+    font-family: nexaregular, Open\ Sans, sans-serif;
 }
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  text-align: center;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+:global(.active__btn) {
+    background-color: rgb(191, 194, 11);
 }

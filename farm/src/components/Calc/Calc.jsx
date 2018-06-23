@@ -5,8 +5,9 @@ import Fields from '../Fields/Fields.jsx';
 import Crops from '../Crops/Crops.jsx';
 
 class Calc extends Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
+              
         this.state = {
             hect: 0,
             suscep: 0,
@@ -16,50 +17,51 @@ class Calc extends Component {
             perTonne: 0,
             perField: 0,
         }
-        this.updateState = this.updateState.bind(this);
+        this.updateStateField = this.updateStateField.bind(this);
+        this.updateStateCrop = this.updateStateCrop.bind(this);
+
+        this.onChangeHandler = this.onChangeHandler.bind(this);
     }
 
-    updateState(hect, suscep, expected, risk, price) {
-        this.setState({ hect: hect });
-        this.setState({ suscep: suscep });
-        this.setState({ expected: expected });
-        this.setState({ risk: risk });
-        this.setState({ price: price });
+    updateStateField(hect, suscep) {
+       this.setState({ hect: hect, suscep: suscep }, () => {
+        this.onChangeHandler();
+       }); 
     }
+    updateStateCrop(expected, risk, price) {
+        this.setState({ expected: expected, risk: risk, price: price }, () => {
+         this.onChangeHandler();
+        }); 
+     }
+    onChangeHandler() {
+        const hect = this.state.hect.valueOf();
+        const suscep = this.state.suscep.valueOf();
+        const expected = this.state.expected.valueOf();
+        const risk = this.state.risk.valueOf();
+        const price = this.state.price.valueOf();
+           
+        const perTonne = ((hect * expected) / (risk * suscep)) * price;
+            
+        const perField = ((hect * expected) / (risk * suscep)) * price * hect;
+
+    
+        this.setState({perTonne: perTonne, perField: perField});
+      }
 
     render() {
-        //const perTonne = ((this.state.hect * this.state.expected) / (this.state.risk * this.state.suscep)) * this.state.price;
-        //const perField = ((this.state.hect * this.state.expected) / (this.state.risk * this.state.suscep)) * this.state.price * this.state.hect;
         return ( <form className = 'main__form' >
-            <Fields update = { this.updateState } /> 
-            <Crops update = { this.updateState } />
+            <Fields update = { this.updateStateField } /> 
+            <Crops update = { this.updateStateCrop } />
 
             <div className='main__form--res'>
                 <label>
                     Per Tonne:
-                    <input type = "text" value={ this.state.perTonne } /> 
-                    <button onClick={(event) => {
-                            event.preventDefault();
-                            console.log(this.state.hect);
-                            console.log(this.state.expected);
-                            console.log(this.state.risk);
-                            console.log(this.state.suscep);
-                            console.log(this.state.price);
-
-
-                            let a = this.state.hect * this.state.expected;
-                            let b = this.state.risk * this.state.suscep;
-                            let c = a / b;
-                            let result = c * this.state.price;
-                            console.log(b);
-                            this.setState({ perTonne: result});
-
-                    }}>Calc</button>
+                    <input type = "text" value={ this.state.perTonne.toFixed(2) } onChange={this.onChangeHandler}/> 
                 </label>
 
                 <label>
                     Per Field:
-                    <input type = "text" defaultValue = { this.state.perField } onChange={this.handleChange}/> 
+                    <input type = "text" value = { this.state.perField.toFixed(2) } onChange={this.onChangeHandler}/> 
                 </label >
             </div>
 

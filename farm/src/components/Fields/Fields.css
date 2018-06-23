@@ -7,7 +7,7 @@
 }
 
 .fields__wrap>button {
-    width: 200px;
+    min-width: 200px;
     height: 50px;
     border: none;
     outline: none;
@@ -23,16 +23,26 @@
     background: rgba(3, 65, 3, .8);
 }
 
-.active__btn {
-    background: rgb(191, 194, 11);
-}
-
 .input__wrap {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input__wrap>label {
+    min-width: 200px;
+    height: 50px;
+    margin: 5px;
+}
+
+.input__wrap>label>span {
+    width: 100%;
+    display: block;
+    text-align: center;
 }
 
 .input__wrap>label>input {
-    height: 50px;
     font-size: 20px;
     text-align: center;
 }

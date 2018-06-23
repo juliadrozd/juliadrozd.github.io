@@ -7,7 +7,7 @@
 }
 
 .crops__wrap>button {
-    width: 200px;
+    min-width: 200px;
     height: 70px;
     border: none;
     outline: none;
@@ -29,6 +29,10 @@
 
 .input__wrap {
     width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .input__wrap>input {
