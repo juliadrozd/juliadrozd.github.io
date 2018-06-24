@@ -41,13 +41,15 @@ class Calc extends Component {
         const price = this.state.price.valueOf();
            
         const perTonne = ((hect * expected) / (risk * suscep)) * price;
-            
         const perField = ((hect * expected) / (risk * suscep)) * price * hect;
 
+            if (isNaN(perTonne, perField)) { 
+                return this.setState({perTonne: 0, perField: 0})
+            } else {
+                this.setState({perTonne: perTonne, perField: perField});
+            } 
+    }
     
-        this.setState({perTonne: perTonne, perField: perField});
-      }
-
     render() {
         return ( <form className = 'main__form' >
             <Fields update = { this.updateStateField } /> 
