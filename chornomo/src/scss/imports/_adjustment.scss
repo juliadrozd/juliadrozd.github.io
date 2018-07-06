@@ -1,0 +1,137 @@
+$hover-color: rgb(31, 170, 226);
+$active-color: rgba(109, 110, 113, .1);
+$border-color: #011632;
+$main-color: #004C66;
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "OpenSans", sans-serif;
+}
+
+.container {
+    width: 1160px;
+    margin: 0 auto;
+    padding: 0;
+    @include responsive(1178px) {
+        width: 1000px;
+    }
+    @include responsive(1120px) {
+        width: 980px;
+    }
+    @include responsive(982px) {
+        width: 900px;
+    }
+    @include responsive(918px) {
+        width: 820px;
+    }
+    @include responsive(878px) {
+        width: 800px;
+    }
+    @include responsive(857px) {
+        width: 720px;
+    }
+    @include small {
+        width: 700px;
+    }
+    @include responsive(677px) {
+        width: 550px;
+    }
+    @include responsive(644px) {
+        width: 500px;
+    }
+    @include extraSmall {
+        width: 400px;
+    }
+    @include responsive(590px) {
+        width: auto;
+    }
+    @include responsive(472px) {
+        width: 370px;
+    }
+    @include extraSmall {
+        width: auto;
+    }
+}
+
+.container__flex {
+    @include flexBetween;
+    @include responsive(1177px) {
+        @include flexCenter;
+    }
+}
+
+.section__title {
+    @include flexCenter;
+    flex-flow: row wrap;
+    padding: 30px 0;
+    @include responsive(761px) {
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 0 30px 0;
+    }
+}
+
+.section__title--text-main {
+    font-family: 'OpenSans', sans-serif;
+    font-weight: 600;
+    text-align: center;
+    color: $main-color;
+    font-size: 36px;
+    line-height: 49px;
+    padding-bottom: 60px;
+}
+
+.section__title--text-descr {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    line-height: 34px;
+    @include responsive(761px) {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+.back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin: 0;
+    padding: 15px;
+    background: #ffffff;
+    color: #c7c9ce;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 9;
+    font-size: 35px;
+    text-align: center;
+    transform: rotate(-90deg);
+    @include responsive(918px) {
+        display: none !important;
+    }
+}
+
+.overlay {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: none;
+    background: rgba(0, 0, 0, 0);
+}
+
+.overlay--active {
+    display: block;
+}
+

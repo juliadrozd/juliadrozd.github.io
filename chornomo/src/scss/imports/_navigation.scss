@@ -1,0 +1,148 @@
+.menu-btn {
+    padding: 0;
+    background: none;
+    border: none;
+    outline: none;
+    width: 40px;
+    height: 40px;
+    display: none;
+    @include responsive(761px) {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+.main-navigation {
+    border: none;
+    outline: none;
+    background: none;
+    color: $main-color;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    position: relative;
+    width: 350px;
+    text-align: left;
+    &:hover {
+        color: $hover-color;
+    }
+   
+    &:active {
+        color: $active-color;
+    }
+  
+}
+.nav {
+    transition: transform .2s ease-in-out;
+    width: 300px;
+    
+    @include responsive(761px) {
+        will-change: transform;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 230px;
+        height: 100vh;
+        background: $hover-color;
+        transform: translateX(-100%);
+        z-index: 9999999999;
+    }
+}
+
+.nav--active {
+    @include responsive(761px) {
+        transform: translateX(0);
+        z-index: 9999999999;
+    }
+}
+
+.nav__wrap {
+    @include responsive(1178px) {
+        @include flexCenter;
+    }
+    @include responsive(761px) {
+        background: #ffffff;
+    }
+}
+
+.nav__flex {
+    @include flexBetween;
+}
+
+.nav__list {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    @include flexCenter;
+    flex-flow: column wrap;
+    position: absolute;
+    background: #ffffff;
+    width: 350px;
+    & li {
+       
+        text-align: center;
+        width: inherit;
+        border-bottom: 1px solid rgba(0, 93, 121, 0.5);
+    }
+     :last-child {
+        border-bottom: none;
+    }
+    @include responsive(1177px) {
+        @include flexBetween;
+    }
+    @include responsive(761px) {
+        flex-flow: column nowrap;
+    }
+}
+
+.nav__item {
+    @include responsive(761px) {
+        width: 100%;
+    }
+}
+
+.nav__item--link {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: $main-color;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: .5px;
+    padding: 10px 10px;
+    transition: color .3s ease-in-out;
+    
+    &:hover {
+        color: $hover-color;
+    }
+   
+    &:active {
+        color: $active-color;
+    }
+    
+    @include responsive(860px) {
+        padding: 30px 10px;
+    }
+    @include small {
+        text-align: center;
+        line-height: 22px;
+        font-weight: normal;
+        padding: 30px 15px;
+    }
+    @include responsive(761px) {
+        &:hover {
+            color: $main-color;
+        }
+        &:active {
+            color: $border-color;
+        }
+    }
+}
+.show--main-nav {
+    display: flex;
+    z-index: 9999999999;
+}
+
