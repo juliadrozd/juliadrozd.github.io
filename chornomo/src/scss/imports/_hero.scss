@@ -6,8 +6,14 @@
     justify-content: center;
     align-items: flex-end;
     position: relative;
+    @include medium {
+        height: 450px;
+    }
+    @include small {
+        height: 350px;
+    }
     @include responsive(761px) {
-        height: 400px;
+        height: 250px;
     }
 }
 
@@ -19,12 +25,12 @@
     top: 40px;
     color: #fff;
     margin: 0;
+    @include medium {
+        align-items: flex-start;
+        top: 0;
+    }
     @include responsive(761px) {
         justify-content: center;
-        align-items: center;
-    }
-
-    @include responsive(1120px) {
         align-items: center;
     }
 }
@@ -36,6 +42,12 @@
     margin-bottom: 40px;
     position: relative;
     z-index: 999;
+    @include medium {
+        margin-bottom: 20px;
+    }
+    @include small {
+        margin-bottom: 160px;
+    }
     @include responsive(761px) {
         display: flex;
         font-size: 40px;
@@ -43,6 +55,11 @@
     }
     @include responsive(518px) {
         text-align: center;
+    }
+    @include extraSmall {
+        font-size: 30px;
+        line-height: 40px;
+        margin-bottom: 100px;
     }
 }
 
@@ -62,6 +79,9 @@
     @include responsive(518px) {
         text-align: center;
     }
+    @include extraSmall {
+        padding-top: 0;
+    }
 }
 .hero__gallery {
     text-align: right;
@@ -72,6 +92,15 @@
     flex-flow: row nowrap;
     overflow: hidden;
     margin-bottom: 15px;
+    @include medium {
+        height: 450px;
+    }
+    @include small {
+        height: 350px;
+    }
+    @include responsive(761px) {
+        height: 250px;
+    }
 
 }
 
@@ -81,7 +110,15 @@
     position: relative;
     width: 100%;
     height: 650px;
-   
+    @include medium {
+        height: 450px;
+    }
+    @include small {
+        height: 350px;
+    }
+    @include responsive(761px) {
+        height: 250px;
+    }
 }
 .hero__gallery--next--btn,
 .hero__gallery--prev--btn {

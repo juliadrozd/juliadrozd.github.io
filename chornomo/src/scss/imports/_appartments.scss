@@ -7,9 +7,11 @@
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: flex-start;
-
     @include responsive(982px) {
 		flex-flow: column wrap;
+    }
+    @include small {
+       margin-bottom: 20px;
     }
 }
 
@@ -25,9 +27,12 @@
     @include responsive(1120px) {
 		padding: 0 35px 80px 35px;
     }
-
-    @include responsive(982px) {
+    @include medium {
         width: 100%;
+        padding: 0;
+        margin: 10px 0;
+    }
+    @include responsive(982px) {
         justify-content: space-around;
     }
     
@@ -50,15 +55,26 @@
     justify-content: space-between;
     align-items: flex-start;
     flex-flow: row;
+    @include small {
+        margin: 10px 0;
+        flex-flow: column;
+    }
 }
 .rooms__item--img--wrap {
     width: 50%;
+    @include small {
+        order: 2;
+        width: 100%;
+    }
 }
 .rooms__item--img {
     display: flex;
     width: 50%;
     height: 200px;
-    
+    @include responsive(761px) {
+        display: block;
+        height: auto;
+    }
     > img {
         width: 100%;
         height: 100%;
@@ -67,13 +83,23 @@
         margin: 0;
         padding-right: 20px;
     }
+    @include responsive(761px) {
+        width: 100%;
+        flex-flow: column;
+    }
    
    
 }
 .rooms__item--descr--wrap {
     width: 45%;
+    
     > span {
         display: block;
+    }
+    @include small {
+        order: 1;
+        width: 100%;
+        margin-bottom: 20px;
     }
 }
 .rooms__item--title {
@@ -83,6 +109,9 @@
     font-size: 24px;
     line-height: 34px;
     margin-bottom: 20px;
+    @include medium {
+        margin: 0;
+    }
 }
 .rooms__item--descr {
     font-family: 'Roboto', sans-serif;
@@ -104,6 +133,7 @@
     justify-content: space-between;
     width: 33%;
     height: 250px;
+
     > img {
         width: 100%;
         height: 100%;
@@ -111,5 +141,18 @@
         object-position: 0 0;
         padding: 10px;
         margin: 0;
+        @include responsive(761px) {
+            padding: 0;
+            margin: 5px 0;
+        }
+    }
+    @include small {
+        margin-top: 30px;
+        height: 200px;
+    }
+    @include responsive(761px) {
+        width: 100%;
+        flex-flow: column;
+        height: auto;
     }
 }

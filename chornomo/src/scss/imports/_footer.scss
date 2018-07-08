@@ -7,6 +7,12 @@
     top: 50px;
     transform: translateY(-50px);
     font-family: 'OpenSans', sans-serif;
+    @include small {
+        height: 350px;
+    }
+    @include responsive(761px) {
+        height: 700px;
+    }
 }
 .footer__title {
     text-align: center;
@@ -16,6 +22,15 @@
     line-height: 59px;
     text-transform: uppercase;
     margin-bottom: 100px;
+
+    @include small {
+        color: $main-color;
+        position: relative;
+        top: -100px;
+    }
+    @include responsive(761px) {
+        top: -200px;
+    }
 }
 .footer__content {
     width: 100%;
@@ -24,6 +39,9 @@
     position: absolute;
     bottom: 0;
     display: flex;
+    @include responsive(761px) {
+        height:auto;
+    }
 
 }
 .footer__wrap {
@@ -34,8 +52,16 @@
     flex-flow: row;
     font-style: normal;
     color: #ffffff;
+
     @include responsive(918px) {
         @include flexCenter;
+        flex-flow: column wrap;
+    }
+    @include small {
+        flex-flow: row wrap;
+        align-items: flex-start;
+    }
+    @include responsive(761px) {
         flex-flow: column wrap;
     }
 
@@ -50,13 +76,26 @@
     > h3 {
         margin: 0;
     }
+    @include small {
+        width: 50%;
+    }
+    @include responsive(761px) {
+        width: 100%;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
 }
 .footer--location {
     order: 1;
+    
     > h3 {
         font-size: 18px;
         font-weight: 700;
         line-height: 25px;
+        text-align: center;
+        
     }
     > p {
        @include flexCenter;
@@ -67,6 +106,9 @@
            margin-right: 5px;
        }
     }
+    @include responsive(761px) {
+        text-align: center;
+    }
 }
 .footer--phones {
     font-size: 14px;
@@ -74,10 +116,9 @@
     line-height: 19px;
     order: 2;
     margin-top: 10px;  
+    text-align: center;
     flex-flow: column;
-    align-items: center;
     > span {
-      
         margin-bottom: 15px;
     }
 }
@@ -87,6 +128,7 @@
     font-size: 18px;
     font-weight: 600;
     line-height: 25px;
+    text-align: center;
     > h3 {
         margin-bottom: 15px;
     }
@@ -97,26 +139,44 @@
         line-height: 19px;
         margin-bottom: 15px;
     }
+    @include medium {
+        width: 30%;
+    }
+    @include small {
+        width: 50%;
+    }
+    @include responsive(761px) {
+        width: 100%;
+    }
 }
 .footer__social {
     order: 4;
     flex-flow: column;
     align-items: center;
+
     > p {
+       
         text-align: center;
         margin: 0;
         font-size: 18px;
         font-weight: normal;
         line-height: 25px;
     }
-    @include responsive(918px) {
-        @include flexCenter;
+    @include medium {
+        width: 18%;
+    }
+    @include small {
+        width: 20%;
+    }
+    @include responsive(761px) {
         width: 100%;
-        padding-top: 50px;
     }
 }
 .social__wrap {
     display: flex;
+    @include responsive(761px) {
+        @include flexCenter;
+    }
 }
 
 .footer__social--link {
@@ -127,16 +187,7 @@
    flex-flow: row wrap;
     width: 66px;
     padding: 15px 0;
-    
     &:last-child {
         border: none;
     }
-}
-
-.footer__copywriting {
-    width: 100%;
-    font-size: 14px;
-    line-height: 16px;
-    padding: 50px 0 0 0;
-    color: #ffffff;
 }

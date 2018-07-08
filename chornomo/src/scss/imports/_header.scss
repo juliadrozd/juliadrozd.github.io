@@ -21,8 +21,11 @@
      :last-child {
         margin-right: 0;
     }
+   
     @include small {
-        padding-bottom: 20px;
+        display: flex;
+        padding-bottom: 0;
+        flex-flow: column;
     }
     @include responsive(761px) {
         padding: 10px 0;
@@ -53,6 +56,16 @@
     &:active {
         background: $active-color;
     }
+    @include medium {
+        padding: 0;
+    }
+    @include small {
+        padding-bottom: 10px;
+    }
+    @include extraSmall {
+        justify-content: center;
+    }
+    
 }
 
 .header__address--social {
@@ -64,19 +77,3 @@
         display: none;
     }
 }
-
-.address__social--link {
-    @include flexCenter;
-    text-decoration: none;
-    width: 66px;
-    padding: 15px 0;
-    border-right: 1px solid $border-color;
-    font-size: 20px;
-    &:hover {
-        color: $hover-color;
-    }
-    &:active {
-        color: $active-color;
-    }
-}
-
