@@ -8,7 +8,6 @@
 }
 
 .header__address {
-    color: #011632;
     @include flexBetween;
     font-style: normal;
     @include small {
@@ -35,10 +34,10 @@
 .address__link {
     display: flex;
     align-items: center;
-    font-weight: normal;
+    font-weight: 600;
     color: $main-color;
-    font-size: 14px;
-    line-height: 14px;
+    font-size: 18px;
+    line-height: 25px;
     text-decoration: none;
     letter-spacing: .5px;
     margin-right: 10px;
@@ -58,6 +57,8 @@
     }
     @include medium {
         padding: 0;
+        font-size: 14px;
+        line-height: 18px;
     }
     @include small {
         padding-bottom: 10px;
@@ -66,14 +67,4 @@
         justify-content: center;
     }
     
-}
-
-.header__address--social {
-    display: flex;
-    &a:first-child {
-        border-left: 1px solid $border-color;
-    }
-    @include responsive(761px) {
-        display: none;
-    }
 }

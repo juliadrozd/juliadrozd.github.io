@@ -18,8 +18,9 @@
     text-align: center;
     font-weight: 700;
     color: #F7F7F7;
-    font-size: 36px;
-    line-height: 59px;
+    font-size: 48px;
+    line-height: 78px;
+    letter-spacing: 10px;
     text-transform: uppercase;
     margin-bottom: 100px;
 
@@ -68,8 +69,6 @@
 }
 .footer__section {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
     flex-flow: row wrap;
     width: 23%;
     margin: 0;
@@ -89,6 +88,9 @@
 }
 .footer--location {
     order: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
     
     > h3 {
         font-size: 18px;
@@ -121,10 +123,10 @@
     }
 }
 .footer--phones {
-    
+    display: flex;
+    align-items: center;
     order: 2;
     margin-top: 10px;  
-    text-align: center;
     flex-flow: column;
     > a {
         text-decoration: none;
