@@ -7,6 +7,7 @@
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: flex-start;
+    padding: 0 20px;
     @include responsive(982px) {
 		flex-flow: column wrap;
     }
@@ -82,6 +83,9 @@
         object-position: 0 0;
         margin: 0;
         padding-right: 20px;
+        @include small {
+            padding-right: 0;
+         }
     }
     @include responsive(761px) {
         width: 100%;

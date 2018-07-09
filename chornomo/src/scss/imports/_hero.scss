@@ -46,7 +46,7 @@
         margin-bottom: 20px;
     }
     @include small {
-        margin-bottom: 160px;
+        top: 0;
     }
     @include responsive(761px) {
         display: flex;
@@ -69,6 +69,10 @@
     font-weight: 500;
     font-size: 24px;
     line-height: 28px;
+    @include small {
+        position: relative;
+        bottom: -40px;
+    }
     @include responsive(761px) {
         display: flex;
         font-size: 18px;
