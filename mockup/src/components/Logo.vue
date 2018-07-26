@@ -2,7 +2,7 @@
 <!--Main logo-->
     <div class="main-logo">
         <a href="#" class="main-logo__link">
-            <img class="main-logo__img" src="./src/assets/logotype.png" alt="mockup">
+            <img class="main-logo__img" src="../assets/logotype.png" alt="mockup">
         </a>
     </div>
 <!--./Main logo-->
