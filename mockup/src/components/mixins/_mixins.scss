@@ -1,0 +1,59 @@
+$main-color: rgb(95, 95, 95);
+$hover-color:rgb(73, 153, 175);
+$accent-color: rgb(102, 131, 51);
+$red-color: rgb(241, 113, 94);
+$background: rgb(243, 238, 234);
+$block-color: rgb(255, 255, 255);
+$light-main: rgb(179, 179, 179);
+@mixin size($width, $height: auto) {
+    width: $width;
+    height: $height;
+}
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flexBetween {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin AlignFlexStart {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+@mixin large {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin medium {
+    @media screen and (max-width: 992px) {
+        @content;
+    }
+}
+
+@mixin small {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin extraSmall {
+    @media screen and (max-width: 451px) {
+        @content;
+    }
+}
+
+@mixin responsive($width) {
+    @media screen and (max-width: $width) {
+        @content;
+    }
+}
