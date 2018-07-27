@@ -1,7 +1,9 @@
 <template>
   <div class="container">
     <header class="main-header">
-        <app-logo />
+        <div class="logo--wrap">
+            <app-logo />
+        </div>
         <div class="main-right">
           <app-search />
           <app-nav />
@@ -49,8 +51,11 @@ export default {
       align-items: center;
     }
 }
-
+.logo--wrap {
+  width: 30%;
+}
 .main-right {
+  width: 70%;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
