@@ -59,11 +59,11 @@ export default {
   data () {
     return {
     social: [
-        {imgPath: './src/assets/facebook.svg', title: 'facebook', path: '/fb'},
-        {imgPath: './src/assets/twitter.svg', title: 'twitter', path: '/tw'},
-        {imgPath: './src/assets/youtube.svg', title: 'youtube', path: '/yt'},
-        {imgPath: './src/assets/paypal.svg', title: 'paypal', path: '/pp'},
-        {imgPath: './src/assets/email.svg', title: 'email', path: '/em'},
+        {imgPath: 'https://firebasestorage.googleapis.com/v0/b/mockup-646e9.appspot.com/o/facebook.svg?alt=media&token=b40191f9-68c2-4113-9445-671826643a1e', title: 'facebook', path: '/fb'},
+        {imgPath: 'https://firebasestorage.googleapis.com/v0/b/mockup-646e9.appspot.com/o/twitter.svg?alt=media&token=f04ecaa7-3ba5-4aa7-8867-c79d897c2822', title: 'twitter', path: '/tw'},
+        {imgPath: 'https://firebasestorage.googleapis.com/v0/b/mockup-646e9.appspot.com/o/youtube.svg?alt=media&token=066201a4-cbf5-4f41-8afb-cd83ea216729', title: 'youtube', path: '/yt'},
+        {imgPath: 'https://firebasestorage.googleapis.com/v0/b/mockup-646e9.appspot.com/o/paypal.svg?alt=media&token=b51541c3-2659-43cb-b6e4-0197d2837093', title: 'paypal', path: '/pp'},
+        {imgPath: 'https://firebasestorage.googleapis.com/v0/b/mockup-646e9.appspot.com/o/email.svg?alt=media&token=eb1218ea-473e-4976-a561-d7989ca46479', title: 'email', path: '/em'},
       ],
     }
   },

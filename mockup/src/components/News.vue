@@ -11,7 +11,7 @@
                     <h3 class="news__title">{{ item.title }}</h3>
                     <a class="news__link" :href="item.path">
                         <p>{{ item.text }}</p>
-                        <img src="https://photos.app.goo.gl/K4CcgjsNtsmT7un87" alt="go">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/mockup-646e9.appspot.com/o/newsbtn.png?alt=media&token=c10527fe-39e6-4604-9ba0-54c09c9ee7b5" alt="go">
                     </a>
                 </figcaption>
 
@@ -27,9 +27,9 @@ export default {
   data () {
     return {
     news: [
-        {imgPath: 'https://photos.app.goo.gl/xdQu4SeHCr9pcqeWA', title: 'Stories', text: 'Read stories of SevenOaks', path: '/stories'},
-        {imgPath: 'https://photos.app.goo.gl/wYDkho6LahpJoN4a7', title: 'Give only', text: 'Quick & easy online giving', path: '/give'},
-        {imgPath: 'https://photos.app.goo.gl/5zXa2nvugALa7N2Q7', title: 'Prayer', text: 'Submit your prayer request', path: '/prayer'},
+        {imgPath: 'https://firebasestorage.googleapis.com/v0/b/mockup-646e9.appspot.com/o/pic1.png?alt=media&token=7e4063da-6331-49f1-9cb6-19efa5134331', title: 'Stories', text: 'Read stories of SevenOaks', path: '/stories'},
+        {imgPath: 'https://firebasestorage.googleapis.com/v0/b/mockup-646e9.appspot.com/o/pic2.png?alt=media&token=480bf6a0-05e8-4162-be23-4650ce2770d4', title: 'Give only', text: 'Quick & easy online giving', path: '/give'},
+        {imgPath: 'https://firebasestorage.googleapis.com/v0/b/mockup-646e9.appspot.com/o/pic3.png?alt=media&token=f2568a6a-898b-4b11-9038-1790db6eae9b', title: 'Prayer', text: 'Submit your prayer request', path: '/prayer'},
     ],
     }
   },
