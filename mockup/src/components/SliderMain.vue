@@ -3,7 +3,7 @@
         <section class="slider__container">
         <!-- slider__btn--prev -->
         <button @click="prev" class="slider__btn slider__btn--prev">
-            <img src="../assets/btn.png" alt="prev">
+            <img src="https://photos.app.goo.gl/NrmW7NcrnjrUEA9N8" alt="prev">
         </button>
         <!-- ./slider__btn--prev -->
 
@@ -31,7 +31,7 @@
 
         <!-- slider__btn--next -->
         <button @click="next" class="slider__btn slider__btn--next">
-            <img src="../assets/btn.png" alt="next">
+            <img src="https://photos.app.goo.gl/NrmW7NcrnjrUEA9N8" alt="next">
         </button>
         <!-- ./slider__btn--next -->
         </section>
@@ -42,9 +42,9 @@ export default {
   data () {
     return {
     slider: [
-        {imgPath: './src/assets/banner.png', title: 'banner1', mainText: 'Welcome to SevenOaks website', text: 'which is run by the friends of SevenOaks.'},
-        {imgPath: './src/assets/banner.png', title: 'banner2', mainText: 'Banner2', text: 'which is run by the friends of SevenOaks.'},
-        {imgPath: './src/assets/banner.png', title: 'banner3', mainText: 'Banner3', text: 'which is run by the friends of SevenOaks.'},
+        {imgPath: 'https://photos.app.goo.gl/31uM2KTx57NxjWDk9', title: 'banner1', mainText: 'Welcome to SevenOaks website', text: 'which is run by the friends of SevenOaks.'},
+        {imgPath: 'https://photos.app.goo.gl/31uM2KTx57NxjWDk9', title: 'banner2', mainText: 'Banner2', text: 'which is run by the friends of SevenOaks.'},
+        {imgPath: 'https://photos.app.goo.gl/31uM2KTx57NxjWDk9', title: 'banner3', mainText: 'Banner3', text: 'which is run by the friends of SevenOaks.'},
       ],
     }
   },

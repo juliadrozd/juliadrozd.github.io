@@ -11,7 +11,7 @@
                     <h3 class="news__title">{{ item.title }}</h3>
                     <a class="news__link" :href="item.path">
                         <p>{{ item.text }}</p>
-                        <img src="../assets/newsbtn.png" alt="go">
+                        <img src="https://photos.app.goo.gl/K4CcgjsNtsmT7un87" alt="go">
                     </a>
                 </figcaption>
 
@@ -27,9 +27,9 @@ export default {
   data () {
     return {
     news: [
-        {imgPath: './src/assets/pic1.png', title: 'Stories', text: 'Read stories of SevenOaks', path: '/stories'},
-        {imgPath: './src/assets/pic2.png', title: 'Give only', text: 'Quick & easy online giving', path: '/give'},
-        {imgPath: './src/assets/pic3.png', title: 'Prayer', text: 'Submit your prayer request', path: '/prayer'},
+        {imgPath: 'https://photos.app.goo.gl/xdQu4SeHCr9pcqeWA', title: 'Stories', text: 'Read stories of SevenOaks', path: '/stories'},
+        {imgPath: 'https://photos.app.goo.gl/wYDkho6LahpJoN4a7', title: 'Give only', text: 'Quick & easy online giving', path: '/give'},
+        {imgPath: 'https://photos.app.goo.gl/5zXa2nvugALa7N2Q7', title: 'Prayer', text: 'Submit your prayer request', path: '/prayer'},
     ],
     }
   },
